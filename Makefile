@@ -27,17 +27,20 @@ else ifeq ($(BACKEND),cpp)
   BND_OBJ := $(BUILD_DIR)/solver_cpu.o
   CBND := $(CXX)
   BNDFLAGS := -O3 -std=c++20
+  BND_DEP := linalg
 else
   $(error Unknown BACKEND '$(BACKEND)'; use BACKEND=cuda or BACKEND=cpp)
 endif
 
 # --- Compiler flags ---
 CXXFLAGS := -std=c++20 -O3
-LDFLAGS  := -lcudart
+LDFLAGS  := -lcudart -lcusolver
 
 # --- Files ---
 MAIN_SRC := $(SRC_DIR)/main.cpp
 TEST_SRC := $(SRC_DIR)/testing.cpp
+
+DEPS := linprog
 
 # --- Targets ---
 MAIN := $(BIN_DIR)/solver_$(BACKEND)
@@ -52,6 +55,8 @@ endif
 # --- Object files ---
 MAIN_OBJ := $(BUILD_DIR)/main.o
 TEST_OBJ := $(BUILD_DIR)/testing.o
+DEP_OBJ := $(DEPS:%=$(BUILD_DIR)/%.o)
+BND_DEP_OBJ := $(BND_DEP:%=$(BUILD_DIR)/%.o)
 
 # ========================
 #  Rules
@@ -62,10 +67,10 @@ TEST_OBJ := $(BUILD_DIR)/testing.o
 all: $(MAIN)
 
 # --- Binaries ---
-$(MAIN): $(MAIN_OBJ) $(BND_OBJ) | $(BIN_DIR)
+$(MAIN): $(MAIN_OBJ) $(BND_OBJ) $(BND_DEP_OBJ) $(DEP_OBJ)| $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
-$(TEST): $(TEST_OBJ) $(BND_OBJ) | $(BIN_DIR)
+$(TEST): $(TEST_OBJ) $(BND_OBJ) $(BND_DEP_OBJ) $(DEP_OBJ)| $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
 # --- Compile rules ---
