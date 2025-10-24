@@ -9,7 +9,7 @@ __global__ void kernel(int a) {
 }
 
 
-struct result solver(int n, int m, vector<vector<double>> A, vector<double> b, vector<double> c) {
+struct result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c) {
     int zero = 0;
     cudaMemcpyToSymbol(val, &zero, sizeof(int));
 

@@ -27,7 +27,7 @@ else ifeq ($(BACKEND),cpp)
   BND_OBJ := $(BUILD_DIR)/solver_cpu.o
   CBND := $(CXX)
   BNDFLAGS := -O3 -std=c++20
-  BND_DEP := linalg
+  BND_DEP := linalg_cpu
 else
   $(error Unknown BACKEND '$(BACKEND)'; use BACKEND=cuda or BACKEND=cpp)
 endif
@@ -40,7 +40,7 @@ LDFLAGS  := -lcudart -lcusolver
 MAIN_SRC := $(SRC_DIR)/main.cpp
 TEST_SRC := $(SRC_DIR)/testing.cpp
 
-DEPS := linprog
+DEPS := linprog logging
 
 # --- Targets ---
 MAIN := $(BIN_DIR)/solver_$(BACKEND)

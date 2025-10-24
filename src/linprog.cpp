@@ -1,4 +1,5 @@
 #include "linprog.hpp"
+#include "linalg_cpu.hpp"
 
 bool feasible(int n, int m, mat &A, vec &x, vec &b) {
     for(int i = 0; i < n; i++) {

@@ -2,7 +2,7 @@
 #include <cusolverDn.h>
 #include <stdexcept>
 
-#include "linalg.hpp"
+#include "linalg_cpu.hpp"
 #include <assert.h>
 
 vec mv_solve(int n, mat_cm& A, vec& b) {

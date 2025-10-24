@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <cmath>
 
 #include "solver.hpp"
 #include "linalg.hpp"
@@ -12,7 +13,7 @@ double eps = 1e-6;
 // Implementation directly following the Rice Notes:
 // https://www.cmor-faculty.rice.edu/~yzhang/caam378/Notes/Save/note2.pdf
 
-struct result solver(int n, int m, mat A, vec b, vec c) {
+struct result solver(int m, int n, mat A, vec b, vec c) {
     assert(A.size() == n);
     for(int i = 0; i < n; i++) {
         assert(A[i].size() == m);
@@ -47,7 +48,7 @@ struct result solver(int n, int m, mat A, vec b, vec c) {
 
         for(int i = 0; i < m; i++) {
             for(int j = 0; j < m; j++) {
-                A_B[j + i * n] = A[B[i]][j];
+                A_B[j + i * m] = A[B[i]][j];
             }
             c_B[i] = c[B[i]]; 
             x_B[i] = x[B[i]];
@@ -55,7 +56,7 @@ struct result solver(int n, int m, mat A, vec b, vec c) {
 
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                A_N[j + i*n] = A[N[i]][j];
+                A_N[j + i*m] = A[N[i]][j];
             }
             c_N[i] = c[N[i]];
         }

@@ -1,7 +1,7 @@
 /**
  * Utility for simple Linear Programming questions.
  */
-#include "linalg.hpp"
+#include "types.hpp"
 
 /**
  * Given an x, is it feasible in Ax <= b?
