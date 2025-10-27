@@ -1,11 +1,5 @@
 #pragma once
-#include <vector>
-using std::vector;
-
-struct result {
-    bool success;
-    vector<double> assignment;
-};
+#include "../solver.hpp"
 
 /**
  * Simplex Solver. Assumed interface
@@ -24,4 +18,4 @@ struct result {
  * c: vector of costs
  */
 
-struct result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c);
+struct result base_solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c);

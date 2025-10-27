@@ -2,7 +2,8 @@
 #include <cmath>
 
 #include "solver.hpp"
-#include "linalg.hpp"
+#include "linalg_cpu.hpp"
+#include "linprog.hpp"
 #include "logging.hpp"
 
 typedef vector<int> idx;
@@ -42,7 +43,7 @@ struct result solver(int m, int n, mat A, vec b, vec c) {
     mat_cm A_N(m*n);
     vec    c_N(n);
 
-    while(true) {
+    for(int i = 0; i < 100; i++) {
         logging::log("B", B);
         logging::log("N", N);
 
@@ -62,7 +63,8 @@ struct result solver(int m, int n, mat A, vec b, vec c) {
         }
 
         // 1. Dual estimates.
-        vec y = mv_solve(m, A_B, c_B);
+        mat_cm A_BT = m_transpose(m, m, A_B);
+        vec y = mv_solve(m, A_BT, c_B);
         mat_cm A_NT = m_transpose(m, n, A_N);
         vec tmp = mv_mult(n, m, A_NT, y);
         vec s_N = v_minus(n, c_N, tmp);
@@ -110,7 +112,7 @@ struct result solver(int m, int n, mat A, vec b, vec c) {
         // 6. Leaving Variable selection
         int r = -1;
         for(int i = 0; i < m; i++) {
-            if(d[i] > 0 && (r == -1 || x_B[i]/d[i] < x_B[r]/d[r])) {
+            if(d[i] > eps && (r == -1 || x_B[i]/d[i] < x_B[r]/d[r])) {
                 r = i;
             }
         }
@@ -129,4 +131,8 @@ struct result solver(int m, int n, mat A, vec b, vec c) {
         N[j_i] = ii;
         B[r]   = jj;
     }
+
+    result res;
+    res.success = false;
+    return res;
 }

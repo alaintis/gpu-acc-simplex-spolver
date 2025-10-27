@@ -72,7 +72,7 @@ mat_cm m_transpose(int m, int n, mat_cm& A) {
 
     for(int i = 0; i < m; i++) {
         for(int j = 0; j < n; j++) {
-            AT[j * m + i] = A[i * n + j];
+            AT[j + i * n] = A[i + j * m];
         }
     }
 
