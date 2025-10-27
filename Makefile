@@ -32,6 +32,8 @@ CUOPT_XENV := LD_LIBRARY_PATH=$(CUOPT_DIR)/lib64/:$$LD_LIBRARY_PATH
 
 ifeq ($(BACKEND),cuda)
   BND_OBJ := $(BUILD_DIR)/solver_gpu.o
+  BND_LDFLAGS := -lcublas -lcusolver
+  BND_DEP := linalg_gpu
 else ifeq ($(BACKEND),cpp)
   BND_OBJ := $(BUILD_DIR)/solver_cpu.o
 else ifeq ($(BACKEND),cuopt)

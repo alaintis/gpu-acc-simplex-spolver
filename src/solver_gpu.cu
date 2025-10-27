@@ -1,23 +1,155 @@
-#include <cuda_runtime.h>
+#include <assert.h>
+#include <cmath>
+#include <cstring>
 
 #include "solver.hpp"
+#include "linalg_gpu.hpp"
+#include "linalg_cpu.hpp"
+#include "linprog.hpp"
+#include "logging.hpp"
 
-__device__ int val = 0;
+typedef vector<int> idx;
 
-__global__ void kernel(int a) {
-    atomicExch(&val, a+1);
+// convert A (vector<vec>) -> contiguous column-major host buffer
+std::vector<double> pack_A_column_major(int m, int ncols, const std::vector<std::vector<double>>& Acols) {
+    std::vector<double> Ahost((size_t)m * ncols);
+    for (int col = 0; col < ncols; ++col) {
+        for (int row = 0; row < m; ++row) {
+            Ahost[(size_t)col * m + row] = Acols[col][row]; // column-major: leading dim = m
+        }
+    }
+    return Ahost;
 }
 
+double eps = 1e-6;
 
-struct result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c) {
-    int zero = 0;
-    cudaMemcpyToSymbol(val, &zero, sizeof(int));
+// Implementation directly following the Rice Notes:
+// https://www.cmor-faculty.rice.edu/~yzhang/caam378/Notes/Save/note2.pdf
 
-    kernel<<<1, 1>>>(n);
-    cudaDeviceSynchronize();
+struct result solver(int m, int n, mat A, vec b, vec c) {
+    assert(A.size() == n);
+    for(int i = 0; i < n; i++) {
+        assert(A[i].size() == m);
+    }
+    assert(b.size() == m);
+    assert(c.size() == n);
 
-    int out = 32;
-    cudaMemcpyFromSymbol(&out, val, sizeof(int));
-    struct result r;
-    return r;
+    idx B(m);
+    vec_gpu x(m + n, 0);
+    for(int i = 0; i < m; i++){
+        vec_gpu e_i(m, 0);
+        e_i[i] = 1;
+        A.push_back(e_i);
+        c.push_back(0);
+        B[i] = n+i;
+        x[i+n] = b[i];
+    }
+
+    idx N(n);
+    for(int i = 0; i < n; i++) N[i] = i;
+
+    int n_total = n + m;
+    init_gpu_workspace(n_total, m, n_total);
+    std::vector<double> A_host = pack_A_column_major(m, n_total, A);
+
+    mat_cm_gpu A_B(m*m);
+    vec_gpu    c_B(m);
+    vec_gpu    x_B(m);
+
+    mat_cm_gpu A_N(m*n);
+    vec_gpu    c_N(n);
+
+    for(int i = 0; i < 100; i++) {
+        logging::log("B", B);
+        logging::log("N", N);
+
+        // Build A_B and A_N (column-major)
+        for(int col=0; col<m; col++){
+            int src = B[col];
+            std::memcpy(&A_B[(size_t)col*m], &A_host[(size_t)src*m], sizeof(double)*m);
+            c_B[col] = c[src];
+            x_B[col] = x[src];
+        }
+        for(int col=0; col<n; col++){
+            int src = N[col];
+            std::memcpy(&A_N[(size_t)col*m], &A_host[(size_t)src*m], sizeof(double)*m);
+            c_N[col] = c[src];
+        }
+
+        // 1. Dual estimates.
+        mat_cm_gpu A_BT = m_transpose_gpu(m, m, A_B);
+        vec_gpu y = mv_solve_gpu(m, A_BT, c_B);
+        mat_cm_gpu A_NT = m_transpose_gpu(m, n, A_N);
+        vec_gpu tmp = mv_mult(n, m, A_NT, y);
+        vec_gpu s_N = v_minus(n, c_N, tmp);
+        
+        logging::log("s_N", s_N);
+
+        // 2. Check optimality.
+        bool optimal = true;
+        for(int i = 0; i < n; i++) {
+            optimal &= s_N[i] >= -eps;
+        }
+        if(optimal) {
+            x.resize(n);
+            struct result res = {
+                .success = true,
+                .assignment = x
+            };
+            destroy_gpu_workspace();
+            return res;
+        }
+
+        // 3. Selection of entering variable.
+        // For now we choose the most negative entry.
+        int j_i = 0;
+        for(int i = 0; i < n; i++) {
+            if(s_N[j_i] > s_N[i]) j_i = i;
+        }
+        int jj = N[j_i];
+
+        // 4. Compute step
+        vec_gpu d = mv_solve_gpu(m, A_B, A[jj]);
+
+        logging::log("d", d);
+
+        // 5. Check unboundedness
+        bool unbounded = true;
+        for(int i = 0; i < m; i++) {
+            unbounded &= d[i] <= eps;
+        }
+        if(unbounded) {
+            struct result res;
+            res.success = false;
+            destroy_gpu_workspace();
+            return res;
+        }
+
+        // 6. Leaving Variable selection
+        int r = -1;
+        for(int i = 0; i < m; i++) {
+            if(d[i] > eps && (r == -1 || x_B[i]/d[i] < x_B[r]/d[r])) {
+                r = i;
+            }
+        }
+        assert(r >= 0);
+        int ii = B[r];
+        double tt = x_B[r]/d[r];
+
+        // 7. Update variables
+        x[jj] = tt;
+        // x_B <== x_B - tt * d
+        for(int i = 0; i < m; i++) {
+            x[B[i]] = x_B[i] - tt * d[i];
+        }
+
+        // 8. Update Basis
+        N[j_i] = ii;
+        B[r]   = jj;
+    }
+
+    result res;
+    res.success = false;
+    destroy_gpu_workspace();
+    return res;
 }
