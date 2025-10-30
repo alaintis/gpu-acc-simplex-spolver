@@ -23,30 +23,65 @@ std::vector<double> pack_A_column_major(int m, int ncols, const std::vector<std:
 
 double eps = 1e-6;
 
+
+vec Ax_mult(int m, int n, mat &A, vec &x) {
+    vec y(m);
+
+    for(int i = 0; i < m; i++) {
+        double sum = 0;
+        for(int j = 0; j < n; j++) {
+            sum += A[j][i] * x[j];
+        }
+        y[i] = sum;
+    }
+
+    return y;
+}
+
 // Implementation directly following the Rice Notes:
 // https://www.cmor-faculty.rice.edu/~yzhang/caam378/Notes/Save/note2.pdf
 
-struct result solver(int m, int n, mat A, vec b, vec c) {
+struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
     assert(A.size() == n);
     for(int i = 0; i < n; i++) {
         assert(A[i].size() == m);
     }
     assert(b.size() == m);
     assert(c.size() == n);
+    assert(x.size() == n);
 
-    idx B(m);
-    vec_gpu x(m + n, 0);
+    vec y = Ax_mult(m, n, A, x);
+    
     for(int i = 0; i < m; i++){
-        vec_gpu e_i(m, 0);
+        vec e_i(m, 0);
         e_i[i] = 1;
         A.push_back(e_i);
         c.push_back(0);
-        B[i] = n+i;
-        x[i+n] = b[i];
+        x.push_back(b[i] - y[i]);
     }
 
+    // Selection of the Basis and Non Basis, currently we don't accept initial conditions
+    // with zeros in the basis. This is because we otherwise would have to solve some linear
+    // systems to get started.
+    int zero_count = 0;
+    for(int i = 0; i < n + m; i++) if (std::abs(x[i]) < eps) zero_count += 1;
+    if(zero_count != n) {
+        std::cout << "No Non-Basis / Basis split found." << std::endl;
+        result res;
+        res.success = false;
+    }
+
+    idx B(m);
     idx N(n);
-    for(int i = 0; i < n; i++) N[i] = i;
+    int n_count = 0;
+    int b_count = 0;
+    for(int i = 0; i < n + m; i++) {
+        if (std::abs(x[i]) < eps) {
+            N[n_count++] = i;
+        } else {
+            B[b_count++] = i;
+        }
+    }
 
     int n_total = n + m;
     init_gpu_workspace(n_total, m, n_total);

@@ -1,11 +1,7 @@
 #pragma once
+#include "solver.hpp"
 #include <vector>
 using std::vector;
-
-struct result {
-    bool success;
-    vector<double> assignment;
-};
 
 /**
  * Simplex Solver. Assumed interface
@@ -22,6 +18,7 @@ struct result {
  * A: list of columns of constraint matrix.
  * b: vector of constraints
  * c: vector of costs
+ * x: initial feasible solution
  */
 
-struct result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c, vector<double> x);
+struct result solver_wrapper(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c);

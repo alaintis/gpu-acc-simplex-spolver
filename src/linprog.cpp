@@ -1,11 +1,13 @@
+#include <iostream>
 #include "linprog.hpp"
 #include "linalg_cpu.hpp"
 
+extern double eps;
+
 bool feasible(int n, int m, mat &A, vec &x, vec &b) {
     for(int i = 0; i < n; i++) {
-        if(x[i] < 0) return false;
+        if(x[i] < -eps) return false;
     }
-
 
     mat_cm A_dense(n*m);
 
@@ -14,10 +16,9 @@ bool feasible(int n, int m, mat &A, vec &x, vec &b) {
             A_dense[i + j * m] = A[j][i];
         }
     }
-
     vec y = mv_mult(m, n, A_dense, x);
     for(int i = 0; i < m; i++) {
-        if(y[i] > b[i]) return false;
+        if(y[i] > b[i] + eps) return false;
     }
 
     return true;

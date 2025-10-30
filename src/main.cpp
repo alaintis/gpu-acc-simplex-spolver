@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "solver.hpp"
+#include "solver_wrapper.hpp"
 #include "linprog.hpp"
 
 int main() {
@@ -14,7 +14,7 @@ int main() {
     vector<double> b = { 60, 60 };
     vector<double> c = { -40, -88 };
 
-    struct result r = solver(m, n, A, b, c);
+    struct result r = solver_wrapper(m, n, A, b, c);
 
     std::cout << "Result: " << ((r.success) ? "Success" : "Failed") << std::endl;
 

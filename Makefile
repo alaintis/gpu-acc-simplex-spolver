@@ -49,7 +49,7 @@ endif
 MAIN_SRC := $(SRC_DIR)/main.cpp
 TEST_SRC := $(SRC_DIR)/testing.cpp
 
-DEPS := linprog linalg_cpu logging
+DEPS := linprog linalg_cpu logging solver_wrapper
 
 # --- Targets ---
 MAIN := $(BIN_DIR)/solver_$(BACKEND)

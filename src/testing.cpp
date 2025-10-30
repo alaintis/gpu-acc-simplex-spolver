@@ -3,7 +3,7 @@
 #include <string>
 #include <filesystem>
 
-#include "solver.hpp"
+#include "solver_wrapper.hpp"
 #include "logging.hpp"
 
 namespace fs = std::filesystem;
@@ -55,7 +55,7 @@ void test(const Problem &p, const std::string &name = "") {
         std::cout << "Invoking solver..."<< "A.size=" << p.A.size() << " m=" << p.m << " n=" << p.n << std::endl;
 
         logging::active = false;
-        struct result r = solver(p.m, p.n, p.A, p.b, p.c);
+        struct result r = solver_wrapper(p.m, p.n, p.A, p.b, p.c);
         if(r.success) {
             std::cout << "success";
         }
