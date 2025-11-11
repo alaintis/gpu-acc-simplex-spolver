@@ -1,6 +1,6 @@
 add_library(simplex_gpu STATIC
     linalg_gpu.cu
-    solver_gpu.cpp
+    solver_gpu.cu
 )
 
 target_include_directories(simplex_gpu

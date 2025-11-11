@@ -1,6 +1,6 @@
 #include "types.hpp"
-typedef vec vec_gpu;
-typedef mat_cm mat_cm_gpu;
+typedef double *vec_gpu;
+typedef double *mat_cm_gpu;
 
 
 
@@ -10,9 +10,9 @@ typedef mat_cm mat_cm_gpu;
  * A: nxn matrix column major order.
  * b: n vector
  * 
- * return x, the solution.
+ * x, the solution.
  */
-vec_gpu mv_solve_gpu(int n, mat_cm_gpu& A, vec_gpu& b);
+void mv_solve_gpu(int n, const mat_cm_gpu A, const vec_gpu b, vec_gpu x);
 
 
 /**
@@ -21,24 +21,24 @@ vec_gpu mv_solve_gpu(int n, mat_cm_gpu& A, vec_gpu& b);
  * A: mxn matrix column major order.
  * x: n vector
  * 
- * returns Ax, the solution a m vector.
+ * y: Ax, the solution a m vector.
  */
-vec_gpu mv_mult_gpu(int m, int n, mat_cm_gpu& A, vec_gpu& x);
+void mv_mult_gpu(int m, int n, const mat_cm_gpu A, const vec_gpu x, vec_gpu y);
 
 /**
  * Returns the transposed of the matrix.
  * 
  * A: mxn matrix column major order.
  * 
- * return A^T, the solution nxm matrix column major order.
+ * AT: A^T, the solution nxm matrix column major order.
  */
-mat_cm_gpu m_transpose_gpu(int m, int n, mat_cm_gpu& A);
+void m_transpose_gpu(int m, int n, const mat_cm_gpu A, mat_cm_gpu AT);
 
 
 /**
- * Returns a - b
+ * c: a - b
  */
-vec_gpu v_minus_gpu(int n, vec_gpu& a, vec_gpu& b);
+void v_minus_gpu(int n, const vec_gpu a, const vec_gpu b, vec_gpu c);
 
 // Initialize global GPU workspace (allocates device buffers, cuBLAS/cuSOLVER handles)
 void init_gpu_workspace(int n, int m, int max_cols);

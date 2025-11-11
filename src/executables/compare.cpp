@@ -29,8 +29,8 @@ void test(int seed) {
     for(int i = 0; i < m; i++) b[i] = fRand(0, 1);
     for(int i = 0; i < n; i++) c[i] = fRand(-2, -1);
 
-    // Set a single problem negative.
-    b[rand() % m] = -0.01;
+    // Set a single problem slightly negative.
+    b[rand() % m] = -0.001;
 
     logging::log("A", A[0]);
     logging::log("b", b);
