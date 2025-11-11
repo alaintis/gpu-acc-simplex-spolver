@@ -24,4 +24,12 @@ struct result {
  * c: vector of costs
  */
 
+ #ifdef __cplusplus
+extern "C" {
+#endif
+
 struct result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c, vector<double> x);
+
+#ifdef __cplusplus
+}
+#endif

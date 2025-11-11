@@ -1,5 +1,5 @@
 #pragma once
-#include "../solver.hpp"
+#include "solver.hpp"
 
 /**
  * Simplex Solver. Assumed interface

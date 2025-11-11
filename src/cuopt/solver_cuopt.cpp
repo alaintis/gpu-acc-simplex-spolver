@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <cuopt/linear_programming/cuopt_c.h>
 
-#include "../solver.hpp"
+#include "solver.hpp"
 #include "base_solver.hpp"
 
 typedef vector<cuopt_int_t> idx;
 typedef vector<cuopt_float_t> vec;
 
-__attribute__((weak))
-result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c) {
+extern "C" __attribute__((weak))
+result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c, vector<double> x) {
     return base_solver(m, n, A, b, c);
 }
 

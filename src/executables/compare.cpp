@@ -2,7 +2,7 @@
 #include <cmath>
 
 #include "solver_wrapper.hpp"
-#include "cuopt/base_solver.hpp"
+#include "base_solver.hpp"
 #include "linprog.hpp"
 #include "logging.hpp"
 

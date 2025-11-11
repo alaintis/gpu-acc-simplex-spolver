@@ -30,6 +30,7 @@ struct result solver_wrapper(int m, int n, vector<vector<double>> A, vector<doub
         vector<double> c_aux(n, 0);
         vector<double> x_aux = x;
 
+        // A being column major, we add rows
         for(int i = 0; i < m; i++) {
             if(b[i] < 0) {
                 vector<double> e_i(m, 0);

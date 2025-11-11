@@ -11,4 +11,4 @@ bool feasible(int n, int m, mat &A, vec &x, vec &b);
 /**
  * Given an x, evaluate its score.
  */
-double score(int n, vec &x, vec &c);
+double score(int n, const vec &x, const vec &c);
