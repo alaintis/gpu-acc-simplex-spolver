@@ -7,12 +7,12 @@ The codebase is organized into modular libraries and distinct executables:
 ```
 ├── CMakeLists.txt               # Root CMake file, defines SOLVER_BACKEND
 ├── README.md                    # This project guide
-├── executables/                 # All main programs
-│   ├── CMakeLists.txt           # Defines the executable targets
-│   ├── testing.cpp              # Source for 'test_runner' (Correctness)
-|   |── compare.cpp              # Source for 'compare_tool' (Correctness)
-│   └── benchmarking.cpp         # Source for 'benchmark_runner' (Performance)
 ├── src/
+│   ├── executables/             # All main programs
+│   │   ├── CMakeLists.txt       # Defines the executable targets
+│   │   ├── testing.cpp          # Source for 'test_runner' (Correctness)
+│   |   |── compare.cpp          # Source for 'compare_tool' (Correctness)
+│   │   └── benchmarking.cpp     # Source for 'benchmark_runner' (Performance)
 │   ├── common/                  # Shared code for all backends
 │   │   ├── problem_reader.hpp   # Loads problems from files
 │   │   ├── linprog.hpp          # Utility functions (score, feasible)
