@@ -1,7 +1,7 @@
 #include <algorithm>
 #include <chrono>
 #include <filesystem>
-#include <fstream>    
+#include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <numeric>
@@ -9,10 +9,10 @@
 #include <string>
 #include <vector>
 
-
 #include "logging.hpp"
 #include "problem_reader.hpp"
 #include "solver_wrapper.hpp"
+#include "linprog.hpp"
 
 namespace fs = std::filesystem;
 
@@ -28,10 +28,8 @@ struct record {
 // Function to output records to CSV
 void output_csv(const std::vector<std::filesystem::path>& files_to_benchmark,
                 const std::vector<record>& records,
-                const std::string& output_filename = "benchmark_results.csv")
-{
+                const std::string& output_filename = "benchmark_results.csv") {
     // Sanity check: both vectors must have the same size
-    
 
     // Open CSV file for writing
     std::ofstream csv_file(output_filename);
@@ -48,45 +46,53 @@ void output_csv(const std::vector<std::filesystem::path>& files_to_benchmark,
         const auto& path = files_to_benchmark[i];
         const auto& rec = records[i];
 
-        csv_file << '"' << path.string() << '"' << ','      // Quote path to handle commas
-                 << rec.total_time << ','
-                 << rec.avg_time << ','
-                 << rec.min_time << ','
-                 << rec.max_time << ','
-                 << (rec.all_successful ? "true" : "false")
-                 << '\n';
+        csv_file << '"' << path.string() << '"' << ',' // Quote path to handle commas
+                 << rec.total_time << ',' << rec.avg_time << ',' << rec.min_time << ','
+                 << rec.max_time << ',' << (rec.all_successful ? "true" : "false") << '\n';
     }
 
     csv_file.close();
     std::cout << "CSV file written successfully: " << output_filename << "\n";
-}; 
-
+};
 
 struct Timer {
     std::chrono::high_resolution_clock::time_point time_point;
-    
+
     // Returns duration in milliseconds
     double stop() {
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double, std::milli> ms = end - time_point;
         return ms.count();
     }
-    void  start() {
+    void start() {
         auto t = std::chrono::high_resolution_clock::now();
         time_point = t;
     }
 };
 
+
+// Function to run benchmark on a single problem
+// Returns a record with timing statistics
+// Aborts and return if no valid basis/non-basis split found
 record run_benchmark(const Problem& p,
-                   const std::string& problem_name,
-                   int warmup_runs,
-                   int timed_runs) {
+                     const std::string& problem_name,
+                     int warmup_runs,
+                     int timed_runs) {
     std::cout << "Benchmarking: " << problem_name << " (m=" << p.m << ", n=" << p.n << ")"
               << std::endl;
 
     // Warm-up runs
     for (int i = 0; i < warmup_runs; ++i) {
-        solver_wrapper(p.m, p.n, p.A, p.b, p.c);
+        std::cout << "  Warm-up run " << (i + 1) << "..." << std::endl;
+        result res = solver_wrapper(p.m, p.n, p.A, p.b, p.c);
+        if(!res.success){
+            std::cout << "  Warm-up run " << (i + 1) << " failed." << std::endl;
+            return record{0, 0, 0, 0, false};
+        }
+        if(!res.basis_split_found){
+            std::cout << "  Warm-up run " << (i + 1) << " did not find a valid basis/non-basis split." << std::endl;
+            return record{0, 0, 0, 0, false};
+        }
     }
 
     // Timed runs
@@ -99,11 +105,18 @@ record run_benchmark(const Problem& p,
         timer.start();
         result r = solver_wrapper(p.m, p.n, p.A, p.b, p.c);
         timings.push_back(timer.stop());
-
-        if (!r.success) {
+        if(!r.success){
             all_successful = false;
-            std::cout << "  Run " << (i + 1) << " failed." << std::endl;
+            std::cout << "  Run " << (i + 1) << " failed. Empty record is returned " << std::endl;
+            return record{0, 0, 0, 0, false};
         }
+        if(!r.basis_split_found){
+            all_successful = false;
+            std::cout << "  Run " << (i + 1) << " did not find a valid basis/non-basis split. Empty record is returned " << std::endl;
+            return record{0, 0, 0, 0, false};
+        }
+        
+        
     }
 
     // Calculate and report statistics
@@ -124,6 +137,11 @@ record run_benchmark(const Problem& p,
     std::cout << "  Avg:  " << avg_time << " ms" << std::endl;
     std::cout << "  Min:  " << min_time << " ms (Fastest)" << std::endl;
     std::cout << "  Max:  " << max_time << " ms" << std::endl;
+    
+    // Printing data for statistics collection in benchmarking scripts
+    std::cout << "START"<<std::endl;
+    std::cout << "" << total_time << "," << avg_time << "," << min_time << "," << max_time << std::endl;
+    std::cout << "END"<<std::endl;
 
     if (!all_successful) {
         std::cout << "  !! WARNING: At least one run failed!" << std::endl;
@@ -209,12 +227,13 @@ int main(int argc, char** argv) {
         for (const auto& path : files_to_benchmark) {
             try {
                 Problem p = read_problem(path.string());
-                std::cout << "----is running number " << count++ << " of  " << total << ": " << path.string() << " ---------------------------" << std::endl;
+                std::cout << "----is running number " << count++ << " of  " << total << ": "
+                          << path.string() << " ---------------------------" << std::endl;
                 // Run benchmark and store record
                 records.push_back(run_benchmark(p, path.string(), WARMUP_RUNS, TIMED_RUNS));
 
-            // Limit to 10 files for quick testing
-            if(count > 10){
+            // Limit to 100 files for quick testing
+            if(count > 100){
                 std::cout << "------Attention!!!---------------------------" << std::endl;
                 std::cout << " There is a break after 10 files for quick testing purposes " << std::endl;
                 break;

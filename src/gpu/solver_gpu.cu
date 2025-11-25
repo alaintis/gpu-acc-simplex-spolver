@@ -1,8 +1,8 @@
 #include <assert.h>
 #include <cmath>
 #include <cstring>
-#include <limits>
 #include <iostream>
+#include <limits>
 
 #include "linalg_gpu.hpp"
 #include "logging.hpp"
@@ -10,7 +10,9 @@
 
 typedef vector<int> idx;
 
-std::vector<double> pack_A_column_major(int m, int ncols, const std::vector<std::vector<double>>& Acols) {
+std::vector<double> pack_A_column_major(int m,
+                                        int ncols,
+                                        const std::vector<std::vector<double>>& Acols) {
     std::vector<double> Ahost((size_t)m * ncols);
     for (int col = 0; col < ncols; ++col) {
         for (int row = 0; row < m; ++row) {
@@ -19,8 +21,6 @@ std::vector<double> pack_A_column_major(int m, int ncols, const std::vector<std:
     }
     return Ahost;
 }
-
-static double eps = 1e-6;
 
 vec Ax_mult(int m, int n, mat& A, vec& x) {
     vec y(m);
@@ -58,7 +58,8 @@ __device__ double atomicMinDouble(double* address, double val) {
     do {
         assumed = old;
         double assumed_d = ull_to_double(assumed);
-        if (assumed_d <= val) break; // already smaller
+        if (assumed_d <= val)
+            break; // already smaller
         old = atomicCAS(address_as_ull, assumed, val_ull);
     } while (assumed != old);
     return ull_to_double(old);
@@ -71,7 +72,8 @@ __device__ double atomicMaxDouble(double* address, double val) {
     do {
         assumed = old;
         double assumed_d = ull_to_double(assumed);
-        if (assumed_d >= val) break; // already larger
+        if (assumed_d >= val)
+            break; // already larger
         old = atomicCAS(address_as_ull, assumed, val_ull);
     } while (assumed != old);
     return ull_to_double(old);
@@ -84,7 +86,8 @@ __global__ void kernel_min_val(const double* arr, int n, double* out_min) {
     double local_min = INFINITY;
     for (int i = idx; i < n; i += stride) {
         double v = arr[i];
-        if (v < local_min) local_min = v;
+        if (v < local_min)
+            local_min = v;
     }
     if (local_min < INFINITY) {
         atomicMinDouble(out_min, local_min);
@@ -92,7 +95,11 @@ __global__ void kernel_min_val(const double* arr, int n, double* out_min) {
 }
 
 // kernel: find first index i where fabs(arr[i] - val) <= tol, store into out_idx (atomic)
-__global__ void kernel_find_index_value(const double* arr, int n, double val, double tol, int* out_idx) {
+__global__ void kernel_find_index_value(const double* arr,
+                                        int n,
+                                        double val,
+                                        double tol,
+                                        int* out_idx) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     int stride = gridDim.x * blockDim.x;
     for (int i = idx; i < n; i += stride) {
@@ -115,15 +122,21 @@ __global__ void kernel_max_val(const double* arr, int n, double* out_max) {
     double local_max = -INFINITY;
     for (int i = idx; i < n; i += stride) {
         double v = arr[i];
-        if (v > local_max) local_max = v;
+        if (v > local_max)
+            local_max = v;
     }
     if (local_max > -INFINITY) {
         atomicMaxDouble(out_max, local_max);
     }
 }
 
-// kernel: compute min ratio xB[i]/d[i] for d[i] > eps, store ratio in out_min_ratio (initially +inf)
-__global__ void kernel_min_ratio(const double* xB, const double* d, int m, double eps_local, double* out_min_ratio) {
+// kernel: compute min ratio xB[i]/d[i] for d[i] > eps, store ratio in out_min_ratio (initially
+// +inf)
+__global__ void kernel_min_ratio(const double* xB,
+                                 const double* d,
+                                 int m,
+                                 double eps_local,
+                                 double* out_min_ratio) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     int stride = gridDim.x * blockDim.x;
     double local_min = INFINITY;
@@ -131,7 +144,8 @@ __global__ void kernel_min_ratio(const double* xB, const double* d, int m, doubl
         double di = d[i];
         if (di > eps_local) {
             double ratio = xB[i] / di;
-            if (ratio < local_min) local_min = ratio;
+            if (ratio < local_min)
+                local_min = ratio;
         }
     }
     if (local_min < INFINITY) {
@@ -139,8 +153,15 @@ __global__ void kernel_min_ratio(const double* xB, const double* d, int m, doubl
     }
 }
 
-// kernel: find first index where fabs(xB[i]/d[i] - minratio) <= tol, and d[i] > eps -> store index in out_idx
-__global__ void kernel_find_index_ratio(const double* xB, const double* d, int m, double minratio, double eps_local, double tol, int* out_idx) {
+// kernel: find first index where fabs(xB[i]/d[i] - minratio) <= tol, and d[i] > eps -> store index
+// in out_idx
+__global__ void kernel_find_index_ratio(const double* xB,
+                                        const double* d,
+                                        int m,
+                                        double minratio,
+                                        double eps_local,
+                                        double tol,
+                                        int* out_idx) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     int stride = gridDim.x * blockDim.x;
     for (int i = idx; i < m; i += stride) {
@@ -157,25 +178,24 @@ __global__ void kernel_find_index_ratio(const double* xB, const double* d, int m
     }
 }
 
-extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
-    assert(A.size() == n);
-    for (int i = 0; i < n; i++) {
+extern "C" struct result solver(int m,
+                                int n_total,
+                                const mat& A,
+                                const vec& b,
+                                const vec& c,
+                                vec& x,
+                                const idx& B_init
+                            ) {
+
+    assert(A.size() == n_total);
+    for (int i = 0; i < n_total; i++) {
         assert(A[i].size() == m);
     }
     assert(b.size() == m);
-    assert(c.size() == n);
-    assert(x.size() == n);
-
-    vec y_initial = Ax_mult(m, n, A, x);
-
-    for(int i = 0; i < m; i++){
-        vec e_i(m, 0);
-        e_i[i] = 1;
-        A.push_back(e_i);
-        c.push_back(0);
-        x.push_back(b[i] - y_initial[i]);
-    }
-
+    assert(c.size() == n_total);
+    assert(x.size() == n_total);
+    assert(n_total >= m);
+    int n = n_total - m;
     int zero_count = 0;
     for (int i = 0; i < n + m; i++) {
         if (std::abs(x[i]) < eps) {
@@ -183,10 +203,11 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         }
     }
 
-    if(zero_count != n) {
+    if (zero_count != n) {
         std::cout << "No Non-Basis / Basis split found." << std::endl;
         result res;
         res.success = false;
+        res.basis_split_found = false;
         return res;
     }
 
@@ -202,18 +223,16 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         }
     }
 
-
-    int n_total = n + m;
     init_gpu_workspace(n_total, m, n_total);
     std::vector<double> A_host = pack_A_column_major(m, n_total, A);
 
     // main variables.
     mat_cm_gpu A_B;
-    vec_gpu    c_B;
-    vec_gpu    x_B;
+    vec_gpu c_B;
+    vec_gpu x_B;
 
     mat_cm_gpu A_N;
-    vec_gpu    c_N;
+    vec_gpu c_N;
 
     // temporary variables
     mat_cm_gpu A_BT;
@@ -224,15 +243,15 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
     vec_gpu Ajj;
     vec_gpu d;
 
-    cudaMalloc(&A_B, sizeof(double) * m*m);
+    cudaMalloc(&A_B, sizeof(double) * m * m);
     cudaMalloc(&c_B, sizeof(double) * m);
     cudaMalloc(&x_B, sizeof(double) * m);
-    cudaMalloc(&A_N, sizeof(double) * m*n);
+    cudaMalloc(&A_N, sizeof(double) * m * n);
     cudaMalloc(&c_N, sizeof(double) * n);
 
-    cudaMalloc(&A_BT, sizeof(double) * m*m);
+    cudaMalloc(&A_BT, sizeof(double) * m * m);
     cudaMalloc(&y, sizeof(double) * m);
-    cudaMalloc(&A_NT, sizeof(double) * n*m);
+    cudaMalloc(&A_NT, sizeof(double) * n * m);
     cudaMalloc(&tmp, sizeof(double) * n);
     cudaMalloc(&s_N, sizeof(double) * n);
     cudaMalloc(&Ajj, sizeof(double) * m);
@@ -249,20 +268,23 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
     cudaMalloc(&d_minratio_scalar, sizeof(double));
     cudaMalloc(&d_index_scalar, sizeof(int));
 
-    for(int iter = 0; iter < 100; iter++) {
+    int iter_limit =10*n*m; 
+    for (int iter = 0; iter < iter_limit; iter++) {
         logging::log("B", B);
         logging::log("N", N);
 
         // Build A_B and A_N (column-major)
         for (int col = 0; col < m; col++) {
             int src = B[col];
-            cudaMemcpy(&A_B[(size_t)col*m], &A_host[(size_t)src*m], sizeof(double)*m, cudaMemcpyHostToDevice);
+            cudaMemcpy(&A_B[(size_t)col * m], &A_host[(size_t)src * m], sizeof(double) * m,
+                       cudaMemcpyHostToDevice);
             cudaMemcpy(&c_B[col], &c[src], sizeof(double), cudaMemcpyHostToDevice);
             cudaMemcpy(&x_B[col], &x[src], sizeof(double), cudaMemcpyHostToDevice);
         }
         for (int col = 0; col < n; col++) {
             int src = N[col];
-            cudaMemcpy(&A_N[(size_t)col*m], &A_host[(size_t)src*m], sizeof(double)*m, cudaMemcpyHostToDevice);
+            cudaMemcpy(&A_N[(size_t)col * m], &A_host[(size_t)src * m], sizeof(double) * m,
+                       cudaMemcpyHostToDevice);
             cudaMemcpy(&c_N[col], &c[src], sizeof(double), cudaMemcpyHostToDevice);
         }
 
@@ -281,7 +303,8 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         // choose kernel launch params
         int block = 256;
         int grid = (n + block - 1) / block;
-        if (grid > 512) grid = 512;
+        if (grid > 512)
+            grid = 512;
 
         kernel_min_val<<<grid, block>>>(s_N, n, d_min_scalar);
         cudaDeviceSynchronize();
@@ -296,8 +319,9 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         // 2. Check optimality.
         bool optimal = true;
         // use on-device result to determine if there's a negative reduced cost
-        if (sN_min_val < -eps) optimal = false;
-        if(optimal) {
+        if (sN_min_val < -eps)
+            optimal = false;
+        if (optimal) {
             x.resize(n);
             struct result res = {.success = true, .assignment = x};
             destroy_gpu_workspace();
@@ -313,10 +337,11 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
 
         // 3. Selection of entering variable.
 
-        //TODO: not kernelized yet
+        // TODO: not kernelized yet
         int j_i = 0;
-        for(int i = 0; i < n; i++) {
-            if(s_N_h[j_i] > s_N_h[i]) j_i = i;
+        for (int i = 0; i < n; i++) {
+            if (s_N_h[j_i] > s_N_h[i])
+                j_i = i;
         }
         int jj = N[j_i];
 
@@ -334,7 +359,8 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         cudaMemcpy(d_max_scalar, &init_max, sizeof(double), cudaMemcpyHostToDevice);
         int block2 = 256;
         int grid2 = (m + block2 - 1) / block2;
-        if (grid2 > 512) grid2 = 512;
+        if (grid2 > 512)
+            grid2 = 512;
 
         kernel_max_val<<<grid2, block2>>>(d, m, d_max_scalar);
         cudaDeviceSynchronize();
@@ -343,8 +369,9 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         cudaMemcpy(&d_max_val, d_max_scalar, sizeof(double), cudaMemcpyDeviceToHost);
 
         bool unbounded = true;
-        if (d_max_val > eps) unbounded = false;
-        if(unbounded) {
+        if (d_max_val > eps)
+            unbounded = false;
+        if (unbounded) {
             struct result res;
             res.success = false;
             destroy_gpu_workspace();
@@ -372,7 +399,8 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         cudaMemcpy(d_index_scalar, &init_idx, sizeof(int), cudaMemcpyHostToDevice);
 
         double tol = 1e-12;
-        kernel_find_index_ratio<<<grid2, block2>>>(x_B, d, m, minratio_val, eps, tol, d_index_scalar);
+        kernel_find_index_ratio<<<grid2, block2>>>(x_B, d, m, minratio_val, eps, tol,
+                                                   d_index_scalar);
         cudaDeviceSynchronize();
 
         int r_dev;
@@ -385,8 +413,8 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
             cudaMemcpy(d_h2.data(), d, sizeof(double) * m, cudaMemcpyDeviceToHost);
 
             int r = -1;
-            for(int i = 0; i < m; i++) {
-                if(d_h2[i] > eps && (r == -1 || x_B_h[i]/d_h2[i] < x_B_h[r]/d_h2[r])) {
+            for (int i = 0; i < m; i++) {
+                if (d_h2[i] > eps && (r == -1 || x_B_h[i] / d_h2[i] < x_B_h[r] / d_h2[r])) {
                     r = i;
                 }
             }
@@ -400,11 +428,11 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
         cudaMemcpy(x_B_h.data(), x_B, sizeof(double) * m, cudaMemcpyDeviceToHost);
 
         int ii = B[r];
-        double tt = x_B_h[r]/d_h[r];
+        double tt = x_B_h[r] / d_h[r];
         // 7. Update variables
         x[jj] = tt;
         // x_B <== x_B - tt * d
-        for(int i = 0; i < m; i++) {
+        for (int i = 0; i < m; i++) {
             x[B[i]] = x_B_h[i] - tt * d_h[i];
         }
 
@@ -426,4 +454,3 @@ extern "C" struct result solver(int m, int n, mat A, vec b, vec c, vec x) {
 
     return res;
 }
-

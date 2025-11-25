@@ -1,25 +1,48 @@
 #include <assert.h>
-#include <stdio.h>
+#include <cmath>
 #include <cuopt/linear_programming/cuopt_c.h>
+#include <stdio.h>
 
-#include "solver.hpp"
 #include "base_solver.hpp"
+#include "solver.hpp"
 
 typedef vector<cuopt_int_t> idx;
 typedef vector<cuopt_float_t> vec;
 
-extern "C" __attribute__((weak))
-result solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c, vector<double> x) {
+/**
+ * This is the weak-symbol implementation of solver().
+ * When the cuopt backend is selected, this function is linked.
+ * It just passes the call through to base_solver().
+ *
+ * NOTE: The 'x' vector is non-const (vector<double>&) to match the
+ * cpu/gpu solvers, but base_solver will treat it as const.
+ */
+extern "C" __attribute__((weak)) result solver(int m,
+                                               int n,
+                                               const vector<vector<double>>& A,
+                                               const vector<double>& b,
+                                               const vector<double>& c,
+                                               vector<double>& x,
+                                               const idx& B) {
     return base_solver(m, n, A, b, c);
 }
 
-result base_solver(int m, int n, vector<vector<double>> A, vector<double> b, vector<double> c) {
+/**
+ * This is the actual cuOpt implementation, called by the weak solver()
+ * and by the test_runner for the reference solution.
+ */
+result base_solver(int m,
+                   int n,
+                   const vector<vector<double>>& A,
+                   const vector<double>& b,
+                   const vector<double>& c) {
     assert(A.size() == n);
-    for(int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         assert(A[i].size() == m);
     }
     assert(b.size() == m);
     assert(c.size() == n);
+    assert(n >= m);
 
     cuOptOptimizationProblem problem = NULL;
     cuOptSolverSettings settings = NULL;
@@ -27,50 +50,49 @@ result base_solver(int m, int n, vector<vector<double>> A, vector<double> b, vec
 
     cuopt_int_t num_variables = n;
     cuopt_int_t num_constraints = m;
-    cuopt_int_t nnz = m * n;
 
-    // CSR
-    idx row_offsets(m + 1);
-    idx column_indices(m * n);
-    vec values(m * n);
-    for(int i = 0; i < m+1; i++) {
-        row_offsets[i] = i * n;
-    }
-    for(int i = 0; i < m; i++) {
-        for(int j = 0; j < n; j++) {
-            column_indices[i*n+j] = j;
-            values[i*n + j] = A[j][i];
+    // Build a sparse CSR matrix
+    idx row_offsets;
+    idx column_indices;
+    vec values;
+
+    row_offsets.push_back(0); // First row always starts at 0
+    cuopt_int_t nnz = 0;
+
+    // We iterate row-by-row and only store non-zeroes
+    for (int i = 0; i < m; i++) { // For each row i
+        for (int j = 0; j < n; j++) { // For each column j
+            double val = A[j][i]; // Get A(i, j) from column-major input
+
+            // Only store non-zero values
+            if (std::abs(val) > 1e-12) {
+                values.push_back(val);
+                column_indices.push_back(j);
+                nnz++;
+            }
         }
+        row_offsets.push_back(nnz);
     }
 
     vec var_lower_bounds(n, 0);
     vec var_upper_bounds(n, CUOPT_INFINITY);
     vector<char> var_types(n, CUOPT_CONTINUOUS);
-    vector<char> constraint_types(m, CUOPT_LESS_THAN);
-    
+    vector<char> constraint_types(m, CUOPT_EQUAL);
+
     cuopt_int_t status;
     cuopt_float_t time;
-    cuopt_int_t termination_status;
+    cuopt_int_t termination_status = -1; // Initialize to a known error state
     cuopt_float_t objective_value;
 
     // Result
     vec solution_values(n);
-    
+
     // Create the problem
-    status = cuOptCreateProblem(m,
-                                n,
-                                CUOPT_MINIMIZE,
-                                0.0,    // objective offset
-                                c.data(),
-                                row_offsets.data(),
-                                column_indices.data(),
-                                values.data(),
-                                constraint_types.data(),
-                                b.data(),
-                                var_lower_bounds.data(),
-                                var_upper_bounds.data(),
-                                var_types.data(),
-                                &problem);
+    status = cuOptCreateProblem(m, n, CUOPT_MINIMIZE,
+                                0.0, // objective offset
+                                c.data(), row_offsets.data(), column_indices.data(), values.data(),
+                                constraint_types.data(), b.data(), var_lower_bounds.data(),
+                                var_upper_bounds.data(), var_types.data(), &problem);
     if (status != CUOPT_SUCCESS) {
         printf("Error creating problem: %d\n", status);
         goto DONE;
@@ -83,23 +105,46 @@ result base_solver(int m, int n, vector<vector<double>> A, vector<double> b, vec
         goto DONE;
     }
 
-
     // Set solver parameters
-    // Silence solver
-    // This does not really work, still an open issue: https://github.com/NVIDIA/cuopt/issues/187
     status = cuOptSetIntegerParameter(settings, CUOPT_LOG_TO_CONSOLE, false);
     if (status != CUOPT_SUCCESS) {
         printf("Error setting log state: %d\n", status);
         goto DONE;
     }
 
-    // Set tolerance
-    status = cuOptSetFloatParameter(settings, CUOPT_ABSOLUTE_PRIMAL_TOLERANCE, 0.0001);
+    status = cuOptSetFloatParameter(settings, CUOPT_ABSOLUTE_PRIMAL_TOLERANCE, 1.0e-4);
     if (status != CUOPT_SUCCESS) {
-        printf("Error setting optimality tolerance: %d\n", status);
+        printf("Error setting primal tolerance: %d\n", status);
         goto DONE;
     }
 
+    status = cuOptSetFloatParameter(settings, CUOPT_ABSOLUTE_DUAL_TOLERANCE, 1.0e-4);
+    if (status != CUOPT_SUCCESS) {
+        printf("Error setting dual tolerance: %d\n", status);
+        goto DONE;
+    }
+
+    status = cuOptSetFloatParameter(settings, CUOPT_ABSOLUTE_GAP_TOLERANCE, 1.0e-4);
+    if (status != CUOPT_SUCCESS) {
+        printf("Error setting gap tolerance: %d\n", status);
+        goto DONE;
+    }
+
+    // Force deterministic behavior by using only one thread.
+    status = cuOptSetIntegerParameter(settings, CUOPT_NUM_CPU_THREADS, 1);
+    if (status != CUOPT_SUCCESS) {
+        printf("Error setting num cpu threads: %d\n", status);
+        goto DONE;
+    }
+
+    // Force the solver to only use the CPU-based Dual Simplex method.
+    // This, combined with num_cpu_threads=1, eliminates all
+    // non-determinism from the default "concurrent" method.
+    status = cuOptSetIntegerParameter(settings, CUOPT_METHOD, 2); // 2 = DUAL_SIMPLEX
+    if (status != CUOPT_SUCCESS) {
+        printf("Error setting solver method: %d\n", status);
+        goto DONE;
+    }
 
     // Solve the problem
     status = cuOptSolve(problem, settings, &solution);
@@ -115,20 +160,14 @@ result base_solver(int m, int n, vector<vector<double>> A, vector<double> b, vec
     }
 
     status = cuOptGetPrimalSolution(solution, solution_values.data());
-    if (status != CUOPT_SUCCESS) {
-        printf("Error getting solution values: %d\n", status);
-        goto DONE;
-    }
+
 DONE:
     cuOptDestroyProblem(&problem);
     cuOptDestroySolverSettings(&settings);
     cuOptDestroySolution(&solution);
 
     if (termination_status == CUOPT_TERIMINATION_STATUS_OPTIMAL) {
-        result res = {
-            .success = true,
-            .assignment = solution_values
-        };
+        result res = {.success = true, .assignment = solution_values};
         return res;
     } else {
         result res;

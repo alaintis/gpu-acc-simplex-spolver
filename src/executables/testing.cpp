@@ -1,144 +1,191 @@
-#include <iostream>
-#include <string>
-#include <filesystem>
-#include <stdexcept>
 #include <cmath>
+#include <filesystem>
 #include <iomanip>
+#include <iostream>
+#include <stdexcept>
+#include <string>
 
-#include "solver_wrapper.hpp" // backend (cpu/gpu/cuopt)
-#include "base_solver.hpp"    // cuOpt reference solver
-#include "linprog.hpp"        // score
+#include "base_solver.hpp" // cuOpt reference solver
+#include "linprog.hpp" // score
 #include "logging.hpp"
 #include "problem_reader.hpp"
+#include "solver_wrapper.hpp" // backend (cpu/gpu/cuopt)
 
 namespace fs = std::filesystem;
 
+// Timer utility for benchmarking
+struct Timer {
+    std::chrono::high_resolution_clock::time_point time_point;
+
+    // Returns duration in milliseconds
+    double stop() {
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double, std::milli> ms = end - time_point;
+        return ms.count();
+    }
+    void start() {
+        auto t = std::chrono::high_resolution_clock::now();
+        time_point = t;
+    }
+};
+
 /**
  * Runs the solver for a single problem and prints the result.
+ * Returns TRUE if the test passed (solvers agree),
+ * Returns FALSE if the test failed (solvers disagree).
  */
-void run_solver_test(const Problem &p, const std::string &problem_name)
-{
-    std::cout << "Comparing on: " << problem_name
-              << " (m=" << p.m << ", n=" << p.n << ")" << std::endl;
+bool run_solver_test(const Problem& p, const std::string& problem_name) {
+    // ... (This function remains unchanged)
+    std::cout << "Comparing on: " << problem_name << " (m=" << p.m << ", n=" << p.n << ")"
+              << std::endl;
 
     result r_backend; // Result from backend (cpu/gpu)
-    result r_cuopt;   // Result from cuOpt (base)
+    result r_cuopt; // Result from cuOpt (base)
+    Timer timer_backend;
+    Timer timer_cuopt;
+    double time_backend = 0.0;
+    double time_cuopt = 0.0;
 
     // Run selected backend solver (via wrapper)
-    try
-    {
+    try {
+        timer_backend.start();
+
         r_backend = solver_wrapper(p.m, p.n, p.A, p.b, p.c);
-        std::cout << "  Backend: "
-                  << (r_backend.success ? "Success" : "Failed") << std::endl;
-    }
-    catch (const std::exception &e)
-    {
+
+        time_backend = timer_backend.stop();
+        std::cout << "  Backend: " << (r_backend.success ? "Success" : "Failed")
+                  << " (Time: " << time_backend << " ms)" << std::endl;
+    } catch (const std::exception& e) {
         std::cerr << "  Backend threw exception: " << e.what() << std::endl;
         r_backend.success = false;
     }
 
     // Run the cuOpt base solver (reference)
-    try
-    {
+    try {
+        timer_cuopt.start();
+
         r_cuopt = base_solver(p.m, p.n, p.A, p.b, p.c);
-        std::cout << "  cuOpt:   "
-                  << (r_cuopt.success ? "Success" : "Failed") << std::endl;
-    }
-    catch (const std::exception &e)
-    {
+
+        time_cuopt = timer_cuopt.stop();
+        std::cout << "  cuOpt:   " << (r_cuopt.success ? "Success" : "Failed")
+                  << " (Time: " << time_cuopt << " ms)" << std::endl;
+    } catch (const std::exception& e) {
         std::cerr << "  cuOpt threw exception: " << e.what() << std::endl;
         r_cuopt.success = false;
     }
 
     // Compare results
-    if (r_backend.success && r_cuopt.success)
-    {
+    if (r_backend.success && r_cuopt.success) {
         // Both successful, compare objective scores
         double score_backend = score(p.n, r_backend.assignment, p.c);
         double score_cuopt = score(p.n, r_cuopt.assignment, p.c);
         double delta = std::fabs(score_backend - score_cuopt);
 
+        std::cout << "Printing the following for statistics collection ( time_all_problems.sh)"
+                  << std::endl;
+        std::cout << "optimal value BACKEND, optimal value CUOPT, delta" << std::endl;
+        std::cout << "time BACKEND (ms), time CUOPT (ms)" << std::endl;
+
+        std::cout << "START" << std::endl;
+        // std::cout << std::fixed << std::setprecision(6);
+        // std::cout << "  Scores -> Backend: " << score_backend << " | cuOpt: " << score_cuopt
+        //           << " | Delta: " << delta << std::endl;
+        // std::cout << "  Times  -> Backend: " << time_backend << " ms | cuOpt: " << time_cuopt <<
+        // " ms" << std::endl;
+
+        // for statistics only data is outputed
         std::cout << std::fixed << std::setprecision(6);
-        std::cout << "  Scores -> Backend: " << score_backend
-                  << " | cuOpt: " << score_cuopt
-                  << " | Delta: " << delta << std::endl;
+        std::cout << "" << score_backend << "," << score_cuopt << "," << delta << std::endl;
+        std::cout << "" << time_backend << "," << time_cuopt << std::endl;
+        std::cout << "END" << std::endl;
 
-        std::cout.unsetf(std::ios_base::floatfield | std::ios_base::fixed);
-
-        if (delta > 0.001)
-        {
+        if (delta > 0.001) {
             std::cout << "  !! WARNING: Objective values differ significantly!" << std::endl;
+            std::cout << std::endl;
+            return false;
         }
-    }
-    else if (r_backend.success != r_cuopt.success)
-    {
+    } else if (r_backend.success != r_cuopt.success) {
         // One succeeded and one failed
         std::cout << "  !! WARNING: Solvers disagree on success!" << std::endl;
-    }
-    else
-    {
+        std::cout << std::endl;
+        return false;
+    } else {
         std::cout << "  (Both solvers failed or were infeasible)" << std::endl;
     }
 
     std::cout << std::endl;
+    return true; // TEST PASSED
 }
 
-int main(int argc, char **argv)
-{
+/**
+ * Helper function to read and test a single problem file.
+ * Updates counters for processed and failed files.
+ */
+void process_problem_file(const fs::path& path, int& files_processed, int& files_failed) {
+    // Check extension
+    const std::string extension = path.extension().string();
+    if (extension != ".txt" && extension != ".csc") {
+        std::cout << "Skipping non-problem file: " << path.string() << std::endl;
+        return;
+    }
+
+    files_processed++;
+
+    // Run test for this file
+    try {
+        Problem p = read_problem(path.string());
+        bool test_passed = run_solver_test(p, path.string());
+        if (!test_passed) {
+            files_failed++;
+        }
+    } catch (const std::exception& e) {
+        std::cerr << "Failed to read or test file: " << path.string() << std::endl;
+        std::cerr << "  Error: " << e.what() << std::endl << std::endl;
+        files_failed++;
+    }
+}
+
+int main(int argc, char** argv) {
     // Set global logging state once for the entire test run
     logging::active = false;
 
-    // Test directory
-    fs::path test_dir = "test";
-    if (argc > 1)
-    {
-        test_dir = argv[1];
+    // Path to test (can be a file or directory)
+    fs::path input_path = "test";
+    if (argc > 1) {
+        input_path = argv[1];
     }
 
-    std::cout << "Testing problems in: " << test_dir << std::endl;
+    std::cout << "Processing path: " << input_path << std::endl;
     std::cout << "---------------------------------" << std::endl;
 
     int files_processed = 0;
     int files_failed = 0;
 
-    // Iterate through the directory
-    try
-    {
-        for (const auto &entry : fs::directory_iterator(test_dir))
-        {
-
-            // Filter for valid problem files
-            if (!entry.is_regular_file())
-            {
-                continue; // Skip weird files
-            }
-
-            const auto &path = entry.path();
-            const std::string extension = path.extension().string();
-
-            if (extension == ".txt" || extension == ".presolved")
-            {
-                files_processed++;
-
-                // Run test for this file
-                try
-                {
-                    Problem p = read_problem(path.string());
-                    run_solver_test(p, path.string());
-                }
-                catch (const std::exception &e)
-                {
-                    std::cerr << "Failed to read or test file: " << path.string() << std::endl;
-                    std::cerr << "  Error: " << e.what() << std::endl
-                              << std::endl;
-                    files_failed++;
+    try {
+        // Check if the path is a directory
+        if (fs::is_directory(input_path)) {
+            std::cout << "Path is a directory, iterating..." << std::endl << std::endl;
+            for (const auto& entry : fs::directory_iterator(input_path)) {
+                // Only process regular files
+                if (entry.is_regular_file()) {
+                    process_problem_file(entry.path(), files_processed, files_failed);
                 }
             }
         }
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << "Fatal Error: Error while iterating test directory: " << e.what() << std::endl;
+        // Check if the path is a single file
+        else if (fs::is_regular_file(input_path)) {
+            std::cout << "Path is a single file, processing..." << std::endl << std::endl;
+            process_problem_file(input_path, files_processed, files_failed);
+        }
+        // Handle cases where the path doesn't exist or isn't a file/directory
+        else {
+            std::cerr << "Fatal Error: Path is not a valid file or directory: " << input_path
+                      << std::endl;
+            return 1;
+        }
+
+    } catch (const std::exception& e) {
+        std::cerr << "Fatal Error: Error while processing path: " << e.what() << std::endl;
         return 1;
     }
 

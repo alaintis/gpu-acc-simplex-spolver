@@ -1,0 +1,16 @@
+../../dphpc-simplex-data/netlib/presolved/adlittle.presolved
+225494.963163,225494.963162,0.000000
+4357.316301,233.106725
+
+../../dphpc-simplex-data/netlib/presolved/afiro.presolved
+-464.753143,-464.753143,0.000000
+819.359050,112.904218
+
+../../dphpc-simplex-data/netlib/presolved/agg.presolved
+-35991767.286576,-35991767.286610,0.000033
+8866.557860,119.109170
+
+../../dphpc-simplex-data/netlib/presolved/blend.presolved
+-30.812150,-30.812150,0.000000
+6540.113278,128.484766
+

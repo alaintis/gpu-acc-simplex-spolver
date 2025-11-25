@@ -1,50 +1,27 @@
+#pragma once
 #include <vector>
 using std::vector;
+
 typedef vector<double> vec;
 typedef vector<vec> mat;
-
-/**
- * Matrix column major order
- * [0, 1]
- * [2, 3]
- * 
- * Is stored as [0, 2, 1, 3].
- */ 
-
 typedef vector<double> mat_cm;
 
-/**
- * Matrix Vector solve. Solves the equation Ax = b and returns x.
- * 
- * A: nxn matrix column major order.
- * b: n vector
- * 
- * return x, the solution.
- */
-vec mv_solve(int n, mat_cm& A, vec& b);
-
+// Workspace Management
+void init_cpu_workspace(int n);
+void destroy_cpu_workspace();
 
 /**
- * Matrix vector multiplication.
- * 
- * A: mxn matrix column major order.
- * x: n vector
- * 
- * returns Ax, the solution a m vector.
+ * Factorize matrix A (LU decomposition).
+ * Result is stored internally in the workspace.
+ * A: pointer to nxn matrix (column major)
  */
-vec mv_mult(int m, int n, mat_cm& A, vec& x);
+void cpu_factorize(int n, const double* A);
 
 /**
- * Returns the transposed of the matrix.
- * 
- * A: mxn matrix column major order.
- * 
- * return A^T, the solution nxm matrix column major order.
+ * Solve linear system using the PREVIOUSLY computed factorization.
+ * If transpose is true: Solves A^T x = b
+ * If transpose is false: Solves A x = b
+ * * b: pointer to n vector (input)
+ * x: pointer to n vector (output)
  */
-mat_cm m_transpose(int m, int n, mat_cm& A);
-
-
-/**
- * Returns a - b
- */
-vec v_minus(int n, vec& a, vec& b);
+void cpu_solve_prefactored(int n, const double* b, double* x, bool transpose);

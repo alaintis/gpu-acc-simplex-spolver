@@ -180,3 +180,44 @@ ncu --set full -o compute_report ./build/benchmark_runner ./netlib/afiro.presolv
 ```
 
 Open the ```compute_report.ncu-rep``` file in the NVIDIA NSight Compute GUI to see details like memory stalls, instruction counts, and cache miss rates for your kernel.
+
+# 6. Batch & Benchmark Scripts (automation)
+
+Two helper scripts are included to run the test and benchmark suites in batch:
+
+- scripts:
+  - time_all_problems.sh — runs the test_runner over all presolved Netlib problems and collects cleaned results (results.txt) and full logs (full_log.txt).
+  - benchmark.sh — interactive script that configures CMake for a chosen backend, builds benchmark_runner and runs it over the Netlib presolved problems, collecting results.
+
+What they expect
+- Both scripts assume executables live in the project's build/ directory:
+  - test_runner -> ./build/test_runner
+  - benchmark_runner -> ./build/benchmark_runner
+- Both scripts iterate files in ../../dphpc-simplex-data/netlib/presolved by default.
+- Each script calls srun per-run (so srun must be available on your system). The scripts also enforce a per-problem timeout.
+
+Quick usage examples
+
+1) Run the correctness batch (time_all_problems.sh)
+- Build the tester first:
+  cmake -S . -B build -DSOLVER_BACKEND=cpu
+  cmake --build build --target test_runner
+- Run the batch script (it uses srun per-run internally):
+  ./time_all_problems.sh
+- Notes:
+  - Adjust MAX, TIMEOUT, OUTFILE and LOGFILE variables at the top of the script to limit runs or change output names.
+  - The script logs raw output to full_log.txt and cleaned per-problem results to results.txt.
+
+2) Run the benchmark pipeline (benchmark.sh)
+- The script is interactive: it will ask you to pick GPU/CPU/cuOpt, configure CMake accordingly, build benchmark_runner and then run the measurements.
+  ./benchmark.sh
+- If you prefer the manual (non-interactive) flow, do:
+  cmake -S . -B build -DSOLVER_BACKEND=gpu
+  cmake --build build --target benchmark_runner
+  srun -A dphpc -t 00:10 ./build/benchmark_runner ./netlib/afiro.presolved
+- Notes:
+  - benchmark.sh also calls srun per-run; tune MAX and TIMEOUT inside the script if you need different limits.
+  - For cuOpt you may need to pass -DcuOpt_DIR to cmake (or provide the path when prompted by the script).
+
+Cluster note
+- Because both scripts invoke srun for each problem, you can run the script from a machine with srun access. Do not wrap the scripts themselves with another srun call unless you know you need nested allocations.

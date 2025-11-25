@@ -16,7 +16,7 @@ find_package(CUDAToolkit 12.0 REQUIRED
 )
 
 # This can be overridden (e.g., -DcuOpt_DIR=...)
-set(cuOpt_DIR "$ENV{HOME}/.venv/lib/python3.12/site-packages/libcuopt"
+set(cuOpt_DIR "$ENV{HOME}/dphpc/venv/lib/python3.12/site-packages/libcuopt"
     CACHE PATH "Path to the root of the cuOpt installation")
 
 message(STATUS "Using cuOpt from: ${cuOpt_DIR}")

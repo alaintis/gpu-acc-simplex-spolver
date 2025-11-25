@@ -1,90 +1,89 @@
+#include <assert.h>
 #include <cuda_runtime.h>
 #include <cusolverDn.h>
+#include <iostream>
 #include <stdexcept>
+#include <vector>
 
 #include "linalg_cpu.hpp"
-#include <assert.h>
+#include "logging.hpp"
 
-vec mv_solve(int n, mat_cm& A, vec& b) {
-    assert(A.size() == n*n);
-    assert(b.size() == n);
-    
-    double *A_d = nullptr;
-    double *b_d = nullptr;
-    int *ipiv_d = nullptr;
-    int *info_d = nullptr;
-
-    int work_size = 0;
-    double* work_d = nullptr;
+struct CPUWorkspace {
+    double* A_d;
+    double* b_d;
+    int* ipiv_d;
+    int* info_d;
+    double* work_d;
+    int work_size;
     cusolverDnHandle_t handle;
-    cusolverDnCreate(&handle);
+    bool initialized = false;
+};
 
-    cudaMalloc((void**)&A_d, n * n * sizeof(double));
-    cudaMalloc((void**)&b_d, n * sizeof(double));
-    cudaMalloc((void**)&ipiv_d, n * sizeof(int));
-    cudaMalloc((void**)&info_d, sizeof(int));
+static CPUWorkspace ws;
 
-    cudaMemcpy(A_d, A.data(), n * n * sizeof(double), cudaMemcpyHostToDevice);
-    cudaMemcpy(b_d, b.data(), n * sizeof(double), cudaMemcpyHostToDevice);
+void init_cpu_workspace(int n) {
+    if (ws.initialized)
+        return;
 
-    cusolverDnDgetrf_bufferSize(handle, n, n, A_d, n, &work_size);
-    cudaMalloc((void**)&work_d, work_size * sizeof(double));
+    cusolverDnCreate(&ws.handle);
 
+    cudaMalloc((void**)&ws.A_d, n * n * sizeof(double));
+    cudaMalloc((void**)&ws.b_d, n * sizeof(double));
+    cudaMalloc((void**)&ws.ipiv_d, n * sizeof(int));
+    cudaMalloc((void**)&ws.info_d, sizeof(int));
 
-    // LU decomposition.
-    cusolverDnDgetrf(handle, n, n, A_d, n, work_d, ipiv_d, info_d);
-    cusolverDnDgetrs(handle, CUBLAS_OP_N, n, 1, A_d, n, ipiv_d, b_d, n, info_d);
+    cusolverDnDgetrf_bufferSize(ws.handle, n, n, ws.A_d, n, &ws.work_size);
+    cudaMalloc((void**)&ws.work_d, ws.work_size * sizeof(double));
 
-    
-    cudaFree(A_d);
-    cudaFree(ipiv_d);
-    cudaFree(info_d);
-    cudaFree(work_d);
-    cusolverDnDestroy(handle);
-    
-    vec x(n);
-    cudaMemcpy(x.data(), b_d, n * sizeof(double), cudaMemcpyDeviceToHost);
-    cudaFree(b_d);
-    return x;
+    ws.initialized = true;
 }
 
+void destroy_cpu_workspace() {
+    if (!ws.initialized)
+        return;
 
-vec mv_mult(int m, int n, mat_cm& A, vec& x) {
-    assert(A.size() == n * m);
-    assert(x.size() == n);
-    vec y(m);
+    cudaFree(ws.A_d);
+    cudaFree(ws.b_d);
+    cudaFree(ws.ipiv_d);
+    cudaFree(ws.info_d);
+    cudaFree(ws.work_d);
+    cusolverDnDestroy(ws.handle);
 
-    for(int i = 0; i < m; i++) {
-        double sum = 0;
-        for(int j = 0; j < n; j++) {
-            sum += A[i + j * m] * x[j];
-        }
-        y[i] = sum;
-    }
-
-    return y;
+    ws.initialized = false;
 }
 
-mat_cm m_transpose(int m, int n, mat_cm& A) {
-    assert(A.size() == n * m);
+void cpu_factorize(int n, const double* A) {
+    if (!ws.initialized)
+        throw std::runtime_error("Workspace not initialized");
 
-    mat_cm AT(n*m);
+    // Copy A to device
+    cudaMemcpy(ws.A_d, A, n * n * sizeof(double), cudaMemcpyHostToDevice);
 
-    for(int i = 0; i < m; i++) {
-        for(int j = 0; j < n; j++) {
-            AT[j + i * n] = A[i + j * m];
-        }
+    // Factorize (A is overwritten with L and U)
+    cusolverDnDgetrf(ws.handle, n, n, ws.A_d, n, ws.work_d, ws.ipiv_d, ws.info_d);
+
+    // Check for singularities
+    int info_h = 0;
+    cudaMemcpy(&info_h, ws.info_d, sizeof(int), cudaMemcpyDeviceToHost);
+    if (info_h != 0 && logging::active) {
+        std::cerr << "Warning: Singular matrix in factorization (info=" << info_h << ")"
+                  << std::endl;
     }
-
-    return AT;
 }
 
-vec v_minus(int n, vec& a, vec& b) {
-    vec diff(n);
+void cpu_solve_prefactored(int n, const double* b, double* x, bool transpose) {
+    if (!ws.initialized)
+        throw std::runtime_error("Workspace not initialized");
 
-    for(int i = 0; i < n; i++) {
-        diff[i] = a[i] - b[i];
-    }
+    // Copy b to device
+    cudaMemcpy(ws.b_d, b, n * sizeof(double), cudaMemcpyHostToDevice);
 
-    return diff;
+    // Select Operation: N (Normal) or T (Transpose)
+    cublasOperation_t op = transpose ? CUBLAS_OP_T : CUBLAS_OP_N;
+
+    // Solve using the existing factorization in ws.A_d and ws.ipiv_d
+    cusolverDnDgetrs(ws.handle, op, n, 1, ws.A_d, n, ws.ipiv_d, ws.b_d, n, ws.info_d);
+
+    // Copy result back
+    cudaMemcpy(x, ws.b_d, n * sizeof(double), cudaMemcpyDeviceToHost);
 }

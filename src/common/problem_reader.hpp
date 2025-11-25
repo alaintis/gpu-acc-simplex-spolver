@@ -1,10 +1,9 @@
 #pragma once
 
-#include <vector>
 #include <string>
+#include <vector>
 
-struct Problem
-{
+struct Problem {
     int m;
     int n;
     std::vector<std::vector<double>> A;
@@ -21,4 +20,4 @@ struct Problem
  * * The function loads the A matrix into the column-major format required
  * by the solver.
  */
-Problem read_problem(const std::string &path);
+Problem read_problem(const std::string& path);
