@@ -1,41 +1,48 @@
-#include "types.hpp"
-typedef double* vec_gpu;
-typedef double* mat_cm_gpu;
+#pragma once
+#include <vector>
+using std::vector;
+
+typedef vector<double> vec;
+typedef vector<vec> mat;
+typedef vector<double> mat_cm;
+
+// Workspace Management
+void init_gpu_workspace(int n);
+void destroy_gpu_workspace();
 
 /**
- * Matrix Vector solve. Solves the equation Ax = b and returns x.
- *
- * A: nxn matrix column major order.
- * b: n vector
- *
- * x, the solution.
+ * Solve linear system using the PREVIOUSLY computed factorization.
+ * If transpose is true: Solves A^T x = b
+ * If transpose is false: Solves A x = b
+ * b: pointer to n vector (input)
+ * x: pointer to n vector (output)
  */
-void mv_solve_gpu(int n, const mat_cm_gpu A, const vec_gpu b, vec_gpu x);
+void gpu_solve_prefactored(int n, const double* b, double* x, bool transpose);
+
+// Upload static problem data (A and c) to GPU once
+void gpu_load_problem(int m, int n_total, const double* A_flat, const double* b, const double* c);
+
+// Compute reduced costs: sn = c - A^T * y
+// Returns a pointer to host memory containing all reduced costs
+const double* gpu_compute_reduced_costs(int m, int n_total, const double* y_host);
 
 /**
- * Matrix vector multiplication.
- *
- * A: mxn matrix column major order.
- * x: n vector
- *
- * y: Ax, the solution a m vector.
+ * Solves A_Basis * d = A_column[col_idx]
+ * Uses the A matrix already stored on the GPU from gpu_load_problem.
+ * col_idx: The index of the entering variable (column to fetch)
+ * d_out:   Host pointer to store the result
  */
-void mv_mult_gpu(int m, int n, const mat_cm_gpu A, const vec_gpu x, vec_gpu y);
+void gpu_solve_from_resident_col(int m, int col_idx, double* d_out);
 
 /**
- * Returns the transposed of the matrix.
- *
- * A: mxn matrix column major order.
- *
- * AT: A^T, the solution nxm matrix column major order.
+ * 1. Uploads the basis indices (B) to the GPU.
+ * 2. Gathers the corresponding columns from A_full_d into AB_d.
+ * 3. Factorizes AB_d inplace (LU decomposition).
  */
-void m_transpose_gpu(int m, int n, const mat_cm_gpu A, mat_cm_gpu AT);
+void gpu_build_basis_and_factorize(int m, int n_total, const int* B_indices);
 
-/**
- * c: a - b
- */
-void v_minus_gpu(int n, const vec_gpu a, const vec_gpu b, vec_gpu c);
+// Update only the RHS storage (used during perturbation)
+void gpu_update_rhs_storage(int m, const double* b_new);
 
-// Initialize global GPU workspace (allocates device buffers, cuBLAS/cuSOLVER handles)
-void init_gpu_workspace(int n, int m, int max_cols);
-void destroy_gpu_workspace(void);
+// Uses the b stored on the GPU. Result is copied to x_out (Host).
+void gpu_solve_from_persistent_b(int m, double* x_out);
