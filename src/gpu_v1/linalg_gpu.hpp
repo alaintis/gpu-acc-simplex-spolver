@@ -10,39 +10,44 @@ typedef vector<double> mat_cm;
 void init_gpu_workspace(int n);
 void destroy_gpu_workspace();
 
-/**
- * Solve linear system using the PREVIOUSLY computed factorization.
- * If transpose is true: Solves A^T x = b
- * If transpose is false: Solves A x = b
- * b: pointer to n vector (input)
- * x: pointer to n vector (output)
- */
-void gpu_solve_prefactored(int n, const double* b, double* x, bool transpose);
-
 // Upload static problem data (A and c) to GPU once
 void gpu_load_problem(int m, int n_total, const double* A_flat, const double* b, const double* c);
+
+// Update only the RHS storage (used during perturbation)
+void gpu_update_rhs_storage(int m, const double* b_new);
 
 // Compute reduced costs: sn = c - A^T * y
 // Returns a pointer to host memory containing all reduced costs
 const double* gpu_compute_reduced_costs(int m, int n_total, const double* y_host);
 
 /**
- * Solves A_Basis * d = A_column[col_idx]
- * Uses the A matrix already stored on the GPU from gpu_load_problem.
- * col_idx: The index of the entering variable (column to fetch)
- * d_out:   Host pointer to store the result
+ * 1. Uploads the basis indices (B) to the GPU.
+ * 2. Gathers the corresponding columns from A_full_d into B_inv_d.
+ * 3. Factorizes (LU) AND Computes the Explicit Inverse (B_inv_d becomes B^-1).
  */
-void gpu_solve_from_resident_col(int m, int col_idx, double* d_out);
+void gpu_build_basis_and_invert(int m, int n_total, const int* B_indices);
 
 /**
- * 1. Uploads the basis indices (B) to the GPU.
- * 2. Gathers the corresponding columns from A_full_d into AB_d.
- * 3. Factorizes AB_d inplace (LU decomposition).
+ * Updates the Inverse Basis Matrix (B_inv_d) in-place using the Sherman-Morrison formula.
+ * pivot_row: The index of the variable leaving the basis (j).
+ * Assumes the direction vector 'd' (aka B^-1 * A_entering) is already
+ * residing in the GPU workspace 'ws.b_d' (leftover from the previous step).
  */
-void gpu_build_basis_and_factorize(int m, int n_total, const int* B_indices);
+void gpu_update_basis_fast(int m, int pivot_row);
 
-// Update only the RHS storage (used during perturbation)
-void gpu_update_rhs_storage(int m, const double* b_new);
+/**
+ * Multiplies B^-1 * b (or B^-T * b if transpose is true).
+ * Result is stored in x (host).
+ */
+void gpu_mult_inverse(int m, const double* b, double* x, bool transpose);
 
-// Uses the b stored on the GPU. Result is copied to x_out (Host).
-void gpu_solve_from_persistent_b(int m, double* x_out);
+/**
+ * Computes d = B^-1 * A_column[col_idx]
+ * Uses the Explicit Inverse currently stored in AB_d.
+ * The result is left in GPU memory (ws.b_d) for the subsequent update step,
+ * and also copied to d_out (Host) for the ratio test.
+ */
+void gpu_calc_direction(int m, int col_idx, double* d_out);
+
+// Computes x = B^-1 * b_persistent
+void gpu_recalc_x_from_persistent_b(int m, double* x_out);

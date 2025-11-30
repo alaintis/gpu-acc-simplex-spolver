@@ -171,19 +171,24 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
     // ============================================================
     // 3. MAIN LOOP
     // ============================================================
+    const int REFACTOR_FREQ = 50;
     int max_iter = 500 * (n_total + m);
 
     for (int iter = 0; iter < max_iter; iter++) {
-        // 1. & 2. Build and factorize Basis Matrix
+        // 1. & 2. Build and factorize Basis Matrix or update it
         for (int i = 0; i < m; i++) {
             c_B[i] = c_scaled[B[i]];
         }
 
-        gpu_build_basis_and_factorize(m, n_total, B.data());
+        bool refactor_needed = (iter % REFACTOR_FREQ == 0);
+        if (iter == 0 || refactor_needed) {
+            // Full Rebuild: Gather -> LU -> Invert
+            gpu_build_basis_and_invert(m, n_total, B.data());
+        }
 
         // 3. Recompute Primal Solution instead of incremental updates (Anti-Drift) & do stall
-        // detection. We solve A_B * x_B = b_scaled explicitly every iteration.
-        gpu_solve_from_persistent_b(m, x_B.data());
+        // detection. We calculate x_B = B^-1 * b_scaled explicitly every iteration.
+        gpu_recalc_x_from_persistent_b(m, x_B.data());
 
         // Calculate whole x_scaled for stall detection
         std::fill(x_scaled.begin(), x_scaled.end(), 0.0);
@@ -216,18 +221,15 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
             gpu_update_rhs_storage(m, b_eff.data());
             stall_counter = 0;
             // Re-solve with perturbed b immediately
-            gpu_solve_from_persistent_b(m, x_B.data());
-            for (int i = 0; i < m; ++i) {
-                x_scaled[B[i]] = x_B[i];
-            }
+            gpu_recalc_x_from_persistent_b(m, x_B.data());
         }
 
         if (iter % 500 == 0) {
             std::cout << "Iter " << iter << " | Obj: " << current_obj << std::endl;
         }
 
-        // 4. Solve Dual: A_B^T y = c_B
-        gpu_solve_prefactored(m, c_B.data(), y.data(), true);
+        // 4. Solve Dual: y = B^-T * c_B
+        gpu_mult_inverse(m, c_B.data(), y.data(), true); // true = Transpose
 
         // 5. Pricing (Dantzig's Rule for now)
         // We calculate reduced costs for ALL variables (Basic and Non-Basic) at once on GPU.
@@ -261,18 +263,16 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
             if (is_perturbed) {
                 gpu_update_rhs_storage(m, b_scaled.data());
             }
-
-            gpu_solve_from_persistent_b(m, x_B.data());
-
+            gpu_recalc_x_from_persistent_b(m, x_B.data());
             unscale_solution(m, n_total, B, x_B, sc, x);
-
             destroy_gpu_workspace();
             return {.success = true, .assignment = x, .basis = B, .basis_split_found = true};
         }
 
-        // 7. Compute Primal Step: A_B d = A_jj
-        int jj = N[j_i];
-        gpu_solve_from_resident_col(m, jj, d.data());
+        // 7. Compute Primal Step: d = B^-1 * A_jj
+        int jj = N[j_i]; // Entering Column Index
+        gpu_calc_direction(
+            m, jj, d.data()); // Leaves a copy in GPU memory (ws.b_d) for the subsequent update!
 
         // 8. Unbounded Check
         bool unbounded = true;
@@ -324,7 +324,9 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         int ii = B[r];
         N[j_i] = ii;
         B[r] = jj;
+        gpu_update_basis_fast(m, r);
     }
+
     std::cout << "Out of iterations!" << std::endl;
     destroy_gpu_workspace();
     return {.success = false};
