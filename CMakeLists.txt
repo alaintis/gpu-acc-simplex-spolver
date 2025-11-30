@@ -16,7 +16,7 @@ find_package(CUDAToolkit 12.0 REQUIRED
 )
 
 # This can be overridden (e.g., -DcuOpt_DIR=...)
-set(cuOpt_DIR "$ENV{HOME}/dphpc/venv/lib/python3.12/site-packages/libcuopt"
+set(cuOpt_DIR "$ENV{HOME}/.venv/lib/python3.12/site-packages/libcuopt"
     CACHE PATH "Path to the root of the cuOpt installation")
 
 message(STATUS "Using cuOpt from: ${cuOpt_DIR}")
@@ -26,8 +26,8 @@ if(NOT EXISTS "${cuOpt_DIR}/include/cuopt/linear_programming/cuopt_c.h")
 endif()
 
 # Backend Selection
-set(SOLVER_BACKEND "gpu" CACHE STRING "Which solver backend to use (cpu, gpu, cuopt)")
-set_property(CACHE SOLVER_BACKEND PROPERTY STRINGS "cpu" "gpu" "cuopt")
+set(SOLVER_BACKEND "gpuv0" CACHE STRING "Which solver backend to use (cpu, gpuv0, gpuv1 cuopt)")
+set_property(CACHE SOLVER_BACKEND PROPERTY STRINGS "cpu" "gpuv0" "gpuv1" "cuopt")
 message(STATUS "Selected solver backend: ${SOLVER_BACKEND}")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
