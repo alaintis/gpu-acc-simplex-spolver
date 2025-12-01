@@ -26,7 +26,7 @@ MAX=10
 
 echo "Select solver backend to build:"
 echo "  1) GPU usual"
-echo "  1b) GPU sherman morrison"
+echo "  1b) GPU sherman morrison, type: 1b"
 echo "  2) CPU"
 echo "  3) cuOpt"
 echo -n "Enter choice (1–3): "
