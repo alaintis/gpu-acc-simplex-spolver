@@ -4,6 +4,8 @@ elseif(SOLVER_BACKEND STREQUAL "gpu")
     set(SOLVER_LIB simplex_gpu)
 elseif(SOLVER_BACKEND STREQUAL "cuopt")
     set(SOLVER_LIB simplex_cuopt)
+elseif(SOLVER_BACKEND STREQUAL "sparse")
+    set(SOLVER_LIB simplex_sparse)
 else()
     message(FATAL_ERROR "Unknown SOLVER_BACKEND: ${SOLVER_BACKEND}")
 endif()
@@ -26,7 +28,7 @@ add_executable(test_runner
 target_link_libraries(test_runner PRIVATE
     simplex_common
     ${SOLVER_LIB}
-    simplex_cuopt
+    simplex_gpu
 )
 
 add_executable(benchmark_runner
@@ -46,5 +48,5 @@ target_link_libraries(compare_tool
     PRIVATE
         simplex_common
         ${SOLVER_LIB}
-        simplex_cuopt
+        simplex_gpu
 )

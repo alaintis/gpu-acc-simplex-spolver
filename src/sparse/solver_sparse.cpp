@@ -5,7 +5,7 @@
 #include <random>
 #include <vector>
 
-#include "linalg_gpu.hpp"
+#include "linalg_sparse.hpp"
 #include "logging.hpp"
 #include "solver.hpp"
 #include "types.hpp"
@@ -103,13 +103,6 @@ static void unscale_solution(int m,
 // Implementation following the Rice Notes:
 // https://www.cmor-faculty.rice.edu/~yzhang/caam378/Notes/Save/note2.pdf
 // It accept as input Ax = b, with initial solution x in column major format.
-
-extern "C" __attribute__((weak)) struct result
-base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, const idx& B_init) {
-    return solver(m, n_total, A, b, c, x, B_init);
-}
-
-
 extern "C" struct result
 solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, const idx& B_init) {
     // ============================================================
@@ -157,8 +150,8 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         return {.success = false};
     }
 
-    init_gpu_workspace(m);
-    gpu_load_problem(m, n_total, A_scaled.data(), b_scaled.data(), c_scaled.data());
+    init_sparse_workspace(m);
+    sparse_load_problem(m, n_total, A_scaled.data(), b_scaled.data(), c_scaled.data());
 
     // Buffers
     vector<double> A_B(m * m);
@@ -186,11 +179,11 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
             c_B[i] = c_scaled[B[i]];
         }
 
-        gpu_build_basis_and_factorize(m, n_total, B.data());
+        sparse_build_basis_and_factorize(m, n_total, B.data());
 
         // 3. Recompute Primal Solution instead of incremental updates (Anti-Drift) & do stall
         // detection. We solve A_B * x_B = b_scaled explicitly every iteration.
-        gpu_solve_from_persistent_b(m, x_B.data());
+        sparse_solve_from_persistent_b(m, x_B.data());
 
         // Calculate whole x_scaled for stall detection
         std::fill(x_scaled.begin(), x_scaled.end(), 0.0);
@@ -220,10 +213,10 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
                 b_eff[k] += dist_pert(rng);
             is_perturbed = true;
             // Update the persistent b on GPU
-            gpu_update_rhs_storage(m, b_eff.data());
+            sparse_update_rhs_storage(m, b_eff.data());
             stall_counter = 0;
             // Re-solve with perturbed b immediately
-            gpu_solve_from_persistent_b(m, x_B.data());
+            sparse_solve_from_persistent_b(m, x_B.data());
             for (int i = 0; i < m; ++i) {
                 x_scaled[B[i]] = x_B[i];
             }
@@ -234,12 +227,13 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         }
 
         // 4. Solve Dual: A_B^T y = c_B
-        gpu_solve_prefactored(m, c_B.data(), y.data(), true);
+        // sparse_solve_ABT(m, c_B.data(), y.data());
+        sparse_solve_prefactored(m, c_B.data(), y.data(), true);
 
         // 5. Pricing (Dantzig's Rule for now)
         // We calculate reduced costs for ALL variables (Basic and Non-Basic) at once on GPU.
         // It's faster to do one giant matrix mult than iterating just N on CPU.
-        const double* all_sn = gpu_compute_reduced_costs(m, n_total, y.data());
+        const double* all_sn = sparse_compute_reduced_costs(m, n_total, y.data());
 
         int j_i = -1;
         double min_sn = -1e-7;
@@ -266,20 +260,20 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
             // 6. FINAL CLEANUP & UNSCALING
             // Solve against scaled b, then unscale x.
             if (is_perturbed) {
-                gpu_update_rhs_storage(m, b_scaled.data());
+                sparse_update_rhs_storage(m, b_scaled.data());
             }
 
-            gpu_solve_from_persistent_b(m, x_B.data());
+            sparse_solve_from_persistent_b(m, x_B.data());
 
             unscale_solution(m, n_total, B, x_B, sc, x);
 
-            destroy_gpu_workspace();
+            destroy_sparse_workspace();
             return {.success = true, .assignment = x, .basis = B, .basis_split_found = true};
         }
 
         // 7. Compute Primal Step: A_B d = A_jj
         int jj = N[j_i];
-        gpu_solve_from_resident_col(m, jj, d.data());
+        sparse_solve_from_resident_col(m, jj, d.data());
 
         // 8. Unbounded Check
         bool unbounded = true;
@@ -291,7 +285,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         }
         if (unbounded) {
             std::cout << "Problem is unbounded." << std::endl;
-            destroy_gpu_workspace();
+            destroy_sparse_workspace();
             return {.success = false};
         }
 
@@ -323,7 +317,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
 
         if (r < 0) {
             std::cout << "Solver failure: No leaving variable found." << std::endl;
-            destroy_gpu_workspace();
+            destroy_sparse_workspace();
             return {.success = false};
         }
 
@@ -333,6 +327,6 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         B[r] = jj;
     }
     std::cout << "Out of iterations!" << std::endl;
-    destroy_gpu_workspace();
+    destroy_sparse_workspace();
     return {.success = false};
 }
