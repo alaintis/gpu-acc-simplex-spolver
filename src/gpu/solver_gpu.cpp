@@ -103,6 +103,13 @@ static void unscale_solution(int m,
 // Implementation following the Rice Notes:
 // https://www.cmor-faculty.rice.edu/~yzhang/caam378/Notes/Save/note2.pdf
 // It accept as input Ax = b, with initial solution x in column major format.
+
+extern "C" __attribute__((weak)) struct result
+base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, const idx& B_init) {
+    return solver(m, n_total, A, b, c, x, B_init);
+}
+
+
 extern "C" struct result
 solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, const idx& B_init) {
     // ============================================================

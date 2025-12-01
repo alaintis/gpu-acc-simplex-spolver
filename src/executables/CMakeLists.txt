@@ -28,7 +28,7 @@ add_executable(test_runner
 target_link_libraries(test_runner PRIVATE
     simplex_common
     ${SOLVER_LIB}
-    simplex_cuopt
+    simplex_gpu
 )
 
 add_executable(benchmark_runner
@@ -48,5 +48,5 @@ target_link_libraries(compare_tool
     PRIVATE
         simplex_common
         ${SOLVER_LIB}
-        simplex_cuopt
+        simplex_gpu
 )

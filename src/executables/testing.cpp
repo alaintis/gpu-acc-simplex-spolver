@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <string>
 
-#include "base_solver.hpp" // cuOpt reference solver
+#include "../gpu/base_solver_wrapped.hpp" // cuOpt reference solver
 #include "linprog.hpp" // score
 #include "logging.hpp"
 #include "problem_reader.hpp"
@@ -64,7 +64,7 @@ bool run_solver_test(const Problem& p, const std::string& problem_name) {
     try {
         timer_cuopt.start();
 
-        r_cuopt = base_solver(p.m, p.n, p.A, p.b, p.c);
+        r_cuopt = base_solver_wrapped(p.m, p.n, p.A, p.b, p.c);
 
         time_cuopt = timer_cuopt.stop();
         std::cout << "  cuOpt:   " << (r_cuopt.success ? "Success" : "Failed")
@@ -84,7 +84,7 @@ bool run_solver_test(const Problem& p, const std::string& problem_name) {
         std::cout << "Printing the following for statistics collection ( time_all_problems.sh)"
                   << std::endl;
         std::cout << "optimal value BACKEND, optimal value CUOPT, delta" << std::endl;
-        std::cout << "time BACKEND (ms), time CUOPT (ms)" << std::endl;
+        std::cout << "time BACKEND (ms), time GPUv0 (ms)" << std::endl;
 
         std::cout << "START" << std::endl;
         // std::cout << std::fixed << std::setprecision(6);

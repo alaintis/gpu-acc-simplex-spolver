@@ -6,8 +6,6 @@
 #include <stdexcept>
 #include <vector>
 
-#define THRUST_WRAPPED_NAMESPACE sparse_wrapper
-#include "namespace.hpp"
 #include <thrust/scan.h>
 #include <thrust/execution_policy.h>
 
@@ -308,7 +306,7 @@ void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) 
     int blocks = (m + tpb - 1) / tpb;
     set_pointer_kernel<<<blocks, tpb>>>(m, ws.AT_row_ptr, ws.B_d, ws.ABT_row_ptr);
     cudaDeviceSynchronize();
-    sparse_wrapper::thrust::exclusive_scan(sparse_wrapper::thrust::device, ws.ABT_row_ptr, &ws.ABT_row_ptr[m+1], ws.ABT_row_ptr);
+    thrust::exclusive_scan(thrust::device, ws.ABT_row_ptr, &ws.ABT_row_ptr[m+1], ws.ABT_row_ptr);
 
 
     int nnz = 0;
