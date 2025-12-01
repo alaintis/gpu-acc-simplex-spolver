@@ -227,7 +227,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         }
 
         // 4. Solve Dual: A_B^T y = c_B
-        sparse_solve_ABT(m, c_B.data(), y.data());
+        // sparse_solve_ABT(m, c_B.data(), y.data());
         sparse_solve_prefactored(m, c_B.data(), y.data(), true);
 
         // 5. Pricing (Dantzig's Rule for now)

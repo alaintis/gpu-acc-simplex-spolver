@@ -6,6 +6,11 @@
 #include <stdexcept>
 #include <vector>
 
+#define THRUST_WRAPPED_NAMESPACE sparse_wrapper
+#include "namespace.hpp"
+#include <thrust/scan.h>
+#include <thrust/execution_policy.h>
+
 #include "linalg_sparse.hpp"
 #include "logging.hpp"
 
@@ -36,14 +41,10 @@ struct SparseWorkspace {
     double *AT_value = nullptr;
 
     // Sparse matrices pointers.
-    int *ABT_row_start = nullptr;
-    int *ABT_row_end   = nullptr;
+    int *ABT_row_ptr = nullptr;
     cudssMatrix_t ABT;
     cudssMatrix_t x_cudss;
     cudssMatrix_t b_cudss;
-
-    // Sparse helper
-    int *block_sum_d = nullptr;
 
     // Persistent storage for the full problem (Read-Only)
     double* A_full_d = nullptr; // Size: m * n_total
@@ -87,9 +88,7 @@ void init_sparse_workspace(int m) {
     cudaMalloc((void**)&ws.info_d, sizeof(int));
     
     // Sparse Workspace
-    cudaMalloc((void**)&ws.ABT_row_start, (m+1) * sizeof(int));
-    cudaMalloc((void**)&ws.ABT_row_end, m * sizeof(int));
-    cudaMalloc((void**)&ws.block_sum_d, m * sizeof(int));
+    cudaMalloc((void**)&ws.ABT_row_ptr, (m+1) * sizeof(int));
     
     // Allocate Helpers
     cudaMalloc((void**)&ws.B_d, m * sizeof(int));
@@ -112,9 +111,7 @@ void destroy_sparse_workspace() {
     cudaFree(ws.info_d);
     cudaFree(ws.work_d);
 
-    cudaFree(ws.ABT_row_start);
-    cudaFree(ws.ABT_row_end);
-    cudaFree(ws.block_sum_d);
+    cudaFree(ws.ABT_row_ptr);
 
     cusolverDnDestroy(ws.cusolve_handle);
     cublasDestroy(ws.cublas_handle);
@@ -272,36 +269,12 @@ __global__ void gather_kernel(int m, const double* A_full, double* A_basis, cons
     A_basis[idx] = A_full[col_original * m + row];
 }
 
-__global__ void set_pointer_kernel(int m, const int *A_row_ptr, const int *B, int *AB_row_start, int *AB_row_end, int *block_sums) {
-    // Calculate unique Thread ID
+__global__ void set_pointer_kernel(int m, const int *A_row_ptr, const int *B, int *AB_row_ptr) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
 
-    // Total elements in basis matrix = m * m (Guard)
     int size = 0;
     if (idx < m) {   
-        AB_row_start[idx] = A_row_ptr[B[idx]];
-        AB_row_end[idx]   = A_row_ptr[B[idx]+1];
-
-        if(idx == m-1) AB_row_start[idx+1] = A_row_ptr[B[idx]+1];
-        
-        size = AB_row_end[idx]-AB_row_start[idx];
-    }
-
-    // Data structure big enough for any block size.
-    __shared__ int sums[1024];
-
-    // Load data into shared memory
-    sums[idx] = size;
-    __syncthreads();
-
-    // Reduction inside the block
-    for (unsigned int s = blockDim.x / 2; s > 0; s >>= 1) {
-        if (idx < s) sums[idx] += sums[idx + s];
-        __syncthreads();
-    }
-
-    if (idx == 0){
-        block_sums[blockIdx.x] = sums[0];
+        AB_row_ptr[idx] = A_row_ptr[B[idx]+1] - A_row_ptr[B[idx]];
     }
 }
 
@@ -333,14 +306,13 @@ void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) 
     // 4. Redefine ABT
     int tpb = 512;
     int blocks = (m + tpb - 1) / tpb;
-    set_pointer_kernel<<<blocks, tpb>>>(m, ws.AT_row_ptr, ws.B_d, ws.ABT_row_start, ws.ABT_row_end, ws.block_sum_d);
+    set_pointer_kernel<<<blocks, tpb>>>(m, ws.AT_row_ptr, ws.B_d, ws.ABT_row_ptr);
     cudaDeviceSynchronize();
+    sparse_wrapper::thrust::exclusive_scan(sparse_wrapper::thrust::device, ws.ABT_row_ptr, &ws.ABT_row_ptr[m+1], ws.ABT_row_ptr);
 
-    int block_sum[blocks];
-    cudaMemcpy(block_sum, ws.block_sum_d, blocks * sizeof(int), cudaMemcpyDeviceToHost);
 
     int nnz = 0;
-    for(int i = 0; i < blocks; i++) nnz += block_sum[i];
+    cudaMemcpy(&nnz, &ws.ABT_row_ptr[m], sizeof(int), cudaMemcpyDeviceToHost);
 
     std::cout << "NNZ:: " << nnz << std::endl;
 
@@ -349,7 +321,7 @@ void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) 
     cudssMatrixType_t mtype     = CUDSS_MTYPE_GENERAL;
     cudssMatrixViewType_t mview = CUDSS_MVIEW_FULL;
     cudssIndexBase_t base       = CUDSS_BASE_ZERO;
-    CUDSS_CALL_AND_CHECK(cudssMatrixCreateCsr(&ws.ABT, m, m, nnz, ws.ABT_row_start, ws.ABT_row_end,
+    CUDSS_CALL_AND_CHECK(cudssMatrixCreateCsr(&ws.ABT, m, m, nnz, ws.ABT_row_ptr, NULL,
                          ws.AT_col_idx, ws.AT_value, CUDA_R_32I, CUDA_R_64F, mtype, mview,
                          base), status, "CSR Matrix");
     cudssMatrixCreateDn(&ws.x_cudss, m, 1, m, ws.x_d, CUDA_R_64F, CUDSS_LAYOUT_COL_MAJOR);
@@ -389,10 +361,6 @@ void sparse_solve_prefactored(int n, const double* b, double* x, bool transpose)
 
     // Copy result back
     cudaMemcpy(x, ws.b_d, n * sizeof(double), cudaMemcpyDeviceToHost);
-
-    std::cout << "prefactor";
-    for(int i = 0; i < n; i++) std::cout << x[i] << ", ";
-    std::cout << std::endl;
 }
 
 void sparse_solve_ABT(int n, const double* b, double* x) {
@@ -411,8 +379,4 @@ void sparse_solve_ABT(int n, const double* b, double* x) {
 
     // Copy result back
     cudaMemcpy(x, ws.x_d, n * sizeof(double), cudaMemcpyDeviceToHost);
-
-    std::cout << "ABT";
-    for(int i = 0; i < n; i++) std::cout << x[i] << ", ";
-    std::cout << std::endl;
 }
