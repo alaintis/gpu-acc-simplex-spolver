@@ -13,8 +13,10 @@ DATA_DIR="../../dphpc-simplex-data/netlib/presolved"
 BUILD_DIR="build"
 EXEC="$BUILD_DIR/benchmark_runner"
 TIMEOUT="30s"
-OUTFILE="bench_results_30s.txt"
-LOGFILE="bench_full_log.txt"
+RESULTS_DIR="results"
+mkdir -p "$RESULTS_DIR"
+OUTFILE="$RESULTS_DIR/bench_results_30s.txt"
+LOGFILE="$RESULTS_DIR/bench_full_log.txt"
 MAX=64
 
 ###############################################################################
@@ -22,7 +24,8 @@ MAX=64
 ###############################################################################
 
 echo "Select solver backend:"
-echo "  1) GPU"
+echo "  1) GPU usual"
+echo "  1b) GPU sherman morrison"
 echo "  2) CPU"
 echo "  3) cuOpt"
 echo -n "Enter choice (1–3): "
@@ -30,8 +33,12 @@ read BACKEND_CHOICE
 
 case "$BACKEND_CHOICE" in
     1)
-        BACKEND="gpu"
-        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpu"
+        BACKEND="gpuv0"
+        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpuv0"
+        ;;
+    1b)
+        BACKEND="gpuv1"
+        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpuv1"
         ;;
     2)
         BACKEND="cpu"

@@ -246,7 +246,8 @@ int main(int argc, char** argv) {
             }
         }
         // You can now use the 'records' vector for further processing or reporting
-        output_csv(files_to_benchmark, records);
+        //Ignore for now 
+        // output_csv(files_to_benchmark, records);
 
     } catch (const std::exception& e) {
         // Catch fatal errors like directory iteration

@@ -1,0 +1,358 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc (m=704, n=1754)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37167
+Iter 500 | Obj: 20683.8
+Iter 1000 | Obj: 11446.3
+Iter 1500 | Obj: 4748.7
+Iter 2000 | Obj: 2283.38
+Iter 2500 | Obj: 607.722
+Optimal basis found at iter 2888 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 9135.82
+Iter 500 | Obj: 5567.46
+Iter 1000 | Obj: 4569.15
+Iter 1500 | Obj: 3887.68
+Iter 2000 | Obj: 3596.42
+Iter 2500 | Obj: 3476.05
+Optimal basis found at iter 2895 | Scaled Obj: 3457.78
+  Backend: Success (Time: 2589.31 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 497.334 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+3457.784489,3457.784685,0.000196
+2589.312318,497.334167
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc (m=4494, n=12832)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 3.16906e+06
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 3.12037e+06
+Iter 1000 | Obj: 3.09043e+06
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-01T14:52:50.016] error: *** STEP 12938.0 ON studgpu-node09 CANCELLED AT 2025-12-01T14:52:50 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc (m=55, n=136)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 96 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 442279
+Optimal basis found at iter 58 | Scaled Obj: 225495
+  Backend: Success (Time: 574.685 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 118.724 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+225494.963162,225494.963163,0.000000
+574.684835,118.724424
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc (m=8, n=17)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Backend: Success (Time: 322.604 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 133.925 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-464.753143,-464.753143,0.000000
+322.603578,133.924877
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/agg.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc (m=333, n=418)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 405 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.23813e+08
+Optimal basis found at iter 44 | Scaled Obj: -2.81614e+07
+  Backend: Success (Time: 455.056 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 113.55 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-28161440.166577,-28161440.166499,0.000077
+455.056134,113.550224
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc (m=471, n=705)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 3.26538e+06
+Optimal basis found at iter 557 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.19568e+08
+Optimal basis found at iter 74 | Scaled Obj: -2.02733e+07
+  Backend: Success (Time: 560.392 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 113.437 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-20273339.603977,-20273339.603977,0.000000
+560.392353,113.437286
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc (m=470, n=704)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 3.08774e+06
+Optimal basis found at iter 601 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.52726e+08
+Optimal basis found at iter 86 | Scaled Obj: -2.65186e+06
+  Backend: Success (Time: 570.365 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 144.899 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-2651861.956911,-2651861.956911,0.000000
+570.364915,144.899378
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc (m=198, n=353)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 416 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -384.106
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+  Backend: Success (Time: 446.525 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 115.242 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-453.252363,-453.252363,0.000000
+446.524667,115.242107
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc (m=52, n=132)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+  Backend: Success (Time: 345.782 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 115.086 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-207534.862119,-207534.862119,0.000000
+345.781504,115.085816
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/blend.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc (m=49, n=86)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 25 | Scaled Obj: -31.079
+  Backend: Success (Time: 353.745 ms)
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+  cuOpt:   Success (Time: 96.0615 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-31.079048,-31.079048,0.000000
+353.745238,96.061477
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+

@@ -20,16 +20,22 @@ EXEC="$BUILD_DIR/compare_tool"
 ################################################################################
 
 echo "Select solver backend to build:"
-echo "  1) GPU"
+echo "  1) GPU usual"
+echo "  1b) GPU sherman morrison"
 echo "  2) CPU"
 echo "  3) cuOpt"
+
 echo -n "Enter choice (1–3): "
 read BACKEND_CHOICE
 
 case "$BACKEND_CHOICE" in
     1)
-        BACKEND="gpu"
-        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpu"
+        BACKEND="gpuv0"
+        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpuv0"
+        ;;
+    1b)
+        BACKEND="gpuv1"
+        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpuv1"
         ;;
     2)
         BACKEND="cpu"
@@ -56,8 +62,10 @@ echo "Running CMake configuration:"
 echo "$CMAKE_CMD"
 echo ""
 
-OUTFILE="compare_results_${BACKEND}.txt"
-LOGFILE="compare_full_log_${BACKEND}.txt"
+RESULTS_DIR="results"
+mkdir -p "$RESULTS_DIR"
+OUTFILE="$RESULTS_DIR/compare_results_${BACKEND}.txt"
+LOGFILE="$RESULTS_DIR/compare_full_log_${BACKEND}.txt"
 
 # Clean old outputs
 > "$OUTFILE"

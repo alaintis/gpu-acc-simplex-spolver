@@ -10,20 +10,23 @@
 # 4. Run test_runner across all Netlib presolved problems
 ################################################################################
 
-DATA_DIR="../../dphpc-simplex-data/netlib/presolved"
+DATA_DIR="../../dphpc-simplex-data/netlib/csc/presolved"
 BUILD_DIR="build"
 EXEC="$BUILD_DIR/test_runner"
 TIMEOUT="30s"
+RESULTS_DIR="results"
+mkdir -p "$RESULTS_DIR"
 
-LOGFILE="full_log.txt"
-MAX=64
+LOGFILE="$RESULTS_DIR/full_log.txt"
+MAX=10
 
 ################################################################################
 # Step 1: Ask for backend
 ################################################################################
 
 echo "Select solver backend to build:"
-echo "  1) GPU"
+echo "  1) GPU usual"
+echo "  1b) GPU sherman morrison"
 echo "  2) CPU"
 echo "  3) cuOpt"
 echo -n "Enter choice (1–3): "
@@ -31,8 +34,12 @@ read BACKEND_CHOICE
 
 case "$BACKEND_CHOICE" in
     1)
-        BACKEND="gpu"
-        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpu"
+        BACKEND="gpuv0"
+        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpuv0"
+        ;;
+    1b)
+        BACKEND="gpuv1"
+        CMAKE_CMD="cmake -S . -B $BUILD_DIR -DSOLVER_BACKEND=gpuv1"
         ;;
     2)
         BACKEND="cpu"
@@ -54,7 +61,7 @@ case "$BACKEND_CHOICE" in
         ;;
 esac
 
-OUTFILE="time_30s_results_${BACKEND}_.txt"
+OUTFILE="$RESULTS_DIR/time_testing_results_${TIMEOUT}_${BACKEND}.txt"
 
 echo ""
 echo "Using backend: $BACKEND"
@@ -109,7 +116,7 @@ echo "time limit per problem: $TIMEOUT"
 echo "---------------------------------------------"
 
 
-for file in "$DATA_DIR"/*.presolved; do
+for file in "$DATA_DIR"/*.csc; do
     ((count++))
 
     if [ $count -gt $MAX ]; then
