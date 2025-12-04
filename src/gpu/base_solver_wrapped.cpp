@@ -42,7 +42,7 @@ struct result base_solver_wrapped(int m,
     }
 
     std::cout << "Solving auxiliary problem to find feasible solution x..." << std::endl;
-    result res = solver(m, n_aux, A_aux, b_in, c_aux, x_aux, B_aux);
+    result res = base_solver(m, n_aux, A_aux, b_in, c_aux, x_aux, B_aux);
     if (!res.success) {
         std::cout << "Phase I solver failed." << std::endl;
         return res;
@@ -92,7 +92,7 @@ struct result base_solver_wrapped(int m,
             c_bigM[i] = 1e9; // Huge cost penalty
         }
 
-        result res2 = solver(m, n_aux, A_aux, b_in, c_bigM, x_phase2, B_phase2);
+        result res2 = base_solver(m, n_aux, A_aux, b_in, c_bigM, x_phase2, B_phase2);
 
         // Trim result back to n variables
         if (res2.success) {
@@ -102,6 +102,6 @@ struct result base_solver_wrapped(int m,
     } else {
         // Standard Phase 2: No artificials in basis, use original A and c.
         x_phase2.resize(n);
-        return solver(m, n, A_in, b_in, c_in, x_phase2, B_phase2);
+        return base_solver(m, n, A_in, b_in, c_in, x_phase2, B_phase2);
     }
 }

@@ -23,3 +23,21 @@ struct result base_solver_wrapped(int m,
                           const vector<vector<double>>& A,
                           const vector<double>& b,
                           const vector<double>& c);
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+struct result base_solver(int m,
+                     int n,
+                     const vector<vector<double>>& A,
+                     const vector<double>& b,
+                     const vector<double>& c,
+                     vector<double>& x,
+                     const vector<int>&B
+                    );
+
+#ifdef __cplusplus
+}
+#endif
