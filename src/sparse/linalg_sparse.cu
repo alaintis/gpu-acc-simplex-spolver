@@ -6,6 +6,8 @@
 #include <stdexcept>
 #include <vector>
 
+#include <cusparse_v2.h>
+
 #include <thrust/scan.h>
 #include <thrust/execution_policy.h>
 
@@ -40,6 +42,8 @@ struct SparseWorkspace {
 
     // Sparse matrices pointers.
     int *ABT_row_ptr = nullptr;
+    int *ABT_col_idx = nullptr;
+    double *ABT_value   = nullptr;
     cudssMatrix_t ABT;
     cudssMatrix_t x_cudss;
     cudssMatrix_t b_cudss;
@@ -58,6 +62,7 @@ struct SparseWorkspace {
     cusolverDnHandle_t cusolve_handle;
     cublasHandle_t cublas_handle;
     cudssHandle_t  cudss_handle;
+    cusparseHandle_t  cusparse_handle;
 
     cudssConfig_t cudss_config;
     cudssData_t cudss_data;
@@ -74,9 +79,13 @@ void init_sparse_workspace(int m) {
     cusolverDnCreate(&ws.cusolve_handle);
     cublasCreate(&ws.cublas_handle);
     cudssCreate(&ws.cudss_handle);
+    cusparseCreate(&ws.cusparse_handle);
 
     cudssConfigCreate(&ws.cudss_config);
     cudssDataCreate(ws.cudss_handle, &ws.cudss_data);
+
+    int ir_steps = 1;
+    cudssConfigSet(ws.cudss_config, CUDSS_CONFIG_IR_N_STEPS, &ir_steps, sizeof(ir_steps));
 
     // Allocate Workspace (Scratchpads)
     cudaMalloc((void**)&ws.AB_d, m * m * sizeof(double));
@@ -120,6 +129,8 @@ void destroy_sparse_workspace() {
     cudssMatrixDestroy(ws.x_cudss);
     cudssMatrixDestroy(ws.b_cudss);
 
+    cusparseDestroy(ws.cusparse_handle);
+
     if (ws.A_full_d)
         cudaFree(ws.A_full_d);
     if (ws.b_storage_d)
@@ -139,6 +150,8 @@ void destroy_sparse_workspace() {
         cudaFree(ws.AT_row_ptr);
         cudaFree(ws.AT_col_idx);
         cudaFree(ws.AT_value);
+        cudaFree(ws.ABT_col_idx);
+        cudaFree(ws.ABT_value);
     }
 
     ws.initialized = false;
@@ -179,6 +192,10 @@ void sparse_load_problem(int m, int n_total, const double* A_flat, const double*
     cudaMemcpy(ws.AT_row_ptr, row_ptr.data(), (n_total+1) * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemcpy(ws.AT_col_idx, col_idx.data(), nnz * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemcpy(ws.AT_value, values.data(), nnz * sizeof(double), cudaMemcpyHostToDevice);
+
+
+    cudaMalloc((void**)&ws.ABT_col_idx, nnz * sizeof(int));
+    cudaMalloc((void**)&ws.ABT_value, nnz * sizeof(double));
     
     // Allocate persistent memory
     cudaMalloc((void**)&ws.A_full_d, n_total * m * sizeof(double));
@@ -244,7 +261,7 @@ void sparse_solve_from_resident_col(int m, int col_idx, double* d_out) {
 }
 
 // Assembles Basis Matrix, spawns tons of threads (everything on gpu, all at once)
-__global__ void gather_kernel(int m, const double* A_full, double* A_basis, const int* B_indices) {
+__global__ void sp_gather_kernel(int m, const double* A_full, double* A_basis, const int* B_indices) {
     // Calculate unique Thread ID
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
 
@@ -270,10 +287,30 @@ __global__ void gather_kernel(int m, const double* A_full, double* A_basis, cons
 __global__ void set_pointer_kernel(int m, const int *A_row_ptr, const int *B, int *AB_row_ptr) {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
 
-    int size = 0;
     if (idx < m) {   
         AB_row_ptr[idx] = A_row_ptr[B[idx]+1] - A_row_ptr[B[idx]];
     }
+}
+
+/**
+ * To fill a matrix AB by selecting a set of rows from A using B, we first calculate the prefix sum over the deltas to get the row pointers.
+ * Now the job is just to find the right indices to fill the matrix with.
+ */
+__global__ void fill_AB_kernel(int m, const int *A_row_ptr, const int *A_col_idx, const double *A_value, const int *B, const int *AB_row_ptr, int *AB_col_idx, double *AB_value) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+
+    int row = idx / 32;
+    if(row >= m) return;
+
+    int A_start = A_row_ptr[B[row]];
+    int A_end   = A_row_ptr[B[row]+1];
+    int cols = A_end-A_start;
+
+    int AB_start = AB_row_ptr[row];
+    for(int i = idx % 32; i < cols; i+=32) {
+        AB_col_idx[AB_start + i] = A_col_idx[A_start + i];
+        AB_value[AB_start + i] = A_value[A_start + i];
+    } 
 }
 
 void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) {
@@ -289,7 +326,7 @@ void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) 
     // We round up, we want more threads than total elements (that's why we have guard in Kernel)
     int blocksPerGrid = (total_elements + threadsPerBlock - 1) / threadsPerBlock;
 
-    gather_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, ws.A_full_d, ws.AB_d, ws.B_d);
+    sp_gather_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, ws.A_full_d, ws.AB_d, ws.B_d);
     cudaDeviceSynchronize();
 
     // Check for kernel errors
@@ -308,22 +345,73 @@ void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) 
     cudaDeviceSynchronize();
     thrust::exclusive_scan(thrust::device, ws.ABT_row_ptr, &ws.ABT_row_ptr[m+1], ws.ABT_row_ptr);
 
-
     int nnz = 0;
     cudaMemcpy(&nnz, &ws.ABT_row_ptr[m], sizeof(int), cudaMemcpyDeviceToHost);
 
-    std::cout << "NNZ:: " << nnz << std::endl;
+    // Fill the kernel.
+    int fill_tpb = 512;
+    int fill_blocks = (32 * m + tpb - 1) / tpb;
+    fill_AB_kernel<<<fill_blocks, fill_tpb>>>(m, ws.AT_row_ptr, ws.AT_col_idx, ws.AT_value, ws.B_d, ws.ABT_row_ptr, ws.ABT_col_idx, ws.ABT_value);
+    cudaDeviceSynchronize();
 
+    // std::cout << "NNZ | " << nnz << std::endl;
 
     cudssStatus_t status = CUDSS_STATUS_SUCCESS;
     cudssMatrixType_t mtype     = CUDSS_MTYPE_GENERAL;
     cudssMatrixViewType_t mview = CUDSS_MVIEW_FULL;
     cudssIndexBase_t base       = CUDSS_BASE_ZERO;
     CUDSS_CALL_AND_CHECK(cudssMatrixCreateCsr(&ws.ABT, m, m, nnz, ws.ABT_row_ptr, NULL,
-                         ws.AT_col_idx, ws.AT_value, CUDA_R_32I, CUDA_R_64F, mtype, mview,
+                         ws.ABT_col_idx, ws.ABT_value, CUDA_R_32I, CUDA_R_64F, mtype, mview,
                          base), status, "CSR Matrix");
     cudssMatrixCreateDn(&ws.x_cudss, m, 1, m, ws.x_d, CUDA_R_64F, CUDSS_LAYOUT_COL_MAJOR);
     cudssMatrixCreateDn(&ws.b_cudss, m, 1, m, ws.b_d, CUDA_R_64F, CUDSS_LAYOUT_COL_MAJOR);
+
+
+    // cusparseSpMatDescr_t ABT;
+    // cusparseCreateCsr(&ABT, m, m, nnz, ws.ABT_row_ptr, ws.ABT_col_idx, ws.ABT_value, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F);
+    
+    csrilu02Info_t info;
+    cusparseCreateCsrilu02Info(&info);
+
+    cusparseMatDescr_t ABT_descr;
+    cusparseCreateMatDescr(&ABT_descr);
+    cusparseSetMatType(ABT_descr, CUSPARSE_MATRIX_TYPE_GENERAL);
+    cusparseSetMatIndexBase(ABT_descr, CUSPARSE_INDEX_BASE_ZERO);
+
+    int buffer_size;
+    void* buffer;
+    
+    // set buffer size
+    cusparseDcsrilu02_bufferSize(ws.cusparse_handle, m, nnz, ABT_descr, ws.ABT_value, ws.ABT_row_ptr, ws.ABT_col_idx, info, &buffer_size);
+    cudaMalloc(&buffer, buffer_size);
+
+    cusparseDcsrilu02_analysis(ws.cusparse_handle, m, nnz, ABT_descr, ws.ABT_value, ws.ABT_row_ptr, ws.ABT_col_idx, info, CUSPARSE_SOLVE_POLICY_USE_LEVEL, buffer);
+    int structural_zero;
+    cusparseStatus_t sparse_status = cusparseXcsrilu02_zeroPivot(ws.cusparse_handle, info, &structural_zero);
+    if (sparse_status == CUSPARSE_STATUS_ZERO_PIVOT) {
+        // printf("Warning: structural zero at (%d,%d)\n", structural_zero, structural_zero);
+    }
+
+    cusparseDcsrilu02(
+        ws.cusparse_handle, m, nnz,
+        ABT_descr, ws.ABT_value, ws.ABT_row_ptr, ws.ABT_col_idx,
+        info, CUSPARSE_SOLVE_POLICY_USE_LEVEL, buffer
+    );
+    
+    int numerical_zero;
+    // Check for numerical zeros
+    sparse_status = cusparseXcsrilu02_zeroPivot(ws.cusparse_handle, info, &numerical_zero);
+    if (sparse_status == CUSPARSE_STATUS_ZERO_PIVOT) {
+        // printf("Warning: numerical zero at (%d,%d)\n", numerical_zero, numerical_zero);
+    }
+    
+    cudaFree(buffer);
+    cusparseDestroyCsrilu02Info(info);
+    cusparseDestroyMatDescr(ABT_descr);
+
+
+    // CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_ANALYSIS, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "ANAL");
+    // CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_FACTORIZATION, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "FACT");
 }
 
 // Overwrite the storage with new perturbed values
@@ -370,10 +458,8 @@ void sparse_solve_ABT(int n, const double* b, double* x) {
 
     // Solve using the existing factorization.
     cudssStatus_t status = CUDSS_STATUS_SUCCESS;
-    CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_ANALYSIS, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "ANAL");
-    CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_FACTORIZATION, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "FACT");
-    CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_SOLVE, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "SOLVE");
-    cudaDeviceSynchronize();
+    // CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_SOLVE, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "SOLVE");
+    // cudaDeviceSynchronize();
 
     // Copy result back
     cudaMemcpy(x, ws.x_d, n * sizeof(double), cudaMemcpyDeviceToHost);

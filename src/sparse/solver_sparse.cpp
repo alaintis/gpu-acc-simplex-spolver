@@ -206,11 +206,10 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         prev_obj = current_obj;
 
         // Perturbation trigger
-        // We only have to do this once per run!
-        if (stall_counter > 30 && !is_perturbed) {
+        if (stall_counter > 30) {
             std::cout << "   >>> Stall detected (Iter " << iter << "). Perturbing..." << std::endl;
             for (int k = 0; k < m; ++k)
-                b_eff[k] += dist_pert(rng);
+                b_eff[k] = b_scaled[k] + dist_pert(rng);
             is_perturbed = true;
             // Update the persistent b on GPU
             sparse_update_rhs_storage(m, b_eff.data());
