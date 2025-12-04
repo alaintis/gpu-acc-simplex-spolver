@@ -1,14 +1,18 @@
 #include <algorithm>
 #include <assert.h>
 #include <cmath>
+#include <iostream>
 #include <limits>
 #include <random>
 #include <vector>
 
+#include "ProfileUtils.h"
 #include "linalg_gpu.hpp"
 #include "logging.hpp"
 #include "solver.hpp"
 #include "types.hpp"
+
+using std::vector;
 
 static bool contains(const idx& B, int i) { return std::find(B.begin(), B.end(), i) != B.end(); }
 
@@ -28,6 +32,8 @@ static ScalingContext build_scaling(int m,
                                     const vec& b,
                                     const vec& c,
                                     const vec& x) {
+    PROFILE_SCOPE("Scaling_Build");
+
     ScalingContext sc;
     sc.row_scale.assign(m, 0.0);
     sc.col_scale.assign(n_total, 0.0);
@@ -85,6 +91,8 @@ static void unscale_solution(int m,
                              const vector<double>& x_B,
                              const ScalingContext& sc,
                              vec& x_out) {
+    PROFILE_SCOPE("Unscaling");
+
     // Build full x
     std::fill(x_out.begin(), x_out.end(), 0.0);
     for (int k = 0; k < m; ++k) {
@@ -105,6 +113,8 @@ static void unscale_solution(int m,
 // It accept as input Ax = b, with initial solution x in column major format.
 extern "C" struct result
 solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, const idx& B_init) {
+    PROFILE_SCOPE("Solver_Total");
+
     // ============================================================
     // 0. SANITY CHECKS
     // ============================================================
@@ -150,8 +160,11 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         return {.success = false};
     }
 
-    init_gpu_workspace(m);
-    gpu_load_problem(m, n_total, A_scaled.data(), b_scaled.data(), c_scaled.data());
+    {
+        PROFILE_SCOPE("GPU_Load");
+        init_gpu_workspace(m);
+        gpu_load_problem(m, n_total, A_scaled.data(), b_scaled.data(), c_scaled.data());
+    }
 
     // Buffers
     vector<double> A_B(m * m);
@@ -171,10 +184,12 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
     // ============================================================
     // 3. MAIN LOOP
     // ============================================================
-    const int REFACTOR_FREQ = 50;
+    const int REFACTOR_FREQ = 10000;
     int max_iter = 500 * (n_total + m);
 
     for (int iter = 0; iter < max_iter; iter++) {
+        PROFILE_SCOPE("Solver_Iteration");
+
         // 1. & 2. Build and factorize Basis Matrix or update it
         for (int i = 0; i < m; i++) {
             c_B[i] = c_scaled[B[i]];
@@ -182,80 +197,87 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
 
         bool refactor_needed = (iter % REFACTOR_FREQ == 0);
         if (iter == 0 || refactor_needed) {
+            PROFILE_SCOPE("Refactor_Basis");
             // Full Rebuild: Gather -> LU -> Invert
             gpu_build_basis_and_invert(m, n_total, B.data());
         }
 
-        // 3. Recompute Primal Solution instead of incremental updates (Anti-Drift) & do stall
-        // detection. We calculate x_B = B^-1 * b_scaled explicitly every iteration.
-        gpu_recalc_x_from_persistent_b(m, x_B.data());
-
-        // Calculate whole x_scaled for stall detection
-        std::fill(x_scaled.begin(), x_scaled.end(), 0.0);
-        for (int i = 0; i < m; ++i) {
-            x_scaled[B[i]] = x_B[i];
-        }
-
-        // Stall Detection
-        double current_obj = 0.0;
-        for (int i = 0; i < n_total; ++i) {
-            current_obj += x_scaled[i] * c_scaled[i];
-        }
-
-        // We use the relative change! (NumCSE)
-        if (std::abs(current_obj - prev_obj) < 1e-9 * (1.0 + std::abs(current_obj))) {
-            stall_counter++;
-        } else {
-            stall_counter = 0;
-        }
-        prev_obj = current_obj;
-
-        // Perturbation trigger
-        // We only have to do this once per run!
-        if (stall_counter > 30 && !is_perturbed) {
-            std::cout << "   >>> Stall detected (Iter " << iter << "). Perturbing..." << std::endl;
-            for (int k = 0; k < m; ++k)
-                b_eff[k] += dist_pert(rng);
-            is_perturbed = true;
-            // Update the persistent b on GPU
-            gpu_update_rhs_storage(m, b_eff.data());
-            stall_counter = 0;
-            // Re-solve with perturbed b immediately
+        // 3. Recompute Primal Solution
+        {
+            PROFILE_SCOPE("Recalc_X");
             gpu_recalc_x_from_persistent_b(m, x_B.data());
         }
 
-        if (iter % 500 == 0) {
-            std::cout << "Iter " << iter << " | Obj: " << current_obj << std::endl;
+        {
+            PROFILE_SCOPE("Stall_Detection");
+            // Calculate whole x_scaled for stall detection
+            std::fill(x_scaled.begin(), x_scaled.end(), 0.0);
+            for (int i = 0; i < m; ++i) {
+                x_scaled[B[i]] = x_B[i];
+            }
+
+            double current_obj = 0.0;
+            for (int i = 0; i < n_total; ++i) {
+                current_obj += x_scaled[i] * c_scaled[i];
+            }
+
+            // We use the relative change! (NumCSE)
+            if (std::abs(current_obj - prev_obj) < 1e-9 * (1.0 + std::abs(current_obj))) {
+                stall_counter++;
+            } else {
+                stall_counter = 0;
+            }
+            prev_obj = current_obj;
+
+            // Perturbation trigger
+            if (stall_counter > 30 && !is_perturbed) {
+                std::cout << "   >>> Stall detected (Iter " << iter << "). Perturbing..."
+                          << std::endl;
+                for (int k = 0; k < m; ++k)
+                    b_eff[k] += dist_pert(rng);
+                is_perturbed = true;
+                // Update the persistent b on GPU
+                gpu_update_rhs_storage(m, b_eff.data());
+                stall_counter = 0;
+                // Re-solve with perturbed b immediately
+                gpu_recalc_x_from_persistent_b(m, x_B.data());
+            }
+
+            if (iter % 500 == 0) {
+                std::cout << "Iter " << iter << " | Obj: " << current_obj << std::endl;
+            }
         }
 
         // 4. Solve Dual: y = B^-T * c_B
-        gpu_mult_inverse(m, c_B.data(), y.data(), true); // true = Transpose
+        {
+            PROFILE_SCOPE("Solve_Dual");
+            gpu_mult_inverse(m, c_B.data(), y.data(), true); // true = Transpose
+        }
 
         // 5. Pricing (Dantzig's Rule for now)
-        // We calculate reduced costs for ALL variables (Basic and Non-Basic) at once on GPU.
-        // It's faster to do one giant matrix mult than iterating just N on CPU.
-        const double* all_sn = gpu_compute_reduced_costs(m, n_total, y.data());
-
         int j_i = -1;
         double min_sn = -1e-7;
         bool optimal = true;
 
-        // Iterate over Non-Basic variables to find the entering variable
-        for (int i = 0; i < n; i++) {
-            int original_idx = N[i];
+        {
+            PROFILE_SCOPE("Pricing");
+            const double* all_sn = gpu_compute_reduced_costs(m, n_total, y.data());
 
-            // Read pre-calculated value from the host buffer returned by GPU
-            double sn = all_sn[original_idx];
-
-            if (sn < min_sn) {
-                optimal = false;
-                min_sn = sn;
-                j_i = i;
+            // Iterate over Non-Basic variables to find the entering variable
+            for (int i = 0; i < n; i++) {
+                int original_idx = N[i];
+                double sn = all_sn[original_idx];
+                if (sn < min_sn) {
+                    optimal = false;
+                    min_sn = sn;
+                    j_i = i;
+                }
             }
         }
 
         if (optimal) {
-            std::cout << "Optimal basis found at iter " << iter << " | Scaled Obj: " << current_obj
+            PROFILE_SCOPE("Final_Cleanup");
+            std::cout << "Optimal basis found at iter " << iter << " | Scaled Obj: " << prev_obj
                       << std::endl;
 
             // 6. FINAL CLEANUP & UNSCALING
@@ -271,44 +293,50 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
 
         // 7. Compute Primal Step: d = B^-1 * A_jj
         int jj = N[j_i]; // Entering Column Index
-        gpu_calc_direction(
-            m, jj, d.data()); // Leaves a copy in GPU memory (ws.b_d) for the subsequent update!
-
-        // 8. Unbounded Check
-        bool unbounded = true;
-        for (int i = 0; i < m; i++) {
-            if (d[i] > 1e-9) {
-                unbounded = false;
-                break;
-            }
-        }
-        if (unbounded) {
-            std::cout << "Problem is unbounded." << std::endl;
-            destroy_gpu_workspace();
-            return {.success = false};
+        {
+            PROFILE_SCOPE("Calc_Direction");
+            gpu_calc_direction(m, jj, d.data());
         }
 
-        // 9. Harris Ratio Test
-        double harris_tol = 1e-7;
-        double best_theta = std::numeric_limits<double>::infinity();
-        for (int i = 0; i < m; i++) {
-            if (d[i] > 1e-9) {
-                double theta = (x_B[i] + harris_tol) / d[i];
-                if (theta < best_theta)
-                    best_theta = theta;
-            }
-        }
-
+        // 8. Unbounded Check & 9. Harris Ratio Test
         int r = -1;
-        double max_pivot = -1.0;
+        {
+            PROFILE_SCOPE("Ratio_Test");
 
-        for (int i = 0; i < m; i++) {
-            if (d[i] > 1e-9) {
-                double theta = x_B[i] / d[i];
-                if (theta <= best_theta) {
-                    if (d[i] > max_pivot) {
-                        max_pivot = d[i];
-                        r = i;
+            // Unbounded check
+            bool unbounded = true;
+            for (int i = 0; i < m; i++) {
+                if (d[i] > 1e-9) {
+                    unbounded = false;
+                    break;
+                }
+            }
+            if (unbounded) {
+                std::cout << "Problem is unbounded." << std::endl;
+                destroy_gpu_workspace();
+                return {.success = false};
+            }
+
+            // Harris Ratio Test
+            double harris_tol = 1e-7;
+            double best_theta = std::numeric_limits<double>::infinity();
+            for (int i = 0; i < m; i++) {
+                if (d[i] > 1e-9) {
+                    double theta = (x_B[i] + harris_tol) / d[i];
+                    if (theta < best_theta)
+                        best_theta = theta;
+                }
+            }
+
+            double max_pivot = -1.0;
+            for (int i = 0; i < m; i++) {
+                if (d[i] > 1e-9) {
+                    double theta = x_B[i] / d[i];
+                    if (theta <= best_theta) {
+                        if (d[i] > max_pivot) {
+                            max_pivot = d[i];
+                            r = i;
+                        }
                     }
                 }
             }
@@ -321,10 +349,13 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         }
 
         // 10. Update Basis
-        int ii = B[r];
-        N[j_i] = ii;
-        B[r] = jj;
-        gpu_update_basis_fast(m, r);
+        {
+            PROFILE_SCOPE("Update_Basis");
+            int ii = B[r];
+            N[j_i] = ii;
+            B[r] = jj;
+            gpu_update_basis_fast(m, r);
+        }
     }
 
     std::cout << "Out of iterations!" << std::endl;

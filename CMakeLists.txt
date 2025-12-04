@@ -13,6 +13,7 @@ find_package(CUDAToolkit 12.0 REQUIRED
         cublas
         cudart
         cusparse
+        nvToolsExt
 )
 
 # This can be overridden (e.g., -DcuOpt_DIR=...)

@@ -6,6 +6,7 @@ add_library(simplex_gpu_v1 STATIC
 target_include_directories(simplex_gpu_v1
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}
+        /opt/cuda/include
 )
 
 target_link_libraries(simplex_gpu_v1
@@ -14,4 +15,8 @@ target_link_libraries(simplex_gpu_v1
         CUDA::cusolver
         CUDA::cublas
         CUDA::cudart
+)
+
+target_compile_options(simplex_gpu_v1 PRIVATE 
+    $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>
 )
