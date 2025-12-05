@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "base_solver.hpp"
+#include "../gpu/base_solver_wrapped.hpp"
 #include "linprog.hpp"
 #include "logging.hpp"
 #include "solver_wrapper.hpp"
@@ -70,7 +70,7 @@ void test(int seed) {
     struct result r = solver_wrapper(m, n_dash, A_dash, b, c_dash);
     double time_backend = timer_backend.stop();
     timer_base.start();
-    struct result base_r = base_solver(m, n_dash, A_dash, b, c_dash);
+    struct result base_r = base_solver_wrapped(m, n_dash, A_dash, b, c_dash);
     double time_base = timer_base.stop();
     std::cout << "Base solver result:" << base_r.success << std::endl;
     std::cout << "Backend success? Base success?" << (r.success && base_r.success) << std::endl;

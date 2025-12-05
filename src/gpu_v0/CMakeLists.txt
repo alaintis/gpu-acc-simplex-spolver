@@ -1,6 +1,7 @@
 add_library(simplex_gpu_v0 STATIC
     linalg_gpu.cu
     solver_gpu.cpp
+    base_solver_wrapped.cpp
 )
 
 target_include_directories(simplex_gpu_v0

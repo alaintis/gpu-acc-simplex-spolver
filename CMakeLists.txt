@@ -26,9 +26,19 @@ if(NOT EXISTS "${cuOpt_DIR}/include/cuopt/linear_programming/cuopt_c.h")
                         "Please set -DcuOpt_DIR to the correct location.")
 endif()
 
+# This can be overridden (e.g., -DcuDSS_DIR=...)
+set(cuDSS_DIR "$ENV{HOME}/dphpc/venv/lib/python3.12/site-packages/nvidia/cu12"
+    CACHE PATH "Path to the root of the cuDSS installation")
+
+message(STATUS "Using cuDSS from: ${cuDSS_DIR}")
+if(NOT EXISTS "${cuDSS_DIR}/include/cudss.h")
+    message(FATAL_ERROR "cuDSS not found at the specified path ${cuDSS_DIR}. "
+                        "Please set -DcuDSS_DIR to the correct location.")
+endif()
+
 # Backend Selection
-set(SOLVER_BACKEND "gpuv0" CACHE STRING "Which solver backend to use (cpu, gpuv0, gpuv1 cuopt)")
-set_property(CACHE SOLVER_BACKEND PROPERTY STRINGS "cpu" "gpuv0" "gpuv1" "cuopt")
+set(SOLVER_BACKEND "gpuv0" CACHE STRING "Which solver backend to use (cpu, gpuv0, gpuv1 cuopt, sparse)")
+set_property(CACHE SOLVER_BACKEND PROPERTY STRINGS "cpu" "gpuv0" "gpuv1" "cuopt" "sparse")
 message(STATUS "Selected solver backend: ${SOLVER_BACKEND}")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
