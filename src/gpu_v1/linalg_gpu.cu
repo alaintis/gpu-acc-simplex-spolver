@@ -11,6 +11,7 @@
 struct CPUWorkspace {
     // Buffers
     double* B_inv_d; // Basis Inverse Matrix (m * m)
+    double* B_inv2_d; // Basis Inverse Matrix (m * m) write 2 buffer
     double* b_d; // RHS Workspace (Solver writes solution x here)
     double* inv_temp_d; // Temp buffer for Identity/Inverse calculation (m * m)
 
@@ -39,6 +40,15 @@ struct CPUWorkspace {
 
 static CPUWorkspace ws;
 
+struct PrivateWorkspace {
+    double *u_d; // Matrix of update vectors, to enable sparse update of (A_)B_inv.
+    int    *p_d; // Matrix of pivots of the different updates.
+    int capacity;
+    int count;
+};
+
+static PrivateWorkspace pws;
+
 void init_gpu_workspace(int n) {
     if (ws.initialized)
         return;
@@ -48,6 +58,7 @@ void init_gpu_workspace(int n) {
 
     // Allocate Workspace (Scratchpads)
     cudaMalloc((void**)&ws.B_inv_d, n * n * sizeof(double));
+    cudaMalloc((void**)&ws.B_inv2_d, n * n * sizeof(double));
     cudaMalloc((void**)&ws.inv_temp_d, n * n * sizeof(double));
     cudaMalloc((void**)&ws.b_d, n * sizeof(double));
     cudaMalloc((void**)&ws.ipiv_d, n * sizeof(int));
@@ -60,6 +71,11 @@ void init_gpu_workspace(int n) {
     cusolverDnDgetrf_bufferSize(ws.cusolve_handle, n, n, ws.B_inv_d, n, &ws.work_size);
     cudaMalloc((void**)&ws.work_d, ws.work_size * sizeof(double));
 
+    pws.capacity = 20;
+    pws.count = 0;
+    cudaMalloc((void **) &pws.u_d, n * pws.capacity * sizeof(double));
+    cudaMalloc((void **) &pws.p_d, pws.capacity * sizeof(double));
+
     ws.initialized = true;
 }
 
@@ -68,11 +84,16 @@ void destroy_gpu_workspace() {
         return;
 
     cudaFree(ws.B_inv_d);
+    cudaFree(ws.B_inv2_d);
     cudaFree(ws.inv_temp_d);
     cudaFree(ws.b_d);
     cudaFree(ws.ipiv_d);
     cudaFree(ws.info_d);
     cudaFree(ws.work_d);
+
+    pws.capacity = 0;
+    cudaFree(pws.u_d);
+    cudaFree(pws.p_d);
     cusolverDnDestroy(ws.cusolve_handle);
 
     if (ws.A_full_d)
@@ -153,15 +174,19 @@ __global__ void set_identity_kernel(int m, double* Matrix) {
     Matrix[idx] = (row == col) ? 1.0 : 0.0;
 }
 
-// Sherman-Morrison Update Kernel
+// Sherman-Morrison Update Kernel with sparse update.
 // Inputs:
-//   B_inv: The current Inverse Matrix
-//   d:     The direction vector (B^-1 * a_entering)
-//   pivot_row: The index of the row leaving the basis (j)
+//   B_inv:  The current Inverse Matrix
+//   B_inv2: The next Inverse Matrix
+//   p_d: The pivot columns for each update
+//   u_d: The actual update vectors
+//   count: The number of sparse updates.
 __global__ void update_inverse_kernel(int m,
-                                      double* __restrict__ B_inv,
-                                      const double* __restrict__ d,
-                                      int pivot_row) {
+                                      const double* __restrict__ B_inv,
+                                      double* __restrict__ B_inv2,
+                                      const int* __restrict__ p_d,
+                                      const double* __restrict__ u_d,
+                                      int count) {
     size_t idx = (size_t)blockIdx.x * blockDim.x + threadIdx.x;
     if (idx >= (size_t)m * m)
         return;
@@ -169,27 +194,58 @@ __global__ void update_inverse_kernel(int m,
     int row = idx % m;
     int col = idx / m;
 
-    // Get the pivot element from the direction vector
-    // All threads read the same d[pivot_row], GPU cache handles this broadcast well
-    double pivot_val = d[pivot_row];
-
-    // Read the current value at this thread's position
+    // For each of the updates, we find the pivot row value and multiply it with the
+    // column of the u vector. E^-1 = (I - u e_p^T - ...). Applying this yields:
+    // B_now^-1 = B^-1 - u * B^-1_p - ....
+    // This is implemented here.
     double b_val = B_inv[idx];
-
-    // Read the element of the Pivot Row corresponding to this column
-    double b_pivot_row_val = B_inv[(size_t)col * m + pivot_row];
-
-    // Calculate the new value for the Pivot Row
-    double new_pivot_row_val = b_pivot_row_val / pivot_val;
-
-    if (row == pivot_row) {
-        // If this thread is in the pivot row, update it directly
-        B_inv[idx] = new_pivot_row_val;
-    } else {
-        // If this thread is in any other row, apply the elimination step
-        double d_val = d[row];
-        B_inv[idx] = b_val - (d_val * new_pivot_row_val);
+    for(int i = 0; i < count; i++) {
+        int pivot_row = p_d[i];
+        double b_pivot_row_val = B_inv[(size_t)col * m + pivot_row];
+        double update_val = u_d[i * m + row];
+        b_val -= update_val * b_pivot_row_val;
     }
+    B_inv2[idx] = b_val;
+}
+
+// Add sparse updates with the new pivot and d.
+// We assume that all threads that work for a given index are in the same block. There is a block per update.
+// p_d the pivot vector.
+// u_d the update vectors.
+// count the number of updates before this is applied.
+// b_d the delta vector.
+// pivot_idx the pivot index.
+__global__ void add_sparse_update_kernel(
+    int m,
+    int* __restrict__ p_d,
+    double* __restrict__ u_d,
+    int count,
+    const double* __restrict__ b_d,
+    int pivot_idx
+) {
+    int idx = blockIdx.x;
+    if(idx > count) return;
+
+    double dp_n = b_d[pivot_idx];
+
+    // The new update is on the pivot_idx and is 1/d_p * (d - e_p).
+    if(idx == count) {
+        p_d[idx] = pivot_idx;
+        for(int i = threadIdx.x; i < m; i+=blockDim.x) {
+            u_d[m * idx + i] = (b_d[i] - ((i == pivot_idx) ? 1 : 0)) / dp_n;
+        }
+
+        return;
+    }
+
+    double up = u_d[m * idx + pivot_idx];
+    __syncthreads();
+
+    for(int i = threadIdx.x; i < m; i++) {
+        double ui = (b_d[i] - ((i == pivot_idx) ? 1 : 0)) / dp_n;
+        u_d[m * idx + i] -= ui * up;
+    }
+
 }
 
 // ============================================================
@@ -229,15 +285,27 @@ void gpu_build_basis_and_invert(int m, int n_total, const int* B_indices) {
     cudaMemcpy(ws.B_inv_d, ws.inv_temp_d, m * m * sizeof(double), cudaMemcpyDeviceToDevice);
 }
 
-// Uses the Sherman-Morrison kernel to update AB_d in-place.
+// Uses the Sherman-Morrison kernel to update (A)B_inv_d in-place.
+// This relies on 'ws.b_d' containing the direction vector 'd'!
 void gpu_update_basis_fast(int m, int pivot_row) {
-    size_t total_elements = (size_t)m * m;
-    int threadsPerBlock = 256;
-    int blocksPerGrid = (total_elements + threadsPerBlock - 1) / threadsPerBlock;
+    add_sparse_update_kernel<<<pws.count + 1, 512>>>(m, pws.p_d, pws.u_d, pws.count, ws.b_d, pivot_row);
+    cudaDeviceSynchronize();
+    pws.count += 1;
 
-    // This relies on 'ws.b_d' containing the direction vector 'd'!
-    // This 'd' must have been computed in the previous step (gpu_calc_direction).
-    update_inverse_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, ws.B_inv_d, ws.b_d, pivot_row);
+    if (pws.count == pws.capacity || true) {
+        size_t total_elements = (size_t)m * m;
+        int threadsPerBlock = 256;
+        int blocksPerGrid = (total_elements + threadsPerBlock - 1) / threadsPerBlock;
+    
+        // This 'd' must have been computed in the previous step (gpu_calc_direction).
+        update_inverse_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, ws.B_inv_d, ws.B_inv2_d, pws.p_d, pws.u_d, pws.count);
+        cudaDeviceSynchronize();
+        pws.count = 0;
+
+        double *tmp_d = ws.B_inv_d;
+        ws.B_inv_d = ws.B_inv2_d;
+        ws.B_inv2_d = tmp_d;
+    }
 }
 
 // Computes d = B^-1 * A_j using Matrix-Vector Multiplication.
