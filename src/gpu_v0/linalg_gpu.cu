@@ -8,7 +8,7 @@
 #include "linalg_gpu.hpp"
 #include "logging.hpp"
 
-struct CPUWorkspace {
+struct CPUWorkspace_v0 {
     // Buffers
     double* AB_d; // Basis Matrix
     double* b_d; // RHS Workspace (Solver writes solution x here)
@@ -36,9 +36,9 @@ struct CPUWorkspace {
     bool initialized = false;
 };
 
-static CPUWorkspace ws;
+static CPUWorkspace_v0 ws;
 
-void init_gpu_workspace(int n) {
+void init_gpu_workspace_v0(int n) {
     if (ws.initialized)
         return;
 
@@ -61,7 +61,7 @@ void init_gpu_workspace(int n) {
     ws.initialized = true;
 }
 
-void destroy_gpu_workspace() {
+void destroy_gpu_workspace_v0() {
     if (!ws.initialized)
         return;
 
@@ -92,7 +92,7 @@ void destroy_gpu_workspace() {
     ws.initialized = false;
 }
 
-void gpu_load_problem(int m, int n_total, const double* A_flat, const double* b, const double* c) {
+void gpu_load_problem_v0(int m, int n_total, const double* A_flat, const double* b, const double* c) {
     if (!ws.initialized)
         throw std::runtime_error("Workspace not initialized");
 
@@ -113,7 +113,7 @@ void gpu_load_problem(int m, int n_total, const double* A_flat, const double* b,
 
 // This computes sn = c - A^T * y
 // (we do this for the whole A, I think it's faster than building the non-basic Matrix)
-const double* gpu_compute_reduced_costs(int m, int n_total, const double* y_host) {
+const double* gpu_compute_reduced_costs_v0(int m, int n_total, const double* y_host) {
     // 1. Copy y to device (small copy, size m)
     cudaMemcpy(ws.y_temp_d, y_host, m * sizeof(double), cudaMemcpyHostToDevice);
 
@@ -138,7 +138,7 @@ const double* gpu_compute_reduced_costs(int m, int n_total, const double* y_host
 }
 
 // Solves A_Basis * d = A_column[col_idx]
-void gpu_solve_from_resident_col(int m, int col_idx, double* d_out) {
+void gpu_solve_from_resident_col_v0(int m, int col_idx, double* d_out) {
     if (!ws.initialized)
         throw std::runtime_error("Workspace not initialized");
 
@@ -160,7 +160,7 @@ void gpu_solve_from_resident_col(int m, int col_idx, double* d_out) {
 }
 
 // Assembles Basis Matrix, spawns tons of threads (everything on gpu, all at once)
-__global__ void gather_kernel(int m, const double* A_full, double* A_basis, const int* B_indices) {
+__global__ void gather_kernel_v0(int m, const double* A_full, double* A_basis, const int* B_indices) {
     // Calculate unique Thread ID
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
 
@@ -183,7 +183,7 @@ __global__ void gather_kernel(int m, const double* A_full, double* A_basis, cons
     A_basis[idx] = A_full[col_original * m + row];
 }
 
-void gpu_build_basis_and_factorize(int m, int n_total, const int* B_indices) {
+void gpu_build_basis_and_factorize_v0(int m, int n_total, const int* B_indices) {
     if (!ws.initialized)
         throw std::runtime_error("Workspace not initialized");
 
@@ -196,7 +196,7 @@ void gpu_build_basis_and_factorize(int m, int n_total, const int* B_indices) {
     // We round up, we want more threads than total elements (that's why we have guard in Kernel)
     int blocksPerGrid = (total_elements + threadsPerBlock - 1) / threadsPerBlock;
 
-    gather_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, ws.A_full_d, ws.AB_d, ws.B_d);
+    gather_kernel_v0<<<blocksPerGrid, threadsPerBlock>>>(m, ws.A_full_d, ws.AB_d, ws.B_d);
 
     // Check for kernel errors
     cudaError_t err = cudaGetLastError();
@@ -209,11 +209,11 @@ void gpu_build_basis_and_factorize(int m, int n_total, const int* B_indices) {
 }
 
 // Overwrite the storage with new perturbed values
-void gpu_update_rhs_storage(int m, const double* b_new) {
+void gpu_update_rhs_storage_v0(int m, const double* b_new) {
     cudaMemcpy(ws.b_storage_d, b_new, m * sizeof(double), cudaMemcpyHostToDevice);
 }
 
-void gpu_solve_from_persistent_b(int m, double* x_out) {
+void gpu_solve_from_persistent_b_v0(int m, double* x_out) {
     // 1. Refresh the workspace: Copy Storage -> Workspace
     // We do this because the previous solve destroyed ws.b_d
     cudaMemcpy(ws.b_d, ws.b_storage_d, m * sizeof(double), cudaMemcpyDeviceToDevice);
@@ -226,7 +226,7 @@ void gpu_solve_from_persistent_b(int m, double* x_out) {
     cudaMemcpy(x_out, ws.b_d, m * sizeof(double), cudaMemcpyDeviceToHost);
 }
 
-void gpu_solve_prefactored(int n, const double* b, double* x, bool transpose) {
+void gpu_solve_prefactored_v0(int n, const double* b, double* x, bool transpose) {
     if (!ws.initialized)
         throw std::runtime_error("Workspace not initialized");
 

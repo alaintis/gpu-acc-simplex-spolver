@@ -5,7 +5,7 @@
 #include <stdexcept>
 #include <string>
 
-#include "../gpu/base_solver_wrapped.hpp" // cuOpt reference solver
+#include "../gpu_v0/base_solver_wrapped.hpp" // cuOpt reference solver
 #include "linprog.hpp" // score
 #include "logging.hpp"
 #include "problem_reader.hpp"

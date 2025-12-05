@@ -153,8 +153,8 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
         return {.success = false};
     }
 
-    init_gpu_workspace(m);
-    gpu_load_problem(m, n_total, A_scaled.data(), b_scaled.data(), c_scaled.data());
+    init_gpu_workspace_v0(m);
+    gpu_load_problem_v0(m, n_total, A_scaled.data(), b_scaled.data(), c_scaled.data());
 
     // Buffers
     vector<double> A_B(m * m);
@@ -182,11 +182,11 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
             c_B[i] = c_scaled[B[i]];
         }
 
-        gpu_build_basis_and_factorize(m, n_total, B.data());
+        gpu_build_basis_and_factorize_v0(m, n_total, B.data());
 
         // 3. Recompute Primal Solution instead of incremental updates (Anti-Drift) & do stall
         // detection. We solve A_B * x_B = b_scaled explicitly every iteration.
-        gpu_solve_from_persistent_b(m, x_B.data());
+        gpu_solve_from_persistent_b_v0(m, x_B.data());
 
         // Calculate whole x_scaled for stall detection
         std::fill(x_scaled.begin(), x_scaled.end(), 0.0);
@@ -216,10 +216,10 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
                 b_eff[k] += dist_pert(rng);
             is_perturbed = true;
             // Update the persistent b on GPU
-            gpu_update_rhs_storage(m, b_eff.data());
+            gpu_update_rhs_storage_v0(m, b_eff.data());
             stall_counter = 0;
             // Re-solve with perturbed b immediately
-            gpu_solve_from_persistent_b(m, x_B.data());
+            gpu_solve_from_persistent_b_v0(m, x_B.data());
             for (int i = 0; i < m; ++i) {
                 x_scaled[B[i]] = x_B[i];
             }
@@ -230,12 +230,12 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
         }
 
         // 4. Solve Dual: A_B^T y = c_B
-        gpu_solve_prefactored(m, c_B.data(), y.data(), true);
+        gpu_solve_prefactored_v0(m, c_B.data(), y.data(), true);
 
         // 5. Pricing (Dantzig's Rule for now)
         // We calculate reduced costs for ALL variables (Basic and Non-Basic) at once on GPU.
         // It's faster to do one giant matrix mult than iterating just N on CPU.
-        const double* all_sn = gpu_compute_reduced_costs(m, n_total, y.data());
+        const double* all_sn = gpu_compute_reduced_costs_v0(m, n_total, y.data());
 
         int j_i = -1;
         double min_sn = -1e-7;
@@ -262,20 +262,20 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
             // 6. FINAL CLEANUP & UNSCALING
             // Solve against scaled b, then unscale x.
             if (is_perturbed) {
-                gpu_update_rhs_storage(m, b_scaled.data());
+                gpu_update_rhs_storage_v0(m, b_scaled.data());
             }
 
-            gpu_solve_from_persistent_b(m, x_B.data());
+            gpu_solve_from_persistent_b_v0(m, x_B.data());
 
             unscale_solution(m, n_total, B, x_B, sc, x);
 
-            destroy_gpu_workspace();
+            destroy_gpu_workspace_v0();
             return {.success = true, .assignment = x, .basis = B, .basis_split_found = true};
         }
 
         // 7. Compute Primal Step: A_B d = A_jj
         int jj = N[j_i];
-        gpu_solve_from_resident_col(m, jj, d.data());
+        gpu_solve_from_resident_col_v0(m, jj, d.data());
 
         // 8. Unbounded Check
         bool unbounded = true;
@@ -287,7 +287,7 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
         }
         if (unbounded) {
             std::cout << "Problem is unbounded." << std::endl;
-            destroy_gpu_workspace();
+            destroy_gpu_workspace_v0();
             return {.success = false};
         }
 
@@ -319,7 +319,7 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
 
         if (r < 0) {
             std::cout << "Solver failure: No leaving variable found." << std::endl;
-            destroy_gpu_workspace();
+            destroy_gpu_workspace_v0();
             return {.success = false};
         }
 
@@ -329,7 +329,7 @@ base_solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x
         B[r] = jj;
     }
     std::cout << "Out of iterations!" << std::endl;
-    destroy_gpu_workspace();
+    destroy_gpu_workspace_v0();
     return {.success = false};
 }
 

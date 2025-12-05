@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "../gpu/base_solver_wrapped.hpp"
+#include "../gpu_v0/base_solver_wrapped.hpp"
 #include "linprog.hpp"
 #include "logging.hpp"
 #include "solver_wrapper.hpp"
