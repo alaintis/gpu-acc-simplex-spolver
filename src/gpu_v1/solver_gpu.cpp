@@ -14,8 +14,6 @@
 
 using std::vector;
 
-static bool contains(const idx& B, int i) { return std::find(B.begin(), B.end(), i) != B.end(); }
-
 struct ScalingContext {
     vector<double> row_scale;
     vector<double> col_scale;
@@ -148,9 +146,13 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
     idx N(n); // Non-Basic Variables
 
     // Perform Basis Split
+    std::vector<bool> is_basic(n_total, false);
+    for (int i : B)
+        is_basic[i] = true;
+
     int n_count = 0;
     for (int i = 0; i < n_total; i++) {
-        if (!contains(B, i))
+        if (!is_basic[i])
             N[n_count++] = i;
     }
 
@@ -164,13 +166,13 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         PROFILE_SCOPE("GPU_Load");
         init_gpu_workspace(m);
         gpu_load_problem(m, n_total, A_scaled.data(), b_scaled.data(), c_scaled.data());
+        gpu_init_non_basic(n, N.data());
     }
 
     // Buffers
     vector<double> A_B(m * m);
     vector<double> c_B(m);
     vector<double> x_B(m);
-    vector<double> y(m);
     vector<double> d(m);
 
     // Perturbation
@@ -184,7 +186,8 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
     // ============================================================
     // 3. MAIN LOOP
     // ============================================================
-    const int REFACTOR_FREQ = 10000;
+    const bool DISABLE_REFACTOR = true;
+    const int REFACTOR_FREQ = 50;
     int max_iter = 500 * (n_total + m);
 
     for (int iter = 0; iter < max_iter; iter++) {
@@ -196,7 +199,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         }
 
         bool refactor_needed = (iter % REFACTOR_FREQ == 0);
-        if (iter == 0 || refactor_needed) {
+        if (iter == 0 || (refactor_needed && !DISABLE_REFACTOR)) {
             PROFILE_SCOPE("Refactor_Basis");
             // Full Rebuild: Gather -> LU -> Invert
             gpu_build_basis_and_invert(m, n_total, B.data());
@@ -251,7 +254,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         // 4. Solve Dual: y = B^-T * c_B
         {
             PROFILE_SCOPE("Solve_Dual");
-            gpu_mult_inverse(m, c_B.data(), y.data(), true); // true = Transpose
+            gpu_solve_duals(m, c_B.data());
         }
 
         // 5. Pricing (Dantzig's Rule for now)
@@ -261,17 +264,14 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
 
         {
             PROFILE_SCOPE("Pricing");
-            const double* all_sn = gpu_compute_reduced_costs(m, n_total, y.data());
+            gpu_compute_reduced_costs(m, n_total);
 
-            // Iterate over Non-Basic variables to find the entering variable
-            for (int i = 0; i < n; i++) {
-                int original_idx = N[i];
-                double sn = all_sn[original_idx];
-                if (sn < min_sn) {
-                    optimal = false;
-                    min_sn = sn;
-                    j_i = i;
-                }
+            // Run reduction kernel
+            PricingResult res = gpu_pricing_dantzig(n);
+
+            if (res.index_in_N != -1) {
+                optimal = false;
+                j_i = res.index_in_N;
             }
         }
 
@@ -354,6 +354,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
             int ii = B[r];
             N[j_i] = ii;
             B[r] = jj;
+            gpu_update_non_basic_index(j_i, ii);
             gpu_update_basis_fast(m, r);
         }
     }
