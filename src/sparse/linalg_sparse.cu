@@ -7,6 +7,8 @@
 #include <vector>
 
 #include <cusparse_v2.h>
+#include <curand.h>
+#include <curand_kernel.h>
 
 #include <thrust/scan.h>
 #include <thrust/execution_policy.h>
@@ -313,6 +315,39 @@ __global__ void fill_AB_kernel(int m, const int *A_row_ptr, const int *A_col_idx
     } 
 }
 
+__global__ void addRandomDiagonalShift(
+    int n,
+    const int* __restrict__ row_ptr,
+    const int* __restrict__ col_idx,
+    double* __restrict__ values,
+    double min_shift,
+    double max_shift,
+    int seed
+)
+{
+    int row = blockIdx.x * blockDim.x + threadIdx.x;
+    if (row >= n) return;
+
+    curandState state;
+    curand_init(seed, row, 0, &state);
+
+    double r = curand_uniform_double(&state); // (0,1]
+    r = min_shift + (max_shift - min_shift) * r;
+
+    int start = row_ptr[row];
+    int end   = row_ptr[row + 1];
+
+    for (int j = start; j < end; j++) {
+        if (col_idx[j] == row) {
+            values[j] += r;
+            return;
+        }
+    }
+
+    // No diagonal present → cannot fix with shift alone.
+    printf("Failed to find the diagonal!!\n");
+}
+
 void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) {
     if (!ws.initialized)
         throw std::runtime_error("Workspace not initialized");
@@ -367,48 +402,360 @@ void sparse_build_basis_and_factorize(int m, int n_total, const int* B_indices) 
     cudssMatrixCreateDn(&ws.b_cudss, m, 1, m, ws.b_d, CUDA_R_64F, CUDSS_LAYOUT_COL_MAJOR);
 
 
-    // cusparseSpMatDescr_t ABT;
-    // cusparseCreateCsr(&ABT, m, m, nnz, ws.ABT_row_ptr, ws.ABT_col_idx, ws.ABT_value, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F);
+    cusparseSpMatDescr_t ABT;
+    cusparseCreateCsr(&ABT, m, m, nnz, ws.ABT_row_ptr, ws.ABT_col_idx, ws.ABT_value, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F);
     
-    csrilu02Info_t info;
-    cusparseCreateCsrilu02Info(&info);
 
-    cusparseMatDescr_t ABT_descr;
-    cusparseCreateMatDescr(&ABT_descr);
-    cusparseSetMatType(ABT_descr, CUSPARSE_MATRIX_TYPE_GENERAL);
-    cusparseSetMatIndexBase(ABT_descr, CUSPARSE_INDEX_BASE_ZERO);
+    int *AB_row_ptr = nullptr;
+    int *AB_col_idx = nullptr;
+    double *AB_value = nullptr;
 
-    int buffer_size;
-    void* buffer;
-    
-    // set buffer size
-    cusparseDcsrilu02_bufferSize(ws.cusparse_handle, m, nnz, ABT_descr, ws.ABT_value, ws.ABT_row_ptr, ws.ABT_col_idx, info, &buffer_size);
-    cudaMalloc(&buffer, buffer_size);
+    // allocate CSR output arrays for AB (same nnz as ABT)
+    cudaMalloc(&AB_row_ptr, (m+1) * sizeof(int));
+    cudaMalloc(&AB_col_idx, nnz   * sizeof(int));
+    cudaMalloc(&AB_value,   nnz   * sizeof(double));
 
-    cusparseDcsrilu02_analysis(ws.cusparse_handle, m, nnz, ABT_descr, ws.ABT_value, ws.ABT_row_ptr, ws.ABT_col_idx, info, CUSPARSE_SOLVE_POLICY_USE_LEVEL, buffer);
-    int structural_zero;
-    cusparseStatus_t sparse_status = cusparseXcsrilu02_zeroPivot(ws.cusparse_handle, info, &structural_zero);
-    if (sparse_status == CUSPARSE_STATUS_ZERO_PIVOT) {
-        // printf("Warning: structural zero at (%d,%d)\n", structural_zero, structural_zero);
-    }
 
-    cusparseDcsrilu02(
-        ws.cusparse_handle, m, nnz,
-        ABT_descr, ws.ABT_value, ws.ABT_row_ptr, ws.ABT_col_idx,
-        info, CUSPARSE_SOLVE_POLICY_USE_LEVEL, buffer
+    //Transpose ABT → AB  (CSR → CSR)
+    size_t buffer0_size = 0;
+    void *buffer0 = nullptr;
+
+    // Query buffer
+    cusparseCsr2cscEx2_bufferSize(
+        ws.cusparse_handle,
+        m, m, nnz,
+        ws.ABT_value,
+        ws.ABT_row_ptr,
+        ws.ABT_col_idx,
+        AB_value,
+        AB_row_ptr,
+        AB_col_idx,
+        CUDA_R_64F,
+        CUSPARSE_ACTION_NUMERIC,
+        CUSPARSE_INDEX_BASE_ZERO,
+        CUSPARSE_CSR2CSC_ALG1,
+        &buffer0_size
     );
-    
-    int numerical_zero;
-    // Check for numerical zeros
-    sparse_status = cusparseXcsrilu02_zeroPivot(ws.cusparse_handle, info, &numerical_zero);
-    if (sparse_status == CUSPARSE_STATUS_ZERO_PIVOT) {
-        // printf("Warning: numerical zero at (%d,%d)\n", numerical_zero, numerical_zero);
-    }
-    
-    cudaFree(buffer);
-    cusparseDestroyCsrilu02Info(info);
-    cusparseDestroyMatDescr(ABT_descr);
 
+    cudaMalloc(&buffer0, buffer0_size);
+
+    // Perform transpose
+    cusparseCsr2cscEx2(
+        ws.cusparse_handle,
+        m, m, nnz,
+        ws.ABT_value,
+        ws.ABT_row_ptr,
+        ws.ABT_col_idx,
+        AB_value,
+        AB_row_ptr,
+        AB_col_idx,
+        CUDA_R_64F,
+        CUSPARSE_ACTION_NUMERIC,
+        CUSPARSE_INDEX_BASE_ZERO,
+        CUSPARSE_CSR2CSC_ALG1,
+        buffer0
+    );
+
+    // Same matrix just the other way around.
+    cusparseSpMatDescr_t AB;
+    cusparseCreateCsr(&AB, m, m, nnz, AB_row_ptr, AB_col_idx, AB_value, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F);
+
+
+    int *ABABT_row_ptr = nullptr;
+    int *ABABT_col_idx = nullptr;
+    double *ABABT_value   = nullptr;
+    cusparseSpMatDescr_t ABABT;
+    cusparseCreateCsr(&ABABT, m, m, 0, NULL, NULL, NULL, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_32I, CUSPARSE_INDEX_BASE_ZERO, CUDA_R_64F);
+
+    cusparseSpGEMMDescr_t spgemmDescr;
+    cusparseSpGEMM_createDescr(&spgemmDescr);
+
+    size_t buffer1_size = 0;
+    void*  buffer1_d = NULL;
+    size_t buffer2_size = 0;
+    void*  buffer2_d = NULL;
+    const double alpha = 1.0;
+    const double beta = 0.0;
+
+    cusparseSpGEMM_workEstimation(
+        ws.cusparse_handle, CUSPARSE_OPERATION_NON_TRANSPOSE, CUSPARSE_OPERATION_NON_TRANSPOSE,
+        &alpha, AB, ABT, &beta, ABABT, CUDA_R_64F, CUSPARSE_SPGEMM_DEFAULT, spgemmDescr, &buffer1_size, NULL
+    );
+    cudaMalloc(&buffer1_d, buffer1_size);
+    cusparseSpGEMM_workEstimation(
+        ws.cusparse_handle, CUSPARSE_OPERATION_NON_TRANSPOSE, CUSPARSE_OPERATION_NON_TRANSPOSE,
+        &alpha, AB, ABT, &beta, ABABT, CUDA_R_64F, CUSPARSE_SPGEMM_DEFAULT, spgemmDescr, &buffer1_size, buffer1_d
+    );
+
+    cusparseSpGEMM_compute(
+        ws.cusparse_handle, CUSPARSE_OPERATION_NON_TRANSPOSE, CUSPARSE_OPERATION_NON_TRANSPOSE,
+        &alpha, AB, ABT, &beta, ABABT, CUDA_R_64F, CUSPARSE_SPGEMM_DEFAULT, spgemmDescr, &buffer2_size, buffer2_d
+    );
+    cudaMalloc(&buffer2_d, buffer2_size);
+    cusparseSpGEMM_compute(
+        ws.cusparse_handle, CUSPARSE_OPERATION_NON_TRANSPOSE, CUSPARSE_OPERATION_NON_TRANSPOSE,
+        &alpha, AB, ABT, &beta, ABABT, CUDA_R_64F, CUSPARSE_SPGEMM_DEFAULT, spgemmDescr, &buffer2_size, buffer2_d
+    );
+
+    
+    int64_t ABABT_nnz, _rows, _cols;
+    cusparseSpMatGetSize(ABABT, &_rows, &_cols, &ABABT_nnz);
+    
+    cudaMalloc((void**)&ABABT_row_ptr, (m + 1) * sizeof(int));
+    cudaMalloc((void**)&ABABT_col_idx, ABABT_nnz * sizeof(int));
+    cudaMalloc((void**)&ABABT_value,   ABABT_nnz * sizeof(double));
+    cusparseCsrSetPointers(ABABT, ABABT_row_ptr, ABABT_col_idx, ABABT_value);
+    cusparseSpGEMM_copy(
+        ws.cusparse_handle, CUSPARSE_OPERATION_NON_TRANSPOSE, CUSPARSE_OPERATION_NON_TRANSPOSE,
+        &alpha, AB, ABT, &beta, ABABT, CUDA_R_64F, CUSPARSE_SPGEMM_DEFAULT, spgemmDescr
+    );
+
+    cusparseMatDescr_t descrA;
+    cusparseCreateMatDescr(&descrA);
+    cusparseSetMatType(descrA, CUSPARSE_MATRIX_TYPE_GENERAL);
+    cusparseSetMatIndexBase(descrA, CUSPARSE_INDEX_BASE_ZERO);
+    cusparseSetMatFillMode(descrA, CUSPARSE_FILL_MODE_LOWER);     // IC(0) uses lower
+    cusparseSetMatDiagType(descrA, CUSPARSE_DIAG_TYPE_NON_UNIT);
+
+    csric02Info_t info = NULL;
+    cusparseCreateCsric02Info(&info);
+
+    int bufferSize = 0;
+    cusparseDcsric02_bufferSize(
+        ws.cusparse_handle,
+        m,
+        nnz,
+        descrA,
+        ABABT_value,
+        ABABT_row_ptr,
+        ABABT_col_idx,
+        info,
+        &bufferSize
+    );
+
+    void* buffer = NULL;
+    cudaMalloc(&buffer, bufferSize);
+    cusparseStatus_t sparse_status;
+    sparse_status = cusparseDcsric02_analysis(
+        ws.cusparse_handle,
+        m,
+        nnz,
+        descrA,
+        ABABT_value,
+        ABABT_row_ptr,
+        ABABT_col_idx,
+        info,
+        CUSPARSE_SOLVE_POLICY_NO_LEVEL,
+        buffer
+    );
+
+
+    if (sparse_status != CUSPARSE_STATUS_SUCCESS) {
+        printf("csric02_analysis failed\n");
+        printf("csric02_analysis failed: %s\n", cusparseGetErrorName(sparse_status));
+        printf("Description: %s\n", cusparseGetErrorString(sparse_status));
+    }
+
+    int structural_zero;
+    cusparseStatus_t s1 = cusparseXcsric02_zeroPivot(ws.cusparse_handle, info, &structural_zero);
+    if (s1 == CUSPARSE_STATUS_ZERO_PIVOT) {
+        printf("Structural zero pivot at row %d\n", structural_zero);
+    }
+
+    int numerical_zero;
+    cusparseStatus_t s2;
+
+    for(int i = 0; i < 2; i++) {
+        sparse_status = cusparseDcsric02(
+            ws.cusparse_handle,
+            m,
+            nnz,
+            descrA,
+            ABABT_value,      // overwritten with L factor
+            ABABT_row_ptr,
+            ABABT_col_idx,
+            info,
+            CUSPARSE_SOLVE_POLICY_NO_LEVEL,
+            buffer
+        );
+    
+        if (sparse_status != CUSPARSE_STATUS_SUCCESS) {
+            printf("csric02 factorization failed\n");
+            printf("csric02_analysis failed: %s\n", cusparseGetErrorName(sparse_status));
+            printf("Description: %s\n", cusparseGetErrorString(sparse_status));
+        }
+
+        s2 = cusparseXcsric02_zeroPivot(ws.cusparse_handle, info, &numerical_zero);
+        if (s2 != CUSPARSE_STATUS_ZERO_PIVOT) {
+            break;
+        }
+        double min_shift = 0.001;
+        double max_shift = 0.01;
+
+        int block = 256;
+        int grid  = (m + block - 1) / block;
+        addRandomDiagonalShift<<<grid, block>>>(
+            m,
+            ABABT_row_ptr,
+            ABABT_col_idx,
+            ABABT_value,
+            min_shift,
+            max_shift,
+            rand()
+        );
+        cudaDeviceSynchronize();
+    }
+
+    if(s2 == CUSPARSE_STATUS_ZERO_PIVOT) {
+        double min_shift = 0.1;
+        double max_shift = 0.2;
+
+        int block = 256;
+        int grid  = (m + block - 1) / block;
+        addRandomDiagonalShift<<<grid, block>>>(
+            m,
+            ABABT_row_ptr,
+            ABABT_col_idx,
+            ABABT_value,
+            min_shift,
+            max_shift,
+            rand()
+        );
+        cudaDeviceSynchronize();
+    }
+
+    cusparseSpMatDescr_t matL;
+    cusparseCreateCsr(&matL,
+                    m, m, ABABT_nnz,
+                    ABABT_row_ptr,
+                    ABABT_col_idx,
+                    ABABT_value,   // contains L from IC(0)
+                    CUSPARSE_INDEX_32I,
+                    CUSPARSE_INDEX_32I,
+                    CUSPARSE_INDEX_BASE_ZERO,
+                    CUDA_R_64F);
+
+    cusparseDnVecDescr_t vecB, vecY;
+    cusparseCreateDnVec(&vecB, m, ws.b_d, CUDA_R_64F);
+    cusparseCreateDnVec(&vecY, m, ws.y_temp_d, CUDA_R_64F);
+
+    cusparseSpSVDescr_t spsvDescr;
+    cusparseSpSV_createDescr(&spsvDescr);
+
+    size_t buffer3_size = 0;
+    void *buffer3_d;
+    cusparseSpSV_bufferSize(ws.cusparse_handle,
+                            CUSPARSE_OPERATION_NON_TRANSPOSE,
+                            &alpha,
+                            matL,
+                            vecB,
+                            vecY,
+                            CUDA_R_64F,
+                            CUSPARSE_SPSV_ALG_DEFAULT,
+                            spsvDescr,
+                            &buffer3_size);
+
+    cudaMalloc(&buffer3_d, buffer3_size);
+
+    cusparseSpSV_analysis(ws.cusparse_handle,
+                        CUSPARSE_OPERATION_NON_TRANSPOSE,
+                        &alpha,
+                        matL,
+                        vecB,
+                        vecY,
+                        CUDA_R_64F,
+                        CUSPARSE_SPSV_ALG_DEFAULT,
+                        spsvDescr,
+                        buffer3_d);
+
+    cusparseSpSV_solve(ws.cusparse_handle,
+                    CUSPARSE_OPERATION_NON_TRANSPOSE,
+                    &alpha,
+                    matL,
+                    vecB,
+                    vecY,
+                    CUDA_R_64F,
+                    CUSPARSE_SPSV_ALG_DEFAULT,
+                    spsvDescr);
+
+    cusparseSpSV_bufferSize(ws.cusparse_handle,
+                            CUSPARSE_OPERATION_TRANSPOSE,
+                            &alpha,
+                            matL,
+                            vecB,
+                            vecY,
+                            CUDA_R_64F,
+                            CUSPARSE_SPSV_ALG_DEFAULT,
+                            spsvDescr,
+                            &buffer3_size);
+
+    
+    if (sparse_status != CUSPARSE_STATUS_SUCCESS) {
+        printf("buffer failed\n");
+        printf("csric02_analysis failed: %s\n", cusparseGetErrorName(sparse_status));
+        printf("Description: %s\n", cusparseGetErrorString(sparse_status));
+    }
+
+    cudaMalloc(&buffer3_d, buffer3_size);
+
+    cusparseSpSV_analysis(ws.cusparse_handle,
+                        CUSPARSE_OPERATION_TRANSPOSE,
+                        &alpha,
+                        matL,
+                        vecB,
+                        vecY,
+                        CUDA_R_64F,
+                        CUSPARSE_SPSV_ALG_DEFAULT,
+                        spsvDescr,
+                        buffer3_d);
+    
+    if (sparse_status != CUSPARSE_STATUS_SUCCESS) {
+        printf("analysis failed\n");
+        printf("csric02_analysis failed: %s\n", cusparseGetErrorName(sparse_status));
+        printf("Description: %s\n", cusparseGetErrorString(sparse_status));
+    }
+
+    cusparseSpSV_solve(ws.cusparse_handle,
+                    CUSPARSE_OPERATION_TRANSPOSE,
+                    &alpha,
+                    matL,
+                    vecB,
+                    vecY,
+                    CUDA_R_64F,
+                    CUSPARSE_SPSV_ALG_DEFAULT,
+                    spsvDescr);
+
+    
+    if (sparse_status != CUSPARSE_STATUS_SUCCESS) {
+        printf("solve failed\n");
+        printf("csric02_analysis failed: %s\n", cusparseGetErrorName(sparse_status));
+        printf("Description: %s\n", cusparseGetErrorString(sparse_status));
+    }
+
+    // Clean up
+    cusparseSpGEMM_destroyDescr(spgemmDescr);
+
+    // ABT and ABABT sparse matrix descriptors
+    cusparseDestroySpMat(ABT);
+    cusparseDestroySpMat(ABABT);
+
+    // Temporary buffers from SpGEMM
+    if (buffer1_d) cudaFree(buffer1_d);
+    if (buffer2_d) cudaFree(buffer2_d);
+
+    // IC(0) info structure
+    cusparseDestroyCsric02Info(info);
+
+    // IC(0) matrix descriptor
+    cusparseDestroyMatDescr(descrA);
+
+    // IC(0) temporary buffer
+    if (buffer) cudaFree(buffer);
+    if (buffer0) cudaFree(buffer0);
+
+    if (ABABT_row_ptr) cudaFree(ABABT_row_ptr);
+    if (ABABT_col_idx) cudaFree(ABABT_col_idx);
+    if (ABABT_value)   cudaFree(ABABT_value);
 
     // CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_ANALYSIS, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "ANAL");
     // CUDSS_CALL_AND_CHECK(cudssExecute(ws.cudss_handle, CUDSS_PHASE_FACTORIZATION, ws.cudss_config, ws.cudss_data, ws.ABT, ws.x_cudss, ws.b_cudss), status, "FACT");
