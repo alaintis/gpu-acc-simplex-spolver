@@ -1,8 +1,13 @@
 #include <assert.h>
+#include <cfloat>
 #include <cuda_runtime.h>
 #include <cusolverDn.h>
 #include <iostream>
 #include <stdexcept>
+#include <thrust/device_ptr.h>
+#include <thrust/execution_policy.h>
+#include <thrust/extrema.h>
+#include <thrust/iterator/permutation_iterator.h>
 #include <vector>
 
 #include "linalg_gpu.hpp"
@@ -29,6 +34,13 @@ struct CPUWorkspace {
     double* sn_h = nullptr; // Size: n_total (Reduced costs on Host)
     double* y_temp_d = nullptr; // Size: m (Temp storage for y during pricing)
     int* B_d = nullptr; // Size: n (Buffer for Basis Indices)
+    int* N_d = nullptr; // Non-Basic Indices on GPU (n)
+
+    // CUB Reduction Buffers (Persistent to avoid malloc in loop!)
+    void* cub_temp_d = nullptr;
+    size_t cub_temp_size_d = 0;
+    cub::KeyValuePair<int, double>* pricing_out_d = nullptr;
+    cub::KeyValuePair<int, double>* pricing_out_h = nullptr;
 
     // Handlers
     cusolverDnHandle_t cusolve_handle;
@@ -60,6 +72,12 @@ void init_gpu_workspace(int n) {
     cusolverDnDgetrf_bufferSize(ws.cusolve_handle, n, n, ws.B_inv_d, n, &ws.work_size);
     cudaMalloc((void**)&ws.work_d, ws.work_size * sizeof(double));
 
+    // CUB
+    cudaMalloc((void**)&ws.pricing_out_d, sizeof(cub::KeyValuePair<int, double>));
+    cudaMallocHost((void**)&ws.pricing_out_h, sizeof(cub::KeyValuePair<int, double>));
+    ws.cub_temp_size_d = 1024 * 1024; // 1MB scratchpad is plenty for reductions
+    cudaMalloc((void**)&ws.cub_temp_d, ws.cub_temp_size_d);
+
     ws.initialized = true;
 }
 
@@ -67,30 +85,85 @@ void destroy_gpu_workspace() {
     if (!ws.initialized)
         return;
 
-    cudaFree(ws.B_inv_d);
-    cudaFree(ws.inv_temp_d);
-    cudaFree(ws.b_d);
-    cudaFree(ws.ipiv_d);
-    cudaFree(ws.info_d);
-    cudaFree(ws.work_d);
-    cusolverDnDestroy(ws.cusolve_handle);
+    // Free and NULL workspace buffers
+    if (ws.B_inv_d) {
+        cudaFree(ws.B_inv_d);
+        ws.B_inv_d = nullptr;
+    }
+    if (ws.inv_temp_d) {
+        cudaFree(ws.inv_temp_d);
+        ws.inv_temp_d = nullptr;
+    }
+    if (ws.b_d) {
+        cudaFree(ws.b_d);
+        ws.b_d = nullptr;
+    }
+    if (ws.ipiv_d) {
+        cudaFree(ws.ipiv_d);
+        ws.ipiv_d = nullptr;
+    }
+    if (ws.info_d) {
+        cudaFree(ws.info_d);
+        ws.info_d = nullptr;
+    }
+    if (ws.work_d) {
+        cudaFree(ws.work_d);
+        ws.work_d = nullptr;
+    }
 
-    if (ws.A_full_d)
+    if (ws.cusolve_handle) {
+        cusolverDnDestroy(ws.cusolve_handle);
+        ws.cusolve_handle = nullptr;
+    }
+
+    // Free and NULL persistent storage
+    if (ws.A_full_d) {
         cudaFree(ws.A_full_d);
-    if (ws.b_storage_d)
+        ws.A_full_d = nullptr;
+    }
+    if (ws.b_storage_d) {
         cudaFree(ws.b_storage_d);
-    if (ws.c_full_d)
+        ws.b_storage_d = nullptr;
+    }
+    if (ws.c_full_d) {
         cudaFree(ws.c_full_d);
-    if (ws.sn_d)
-        cudaFree(ws.sn_d);
-    if (ws.y_temp_d)
-        cudaFree(ws.y_temp_d);
-    if (ws.sn_h)
-        free(ws.sn_h);
-    if (ws.B_d)
-        cudaFree(ws.B_d);
+        ws.c_full_d = nullptr;
+    }
 
-    cublasDestroy(ws.cublas_handle);
+    // Free and NULL helpers
+    if (ws.sn_d) {
+        cudaFree(ws.sn_d);
+        ws.sn_d = nullptr;
+    }
+    if (ws.y_temp_d) {
+        cudaFree(ws.y_temp_d);
+        ws.y_temp_d = nullptr;
+    }
+    if (ws.B_d) {
+        cudaFree(ws.B_d);
+        ws.B_d = nullptr;
+    }
+
+    if (ws.N_d) {
+        cudaFree(ws.N_d);
+        ws.N_d = nullptr;
+    }
+
+    if (ws.sn_h) {
+        free(ws.sn_h);
+        ws.sn_h = nullptr;
+    }
+
+    if (ws.cublas_handle) {
+        cublasDestroy(ws.cublas_handle);
+        ws.cublas_handle = nullptr;
+    }
+
+    if (ws.cub_temp_d)
+        cudaFree(ws.cub_temp_d);
+    if (ws.pricing_out_d)
+        cudaFree(ws.pricing_out_d);
+
     ws.initialized = false;
 }
 
@@ -284,7 +357,7 @@ void gpu_recalc_x_from_persistent_b(int m, double* x_out) {
 
 // This computes sn = c - A^T * y
 // (we do this for the whole A, I think it's faster than building the non-basic Matrix)
-const double* gpu_compute_reduced_costs(int m, int n_total, const double* y_host) {
+void gpu_compute_reduced_costs(int m, int n_total, const double* y_host) {
     // 1. Copy y to device (small copy, size m)
     cudaMemcpy(ws.y_temp_d, y_host, m * sizeof(double), cudaMemcpyHostToDevice);
 
@@ -301,14 +374,51 @@ const double* gpu_compute_reduced_costs(int m, int n_total, const double* y_host
                 CUBLAS_OP_T, // Transpose A because we want dot product of cols with y
                 m, n_total, &alpha, ws.A_full_d, m, // LDA is m
                 ws.y_temp_d, 1, &beta, ws.sn_d, 1); // incx & incy = 1 are strides
-
-    // 3. Copy result back to host
-    cudaMemcpy(ws.sn_h, ws.sn_d, n_total * sizeof(double), cudaMemcpyDeviceToHost);
-
-    return ws.sn_h;
 }
 
 // Helper: Update the stored RHS b (used when applying perturbation)
 void gpu_update_rhs_storage(int m, const double* b_new) {
     cudaMemcpy(ws.b_storage_d, b_new, m * sizeof(double), cudaMemcpyHostToDevice);
+}
+
+void gpu_init_non_basic(int n_count, const int* N_indices) {
+    if (!ws.N_d)
+        cudaMalloc((void**)&ws.N_d, n_count * sizeof(int));
+    cudaMemcpy(ws.N_d, N_indices, n_count * sizeof(int), cudaMemcpyHostToDevice);
+}
+
+void gpu_update_non_basic_index(int offset, int new_val) {
+    // Offset is j_i, new_val is ii
+    cudaMemcpy(ws.N_d + offset, &new_val, sizeof(int), cudaMemcpyHostToDevice);
+}
+
+// Optimized CUB Implementation
+PricingResult gpu_pricing_dantzig(int n_count) {
+    if (n_count <= 0)
+        return {-1, 0.0};
+
+    // 1. Prepare Iterators (Zero Copy)
+    thrust::device_ptr<int> dev_N(ws.N_d);
+    thrust::device_ptr<double> dev_rc(ws.sn_d);
+    auto iterator = thrust::make_permutation_iterator(dev_rc, dev_N);
+
+    // 2. Run CUB DeviceReduce::ArgMin
+    //    We use the pre-allocated temp storage 'ws.d_cub_temp'
+    //    Output goes to pre-allocated 'ws.d_pricing_out'
+    cub::DeviceReduce::ArgMin(ws.cub_temp_d, ws.cub_temp_size_d, iterator, ws.pricing_out_h,
+                              n_count);
+
+    // Purely asynchronous kernel launch -> synchronize before reading result
+    cudaStreamSynchronize(0);
+
+    int best_idx = ws.pricing_out_h->key;
+    double best_val = ws.pricing_out_h->value;
+
+    // 3. Optimality Check
+    if (best_val >= -1e-7) {
+        return {-1, best_val};
+    }
+
+    // 4. Return
+    return {best_idx, best_val};
 }

@@ -13,12 +13,27 @@ void destroy_gpu_workspace();
 // Upload static problem data (A and c) to GPU once
 void gpu_load_problem(int m, int n_total, const double* A_flat, const double* b, const double* c);
 
+// Upload initial N indices to GPU
+void gpu_init_non_basic(int n_count, const int* N_indices);
+
+// Update a single index in N (used after pivot)
+// offset: index in the N array (0 to n-1)
+// new_val: the new variable index (ii)
+void gpu_update_non_basic_index(int offset, int new_val);
+
 // Update only the RHS storage (used during perturbation)
 void gpu_update_rhs_storage(int m, const double* b_new);
 
+// Runs the pricing kernel and returns the best candidate
+struct PricingResult {
+    int index_in_N; // The index inside N array (0 to n-1), corresponds to j_i
+    double min_val;
+};
+PricingResult gpu_pricing_dantzig(int n_count);
+
 // Compute reduced costs: sn = c - A^T * y
 // Returns a pointer to host memory containing all reduced costs
-const double* gpu_compute_reduced_costs(int m, int n_total, const double* y_host);
+void gpu_compute_reduced_costs(int m, int n_total, const double* y_host);
 
 /**
  * 1. Uploads the basis indices (B) to the GPU.
