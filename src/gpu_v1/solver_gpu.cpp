@@ -173,7 +173,6 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
     vector<double> A_B(m * m);
     vector<double> c_B(m);
     vector<double> x_B(m);
-    vector<double> y(m);
     vector<double> d(m);
 
     // Perturbation
@@ -255,7 +254,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         // 4. Solve Dual: y = B^-T * c_B
         {
             PROFILE_SCOPE("Solve_Dual");
-            gpu_mult_inverse(m, c_B.data(), y.data(), true); // true = Transpose
+            gpu_solve_duals(m, c_B.data());
         }
 
         // 5. Pricing (Dantzig's Rule for now)
@@ -265,7 +264,7 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
 
         {
             PROFILE_SCOPE("Pricing");
-            gpu_compute_reduced_costs(m, n_total, y.data());
+            gpu_compute_reduced_costs(m, n_total);
 
             // Run reduction kernel
             PricingResult res = gpu_pricing_dantzig(n);

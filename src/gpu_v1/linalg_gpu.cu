@@ -32,7 +32,7 @@ struct CPUWorkspace {
 
     double* sn_d = nullptr; // Size: n_total (Reduced costs on Device)
     double* sn_h = nullptr; // Size: n_total (Reduced costs on Host)
-    double* y_temp_d = nullptr; // Size: m (Temp storage for y during pricing)
+    double* y_d = nullptr; // Size: m (Storage for y)
     int* B_d = nullptr; // Size: n (Buffer for Basis Indices)
     int* N_d = nullptr; // Non-Basic Indices on GPU (n)
 
@@ -67,7 +67,7 @@ void init_gpu_workspace(int n) {
 
     // Allocate Helpers
     cudaMalloc((void**)&ws.B_d, n * sizeof(int));
-    cudaMalloc((void**)&ws.y_temp_d, n * sizeof(double));
+    cudaMalloc((void**)&ws.y_d, n * sizeof(double));
 
     cusolverDnDgetrf_bufferSize(ws.cusolve_handle, n, n, ws.B_inv_d, n, &ws.work_size);
     cudaMalloc((void**)&ws.work_d, ws.work_size * sizeof(double));
@@ -135,9 +135,9 @@ void destroy_gpu_workspace() {
         cudaFree(ws.sn_d);
         ws.sn_d = nullptr;
     }
-    if (ws.y_temp_d) {
-        cudaFree(ws.y_temp_d);
-        ws.y_temp_d = nullptr;
+    if (ws.y_d) {
+        cudaFree(ws.y_d);
+        ws.y_d = nullptr;
     }
     if (ws.B_d) {
         cudaFree(ws.B_d);
@@ -331,18 +331,17 @@ void gpu_calc_direction(int m, int col_idx, double* d_out) {
     cudaMemcpy(d_out, ws.b_d, m * sizeof(double), cudaMemcpyDeviceToHost);
 }
 
-void gpu_mult_inverse(int m, const double* b, double* x, bool transpose) {
-    cudaMemcpy(ws.b_d, b, m * sizeof(double), cudaMemcpyHostToDevice);
+void gpu_solve_duals(int m, const double* c_B_host) {
+    // Copy c_B to Device (ws.b_d is safe to reuse here)
+    cudaMemcpy(ws.b_d, c_B_host, m * sizeof(double), cudaMemcpyHostToDevice);
 
     double alpha = 1.0;
     double beta = 0.0;
-    // Select Transpose (for Duals y = B^-T * c) or Normal (for x = B^-1 * b)
-    cublasOperation_t op = transpose ? CUBLAS_OP_T : CUBLAS_OP_N;
 
-    cublasDgemv(ws.cublas_handle, op, m, m, &alpha, ws.B_inv_d, m, ws.b_d, 1, &beta, ws.y_temp_d,
-                1);
-
-    cudaMemcpy(x, ws.y_temp_d, m * sizeof(double), cudaMemcpyDeviceToHost);
+    // y = B^-T * c_B
+    // Result stored in ws.y_d
+    cublasDgemv(ws.cublas_handle, CUBLAS_OP_T, m, m, &alpha, ws.B_inv_d, m, ws.b_d, 1, &beta,
+                ws.y_d, 1);
 }
 
 void gpu_recalc_x_from_persistent_b(int m, double* x_out) {
@@ -357,11 +356,8 @@ void gpu_recalc_x_from_persistent_b(int m, double* x_out) {
 
 // This computes sn = c - A^T * y
 // (we do this for the whole A, I think it's faster than building the non-basic Matrix)
-void gpu_compute_reduced_costs(int m, int n_total, const double* y_host) {
-    // 1. Copy y to device (small copy, size m)
-    cudaMemcpy(ws.y_temp_d, y_host, m * sizeof(double), cudaMemcpyHostToDevice);
-
-    // 2. Calculate A^T * y
+void gpu_compute_reduced_costs(int m, int n_total) {
+    // 1. Calculate A^T * y
     // Initialize sn with c
     cudaMemcpy(ws.sn_d, ws.c_full_d, n_total * sizeof(double), cudaMemcpyDeviceToDevice);
 
@@ -373,7 +369,7 @@ void gpu_compute_reduced_costs(int m, int n_total, const double* y_host) {
     cublasDgemv(ws.cublas_handle,
                 CUBLAS_OP_T, // Transpose A because we want dot product of cols with y
                 m, n_total, &alpha, ws.A_full_d, m, // LDA is m
-                ws.y_temp_d, 1, &beta, ws.sn_d, 1); // incx & incy = 1 are strides
+                ws.y_d, 1, &beta, ws.sn_d, 1); // incx & incy = 1 are strides
 }
 
 // Helper: Update the stored RHS b (used when applying perturbation)

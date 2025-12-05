@@ -32,8 +32,7 @@ struct PricingResult {
 PricingResult gpu_pricing_dantzig(int n_count);
 
 // Compute reduced costs: sn = c - A^T * y
-// Returns a pointer to host memory containing all reduced costs
-void gpu_compute_reduced_costs(int m, int n_total, const double* y_host);
+void gpu_compute_reduced_costs(int m, int n_total);
 
 /**
  * 1. Uploads the basis indices (B) to the GPU.
@@ -50,11 +49,11 @@ void gpu_build_basis_and_invert(int m, int n_total, const int* B_indices);
  */
 void gpu_update_basis_fast(int m, int pivot_row);
 
-/**
- * Multiplies B^-1 * b (or B^-T * b if transpose is true).
- * Result is stored in x (host).
- */
-void gpu_mult_inverse(int m, const double* b, double* x, bool transpose);
+// Solves x = B^-1 * b. Result copied to Host (for ratio test).
+void gpu_solve_primal(int m, const double* b_host, double* x_host);
+
+// Solves y = B^-T * c_B. Result stays on Device in ws.y_d.
+void gpu_solve_duals(int m, const double* c_B_host);
 
 /**
  * Computes d = B^-1 * A_column[col_idx]
