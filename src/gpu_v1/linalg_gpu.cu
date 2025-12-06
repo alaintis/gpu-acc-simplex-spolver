@@ -14,13 +14,30 @@
 #include "linalg_gpu.hpp"
 #include "logging.hpp"
 
+
+__global__ void print_kernel(int m, int n, int *M);
+
 struct CPUWorkspace {
+    // Original problem statement
+    double* A_origin_d;
+    double* b_origin_d;
+    double* c_origin_d;
+    double* x_origin_d;
+
+    // Scaling helper
+    double* row_scale_d;
+    double* col_scale_d;
+    double* x_scaled_d;
+    double* b_scaled_d;
+
     // Buffers
     double* B_inv_d; // Basis Inverse Matrix (m * m)
     double* B_inv2_d; // Basis Inverse Matrix (m * m) write 2 buffer
     double* b_d; // Temp Workspace: Holds direction 'd' or intermediate vectors
     double* inv_temp_d; // Temp buffer for Identity/Inverse calculation (m * m)
     double* x_B_d; // Solution Vector for Basis Variables (m)
+    double* c_B_d; // Cost Vector for Basis Variables (m)
+    double* obj_d; // Objective value for objective calculation.
 
     // LU decomposition Buffers
     int* ipiv_d; // Pivot Array for LU decomposition
@@ -82,6 +99,8 @@ void init_gpu_workspace(int n) {
     cudaMalloc((void**)&ws.inv_temp_d, n * n * sizeof(double));
     cudaMalloc((void**)&ws.b_d, n * sizeof(double));
     cudaMalloc((void**)&ws.x_B_d, n * sizeof(double));
+    cudaMalloc((void**)&ws.c_B_d, n * sizeof(double));
+    cudaMalloc((void**)&ws.obj_d, sizeof(double));
     cudaMalloc((void**)&ws.ipiv_d, n * sizeof(int));
     cudaMalloc((void**)&ws.info_d, sizeof(int));
 
@@ -122,9 +141,12 @@ void destroy_gpu_workspace() {
         cudaFree(ws.B_inv_d);
         ws.B_inv_d = nullptr;
     }
-    if (ws.inv_temp_d) {
+    if (ws.B_inv2_d) {
         cudaFree(ws.B_inv2_d);
-    cudaFree(ws.inv_temp_d);
+        ws.B_inv2_d = nullptr;
+    }
+    if (ws.inv_temp_d) {
+        cudaFree(ws.inv_temp_d);
         ws.inv_temp_d = nullptr;
     }
     if (ws.b_d) {
@@ -152,6 +174,42 @@ void destroy_gpu_workspace() {
     cudaFree(pws.p_d);
     cusolverDnDestroy(ws.cusolve_handle);
         ws.cusolve_handle = nullptr;
+    }
+
+    // Free and NULL Original problem statement
+    if (ws.A_origin_d) {
+        cudaFree(ws.A_origin_d);
+        ws.A_origin_d = nullptr;
+    }
+    if (ws.b_origin_d) {
+        cudaFree(ws.b_origin_d);
+        ws.b_origin_d = nullptr;
+    }
+    if (ws.c_origin_d) {
+        cudaFree(ws.c_origin_d);
+        ws.c_origin_d = nullptr;
+    }
+    if (ws.x_origin_d) {
+        cudaFree(ws.x_origin_d);
+        ws.x_origin_d = nullptr;
+    }
+
+    // Free and NULL Scaling helper
+    if (ws.row_scale_d) {
+        cudaFree(ws.row_scale_d);
+        ws.row_scale_d = nullptr;
+    }
+    if (ws.col_scale_d) {
+        cudaFree(ws.col_scale_d);
+        ws.col_scale_d = nullptr;
+    }
+    if (ws.x_scaled_d) {
+        cudaFree(ws.x_scaled_d);
+        ws.x_scaled_d = nullptr;
+    }
+    if (ws.b_scaled_d) {
+        cudaFree(ws.b_scaled_d);
+        ws.b_scaled_d = nullptr;
     }
 
     // Free and NULL persistent storage
@@ -205,6 +263,12 @@ void destroy_gpu_workspace() {
     if (ws.x_B_d)
         cudaFree(ws.x_B_d);
     ws.x_B_d = nullptr;
+    if (ws.c_B_d)
+        cudaFree(ws.c_B_d);
+    ws.c_B_d = nullptr;
+    if (ws.obj_d)
+        cudaFree(ws.obj_d);
+    ws.obj_d = nullptr;
 
     if (ws.h_harris_result) {
         cudaFreeHost(ws.h_harris_result);
@@ -215,23 +279,29 @@ void destroy_gpu_workspace() {
     ws.initialized = false;
 }
 
-void gpu_load_problem(int m, int n_total, const double* A_flat, const double* b, const double* c) {
+void gpu_load_problem(int m, int n_total, const mat &A, const double* b, const double* c, double *x, const int *B) {
     if (!ws.initialized)
         throw std::runtime_error("Workspace not initialized");
 
     // Allocate persistent memory
-    cudaMalloc((void**)&ws.A_full_d, n_total * m * sizeof(double));
-    cudaMalloc((void**)&ws.c_full_d, n_total * sizeof(double));
-    cudaMalloc((void**)&ws.b_storage_d, m * sizeof(double));
+    cudaMalloc((void**)&ws.A_origin_d, n_total * m * sizeof(double));
+    cudaMalloc((void**)&ws.c_origin_d, n_total * sizeof(double));
+    cudaMalloc((void**)&ws.b_origin_d, m * sizeof(double));
+    cudaMalloc((void**)&ws.x_origin_d, n_total * sizeof(double));
 
     // Allocate Pricing buffers
     cudaMalloc((void**)&ws.sn_d, n_total * sizeof(double));
     ws.sn_h = (double*)malloc(n_total * sizeof(double));
 
-    // Copy data
-    cudaMemcpy(ws.A_full_d, A_flat, n_total * m * sizeof(double), cudaMemcpyHostToDevice);
-    cudaMemcpy(ws.c_full_d, c, n_total * sizeof(double), cudaMemcpyHostToDevice);
-    cudaMemcpy(ws.b_storage_d, b, m * sizeof(double), cudaMemcpyHostToDevice);
+    // Copy data asynchronous, because we don't have to wait for the dependencies to resolve.
+    for(int i = 0; i < n_total; i++) {
+        cudaMemcpyAsync(&ws.A_origin_d[m * i], A[i].data(), m * sizeof(double), cudaMemcpyHostToDevice, 0);
+    }
+    cudaMemcpyAsync(ws.c_origin_d, c, n_total * sizeof(double), cudaMemcpyHostToDevice,     0);
+    cudaMemcpyAsync(ws.b_origin_d, b, m * sizeof(double), cudaMemcpyHostToDevice,           0);
+    cudaMemcpyAsync(ws.x_origin_d, x, n_total * sizeof(double), cudaMemcpyHostToDevice,     0);
+    cudaMemcpyAsync(ws.B_d, B, m * sizeof(int), cudaMemcpyHostToDevice,     0);
+    cudaStreamSynchronize(0);
 }
 
 // ============================================================
@@ -477,6 +547,201 @@ __global__ void harris_fused_kernel(int m,
     }
 }
 
+// Kernel 
+__global__ void obj_kernel(
+    int m,
+    const double* x_B, const int* B,
+    const double* c_full, double* obj
+) {
+    extern __shared__ double sdata[];
+    int tid = threadIdx.x;
+
+    double local_sum = 0.0;
+    for (int k = tid; k < m; k += blockDim.x) {
+        int j = B[k];
+        double xj = x_B[k];
+        local_sum += xj * c_full[j];
+    }
+
+    // Store in shared memory for reduction
+    sdata[tid] = local_sum;
+    __syncthreads();
+
+    // Reduce (standard parallel reduction)
+    for (int s = blockDim.x >> 1; s > 0; s >>= 1) {
+        if (tid < s) {
+            sdata[tid] += sdata[tid + s];
+        }
+        __syncthreads();
+    }
+
+    // Thread 0 writes final result
+    if (tid == 0) {
+        *obj = sdata[0];
+    }
+}
+
+// Scaling Kernels
+// ====
+
+// Find row_scale for each row. 1 block per row.
+__global__ void row_scale_kernel(
+    const double* __restrict__ A,  // column-major, m × n_total
+    double* __restrict__ row_scale,
+    int m, int n_total
+) {
+    int row = blockIdx.x;
+    if (row >= m) return;
+
+    extern __shared__ double sdata[];
+    int tid = threadIdx.x;
+
+    double local_max = 0.0;
+
+    // Each thread scans over its columns
+    for (int col = tid; col < n_total; col += blockDim.x) {
+        double v = fabs(A[row + col * m]);
+        if (v > local_max) local_max = v;
+    }
+
+    // Load into shared memory
+    sdata[tid] = local_max;
+    __syncthreads();
+
+    // Reduction to find max across block
+    for (int s = blockDim.x >> 1; s > 0; s >>= 1) {
+        if (tid < s) {
+            double other = sdata[tid + s];
+            if (other > sdata[tid]) sdata[tid] = other;
+        }
+        __syncthreads();
+    }
+
+    // Thread 0 writes row result (with clamping)
+    if (tid == 0) {
+        double r = sdata[0];
+        if (r < 1e-9) r = 1.0;
+        row_scale[row] = r;
+    }
+}
+
+__global__ void select_kernel(
+    int m, const double* x, const int* B, double *x_B
+) {
+    int idx = blockDim.x * blockIdx.x + threadIdx.x;
+    int total = blockDim.x * gridDim.x;
+    for(int i = idx; i < m; i += total) {
+        x_B[i] = x[B[i]];
+    }
+}
+
+// Find row_scale for each col. 1 block per col.
+__global__ void col_scale_kernel(
+    const double* __restrict__ A,  // column-major, m × n_total
+    const double* __restrict__ row_scale,
+    double* __restrict__ col_scale,
+    int m, int n_total
+) {
+    int col = blockIdx.x;
+    if (col >= n_total) return;
+
+    extern __shared__ double sdata[];
+    int tid = threadIdx.x;
+
+    double local_max = 0.0;
+
+    // Each thread scans over its columns
+    for (int row = tid; row < m; row += blockDim.x) {
+        double v = fabs(A[row + col * m] / row_scale[row]);
+        if (v > local_max) local_max = v;
+    }
+
+    // Load into shared memory
+    sdata[tid] = local_max;
+    __syncthreads();
+
+    // Reduction to find max across block
+    for (int s = blockDim.x >> 1; s > 0; s >>= 1) {
+        if (tid < s) {
+            double other = sdata[tid + s];
+            if (other > sdata[tid]) sdata[tid] = other;
+        }
+        __syncthreads();
+    }
+
+    // Thread 0 writes row result (with clamping)
+    if (tid == 0) {
+        double r = sdata[0];
+        if (r < 1e-9) r = 1.0;
+        col_scale[col] = r;
+    }
+}
+
+
+__global__ void apply_scale_kernel(
+    int m, int n_total, const double *row_scale, const double *col_scale,
+    const double* __restrict__ A, double* __restrict__ A_scaled,
+    const double* __restrict__ b, double* __restrict__ b_scaled,
+    const double* __restrict__ c, double* __restrict__ c_scaled,
+    const double* __restrict__ x, double* __restrict__ x_scaled
+) {
+    int total = blockDim.x * gridDim.x;
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+
+    for(int i = idx; i < m * n_total; i += total) {
+        int row = i % m;
+        int col = i / m;
+        A_scaled[i] = A[i] / (row_scale[row] * col_scale[col]);
+    }
+
+    for(int i = idx; i < m; i += total) {
+        b_scaled[i] = b[i]/row_scale[i];
+    }
+
+    for(int i = idx; i < n_total; i += total) {
+        c_scaled[i] = c[i]/col_scale[i];
+        x_scaled[i] = x[i]*col_scale[i];
+    }
+}
+
+// Unscale the solution using a single block.
+__global__ void unscale_kernel(
+    int m,
+    int n_total,
+    const int* B,
+    const double* x_B,
+    const double* col_scale,
+    double* x_out
+) {
+    if(blockIdx.x > 0) return;
+
+    int idx = threadIdx.x;
+    for(int i = idx; i < n_total; i+=blockDim.x) {
+        x_out[i] = 0.0;
+    }
+
+    __syncthreads();
+
+    for (int k = idx; k < m; k+=blockDim.x) {
+        // x = x_new / C
+        int col = B[k];
+        double v = x_B[k] / col_scale[col];
+        if (v > -1e-9 && v < 0.0) v = 0.0;
+        x_out[col] = v;
+    }
+}
+
+
+__global__ void print_kernel(int m, int n, int *M) {
+    printf("%p:\n", M);
+    for(int i = 0; i < m; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%d ", M[j * m + i]);
+        }
+        printf("\n");
+    }
+}
+
 // ============================================================
 // LOGIC
 // ============================================================
@@ -491,35 +756,36 @@ void gpu_build_basis_and_invert(int m, int n_total, const int* B_indices) {
 
     // Remove any remaining sparse updates.
     pws.count = 0;
-    
-    // 1. Copy indices to GPU (tiny copy: m integers)
-    cudaMemcpy(ws.B_d, B_indices, m * sizeof(int), cudaMemcpyHostToDevice);
 
-    // 2. Launch Gather Kernel: Gather Basis Columns into B_inv_d
+    // 1. Launch Gather Kernel: Gather Basis Columns into B_inv_d
     size_t total_elements = (size_t)m * m;
     int threadsPerBlock = 256; // 8 Warps (I think it's the sweet spot)
     // We round up, we want more threads than total elements (that's why we have guard in Kernel)
     int blocksPerGrid = (total_elements + threadsPerBlock - 1) / threadsPerBlock;
     gather_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, ws.A_full_d, ws.B_inv_d, ws.B_d);
 
-    // 3. LU Factorization (in-place on B_inv_d)
+    // 2. LU Factorization (in-place on B_inv_d)
     cusolverDnDgetrf(ws.cusolve_handle, m, m, ws.B_inv_d, m, ws.work_d, ws.ipiv_d, ws.info_d);
 
-    // 4. Inversion via Solve: B_inv_d * X = I  => X = B_inv_d^-1
-    // 4a. Initialize temporary buffer to Identity
+    // 3. Inversion via Solve: B_inv_d * X = I  => X = B_inv_d^-1
+    // 3a. Initialize temporary buffer to Identity
     set_identity_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, ws.inv_temp_d);
 
-    // 4b. Solve for Identity. The result X is stored in inv_temp_d.
+    // 3b. Solve for Identity. The result X is stored in inv_temp_d.
     cusolverDnDgetrs(ws.cusolve_handle, CUBLAS_OP_N, m, m, ws.B_inv_d, m, ws.ipiv_d, ws.inv_temp_d,
                      m, ws.info_d);
 
-    // 4c. Copy result (Inverse) back to B_inv_d to be used as the Basis Inverse
+    // 3c. Copy result (Inverse) back to B_inv_d to be used as the Basis Inverse
     cudaMemcpy(ws.B_inv_d, ws.inv_temp_d, m * m * sizeof(double), cudaMemcpyDeviceToDevice);
 }
 
 // Uses the Sherman-Morrison kernel to update (A)B_inv_d in-place.
 // This relies on 'ws.b_d' containing the direction vector 'd'!
-void gpu_update_basis_fast(int m, int pivot_row) {
+void gpu_update_basis_fast(int m, int pivot_row, int new_row) {
+    // Keep B_d in sync.
+    cudaMemcpy(&ws.B_d[pivot_row], &new_row, sizeof(int), cudaMemcpyHostToDevice);
+
+    // Perform sparse update
     add_sparse_update_kernel<<<pws.count + 1, 512>>>(m, pws.p_d, pws.u_d, pws.count, ws.b_d, pivot_row);
     cudaDeviceSynchronize();
     pws.count += 1;
@@ -580,20 +846,16 @@ void gpu_calc_direction(int m, int col_idx) {
     gpu_apply_B_inv(m, CUBLAS_OP_N, A_col_ptr, ws.b_d);
 }
 
-void gpu_solve_duals(int m, const double* c_B_host) {
-    // Copy c_B to Device (ws.b_d is safe to reuse here)
-    cudaMemcpy(ws.b_d, c_B_host, m * sizeof(double), cudaMemcpyHostToDevice);
-
+void gpu_solve_duals(int m) {
     // y = B^-T * c_B
     // Result stored in ws.y_d
-    gpu_apply_B_inv(m, CUBLAS_OP_T, ws.b_d, ws.y_d);
+    gpu_apply_B_inv(m, CUBLAS_OP_T, ws.c_B_d, ws.y_d);
 }
 
-void gpu_recalc_x_from_persistent_b(int m, double* x_out) {
+void gpu_recalc_x_from_persistent_b(int m) {
     // Use the persistent b vector stored in VRAM
     // x_out = B^-1 * b
     gpu_apply_B_inv(m, CUBLAS_OP_N, ws.b_storage_d, ws.x_B_d);
-    cudaMemcpy(x_out, ws.x_B_d, m * sizeof(double), cudaMemcpyDeviceToHost);
 }
 
 // This computes sn = c - A^T * y
@@ -615,8 +877,17 @@ void gpu_compute_reduced_costs(int m, int n_total) {
 }
 
 // Helper: Update the stored RHS b (used when applying perturbation)
-void gpu_update_rhs_storage(int m, const double* b_new) {
-    cudaMemcpy(ws.b_storage_d, b_new, m * sizeof(double), cudaMemcpyHostToDevice);
+void gpu_update_rhs_storage(int m, const double* delta) {
+    double *delta_d;
+    cudaMalloc((void **) &delta_d, m * sizeof(double));
+    cudaMemcpy(delta_d, delta, m * sizeof(double), cudaMemcpyHostToDevice);
+
+    const double alpha = 1.0;
+    cublasDaxpy(ws.cublas_handle, m, &alpha, delta_d, 1, ws.b_storage_d, 1);
+}
+
+void gpu_reset_rhs_storage(int m) {
+    cudaMemcpy(ws.b_scaled_d, ws.b_storage_d, m * sizeof(double), cudaMemcpyDeviceToDevice);
 }
 
 void gpu_init_non_basic(int n_count, const int* N_indices) {
@@ -669,4 +940,60 @@ int gpu_run_ratio_test(int m) {
 
     // 3. Read directly from host pointer
     return ws.h_harris_result->key;
+}
+
+
+double gpu_get_obj(int m, int n_total) {
+    obj_kernel<<<1, 256, 256 * sizeof(double)>>>(m, ws.x_B_d, ws.B_d, ws.c_full_d, ws.obj_d);
+    cudaDeviceSynchronize();
+    double obj = 0;
+    cudaMemcpy(&obj, ws.obj_d, sizeof(double), cudaMemcpyDeviceToHost);
+    return obj;
+}
+
+void gpu_set_c_B(int m) {
+    select_kernel<<<1, 256>>>(m, ws.c_full_d, ws.B_d, ws.c_B_d);
+    cudaDeviceSynchronize();
+}
+
+// Scaling LOGIC
+// ====
+
+void gpu_scale_problem(int m, int n_total) {
+    cudaMalloc((void**)&ws.row_scale_d, m * sizeof(double));
+    cudaMalloc((void**)&ws.col_scale_d, n_total * sizeof(double));
+    cudaMalloc((void**)&ws.A_full_d, n_total * m * sizeof(double));
+    cudaMalloc((void**)&ws.c_full_d, n_total * sizeof(double));
+    cudaMalloc((void**)&ws.b_storage_d, m * sizeof(double));
+    cudaMalloc((void**)&ws.b_scaled_d, m * sizeof(double));
+    cudaMalloc((void**)&ws.x_scaled_d, n_total * sizeof(double));
+
+    int threads = 256;
+    row_scale_kernel<<<m, threads, threads * sizeof(double)>>>(
+        ws.A_origin_d, ws.row_scale_d, m, n_total
+    );
+    cudaDeviceSynchronize();
+
+    col_scale_kernel<<<n_total, threads, threads * sizeof(double)>>>(
+        ws.A_origin_d, ws.row_scale_d, ws.col_scale_d, m, n_total
+    );
+    cudaDeviceSynchronize();
+
+    int blocks = 1024;
+    apply_scale_kernel<<<blocks, threads>>>(
+        m, n_total, ws.row_scale_d, ws.col_scale_d,
+        ws.A_origin_d, ws.A_full_d,
+        ws.b_origin_d, ws.b_scaled_d,
+        ws.c_origin_d, ws.c_full_d,
+        ws.x_origin_d, ws.x_scaled_d
+    );
+    cudaDeviceSynchronize();
+
+    cudaMemcpy(ws.b_storage_d, ws.b_scaled_d, m * sizeof(double), cudaMemcpyDeviceToDevice);
+}
+
+void gpu_unscale(int m, int n_total, double *x_out) {
+    unscale_kernel<<<1, 256>>>(m, n_total, ws.B_d, ws.x_B_d, ws.col_scale_d, ws.x_origin_d);
+    cudaDeviceSynchronize();
+    cudaMemcpy(x_out, ws.x_origin_d, n_total * sizeof(double), cudaMemcpyDeviceToHost);
 }

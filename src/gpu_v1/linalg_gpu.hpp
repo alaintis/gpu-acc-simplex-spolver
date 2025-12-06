@@ -11,7 +11,7 @@ void init_gpu_workspace(int n);
 void destroy_gpu_workspace();
 
 // Upload static problem data (A and c) to GPU once
-void gpu_load_problem(int m, int n_total, const double* A_flat, const double* b, const double* c);
+void gpu_load_problem(int m, int n_total, const mat &A, const double* b, const double* c, double *x, const int *B);
 
 // Upload initial N indices to GPU
 void gpu_init_non_basic(int n_count, const int* N_indices);
@@ -22,7 +22,8 @@ void gpu_init_non_basic(int n_count, const int* N_indices);
 void gpu_update_non_basic_index(int offset, int new_val);
 
 // Update only the RHS storage (used during perturbation)
-void gpu_update_rhs_storage(int m, const double* b_new);
+void gpu_update_rhs_storage(int m, const double* delta);
+void gpu_reset_rhs_storage(int m);
 
 // Runs the pricing kernel and returns the best candidate
 struct PricingResult {
@@ -47,13 +48,13 @@ void gpu_build_basis_and_invert(int m, int n_total, const int* B_indices);
  * Assumes the direction vector 'd' (aka B^-1 * A_entering) is already
  * residing in the GPU workspace 'ws.b_d' (leftover from the previous step).
  */
-void gpu_update_basis_fast(int m, int pivot_row);
+void gpu_update_basis_fast(int m, int pivot_row, int new_row);
 
 // Solves x = B^-1 * b. Result copied to Host (for ratio test).
 void gpu_solve_primal(int m, const double* b_host, double* x_host);
 
-// Solves y = B^-T * c_B. Result stays on Device in ws.y_d.
-void gpu_solve_duals(int m, const double* c_B_host);
+// Solves y = B^-T * c_B.
+void gpu_solve_duals(int m);
 
 /**
  * Computes d = B^-1 * A_column[col_idx]
@@ -64,6 +65,18 @@ void gpu_solve_duals(int m, const double* c_B_host);
 void gpu_calc_direction(int m, int col_idx);
 
 // Computes x = B^-1 * b_persistent
-void gpu_recalc_x_from_persistent_b(int m, double* x_out);
+void gpu_recalc_x_from_persistent_b(int m);
 
 int gpu_run_ratio_test(int m);
+
+// Scale the preloaded problem.
+void gpu_scale_problem(int m, int n_total);
+
+// Unscale the previously found solution, reciding in ws.x_B_d.
+void gpu_unscale(int m, int n_total, double *x_out);
+
+// Calculate the objective value, with scaled c and the current x.
+double gpu_get_obj(int m, int n_total);
+
+// Recalculate c_B.
+void gpu_set_c_B(int m);
