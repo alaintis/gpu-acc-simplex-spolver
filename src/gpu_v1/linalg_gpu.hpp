@@ -61,7 +61,9 @@ void gpu_solve_duals(int m, const double* c_B_host);
  * The result is left in GPU memory (ws.b_d) for the subsequent update step,
  * and also copied to d_out (Host) for the ratio test.
  */
-void gpu_calc_direction(int m, int col_idx, double* d_out);
+void gpu_calc_direction(int m, int col_idx);
 
 // Computes x = B^-1 * b_persistent
 void gpu_recalc_x_from_persistent_b(int m, double* x_out);
+
+int gpu_run_ratio_test(int m);

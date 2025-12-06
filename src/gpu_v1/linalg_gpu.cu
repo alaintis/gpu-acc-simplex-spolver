@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <cfloat>
+#include <cub/cub.cuh>
 #include <cuda_runtime.h>
 #include <cusolverDn.h>
 #include <iostream>
@@ -16,8 +17,9 @@
 struct CPUWorkspace {
     // Buffers
     double* B_inv_d; // Basis Inverse Matrix (m * m)
-    double* b_d; // RHS Workspace (Solver writes solution x here)
+    double* b_d; // Temp Workspace: Holds direction 'd' or intermediate vectors
     double* inv_temp_d; // Temp buffer for Identity/Inverse calculation (m * m)
+    double* x_B_d; // Solution Vector for Basis Variables (m)
 
     // LU decomposition Buffers
     int* ipiv_d; // Pivot Array for LU decomposition
@@ -42,6 +44,10 @@ struct CPUWorkspace {
     cub::KeyValuePair<int, double>* pricing_out_d = nullptr;
     cub::KeyValuePair<int, double>* pricing_out_h = nullptr;
 
+    // Harris Pivoting Result Buffers
+    cub::KeyValuePair<int, double>* h_harris_result = nullptr;
+    cub::KeyValuePair<int, double>* d_harris_result_mapped = nullptr;
+
     // Handlers
     cusolverDnHandle_t cusolve_handle;
     cublasHandle_t cublas_handle;
@@ -55,6 +61,8 @@ void init_gpu_workspace(int n) {
     if (ws.initialized)
         return;
 
+    cudaSetDeviceFlags(cudaDeviceMapHost);
+
     cusolverDnCreate(&ws.cusolve_handle);
     cublasCreate(&ws.cublas_handle);
 
@@ -62,6 +70,7 @@ void init_gpu_workspace(int n) {
     cudaMalloc((void**)&ws.B_inv_d, n * n * sizeof(double));
     cudaMalloc((void**)&ws.inv_temp_d, n * n * sizeof(double));
     cudaMalloc((void**)&ws.b_d, n * sizeof(double));
+    cudaMalloc((void**)&ws.x_B_d, n * sizeof(double));
     cudaMalloc((void**)&ws.ipiv_d, n * sizeof(int));
     cudaMalloc((void**)&ws.info_d, sizeof(int));
 
@@ -74,9 +83,16 @@ void init_gpu_workspace(int n) {
 
     // CUB
     cudaMalloc((void**)&ws.pricing_out_d, sizeof(cub::KeyValuePair<int, double>));
-    cudaMallocHost((void**)&ws.pricing_out_h, sizeof(cub::KeyValuePair<int, double>));
+    cudaMallocHost((void**)&ws.pricing_out_h,
+                   sizeof(cub::KeyValuePair<int, double>)); // Mapped memory
     ws.cub_temp_size_d = 1024 * 1024; // 1MB scratchpad is plenty for reductions
     cudaMalloc((void**)&ws.cub_temp_d, ws.cub_temp_size_d);
+
+    // Harris Test Buffers
+    cudaHostAlloc((void**)&ws.h_harris_result, sizeof(cub::KeyValuePair<int, double>),
+                  cudaHostAllocMapped); // Mapped memory
+    // Get the device pointer for this host memory
+    cudaHostGetDevicePointer((void**)&ws.d_harris_result_mapped, ws.h_harris_result, 0);
 
     ws.initialized = true;
 }
@@ -163,6 +179,16 @@ void destroy_gpu_workspace() {
         cudaFree(ws.cub_temp_d);
     if (ws.pricing_out_d)
         cudaFree(ws.pricing_out_d);
+
+    if (ws.x_B_d)
+        cudaFree(ws.x_B_d);
+    ws.x_B_d = nullptr;
+
+    if (ws.h_harris_result) {
+        cudaFreeHost(ws.h_harris_result);
+        ws.h_harris_result = nullptr;
+    }
+    ws.d_harris_result_mapped = nullptr;
 
     ws.initialized = false;
 }
@@ -265,6 +291,90 @@ __global__ void update_inverse_kernel(int m,
     }
 }
 
+__global__ void harris_fused_kernel(int m,
+                                    const double* __restrict__ x,
+                                    const double* __restrict__ d,
+                                    cub::KeyValuePair<int, double>* d_result_mapped) {
+    struct MinOp {
+        __device__ __forceinline__ double operator()(const double& a, const double& b) const {
+            return (a < b) ? a : b;
+        }
+    };
+
+    struct MaxPivotOp {
+        __device__ __forceinline__ cub::KeyValuePair<int, double> operator()(
+            const cub::KeyValuePair<int, double>& a,
+            const cub::KeyValuePair<int, double>& b) const {
+            if (a.value > b.value)
+                return a;
+            if (b.value > a.value)
+                return b;
+            return (a.key < b.key) ? a : b;
+        }
+    };
+
+    __shared__ double s_min_theta;
+
+    // 1. Find Min Theta
+    typedef cub::BlockReduce<double, 512> BlockReduceDouble;
+    __shared__ typename BlockReduceDouble::TempStorage temp_storage_theta;
+
+    double tol = 1e-7;
+    double epsilon = 1e-9;
+    double min_theta = DBL_MAX;
+
+    for (int i = threadIdx.x; i < m; i += blockDim.x) {
+        double d_val = d[i];
+        if (d_val > epsilon) {
+            double theta = (x[i] + tol) / d_val;
+            if (theta < min_theta) {
+                min_theta = theta;
+            }
+        }
+    }
+
+    double block_min = BlockReduceDouble(temp_storage_theta).Reduce(min_theta, MinOp());
+
+    if (threadIdx.x == 0)
+        s_min_theta = block_min;
+
+    // Barrier to ensure s_min_theta is visible to all threads
+    __syncthreads();
+
+    // 2. Find Best Pivot among those with theta <= s_min_theta
+    typedef cub::BlockReduce<cub::KeyValuePair<int, double>, 512> BlockReducePivot;
+    __shared__ typename BlockReducePivot::TempStorage temp_storage_pivot;
+
+    double best_theta = s_min_theta;
+
+    // Initialize: Key = Index (-1), Value = Magnitude (-1.0)
+    cub::KeyValuePair<int, double> thread_best = {-1, -1.0};
+
+    // If best_theta is still DBL_MAX, problem is unbounded, skip logic
+    if (best_theta < DBL_MAX) {
+        for (int i = threadIdx.x; i < m; i += blockDim.x) {
+            double d_val = d[i];
+            if (d_val > epsilon) {
+                double theta = x[i] / d_val;
+                if (theta <= best_theta) {
+                    if (d_val > thread_best.value) {
+                        thread_best.value = d_val;
+                        thread_best.key = i;
+                    }
+                }
+            }
+        }
+    }
+
+    cub::KeyValuePair<int, double> block_best =
+        BlockReducePivot(temp_storage_pivot).Reduce(thread_best, MaxPivotOp());
+
+    // Thread 0 writes result directly to Mapped Host Memory
+    if (threadIdx.x == 0) {
+        *d_result_mapped = block_best;
+    }
+}
+
 // ============================================================
 // LOGIC
 // ============================================================
@@ -314,7 +424,7 @@ void gpu_update_basis_fast(int m, int pivot_row) {
 }
 
 // Computes d = B^-1 * A_j using Matrix-Vector Multiplication.
-void gpu_calc_direction(int m, int col_idx, double* d_out) {
+void gpu_calc_direction(int m, int col_idx) {
     // d = B^-1 * A_col
     double* A_col_ptr = ws.A_full_d + (static_cast<size_t>(col_idx) * m);
     double alpha = 1.0;
@@ -326,9 +436,6 @@ void gpu_calc_direction(int m, int col_idx, double* d_out) {
     // B_inv_d is B^-1, so this computes d = B^-1 * A_j
     cublasDgemv(ws.cublas_handle, CUBLAS_OP_N, m, m, &alpha, ws.B_inv_d, m, A_col_ptr, 1, &beta,
                 ws.b_d, 1);
-
-    // Copy result back to CPU for the Ratio Test for now...
-    cudaMemcpy(d_out, ws.b_d, m * sizeof(double), cudaMemcpyDeviceToHost);
 }
 
 void gpu_solve_duals(int m, const double* c_B_host) {
@@ -349,9 +456,9 @@ void gpu_recalc_x_from_persistent_b(int m, double* x_out) {
     double beta = 0.0;
     // Use the persistent b vector stored in VRAM
     cublasDgemv(ws.cublas_handle, CUBLAS_OP_N, m, m, &alpha, ws.B_inv_d, m, ws.b_storage_d, 1,
-                &beta, ws.b_d, 1);
+                &beta, ws.x_B_d, 1);
 
-    cudaMemcpy(x_out, ws.b_d, m * sizeof(double), cudaMemcpyDeviceToHost);
+    cudaMemcpy(x_out, ws.x_B_d, m * sizeof(double), cudaMemcpyDeviceToHost);
 }
 
 // This computes sn = c - A^T * y
@@ -393,28 +500,38 @@ PricingResult gpu_pricing_dantzig(int n_count) {
     if (n_count <= 0)
         return {-1, 0.0};
 
-    // 1. Prepare Iterators (Zero Copy)
+    ws.pricing_out_h->key = -1;
+    ws.pricing_out_h->value = 1.0e30;
+
     thrust::device_ptr<int> dev_N(ws.N_d);
     thrust::device_ptr<double> dev_rc(ws.sn_d);
     auto iterator = thrust::make_permutation_iterator(dev_rc, dev_N);
 
-    // 2. Run CUB DeviceReduce::ArgMin
-    //    We use the pre-allocated temp storage 'ws.d_cub_temp'
-    //    Output goes to pre-allocated 'ws.d_pricing_out'
-    cub::DeviceReduce::ArgMin(ws.cub_temp_d, ws.cub_temp_size_d, iterator, ws.pricing_out_h,
+    cub::DeviceReduce::ArgMin(ws.cub_temp_d, ws.cub_temp_size_d, iterator, ws.pricing_out_d,
                               n_count);
 
-    // Purely asynchronous kernel launch -> synchronize before reading result
+    cudaMemcpyAsync(ws.pricing_out_h, ws.pricing_out_d, sizeof(cub::KeyValuePair<int, double>),
+                    cudaMemcpyDeviceToHost, 0);
     cudaStreamSynchronize(0);
 
     int best_idx = ws.pricing_out_h->key;
     double best_val = ws.pricing_out_h->value;
 
-    // 3. Optimality Check
-    if (best_val >= -1e-7) {
+    if (best_val >= -1e-7)
         return {-1, best_val};
-    }
-
-    // 4. Return
     return {best_idx, best_val};
+}
+
+int gpu_run_ratio_test(int m) {
+    // 1. Launch Fused Kernel
+    // Writes directly to ws.d_harris_result_mapped (which is an alias for ws.h_harris_result)
+    harris_fused_kernel<<<1, 512>>>(m, ws.x_B_d, ws.b_d, ws.d_harris_result_mapped);
+
+    // 2. Synchronize Stream
+    // This is required to ensure the GPU has finished writing to the mapped memory.
+    // It replaces the explicit cudaMemcpy.
+    cudaStreamSynchronize(0);
+
+    // 3. Read directly from host pointer
+    return ws.h_harris_result->key;
 }
