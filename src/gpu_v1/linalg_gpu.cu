@@ -131,6 +131,7 @@ void destroy_gpu_workspace() {
     if (ws.cusolve_handle) {
     
     pws.capacity = 0;
+    pws.count = 0;
     cudaFree(pws.u_d);
     cudaFree(pws.p_d);
     cusolverDnDestroy(ws.cusolve_handle);
@@ -314,11 +315,56 @@ __global__ void add_sparse_update_kernel(
     double up = u_d[m * idx + pivot_idx];
     __syncthreads();
 
-    for(int i = threadIdx.x; i < m; i++) {
+    for(int i = threadIdx.x; i < m; i+=blockDim.x) {
         double ui = (b_d[i] - ((i == pivot_idx) ? 1 : 0)) / dp_n;
         u_d[m * idx + i] -= ui * up;
     }
+}
 
+// Apply sparse updates in place within y.
+// p_d the pivot vector.
+// u_d the update vectors.
+// count the number of update vectors.
+// y_d the y vector we are working with.
+// y_out the y vector we write to in the end. MUST be different from y_d.
+__global__ void apply_sparse_update_N_kernel(
+    int m,
+    const int* __restrict__ p_d,
+    const double* __restrict__ u_d,
+    int count,
+    const double* __restrict__ y_d,
+    double* __restrict__ y_out
+) {
+    size_t idx = (size_t)blockIdx.x * blockDim.x + threadIdx.x;
+    if(idx >= m) return;
+
+    double out = y_d[idx];
+    for(int i = 0; i < count; i++) {
+        double y_p = y_d[p_d[i]];
+        out -= y_p * u_d[m * i + idx];
+    }
+    y_out[idx] = out;
+}
+
+// Apply sparse update calculation on y. This takes the product vector we get by U^T y.
+// p_d the pivot vector.
+// prod_d the dot products.
+// count the number of update vectors.
+// y_d the y vector we are working with.
+__global__ void apply_sparse_selection_T_kernel(
+    int m,
+    const int* __restrict__ p_d,
+    const double* __restrict__ prod_d,
+    int count,
+    double * __restrict__ y_d
+) {
+    // only executed by a single thread. Very small kernel, I wish it were smarter.
+    size_t idx = (size_t)blockIdx.x * blockDim.x + threadIdx.x;
+    if(idx > 0) return;
+
+    for(int i = 0; i < count; i++) {
+        y_d[p_d[i]] -= prod_d[i];
+    }
 }
 
 // ============================================================
@@ -333,6 +379,9 @@ void gpu_build_basis_and_invert(int m, int n_total, const int* B_indices) {
     if (!ws.initialized)
         throw std::runtime_error("Workspace not initialized");
 
+    // Remove any remaining sparse updates.
+    pws.count = 0;
+    
     // 1. Copy indices to GPU (tiny copy: m integers)
     cudaMemcpy(ws.B_d, B_indices, m * sizeof(int), cudaMemcpyHostToDevice);
 
@@ -365,7 +414,7 @@ void gpu_update_basis_fast(int m, int pivot_row) {
     cudaDeviceSynchronize();
     pws.count += 1;
 
-    if (pws.count == pws.capacity || true) {
+    if (pws.count == pws.capacity) {
         size_t total_elements = (size_t)m * m;
         int threadsPerBlock = 256;
         int blocksPerGrid = (total_elements + threadsPerBlock - 1) / threadsPerBlock;
@@ -381,19 +430,44 @@ void gpu_update_basis_fast(int m, int pivot_row) {
     }
 }
 
+// Apply the sparse updated B_inv matrix.
+static void gpu_apply_B_inv(int m, cublasOperation_t op, double *y_d, double *x_d) {
+    double alpha = 1.0;
+    double beta = 0.0;
+
+    if(op == CUBLAS_OP_N) {
+        int threadsPerBlock = 512;
+        int blocksPerGrid = (m + threadsPerBlock - 1) / threadsPerBlock;
+
+        // y' = B^-1 * y
+        cublasDgemv(ws.cublas_handle, CUBLAS_OP_N, m, m, &alpha, ws.B_inv_d, m, y_d, 1, &beta, ws.inv_temp_d, 1);
+        
+        // x = y' - sum(u_i * y'_p_i)
+        apply_sparse_update_N_kernel<<<blocksPerGrid, threadsPerBlock>>>(m, pws.p_d, pws.u_d, pws.count, ws.inv_temp_d, x_d);
+        cudaDeviceSynchronize();
+    } else if(op == CUBLAS_OP_T) {
+        // prod = U^T * y
+        cublasDgemv(ws.cublas_handle, CUBLAS_OP_T, m, pws.count, &alpha, pws.u_d, m, y_d, 1, &beta, ws.inv_temp_d, 1);
+        
+        // y' = y - sum(i: prod_i * e_p_i)
+        apply_sparse_selection_T_kernel<<<1,1>>>(m, pws.p_d, ws.inv_temp_d, pws.count, y_d);
+        cudaDeviceSynchronize();
+
+        // x = B^-T * y'
+        cublasDgemv(ws.cublas_handle, CUBLAS_OP_T, m, m, &alpha, ws.B_inv_d, m, y_d, 1, &beta, x_d, 1);
+    } else {
+        fprintf(stderr, "Invalid CUBLAS_OP: %d\n", op);
+    }
+}
+
 // Computes d = B^-1 * A_j using Matrix-Vector Multiplication.
 void gpu_calc_direction(int m, int col_idx, double* d_out) {
     // d = B^-1 * A_col
     double* A_col_ptr = ws.A_full_d + (static_cast<size_t>(col_idx) * m);
-    double alpha = 1.0;
-    double beta = 0.0;
 
-    // cublasDgemv(handle, trans, m, n, alpha, A, lda, x, incx, beta, y, incy)
-    // cublasDgemv: y = alpha * A * x + beta * y
     // We compute: ws.b_d = 1.0 * AB_d * A_col_ptr
-    // B_inv_d is B^-1, so this computes d = B^-1 * A_j
-    cublasDgemv(ws.cublas_handle, CUBLAS_OP_N, m, m, &alpha, ws.B_inv_d, m, A_col_ptr, 1, &beta,
-                ws.b_d, 1);
+    // This computes d = B^-1 * A_j
+    gpu_apply_B_inv(m, CUBLAS_OP_N, A_col_ptr, ws.b_d);
 
     // Copy result back to CPU for the Ratio Test for now...
     cudaMemcpy(d_out, ws.b_d, m * sizeof(double), cudaMemcpyDeviceToHost);
@@ -403,22 +477,15 @@ void gpu_solve_duals(int m, const double* c_B_host) {
     // Copy c_B to Device (ws.b_d is safe to reuse here)
     cudaMemcpy(ws.b_d, c_B_host, m * sizeof(double), cudaMemcpyHostToDevice);
 
-    double alpha = 1.0;
-    double beta = 0.0;
-
     // y = B^-T * c_B
     // Result stored in ws.y_d
-    cublasDgemv(ws.cublas_handle, CUBLAS_OP_T, m, m, &alpha, ws.B_inv_d, m, ws.b_d, 1, &beta,
-                ws.y_d, 1);
+    gpu_apply_B_inv(m, CUBLAS_OP_T, ws.b_d, ws.y_d);
 }
 
 void gpu_recalc_x_from_persistent_b(int m, double* x_out) {
-    double alpha = 1.0;
-    double beta = 0.0;
     // Use the persistent b vector stored in VRAM
-    cublasDgemv(ws.cublas_handle, CUBLAS_OP_N, m, m, &alpha, ws.B_inv_d, m, ws.b_storage_d, 1,
-                &beta, ws.b_d, 1);
-
+    // x_out = B^-1 * b
+    gpu_apply_B_inv(m, CUBLAS_OP_N, ws.b_storage_d, ws.b_d);
     cudaMemcpy(x_out, ws.b_d, m * sizeof(double), cudaMemcpyDeviceToHost);
 }
 
