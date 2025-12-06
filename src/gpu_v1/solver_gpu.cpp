@@ -173,7 +173,6 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
     vector<double> A_B(m * m);
     vector<double> c_B(m);
     vector<double> x_B(m);
-    vector<double> d(m);
 
     // Perturbation
     vector<double> b_eff = b_scaled;
@@ -295,51 +294,14 @@ solver(int m, int n_total, const mat& A, const vec& b, const vec& c, vec& x, con
         int jj = N[j_i]; // Entering Column Index
         {
             PROFILE_SCOPE("Calc_Direction");
-            gpu_calc_direction(m, jj, d.data());
+            gpu_calc_direction(m, jj);
         }
 
         // 8. Unbounded Check & 9. Harris Ratio Test
         int r = -1;
         {
             PROFILE_SCOPE("Ratio_Test");
-
-            // Unbounded check
-            bool unbounded = true;
-            for (int i = 0; i < m; i++) {
-                if (d[i] > 1e-9) {
-                    unbounded = false;
-                    break;
-                }
-            }
-            if (unbounded) {
-                std::cout << "Problem is unbounded." << std::endl;
-                destroy_gpu_workspace();
-                return {.success = false};
-            }
-
-            // Harris Ratio Test
-            double harris_tol = 1e-7;
-            double best_theta = std::numeric_limits<double>::infinity();
-            for (int i = 0; i < m; i++) {
-                if (d[i] > 1e-9) {
-                    double theta = (x_B[i] + harris_tol) / d[i];
-                    if (theta < best_theta)
-                        best_theta = theta;
-                }
-            }
-
-            double max_pivot = -1.0;
-            for (int i = 0; i < m; i++) {
-                if (d[i] > 1e-9) {
-                    double theta = x_B[i] / d[i];
-                    if (theta <= best_theta) {
-                        if (d[i] > max_pivot) {
-                            max_pivot = d[i];
-                            r = i;
-                        }
-                    }
-                }
-            }
+            r = gpu_run_ratio_test(m);
         }
 
         if (r < 0) {

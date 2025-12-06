@@ -19,4 +19,6 @@ target_link_libraries(simplex_gpu_v1
 
 target_compile_options(simplex_gpu_v1 PRIVATE 
     $<$<COMPILE_LANGUAGE:CUDA>:-lineinfo>
+    # CPU optimization
+    #$<$<COMPILE_LANGUAGE:CXX>:-march=native>
 )
