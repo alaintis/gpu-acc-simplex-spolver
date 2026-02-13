@@ -1,0 +1,169 @@
+
+
+
+Orientation for what to benchmark 
+
+
+| Category              | Rows / Cols    | Nonzeros                      |
+| --------------------- | -------------- | ----------------------------- |
+| **Small**             | ≤ 1,000        | ≤ ~10,000                     |
+| **Medium**            | 1,000 – 10,000 | ~10k – 200k                   |
+| **Big (Large)**       | > 10,000       | > ~200k                       |
+| **Highly degenerate** | any size       | structural property, not size |
+
+
+criteria for small,medium, large is
+ max(rows,cols)<=1000 for small, <=10000 for medium, >10000 for large
+
+
+Small: 
+
+working on gpuv0: afiro, stair, israel, scagr25, agg3
+
+-----------verfied small-------
+
+adlittle.csc
+afiro.csc
+
+isreal.csc
+agg.csc
+lofti.csc
+blend.csc
+brandy.csc
+stair.csc
+-----------unverified small-------
+
+
+
+
+25fv47.csc
+agg.csc
+agg2.csc
+agg3.csc
+bandm.csc
+beaconfd.csc
+blend.csc
+brandy.csc
+capri.csc
+cycle.csc
+czprob.csc
+d2q06c.csc
+d6cube.csc
+e226.csc
+etamacro.csc
+finnis.csc
+fit1d.csc
+fit1p.csc
+ganges.csc
+grow7.csc
+grow15.csc
+grow22.csc
+israel.csc
+kb2.csc
+lotfi.csc
+modszk1.csc
+perold.csc
+recipe.csc
+sc105.csc
+sc205.csc
+sc50a.csc
+sc50b.csc
+scagr7.csc
+scfxm1.csc
+scfxm2.csc
+scfxm3.csc
+scorpion.csc
+scrs8.csc
+scsd1.csc
+scsd6.csc
+scsd8.csc
+sctap1.csc
+sctap2.csc
+sctap3.csc
+share1b.csc
+share2b.csc
+shell.csc
+ship04l.csc
+ship04s.csc
+ship08l.csc
+ship08s.csc
+ship12s.csc
+stair.csc
+standata.csc
+standmps.csc
+stocfor1.csc
+stocfor2.csc
+tuff.csc
+vtp.base.csc
+
+Medium:
+
+-----------verified medium-------
+
+
+working on gpuv0: czprob.csc, ganges.csc, cycle.csc, 
+working on gpuv2: pilotnov.csc, greenbea.csc, d2q06c.csc, woodw.csc
+
+
+pilot.csc 
+woodw.csc
+
+fit2d.csc
+
+pilot87.csc
+greenbea.csc
+greenbeb.csc
+maros.csc
+bnl2.csc
+pilotnov.csc
+
+-----------unverified medium-------
+
+boeing1.csc
+degen3.csc
+fit2d.csc
+forplan.csc
+
+
+
+pilot.ja.csc
+pilot.we.csc
+pilot4.csc
+
+sierra.csc
+wood1p.csc
+
+
+Large:
+-----------verified large-------
+
+working on gpuv2: 80bau3b.csc, maros-r7.csc 
+
+maros-r7.csc
+80bau3b.csc
+fit2p.csc
+dfl001.csc
+-----------unverified large-------
+
+
+
+
+Highly degenerate:
+Fraction of zero basic variables (gold standard)
+D=# of zero basic vars / # of basic vars ≥ 0.5
+An LP is classified as highly degenerate if more
+ than 50% of basic variables at the optimal BFS are zero.”
+working on gpuv0(except one, due to logic issue): degen2.csc, perold, scsd6.csc
+
+25fv47.csc
+cycle.csc
+degen2.csc
+degen3.csc
+perold.csc
+scsd1.csc
+scsd6.csc
+scsd8.csc
+
+References:
+
+Dolan, E. D., & Moré, J. J. (2002). Benchmarking optimization software with performance profiles. Mathematical programming, 91, 201-213. DOI: 10.1007/s101070100263

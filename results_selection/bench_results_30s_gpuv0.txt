@@ -1,0 +1,3 @@
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc
+133.082,13.308,13.107,13.577
+

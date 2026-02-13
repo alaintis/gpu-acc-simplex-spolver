@@ -1,0 +1,295 @@
+../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc
+objective_value and time taken:
+3457.78,
+859.809,
+
+../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc
+objective_value and time taken:
+494657,
+32134,
+
+../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc
+objective_value and time taken:
+225495,
+408.093,
+
+../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc
+objective_value and time taken:
+-464.753,
+335.716,
+
+../../dphpc-simplex-data/netlib/csc/presolved/agg.csc
+objective_value and time taken:
+-2.81614e+07,
+353.584,
+
+../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc
+objective_value and time taken:
+-2.02733e+07,
+393.379,
+
+../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc
+objective_value and time taken:
+-2.65186e+06,
+374.963,
+
+../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc
+objective_value and time taken:
+-453.252,
+357.302,
+
+../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc
+objective_value and time taken:
+-207535,
+346.464,
+
+../../dphpc-simplex-data/netlib/csc/presolved/blend.csc
+objective_value and time taken:
+-31.079,
+333.438,
+
+../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc
+objective_value and time taken:
+1953.89,
+530.472,
+
+../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc
+objective_value and time taken:
+1685.77,
+1337.9,
+
+../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc
+objective_value and time taken:
+263.253,
+437.234,
+
+../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc
+objective_value and time taken:
+6551.5,
+332.549,
+
+../../dphpc-simplex-data/netlib/csc/presolved/capri.csc
+objective_value and time taken:
+3035.27,
+356.798,
+
+../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc
+objective_value and time taken:
+-7.12138e+35,
+6486.92,
+
+../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc
+objective_value and time taken:
+967917,
+692.027,
+
+../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc
+objective_value and time taken:
+180940,
+18869.6,
+
+../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc
+objective_value and time taken:
+313.492,
+11712.6,
+
+../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc
+objective_value and time taken:
+-793.648,
+559.707,
+
+../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc
+objective_value and time taken:
+-692.494,
+5021.08,
+
+../../dphpc-simplex-data/netlib/csc/presolved/e226.csc
+objective_value and time taken:
+-11.28,
+431.246,
+
+../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc
+objective_value and time taken:
+334.143,
+407.158,
+
+../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc
+objective_value and time taken:
+551958,
+372.13,
+
+../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc
+objective_value and time taken:
+-4097.14,
+383.654,
+
+../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc
+objective_value and time taken:
+-9146.38,
+660.163,
+
+../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc
+objective_value and time taken:
+9146.38,
+749.486,
+
+../../dphpc-simplex-data/netlib/csc/presolved/forplan.csc
+objective_value and time taken:
+1466.06,
+327.834,
+
+../../dphpc-simplex-data/netlib/csc/presolved/ganges.csc
+objective_value and time taken:
+-108347,
+519.339,
+
+../../dphpc-simplex-data/netlib/csc/presolved/gfrd-pnc.csc
+objective_value and time taken:
+6.90224e+06,
+438.404,
+
+../../dphpc-simplex-data/netlib/csc/presolved/greenbea.csc
+objective_value and time taken:
+-7.13457e+07,
+3278.21,
+
+../../dphpc-simplex-data/netlib/csc/presolved/greenbeb.csc
+objective_value and time taken:
+-4.16395e+06,
+2806.01,
+
+../../dphpc-simplex-data/netlib/csc/presolved/grow15.csc
+objective_value and time taken:
+-1.06871e+08,
+592.506,
+
+../../dphpc-simplex-data/netlib/csc/presolved/grow22.csc
+objective_value and time taken:
+-1.60834e+08,
+826.812,
+
+../../dphpc-simplex-data/netlib/csc/presolved/grow7.csc
+objective_value and time taken:
+-4.77878e+07,
+437.018,
+
+../../dphpc-simplex-data/netlib/csc/presolved/israel.csc
+objective_value and time taken:
+-817525,
+348.262,
+
+../../dphpc-simplex-data/netlib/csc/presolved/kb2.csc
+objective_value and time taken:
+-1749.9,
+372.874,
+
+../../dphpc-simplex-data/netlib/csc/presolved/lotfi.csc
+objective_value and time taken:
+-31.1432,
+344.526,
+
+../../dphpc-simplex-data/netlib/csc/presolved/maros-r7.csc
+objective_value and time taken:
+693586,
+3547.79,
+
+../../dphpc-simplex-data/netlib/csc/presolved/modszk1.csc
+objective_value and time taken:
+320.62,
+560.001,
+
+../../dphpc-simplex-data/netlib/csc/presolved/perold.csc
+objective_value and time taken:
+-8086.51,
+1100.56,
+
+../../dphpc-simplex-data/netlib/csc/presolved/pilot.ja.csc
+objective_value and time taken:
+0,
+783.638,
+
+../../dphpc-simplex-data/netlib/csc/presolved/pilot4.csc
+objective_value and time taken:
+0,
+511.929,
+
+../../dphpc-simplex-data/netlib/csc/presolved/pilotnov.csc
+objective_value and time taken:
+-4497.28,
+5542.53,
+
+../../dphpc-simplex-data/netlib/csc/presolved/recipe.csc
+objective_value and time taken:
+-153.096,
+427.816,
+
+../../dphpc-simplex-data/netlib/csc/presolved/sc105.csc
+objective_value and time taken:
+-52.2021,
+327.396,
+
+../../dphpc-simplex-data/netlib/csc/presolved/sc205.csc
+objective_value and time taken:
+-52.2021,
+347.989,
+
+../../dphpc-simplex-data/netlib/csc/presolved/sc50a.csc
+objective_value and time taken:
+-64.5751,
+334.966,
+
+../../dphpc-simplex-data/netlib/csc/presolved/sc50b.csc
+objective_value and time taken:
+-70,
+326.176,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scagr25.csc
+objective_value and time taken:
+-1.40012e+07,
+408.538,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scagr7.csc
+objective_value and time taken:
+-1.57913e+06,
+347.336,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scfxm1.csc
+objective_value and time taken:
+15781.5,
+372.01,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scfxm2.csc
+objective_value and time taken:
+31389.8,
+457.74,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scfxm3.csc
+objective_value and time taken:
+47166,
+610.468,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scorpion.csc
+objective_value and time taken:
+1679.93,
+344.279,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scrs8.csc
+objective_value and time taken:
+890.027,
+361.234,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scsd1.csc
+objective_value and time taken:
+8.66667,
+351.788,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scsd6.csc
+objective_value and time taken:
+50.5,
+390.964,
+
+../../dphpc-simplex-data/netlib/csc/presolved/scsd8.csc
+objective_value and time taken:
+905,
+568.208,
+

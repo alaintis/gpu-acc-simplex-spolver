@@ -1,0 +1,904 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc (m=8, n=17)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2 | Obj: -464.753
+  Runs: 10 (after 5 warm-ups)
+  Avg:  17.861 ms
+  Min:  17.552 ms (Fastest)
+  Max:  18.290 ms
+START
+178.614,17.861,17.552,18.290
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc (m=438, n=753)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2328 | Obj: 1.82051e-13
+Auxiliary problem solved. Phase 1 Obj: 1.82051e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 708 | Obj: -793.648
+  Runs: 10 (after 5 warm-ups)
+  Avg:  229.034 ms
+  Min:  228.435 ms (Fastest)
+  Max:  230.449 ms
+START
+2290.338,229.034,228.435,230.449
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc (m=10388, n=20750)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T12:07:20.018] error: *** STEP 20493.0 ON studgpu-node01 CANCELLED AT 2025-12-15T12:07:20 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc (m=1214, n=3411)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3715 | Obj: -4.16403e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6904 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3716 | Obj: -4.16403e+06
+  Runs: 10 (after 5 warm-ups)
+  Avg:  3674.713 ms
+  Min:  3664.871 ms (Fastest)
+  Max:  3698.954 ms
+START
+36747.135,3674.713,3664.871,3698.954
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc (m=2054, n=4984)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 12577 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 9686 | Obj: -144.749
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 12577 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 9686 | Obj: -144.749
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 12577 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 9686 | Obj: -144.749
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T12:09:16.891] error: *** STEP 20495.0 ON studgpu-node01 CANCELLED AT 2025-12-15T12:09:16 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc (m=3203, n=7398)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 12055 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T12:10:17.059] error: *** STEP 20497.0 ON studgpu-node09 CANCELLED AT 2025-12-15T12:10:17 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc (m=19, n=40)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 21 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 4 | Obj: -64.5751
+  Runs: 10 (after 5 warm-ups)
+  Avg:  15.562 ms
+  Min:  15.360 ms (Fastest)
+  Max:  15.749 ms
+START
+155.617,15.562,15.360,15.749
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc (m=14, n=31)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 15 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 3 | Obj: -70
+  Runs: 10 (after 5 warm-ups)
+  Avg:  15.019 ms
+  Min:  14.929 ms (Fastest)
+  Max:  15.117 ms
+START
+150.189,15.019,14.929,15.117
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc (m=147, n=1350)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 250 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 699 | Obj: 50.5
+  Runs: 10 (after 5 warm-ups)
+  Avg:  64.094 ms
+  Min:  59.562 ms (Fastest)
+  Max:  69.612 ms
+START
+640.935,64.094,59.562,69.612
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc (m=397, n=2750)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1643 | Obj: 905
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1100 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1642 | Obj: 905
+  Runs: 10 (after 5 warm-ups)
+  Avg:  223.232 ms
+  Min:  221.149 ms (Fastest)
+  Max:  230.713 ms
+START
+2232.316,223.232,221.149,230.713
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc (m=292, n=1905)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 361 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 316 | Obj: 1.79242e+06
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 318 | Obj: 1.79242e+06
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 319 | Obj: 1.79242e+06
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 314 | Obj: 1.79242e+06
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 316 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 387 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 309 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 384 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 315 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 309 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 318 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 387 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 318 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 387 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 317 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 313 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 312 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 317 | Obj: 1.79242e+06
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 388 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 314 | Obj: 1.79242e+06
+  Runs: 10 (after 5 warm-ups)
+  Avg:  72.669 ms
+  Min:  71.721 ms (Fastest)
+  Max:  79.062 ms
+START
+726.691,72.669,71.721,79.062
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc (m=254, n=429)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 424 | Obj: 0.0109
+Infeasible: Phase 1 objective 0.0109 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc (m=562, n=4100)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 817 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 818 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 913 | Obj: 1.30448
+  Runs: 10 (after 5 warm-ups)
+  Avg:  240.137 ms
+  Min:  236.470 ms (Fastest)
+  Max:  254.267 ms
+START
+2401.375,240.137,236.470,254.267
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+

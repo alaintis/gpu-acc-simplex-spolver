@@ -1,0 +1,2567 @@
+================ FULL OUTPUT ===============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Test(seed: 0)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 36.5794
+Optimal basis found at iter 90 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0290386
+Optimal basis found at iter 7 | Scaled Obj: -0.0325845
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 411.189
+Base time (ms): 117.5
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+411.189,117.5
+3.40006e-16
+END
+success: 1
+score backend: -0.0325845 score base: -0.0325845 -0.0325845
+Test(seed: 1)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 36.5794
+Optimal basis found at iter 90 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0290386
+Optimal basis found at iter 7 | Scaled Obj: -0.0325845
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.3554
+Base time (ms): 6.84449
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.3554,6.84449
+3.40006e-16
+END
+success: 1
+score backend: -0.0325845 score base: -0.0325845 -0.0325845
+Test(seed: 2)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 22.6917
+Optimal basis found at iter 67 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00759885
+Optimal basis found at iter 3 | Scaled Obj: -0.00953432
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.3893
+Base time (ms): 5.71507
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.3893,5.71507
+3.92048e-16
+END
+success: 1
+score backend: -0.00953432 score base: -0.00953432 -0.00953432
+Test(seed: 3)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.7255
+Optimal basis found at iter 89 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00386887
+Optimal basis found at iter 6 | Scaled Obj: -0.00643397
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.1311
+Base time (ms): 6.64194
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.1311,6.64194
+1.00805e-14
+END
+success: 1
+score backend: -0.00643397 score base: -0.00643397 -0.00643397
+Test(seed: 4)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.7419
+Optimal basis found at iter 72 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00592375
+Optimal basis found at iter 4 | Scaled Obj: -0.0164396
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.005
+Base time (ms): 5.50352
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.005,5.50352
+4.82253e-16
+END
+success: 1
+score backend: -0.0164396 score base: -0.0164396 -0.0164396
+Test(seed: 5)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 23.1388
+Optimal basis found at iter 77 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00984958
+Optimal basis found at iter 13 | Scaled Obj: -0.0115409
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.6681
+Base time (ms): 5.61213
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.6681,5.61213
+1.04083e-17
+END
+success: 1
+score backend: -0.0115409 score base: -0.0115409 -0.0115409
+Test(seed: 6)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.3809
+Optimal basis found at iter 75 | Scaled Obj: 0.000620596
+Infeasible: Phase 1 objective 0.000620596 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 12.6627
+Base time (ms): 7.52505
+success: 0
+score backend: 0 score base: 0
+Test(seed: 7)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 38.8837
+Optimal basis found at iter 99 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00204878
+Optimal basis found at iter 6 | Scaled Obj: -0.00518574
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 21.3432
+Base time (ms): 6.20717
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+21.3432,6.20717
+1.48319e-16
+END
+success: 1
+score backend: -0.00518574 score base: -0.00518574 -0.00518574
+Test(seed: 8)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 33.0448
+Optimal basis found at iter 95 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00312586
+Optimal basis found at iter 3 | Scaled Obj: -0.00342696
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.8674
+Base time (ms): 6.57562
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.8674,6.57562
+1.2915e-15
+END
+success: 1
+score backend: -0.00342696 score base: -0.00342696 -0.00342696
+Test(seed: 9)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 26.4985
+Optimal basis found at iter 60 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0192738
+Optimal basis found at iter 1 | Scaled Obj: -0.0194119
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.5525
+Base time (ms): 6.29959
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.5525,6.29959
+2.63678e-16
+END
+success: 1
+score backend: -0.0194119 score base: -0.0194119 -0.0194119
+Test(seed: 10)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 22.0412
+Optimal basis found at iter 44 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0185099
+Optimal basis found at iter 1 | Scaled Obj: -0.0201013
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.7446
+Base time (ms): 5.66803
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.7446,5.66803
+8.53484e-16
+END
+success: 1
+score backend: -0.0201013 score base: -0.0201013 -0.0201013
+Test(seed: 11)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 33.5024
+Optimal basis found at iter 92 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00813022
+Optimal basis found at iter 6 | Scaled Obj: -0.0133543
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 22.2039
+Base time (ms): 6.1673
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+22.2039,6.1673
+5.89459e-15
+END
+success: 1
+score backend: -0.0133543 score base: -0.0133543 -0.0133543
+Test(seed: 12)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 21.4744
+Optimal basis found at iter 58 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0289826
+Optimal basis found at iter 7 | Scaled Obj: -0.0375641
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.9296
+Base time (ms): 5.54353
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.9296,5.54353
+1.01308e-15
+END
+success: 1
+score backend: -0.0375641 score base: -0.0375641 -0.0375641
+Test(seed: 13)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 29.2666
+Optimal basis found at iter 82 | Scaled Obj: 0.000644916
+Infeasible: Phase 1 objective 0.000644916 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 13.5428
+Base time (ms): 5.87017
+success: 0
+score backend: 0 score base: 0
+Test(seed: 14)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 18.0856
+Optimal basis found at iter 39 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0215055
+Optimal basis found at iter 4 | Scaled Obj: -0.0331005
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.6059
+Base time (ms): 5.28952
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.6059,5.28952
+1.73472e-16
+END
+success: 1
+score backend: -0.0331005 score base: -0.0331005 -0.0331005
+Test(seed: 15)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 13.1411
+Optimal basis found at iter 55 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0592399
+Optimal basis found at iter 7 | Scaled Obj: -0.0771751
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.5024
+Base time (ms): 5.43718
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.5024,5.43718
+1.33227e-15
+END
+success: 1
+score backend: -0.0771751 score base: -0.0771751 -0.0771751
+Test(seed: 16)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 19.02
+Optimal basis found at iter 74 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00869529
+Optimal basis found at iter 4 | Scaled Obj: -0.0183885
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.1433
+Base time (ms): 5.6913
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.1433,5.6913
+4.09395e-16
+END
+success: 1
+score backend: -0.0183885 score base: -0.0183885 -0.0183885
+Test(seed: 17)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 19.7158
+Optimal basis found at iter 45 | Scaled Obj: 0.001
+Infeasible: Phase 1 objective 0.001 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 9.84592
+Base time (ms): 5.39852
+success: 0
+score backend: 0 score base: 0
+Test(seed: 18)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 24.5167
+Optimal basis found at iter 80 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0102655
+Optimal basis found at iter 3 | Scaled Obj: -0.0297367
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.9335
+Base time (ms): 6.40203
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.9335,6.40203
+1.17961e-15
+END
+success: 1
+score backend: -0.0297367 score base: -0.0297367 -0.0297367
+Test(seed: 19)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.006
+Optimal basis found at iter 78 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0231753
+Optimal basis found at iter 1 | Scaled Obj: -0.0235492
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.6647
+Base time (ms): 6.185
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.6647,6.185
+2.01228e-16
+END
+success: 1
+score backend: -0.0235492 score base: -0.0235492 -0.0235492
+Test(seed: 20)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 20.0018
+Optimal basis found at iter 48 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.015687
+Optimal basis found at iter 2 | Scaled Obj: -0.0215138
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.4497
+Base time (ms): 5.49921
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.4497,5.49921
+2.08167e-17
+END
+success: 1
+score backend: -0.0215138 score base: -0.0215138 -0.0215138
+Test(seed: 21)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 21.1256
+Optimal basis found at iter 53 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0105891
+Optimal basis found at iter 1 | Scaled Obj: -0.0123669
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.1223
+Base time (ms): 5.47981
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.1223,5.47981
+1.93942e-15
+END
+success: 1
+score backend: -0.0123669 score base: -0.0123669 -0.0123669
+Test(seed: 22)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 29.7397
+Optimal basis found at iter 67 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0273348
+Optimal basis found at iter 7 | Scaled Obj: -0.0336094
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.1212
+Base time (ms): 5.60887
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.1212,5.60887
+2.15106e-16
+END
+success: 1
+score backend: -0.0336094 score base: -0.0336094 -0.0336094
+Test(seed: 23)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.3533
+Optimal basis found at iter 75 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00482652
+Optimal basis found at iter 2 | Scaled Obj: -0.00540724
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.0418
+Base time (ms): 5.87014
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.0418,5.87014
+6.01168e-15
+END
+success: 1
+score backend: -0.00540724 score base: -0.00540724 -0.00540724
+Test(seed: 24)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 20.668
+Optimal basis found at iter 46 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00702341
+Optimal basis found at iter 6 | Scaled Obj: -0.0128097
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.2028
+Base time (ms): 5.03785
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.2028,5.03785
+2.61943e-16
+END
+success: 1
+score backend: -0.0128097 score base: -0.0128097 -0.0128097
+Test(seed: 25)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 34.9091
+Optimal basis found at iter 80 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00196663
+Optimal basis found at iter 4 | Scaled Obj: -0.00240787
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.8987
+Base time (ms): 5.46366
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.8987,5.46366
+2.41257e-15
+END
+success: 1
+score backend: -0.00240787 score base: -0.00240787 -0.00240787
+Test(seed: 26)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 19.2836
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0200932
+Optimal basis found at iter 4 | Scaled Obj: -0.0305637
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.6347
+Base time (ms): 5.11708
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.6347,5.11708
+7.18176e-16
+END
+success: 1
+score backend: -0.0305637 score base: -0.0305637 -0.0305637
+Test(seed: 27)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 27.0777
+Optimal basis found at iter 62 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0203923
+Optimal basis found at iter 4 | Scaled Obj: -0.0229779
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.936
+Base time (ms): 5.09269
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.936,5.09269
+1.17961e-16
+END
+success: 1
+score backend: -0.0229779 score base: -0.0229779 -0.0229779
+Test(seed: 28)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 42.5709
+Optimal basis found at iter 117 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.022855
+Optimal basis found at iter 11 | Scaled Obj: -0.0363253
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 23.4653
+Base time (ms): 5.93716
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+23.4653,5.93716
+6.7446e-15
+END
+success: 1
+score backend: -0.0363253 score base: -0.0363253 -0.0363253
+Test(seed: 29)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37.427
+Optimal basis found at iter 77 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00177347
+Optimal basis found at iter 3 | Scaled Obj: -0.00377114
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.5108
+Base time (ms): 5.2485
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.5108,5.2485
+4.90493e-14
+END
+success: 1
+score backend: -0.00377114 score base: -0.00377114 -0.00377114
+Test(seed: 30)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 26.1367
+Optimal basis found at iter 70 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.016061
+Optimal basis found at iter 2 | Scaled Obj: -0.0193598
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.5385
+Base time (ms): 5.49673
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.5385,5.49673
+1.05124e-15
+END
+success: 1
+score backend: -0.0193598 score base: -0.0193598 -0.0193598
+Test(seed: 31)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 18.0259
+Optimal basis found at iter 62 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0178508
+Optimal basis found at iter 3 | Scaled Obj: -0.0331385
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.6179
+Base time (ms): 5.39798
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.6179,5.39798
+5.20417e-16
+END
+success: 1
+score backend: -0.0331385 score base: -0.0331385 -0.0331385
+Test(seed: 32)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 22.3566
+Optimal basis found at iter 55 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0102441
+Optimal basis found at iter 7 | Scaled Obj: -0.0231457
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.715
+Base time (ms): 5.43379
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.715,5.43379
+3.88578e-16
+END
+success: 1
+score backend: -0.0231457 score base: -0.0231457 -0.0231457
+Test(seed: 33)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 21.9631
+Optimal basis found at iter 60 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0168822
+Optimal basis found at iter 0 | Scaled Obj: -0.0168822
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.3208
+Base time (ms): 5.29024
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.3208,5.29024
+6.76542e-16
+END
+success: 1
+score backend: -0.0168822 score base: -0.0168822 -0.0168822
+Test(seed: 34)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 23.5658
+Optimal basis found at iter 53 | Scaled Obj: 0.000433061
+Infeasible: Phase 1 objective 0.000433061 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 10.1257
+Base time (ms): 5.43473
+success: 0
+score backend: 0 score base: 0
+Test(seed: 35)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37.0655
+Optimal basis found at iter 80 | Scaled Obj: 0.000121902
+Infeasible: Phase 1 objective 0.000121902 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 13.0142
+Base time (ms): 5.55462
+success: 0
+score backend: 0 score base: 0
+Test(seed: 36)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 36.6634
+Optimal basis found at iter 78 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0177331
+Optimal basis found at iter 1 | Scaled Obj: -0.0182057
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.7316
+Base time (ms): 5.22272
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.7316,5.22272
+1.76942e-16
+END
+success: 1
+score backend: -0.0182057 score base: -0.0182057 -0.0182057
+Test(seed: 37)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 19.9936
+Optimal basis found at iter 47 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0296528
+Optimal basis found at iter 5 | Scaled Obj: -0.0474978
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.6573
+Base time (ms): 5.04259
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.6573,5.04259
+2.49106e-15
+END
+success: 1
+score backend: -0.0474978 score base: -0.0474978 -0.0474978
+Test(seed: 38)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 38.2926
+Optimal basis found at iter 105 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0397856
+Optimal basis found at iter 6 | Scaled Obj: -0.0459056
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 21.9333
+Base time (ms): 5.92753
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+21.9333,5.92753
+4.44089e-16
+END
+success: 1
+score backend: -0.0459056 score base: -0.0459056 -0.0459056
+Test(seed: 39)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 26.034
+Optimal basis found at iter 67 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0106004
+Optimal basis found at iter 6 | Scaled Obj: -0.0122552
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.7395
+Base time (ms): 5.4479
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.7395,5.4479
+5.20417e-17
+END
+success: 1
+score backend: -0.0122552 score base: -0.0122552 -0.0122552
+Test(seed: 40)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 35.0205
+Optimal basis found at iter 104 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0123615
+Optimal basis found at iter 6 | Scaled Obj: -0.018578
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 26.5042
+Base time (ms): 5.81244
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+26.5042,5.81244
+7.04298e-16
+END
+success: 1
+score backend: -0.018578 score base: -0.018578 -0.018578
+Test(seed: 41)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 21.7696
+Optimal basis found at iter 75 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00851846
+Optimal basis found at iter 7 | Scaled Obj: -0.0280761
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.5325
+Base time (ms): 5.16247
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.5325,5.16247
+7.00828e-16
+END
+success: 1
+score backend: -0.0280761 score base: -0.0280761 -0.0280761
+Test(seed: 42)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 34.8206
+Optimal basis found at iter 79 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00290645
+Optimal basis found at iter 3 | Scaled Obj: -0.00351525
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.0734
+Base time (ms): 5.47718
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.0734,5.47718
+1.00267e-15
+END
+success: 1
+score backend: -0.00351525 score base: -0.00351525 -0.00351525
+Test(seed: 43)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 24.9124
+Optimal basis found at iter 70 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0172758
+Optimal basis found at iter 8 | Scaled Obj: -0.0222689
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.1482
+Base time (ms): 5.54372
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.1482,5.54372
+9.26342e-16
+END
+success: 1
+score backend: -0.0222689 score base: -0.0222689 -0.0222689
+Test(seed: 44)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37.1342
+Optimal basis found at iter 106 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0111006
+Optimal basis found at iter 5 | Scaled Obj: -0.0145173
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 22.4753
+Base time (ms): 7.90357
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+22.4753,7.90357
+1.00094e-15
+END
+success: 1
+score backend: -0.0145173 score base: -0.0145173 -0.0145173
+Test(seed: 45)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 23.4101
+Optimal basis found at iter 54 | Scaled Obj: 0.00092553
+Infeasible: Phase 1 objective 0.00092553 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 10.2056
+Base time (ms): 6.28135
+success: 0
+score backend: 0 score base: 0
+Test(seed: 46)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 16.7944
+Optimal basis found at iter 53 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0544641
+Optimal basis found at iter 2 | Scaled Obj: -0.0556281
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.057
+Base time (ms): 5.285
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.057,5.285
+8.25728e-16
+END
+success: 1
+score backend: -0.0556281 score base: -0.0556281 -0.0556281
+Test(seed: 47)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 36.1915
+Optimal basis found at iter 78 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0020799
+Optimal basis found at iter 3 | Scaled Obj: -0.0029986
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.5227
+Base time (ms): 6.0773
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.5227,6.0773
+4.33681e-17
+END
+success: 1
+score backend: -0.0029986 score base: -0.0029986 -0.0029986
+Test(seed: 48)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 24.4296
+Optimal basis found at iter 63 | Scaled Obj: 0.000994578
+Infeasible: Phase 1 objective 0.000994578 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 10.8118
+Base time (ms): 5.20829
+success: 0
+score backend: 0 score base: 0
+Test(seed: 49)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.5712
+Optimal basis found at iter 91 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0197766
+Optimal basis found at iter 3 | Scaled Obj: -0.0346506
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.1481
+Base time (ms): 6.22135
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.1481,6.22135
+1.58207e-15
+END
+success: 1
+score backend: -0.0346506 score base: -0.0346506 -0.0346506
+Test(seed: 50)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 19.9317
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00796569
+Optimal basis found at iter 0 | Scaled Obj: -0.00796569
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.3319
+Base time (ms): 5.027
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.3319,5.027
+1.80099e-14
+END
+success: 1
+score backend: -0.00796569 score base: -0.00796569 -0.00796569
+Test(seed: 51)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.5119
+Optimal basis found at iter 70 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00221415
+Optimal basis found at iter 5 | Scaled Obj: -0.00900975
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.7473
+Base time (ms): 5.62818
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.7473,5.62818
+6.6596e-15
+END
+success: 1
+score backend: -0.00900975 score base: -0.00900975 -0.00900975
+Test(seed: 52)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 16.3716
+Optimal basis found at iter 56 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00350373
+Optimal basis found at iter 1 | Scaled Obj: -0.00829002
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.9218
+Base time (ms): 5.07488
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.9218,5.07488
+3.23491e-14
+END
+success: 1
+score backend: -0.00829002 score base: -0.00829002 -0.00829002
+Test(seed: 53)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 16.2776
+Optimal basis found at iter 45 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0059478
+Optimal basis found at iter 2 | Scaled Obj: -0.01146
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 14.9646
+Base time (ms): 4.98971
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+14.9646,4.98971
+1.23512e-15
+END
+success: 1
+score backend: -0.01146 score base: -0.01146 -0.01146
+Test(seed: 54)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 17.8318
+Optimal basis found at iter 51 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00764756
+Optimal basis found at iter 9 | Scaled Obj: -0.0260119
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.9396
+Base time (ms): 5.06305
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.9396,5.06305
+4.85723e-17
+END
+success: 1
+score backend: -0.0260119 score base: -0.0260119 -0.0260119
+Test(seed: 55)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 23.0048
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0238055
+Optimal basis found at iter 3 | Scaled Obj: -0.026139
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.2301
+Base time (ms): 5.76995
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.2301,5.76995
+6.55725e-16
+END
+success: 1
+score backend: -0.026139 score base: -0.026139 -0.026139
+Test(seed: 56)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 39.1089
+Optimal basis found at iter 98 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0468273
+Optimal basis found at iter 4 | Scaled Obj: -0.0485441
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.4825
+Base time (ms): 5.63942
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.4825,5.63942
+1.249e-16
+END
+success: 1
+score backend: -0.0485441 score base: -0.0485441 -0.0485441
+Test(seed: 57)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 35.7543
+Optimal basis found at iter 94 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0218758
+Optimal basis found at iter 2 | Scaled Obj: -0.0232511
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.0119
+Base time (ms): 5.45302
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.0119,5.45302
+1.26982e-15
+END
+success: 1
+score backend: -0.0232511 score base: -0.0232511 -0.0232511
+Test(seed: 58)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 17.7322
+Optimal basis found at iter 57 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00596688
+Optimal basis found at iter 1 | Scaled Obj: -0.00877317
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.007
+Base time (ms): 5.22569
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.007,5.22569
+1.81782e-14
+END
+success: 1
+score backend: -0.00877317 score base: -0.00877317 -0.00877317
+Test(seed: 59)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 20.4398
+Optimal basis found at iter 61 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0159503
+Optimal basis found at iter 6 | Scaled Obj: -0.0252889
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.6623
+Base time (ms): 5.26077
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.6623,5.26077
+2.00187e-15
+END
+success: 1
+score backend: -0.0252889 score base: -0.0252889 -0.0252889
+Test(seed: 60)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 18.9408
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0165247
+Optimal basis found at iter 1 | Scaled Obj: -0.0166604
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.4878
+Base time (ms): 4.92258
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.4878,4.92258
+1.15186e-15
+END
+success: 1
+score backend: -0.0166604 score base: -0.0166604 -0.0166604
+Test(seed: 61)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 19.528
+Optimal basis found at iter 43 | Scaled Obj: 0.000218078
+Infeasible: Phase 1 objective 0.000218078 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 8.89485
+Base time (ms): 5.07686
+success: 0
+score backend: 0 score base: 0
+Test(seed: 62)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 19.1214
+Optimal basis found at iter 54 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0142625
+Optimal basis found at iter 2 | Scaled Obj: -0.0337841
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.7491
+Base time (ms): 5.1119
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.7491,5.1119
+7.00828e-16
+END
+success: 1
+score backend: -0.0337841 score base: -0.0337841 -0.0337841
+Test(seed: 63)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 39.4134
+Optimal basis found at iter 85 | Scaled Obj: 0.000543234
+Infeasible: Phase 1 objective 0.000543234 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 13.3376
+Base time (ms): 5.66347
+success: 0
+score backend: 0 score base: 0
+Test(seed: 64)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 23.3531
+Optimal basis found at iter 87 | Scaled Obj: 7.93478e-05
+Auxiliary problem solved. Phase 1 Obj: 7.93478e-05
+Warning: Non-zero artificial 157 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 79347.8
+Optimal basis found at iter 0 | Scaled Obj: 79347.8
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 18.8792
+Base time (ms): 5.99523
+failure
+n: 76, m: 56
+Expected:
+0
+Result:
+1
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.00109082, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.437775, 0.55676, 0.627324, 0.260562, 0.815322, 0.694452, 0.182988, 0.410389, 0.117812, 0.0907192, 0.417769, 0.625752, 0.979927, 0.388269, 0.290547, 0.133674, 0.14307, 0.0640923, 0.205045, 0.137698, 0.0246438, 0.40946, 0.822502, 0.117971, 0.201022, 0, 0.245938, 0.910339, 0.392499, 0.250968, 0.889447, 0.841182, 0.818636, 0.527679, 0.100653, 0.632867, 0.233039, 0.29455, 0.054164, 0.349761, 0.384179, 0.470842, 0.974422, 0.375013, 0.858021, 0.263879, 0.507596, 0, 0.32688, 0.72355, 0.148606, 0.362432, 0.143919, 0.982016, 0.491311, 0.355849, 
+Score: -0.00145659
+Test(seed: 65)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 36.6137
+Optimal basis found at iter 86 | Scaled Obj: 0.000903983
+Infeasible: Phase 1 objective 0.000903983 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 13.1706
+Base time (ms): 5.79297
+success: 0
+score backend: 0 score base: 0
+Test(seed: 66)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 18.7272
+Optimal basis found at iter 57 | Scaled Obj: 0.000732835
+Infeasible: Phase 1 objective 0.000732835 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 10.9227
+Base time (ms): 5.30936
+success: 0
+score backend: 0 score base: 0
+Test(seed: 67)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 16.0552
+Optimal basis found at iter 45 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0216376
+Optimal basis found at iter 1 | Scaled Obj: -0.022144
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 14.7322
+Base time (ms): 5.32386
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+14.7322,5.32386
+3.85109e-16
+END
+success: 1
+score backend: -0.022144 score base: -0.022144 -0.022144
+Test(seed: 68)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 14.1178
+Optimal basis found at iter 45 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0118899
+Optimal basis found at iter 5 | Scaled Obj: -0.0249213
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 14.9533
+Base time (ms): 5.04637
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+14.9533,5.04637
+4.3715e-16
+END
+success: 1
+score backend: -0.0249213 score base: -0.0249213 -0.0249213
+Test(seed: 69)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 28.1837
+Optimal basis found at iter 73 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00777376
+Optimal basis found at iter 4 | Scaled Obj: -0.0115609
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.0313
+Base time (ms): 5.3232
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.0313,5.3232
+4.56232e-16
+END
+success: 1
+score backend: -0.0115609 score base: -0.0115609 -0.0115609
+Test(seed: 70)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.6656
+Optimal basis found at iter 78 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0157092
+Optimal basis found at iter 4 | Scaled Obj: -0.0166135
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.6281
+Base time (ms): 5.90917
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.6281,5.90917
+8.32667e-17
+END
+success: 1
+score backend: -0.0166135 score base: -0.0166135 -0.0166135
+Test(seed: 71)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 39.7505
+Optimal basis found at iter 107 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0126503
+Optimal basis found at iter 2 | Scaled Obj: -0.0138173
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 21.5653
+Base time (ms): 5.64816
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+21.5653,5.64816
+1.26808e-15
+END
+success: 1
+score backend: -0.0138173 score base: -0.0138173 -0.0138173
+Test(seed: 72)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 39.0468
+Optimal basis found at iter 85 | Scaled Obj: 0.001
+Infeasible: Phase 1 objective 0.001 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 13.3964
+Base time (ms): 5.35955
+success: 0
+score backend: 0 score base: 0
+Test(seed: 73)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37.9605
+Optimal basis found at iter 86 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00389129
+Optimal basis found at iter 3 | Scaled Obj: -0.00460864
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.5549
+Base time (ms): 6.12957
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.5549,6.12957
+4.25007e-16
+END
+success: 1
+score backend: -0.00460864 score base: -0.00460864 -0.00460864
+Test(seed: 74)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 21.6139
+Optimal basis found at iter 81 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0245666
+Optimal basis found at iter 8 | Scaled Obj: -0.028511
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.6088
+Base time (ms): 5.45304
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.6088,5.45304
+3.52843e-15
+END
+success: 1
+score backend: -0.028511 score base: -0.028511 -0.028511
+Test(seed: 75)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 13.2009
+Optimal basis found at iter 43 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0134096
+Optimal basis found at iter 2 | Scaled Obj: -0.0242304
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 14.6137
+Base time (ms): 4.78679
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+14.6137,4.78679
+6.45317e-16
+END
+success: 1
+score backend: -0.0242304 score base: -0.0242304 -0.0242304
+Test(seed: 76)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 17.1778
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00542056
+Optimal basis found at iter 3 | Scaled Obj: -0.00889663
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.7899
+Base time (ms): 5.27729
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.7899,5.27729
+7.01696e-15
+END
+success: 1
+score backend: -0.00889663 score base: -0.00889663 -0.00889663
+Test(seed: 77)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 18.7647
+Optimal basis found at iter 54 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.010179
+Optimal basis found at iter 3 | Scaled Obj: -0.0165855
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.7874
+Base time (ms): 4.98353
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.7874,4.98353
+3.70537e-15
+END
+success: 1
+score backend: -0.0165855 score base: -0.0165855 -0.0165855
+Test(seed: 78)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 35.9191
+Optimal basis found at iter 78 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00388339
+Optimal basis found at iter 0 | Scaled Obj: -0.00388339
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.4286
+Base time (ms): 5.14664
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.4286,5.14664
+6.26235e-16
+END
+success: 1
+score backend: -0.00388339 score base: -0.00388339 -0.00388339
+Test(seed: 79)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 33.3132
+Optimal basis found at iter 79 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0186603
+Optimal basis found at iter 2 | Scaled Obj: -0.0222721
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.4333
+Base time (ms): 5.31036
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.4333,5.31036
+1.80411e-16
+END
+success: 1
+score backend: -0.0222721 score base: -0.0222721 -0.0222721
+Test(seed: 80)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 36.2443
+Optimal basis found at iter 97 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00193288
+Optimal basis found at iter 3 | Scaled Obj: -0.00351467
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.8359
+Base time (ms): 5.92175
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.8359,5.92175
+7.79758e-16
+END
+success: 1
+score backend: -0.00351467 score base: -0.00351467 -0.00351467
+Test(seed: 81)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 32.7545
+Optimal basis found at iter 78 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00775769
+Optimal basis found at iter 5 | Scaled Obj: -0.00847644
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 19.1829
+Base time (ms): 5.14877
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+19.1829,5.14877
+6.94063e-15
+END
+success: 1
+score backend: -0.00847644 score base: -0.00847644 -0.00847644
+Test(seed: 82)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 25.9958
+Optimal basis found at iter 71 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.011943
+Optimal basis found at iter 6 | Scaled Obj: -0.0256812
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.2242
+Base time (ms): 5.33016
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.2242,5.33016
+3.22659e-16
+END
+success: 1
+score backend: -0.0256812 score base: -0.0256812 -0.0256812
+Test(seed: 83)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 33.0305
+Optimal basis found at iter 85 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0120191
+Optimal basis found at iter 5 | Scaled Obj: -0.0177855
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.3498
+Base time (ms): 6.0589
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.3498,6.0589
+8.32667e-17
+END
+success: 1
+score backend: -0.0177855 score base: -0.0177855 -0.0177855
+Test(seed: 84)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 22.7856
+Optimal basis found at iter 65 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00394508
+Optimal basis found at iter 8 | Scaled Obj: -0.00589281
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.8684
+Base time (ms): 5.55904
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.8684,5.55904
+6.96665e-15
+END
+success: 1
+score backend: -0.00589281 score base: -0.00589281 -0.00589281
+Test(seed: 85)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37.4253
+Optimal basis found at iter 94 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00449065
+Optimal basis found at iter 2 | Scaled Obj: -0.00640299
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.6634
+Base time (ms): 6.005
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.6634,6.005
+2.27162e-15
+END
+success: 1
+score backend: -0.00640299 score base: -0.00640299 -0.00640299
+Test(seed: 86)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 26.8058
+Optimal basis found at iter 71 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0218793
+Optimal basis found at iter 4 | Scaled Obj: -0.0235151
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.2394
+Base time (ms): 5.42427
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.2394,5.42427
+2.42861e-15
+END
+success: 1
+score backend: -0.0235151 score base: -0.0235151 -0.0235151
+Test(seed: 87)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 26.7884
+Optimal basis found at iter 72 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0248762
+Optimal basis found at iter 2 | Scaled Obj: -0.0256398
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.8835
+Base time (ms): 5.23796
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.8835,5.23796
+1.70003e-16
+END
+success: 1
+score backend: -0.0256398 score base: -0.0256398 -0.0256398
+Test(seed: 88)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 15.547
+Optimal basis found at iter 42 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0107684
+Optimal basis found at iter 0 | Scaled Obj: -0.0107684
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 14.8631
+Base time (ms): 5.08918
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+14.8631,5.08918
+4.52745e-14
+END
+success: 1
+score backend: -0.0107684 score base: -0.0107684 -0.0107684
+Test(seed: 89)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 30.294
+Optimal basis found at iter 74 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.002509
+Optimal basis found at iter 7 | Scaled Obj: -0.0184062
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.7494
+Base time (ms): 5.74855
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.7494,5.74855
+9.50628e-16
+END
+success: 1
+score backend: -0.0184062 score base: -0.0184062 -0.0184062
+Test(seed: 90)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 17.6034
+Optimal basis found at iter 50 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.00722931
+Optimal basis found at iter 2 | Scaled Obj: -0.00786141
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 15.8167
+Base time (ms): 4.82064
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+15.8167,4.82064
+4.17374e-15
+END
+success: 1
+score backend: -0.00786141 score base: -0.00786141 -0.00786141
+Test(seed: 91)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 33.6258
+Optimal basis found at iter 88 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0152706
+Optimal basis found at iter 5 | Scaled Obj: -0.0207362
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.0116
+Base time (ms): 5.92905
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.0116,5.92905
+1.67227e-15
+END
+success: 1
+score backend: -0.0207362 score base: -0.0207362 -0.0207362
+Test(seed: 92)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 20.8592
+Optimal basis found at iter 63 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0228334
+Optimal basis found at iter 3 | Scaled Obj: -0.0274584
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 17.1775
+Base time (ms): 4.97661
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+17.1775,4.97661
+5.41234e-16
+END
+success: 1
+score backend: -0.0274584 score base: -0.0274584 -0.0274584
+Test(seed: 93)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 32.5436
+Optimal basis found at iter 85 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0128211
+Optimal basis found at iter 6 | Scaled Obj: -0.0129314
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 20.2296
+Base time (ms): 6.14785
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+20.2296,6.14785
+8.32667e-17
+END
+success: 1
+score backend: -0.0129314 score base: -0.0129314 -0.0129314
+Test(seed: 94)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 13.6325
+Optimal basis found at iter 43 | Scaled Obj: 0.000427438
+Infeasible: Phase 1 objective 0.000427438 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 9.23195
+Base time (ms): 5.23822
+success: 0
+score backend: 0 score base: 0
+Test(seed: 95)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 27.0782
+Optimal basis found at iter 55 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0037694
+Optimal basis found at iter 0 | Scaled Obj: -0.0037694
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.5458
+Base time (ms): 5.2592
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.5458,5.2592
+7.95276e-13
+END
+success: 1
+score backend: -0.0037694 score base: -0.0037694 -0.0037694
+Test(seed: 96)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 27.8889
+Optimal basis found at iter 61 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0141699
+Optimal basis found at iter 3 | Scaled Obj: -0.029277
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 16.9539
+Base time (ms): 5.24676
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+16.9539,5.24676
+5.20417e-16
+END
+success: 1
+score backend: -0.029277 score base: -0.029277 -0.029277
+Test(seed: 97)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 18.9702
+Optimal basis found at iter 43 | Scaled Obj: 1.27801e-05
+Auxiliary problem solved. Phase 1 Obj: 1.27801e-05
+Warning: Non-zero artificial 90 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 12780.1
+Optimal basis found at iter 0 | Scaled Obj: 12780.1
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 14.8601
+Base time (ms): 5.04336
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+14.8601,5.04336
+2.57657e-05
+END
+success: 1
+score backend: -0.00135276 score base: -0.00132699 -0.00135276
+Test(seed: 98)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 25.5086
+Optimal basis found at iter 82 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -0.0388622
+Optimal basis found at iter 5 | Scaled Obj: -0.0655447
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:1
+Backend success? Base success?1
+Backend time (ms): 18.5596
+Base time (ms): 6.0989
+---------------------------------
+Data for statistics collection only enter if both are succesfull 
+Backend time (ms), Base time (ms)
+Delta
+START
+18.5596,6.0989
+6.80012e-16
+END
+success: 1
+score backend: -0.0655447 score base: -0.0655447 -0.0655447
+Test(seed: 99)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 24.3163
+Optimal basis found at iter 61 | Scaled Obj: 0.000875011
+Infeasible: Phase 1 objective 0.000875011 > 0.
+Setting parameter log_to_console to false
+Setting parameter absolute_primal_tolerance to 1.000000e-04
+Setting parameter absolute_dual_tolerance to 1.000000e-04
+Setting parameter absolute_gap_tolerance to 1.000000e-04
+Setting parameter num_cpu_threads to 1
+Setting parameter method to 2
+Base solver result:0
+Backend success? Base success?0
+Backend time (ms): 10.9056
+Base time (ms): 5.76888
+success: 0
+score backend: 0 score base: 0
+

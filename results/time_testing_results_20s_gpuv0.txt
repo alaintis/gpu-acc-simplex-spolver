@@ -1,0 +1,55 @@
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/adlittle.csc
+objective_value and time taken:
+225495,
+332.216,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/afiro.csc
+objective_value and time taken:
+-464.753,
+322.325,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/agg.csc
+objective_value and time taken:
+-2.81614e+07,
+607.4,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/blend.csc
+objective_value and time taken:
+-31.079,
+330.347,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/brandy.csc
+objective_value and time taken:
+5881.5,
+507.837,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/israel.csc
+objective_value and time taken:
+-817525,
+557.63,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/lotfi.csc
+objective_value and time taken:
+-31.1432,
+319.229,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/pilot.csc
+objective_value and time taken:
+-nan,
+2327.7,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/pilot87.csc
+objective_value and time taken:
+-nan,
+9536.74,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/stair.csc
+objective_value and time taken:
+-13.9271,
+639.003,
+
+../../dphpc-simplex-data/netlib/csc/presolved/presolved_testing_benchmark_set/woodw.csc
+objective_value and time taken:
+1.30448,
+5619.07,
+

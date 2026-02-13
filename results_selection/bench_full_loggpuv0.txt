@@ -1,0 +1,118 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc (m=8, n=17)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Runs: 10 (after 5 warm-ups)
+  Avg:  13.308 ms
+  Min:  13.107 ms (Fastest)
+  Max:  13.577 ms
+START
+133.082,13.308,13.107,13.577
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+

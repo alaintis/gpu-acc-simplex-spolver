@@ -1,0 +1,5 @@
+../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc
+objective_value and time taken:
+3457.78,
+804.243,
+

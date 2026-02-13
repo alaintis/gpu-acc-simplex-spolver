@@ -1,0 +1,3 @@
+../../dphpc-simplex-data/netlib/presolved/afiro.presolved
+2578.957,257.896,257.399,259.824
+

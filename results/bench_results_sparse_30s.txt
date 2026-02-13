@@ -1,0 +1,15 @@
+../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc
+2332.668,233.267,231.512,237.016
+
+../../dphpc-simplex-data/netlib/csc/presolved/agg.csc
+17742.939,1774.294,1770.744,1787.591
+
+../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc
+15196.123,1519.612,1508.555,1530.362
+
+../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc
+1159.688,115.969,114.793,121.982
+
+../../dphpc-simplex-data/netlib/csc/presolved/blend.csc
+2275.173,227.517,226.735,229.348
+

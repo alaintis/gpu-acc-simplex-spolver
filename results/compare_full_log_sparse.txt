@@ -1,0 +1,8 @@
+================ FULL OUTPUT ===============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Test(seed: 0)
+[2025-12-07T09:38:36.001] error: Detected 1 oom_kill event in StepId=15187.0. Some of the step tasks have been OOM Killed.
+srun: error: studgpu-node01: task 0: Out Of Memory
+

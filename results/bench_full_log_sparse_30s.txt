@@ -1,0 +1,815 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc (m=704, n=1754)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37167
+Iter 500 | Obj: 20489.2
+Iter 1000 | Obj: 12072.4
+Iter 1500 | Obj: 5300.6
+Iter 2000 | Obj: 2630.21
+Iter 2500 | Obj: 1334.72
+Iter 3000 | Obj: 312.911
+Optimal basis found at iter 3444 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 9574.48
+Iter 500 | Obj: 5544.59
+Iter 1000 | Obj: 4739.79
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-07T19:33:44.139] error: *** STEP 15705.0 ON studgpu-node01 CANCELLED AT 2025-12-07T19:33:44 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+srun: Force Terminated JobId=15706
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc (m=55, n=136)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+  Runs: 10 (after 5 warm-ups)
+  Avg:  233.267 ms
+  Min:  231.512 ms (Fastest)
+  Max:  237.016 ms
+START
+2332.668,233.267,231.512,237.016
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+srun: Force Terminated JobId=15709
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc (m=333, n=418)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+  Runs: 10 (after 5 warm-ups)
+  Avg:  1774.294 ms
+  Min:  1770.744 ms (Fastest)
+  Max:  1787.591 ms
+START
+17742.939,1774.294,1770.744,1787.591
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc (m=471, n=705)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+Optimal basis found at iter 570 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.55496e+08
+Optimal basis found at iter 95 | Scaled Obj: -2.02733e+07
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+Optimal basis found at iter 570 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.55496e+08
+Optimal basis found at iter 95 | Scaled Obj: -2.02733e+07
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+Optimal basis found at iter 570 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.55496e+08
+Optimal basis found at iter 95 | Scaled Obj: -2.02733e+07
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+Optimal basis found at iter 570 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.55496e+08
+Optimal basis found at iter 95 | Scaled Obj: -2.02733e+07
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+Optimal basis found at iter 570 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.55496e+08
+Optimal basis found at iter 95 | Scaled Obj: -2.02733e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+Optimal basis found at iter 570 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.55496e+08
+Optimal basis found at iter 95 | Scaled Obj: -2.02733e+07
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-07T19:35:46.116] error: *** STEP 15711.0 ON studgpu-node09 CANCELLED AT 2025-12-07T19:35:46 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc (m=470, n=704)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-07T19:36:16.309] error: *** STEP 15712.0 ON studgpu-node01 CANCELLED AT 2025-12-07T19:36:16 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc (m=198, n=353)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+  Runs: 10 (after 5 warm-ups)
+  Avg:  1519.612 ms
+  Min:  1508.555 ms (Fastest)
+  Max:  1530.362 ms
+START
+15196.123,1519.612,1508.555,1530.362
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc (m=52, n=132)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+  Runs: 10 (after 5 warm-ups)
+  Avg:  115.969 ms
+  Min:  114.793 ms (Fastest)
+  Max:  121.982 ms
+START
+1159.688,115.969,114.793,121.982
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc (m=49, n=86)
+  Warm-up run 1...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+  Warm-up run 2...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+  Warm-up run 3...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+  Warm-up run 4...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+  Warm-up run 5...
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+  Runs: 10 (after 5 warm-ups)
+  Avg:  227.517 ms
+  Min:  226.735 ms (Fastest)
+  Max:  229.348 ms
+START
+2275.173,227.517,226.735,229.348
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
