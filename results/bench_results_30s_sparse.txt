@@ -1,0 +1,6 @@
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc
+412.014,412.014,412.014,412.014
+
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc
+10119.142,10119.142,10119.142,10119.142
+

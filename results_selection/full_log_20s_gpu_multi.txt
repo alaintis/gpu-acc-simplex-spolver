@@ -1,0 +1,48 @@
+============ ../../dphpc-simplex-data/netlib/csc/25fv47.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/25fv47.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/25fv47.csc (m=821, n=1876)
+Creating auxiliary problem with 497 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 3200 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 3300 | Obj: 5501.78
+  Backend: Success (Time: 885.153 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+---------------------------------
+objective_value,time_taken_ms
+START
+5501.78,
+885.153,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/80bau3b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/80bau3b.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/80bau3b.csc (m=5574, n=14875)
+Creating auxiliary problem with 1432 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2300 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-30T19:24:20.321] error: *** STEP 27286.0 ON studgpu-node09 CANCELLED AT 2025-12-30T19:24:20 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+

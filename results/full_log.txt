@@ -1,0 +1,81 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc (m=8, n=17)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Backend: Success (Time: 314.254 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-464.753143,,
+314.253513,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc (m=438, n=753)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 376
+Iter 500 | Obj: 120.961
+Iter 1000 | Obj: 49.2738
+Iter 1500 | Obj: 27.5928
+Iter 2000 | Obj: 15.8187
+Optimal basis found at iter 2488 | Scaled Obj: -3.00748e-14
+Auxiliary problem solved. Phase 1 Obj: 1.61596e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -680.862
+Iter 500 | Obj: -774.828
+Optimal basis found at iter 686 | Scaled Obj: -793.648
+  Backend: Success (Time: 6922.76 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-793.648000,,
+6922.758058,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc (m=10388, n=20750)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 20250
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T01:15:30.908] error: *** STEP 20019.0 ON studgpu-node01 CANCELLED AT 2025-12-15T01:15:30 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+

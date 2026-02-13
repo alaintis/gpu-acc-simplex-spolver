@@ -1,0 +1,1676 @@
+============ ../../dphpc-simplex-data/netlib/csc/25fv47.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/25fv47.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/25fv47.csc (m=821, n=1876)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 5302 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 2883 | Obj: 5501.85
+  Backend: Success (Time: 1659.47 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+5501.845888,,
+1659.473484,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/80bau3b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/80bau3b.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/80bau3b.csc (m=5574, n=14875)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:05:03.723] error: *** STEP 20750.0 ON studgpu-node09 CANCELLED AT 2025-12-15T16:05:03 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/adlittle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/adlittle.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/adlittle.csc (m=56, n=138)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 101 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 50 | Obj: 225495
+  Backend: Success (Time: 367.533 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+225494.963162,,
+367.532912,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/afiro.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/afiro.csc (m=27, n=51)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 29 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1 | Obj: -464.753
+  Backend: Success (Time: 334.239 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-464.753143,,
+334.238755,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/agg.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/agg.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/agg.csc (m=488, n=615)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 657 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 141 | Obj: -3.59918e+07
+  Backend: Success (Time: 441.778 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-35991767.286576,,
+441.777828,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/agg2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/agg2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/agg2.csc (m=516, n=758)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 670 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 162 | Obj: -2.02393e+07
+  Backend: Success (Time: 415.409 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-20239252.355977,,
+415.408726,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/agg3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/agg3.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/agg3.csc (m=516, n=758)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 724 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 158 | Obj: 1.03121e+07
+  Backend: Success (Time: 459.832 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+10312115.935089,,
+459.831842,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/bandm.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/bandm.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/bandm.csc (m=305, n=472)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 611 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 208 | Obj: -158.628
+  Backend: Success (Time: 410.011 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-158.628018,,
+410.011055,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/beaconfd.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/beaconfd.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/beaconfd.csc (m=173, n=295)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 138 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 33 | Obj: 33592.5
+  Backend: Success (Time: 371.435 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+33592.485807,,
+371.435402,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/blend.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/blend.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/blend.csc (m=74, n=114)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 107 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 39 | Obj: -30.8121
+  Backend: Success (Time: 347.062 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-30.812150,,
+347.062496,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/bnl1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/bnl1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/bnl1.csc (m=643, n=1586)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 4215 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 513 | Obj: 1977.63
+  Backend: Success (Time: 961.334 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+1977.629562,,
+961.334249,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/bnl2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/bnl2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/bnl2.csc (m=2324, n=4486)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 6760 | Obj: 6.46498e-16
+Auxiliary problem solved. Phase 1 Obj: 6.46498e-16
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 5042 | Obj: 1811.24
+  Backend: Success (Time: 13889.3 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+1811.236540,,
+13889.256707,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/boeing1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/boeing1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/boeing1.csc (m=513, n=894)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 999 | Obj: 5.89838e-15
+Auxiliary problem solved. Phase 1 Obj: 5.89838e-15
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 268 | Obj: 305.803
+  Backend: Success (Time: 502.29 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+305.803394,,
+502.290081,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/boeing2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/boeing2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/boeing2.csc (m=224, n=367)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 300 | Obj: 7534
+Infeasible: Phase 1 objective 7534 > 0.
+  Backend: Failed (Time: 344.886 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+170.525161,,
+344.885918,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/bore3d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/bore3d.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/bore3d.csc (m=245, n=345)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 731 | Obj: -7.76604e+25
+Auxiliary problem solved. Phase 1 Obj: -7.76604e+25
+Warning: Non-zero artificial 489 in basis!
+Warning: Non-zero artificial 485 in basis!
+Warning: Non-zero artificial 494 in basis!
+Warning: Non-zero artificial 373 in basis!
+Warning: Non-zero artificial 371 in basis!
+Warning: Non-zero artificial 508 in basis!
+Warning: Non-zero artificial 456 in basis!
+Warning: Non-zero artificial 401 in basis!
+Warning: Non-zero artificial 475 in basis!
+Warning: Non-zero artificial 524 in basis!
+Warning: Non-zero artificial 511 in basis!
+Warning: Non-zero artificial 391 in basis!
+Warning: Non-zero artificial 437 in basis!
+Warning: Non-zero artificial 378 in basis!
+Warning: Non-zero artificial 521 in basis!
+Warning: Non-zero artificial 457 in basis!
+Warning: Non-zero artificial 545 in basis!
+Warning: Non-zero artificial 527 in basis!
+Warning: Non-zero artificial 519 in basis!
+Warning: Non-zero artificial 409 in basis!
+Warning: Non-zero artificial 487 in basis!
+Warning: Non-zero artificial 459 in basis!
+Warning: Non-zero artificial 510 in basis!
+Warning: Non-zero artificial 533 in basis!
+Warning: Non-zero artificial 476 in basis!
+Warning: Non-zero artificial 517 in basis!
+Warning: Non-zero artificial 520 in basis!
+Warning: Non-zero artificial 536 in basis!
+Warning: Non-zero artificial 407 in basis!
+Warning: Non-zero artificial 532 in basis!
+Warning: Non-zero artificial 541 in basis!
+Warning: Non-zero artificial 486 in basis!
+Warning: Non-zero artificial 558 in basis!
+Warning: Non-zero artificial 539 in basis!
+Warning: Non-zero artificial 526 in basis!
+Warning: Non-zero artificial 578 in basis!
+Warning: Non-zero artificial 499 in basis!
+Warning: Non-zero artificial 493 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 17 | Obj: -nan
+  Backend: Success (Time: 595.136 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-nan,,
+595.136289,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/brandy.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/brandy.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/brandy.csc (m=220, n=303)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 327 | Obj: 1.63392e-15
+Auxiliary problem solved. Phase 1 Obj: 1.63392e-15
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 88 | Obj: 1518.51
+  Backend: Success (Time: 356.901 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+1518.509896,,
+356.900861,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/capri.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/capri.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/capri.csc (m=402, n=611)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 682 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 215 | Obj: 2690.01
+  Backend: Success (Time: 430.863 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+2690.012912,,
+430.862576,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/cycle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/cycle.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/cycle.csc (m=1980, n=3455)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:05:50.118] error: *** STEP 20766.0 ON studgpu-node09 CANCELLED AT 2025-12-15T16:05:50 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/czprob.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/czprob.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/czprob.csc (m=929, n=3333)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1455 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 982 | Obj: 2.1852e+06
+  Backend: Success (Time: 1070.93 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+2185198.293906,,
+1070.934308,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/d2q06c.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/d2q06c.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/d2q06c.csc (m=2171, n=5831)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 12471 | Obj: 4.72043e-15
+Auxiliary problem solved. Phase 1 Obj: 4.72043e-15
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:06:11.758] error: *** STEP 20768.0 ON studgpu-node09 CANCELLED AT 2025-12-15T16:06:11 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/d6cube.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/d6cube.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/d6cube.csc (m=416, n=6185)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 3360 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:06:31.956] error: *** STEP 20769.0 ON studgpu-node01 CANCELLED AT 2025-12-15T16:06:31 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/degen2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/degen2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/degen2.csc (m=444, n=757)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2097 | Obj: 3.26022e-13
+Auxiliary problem solved. Phase 1 Obj: 3.26022e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 671 | Obj: -1435.18
+  Backend: Success (Time: 541.224 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-1435.178000,,
+541.224029,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/degen3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/degen3.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/degen3.csc (m=1503, n=2604)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 12666 | Obj: 9.63346e-13
+Auxiliary problem solved. Phase 1 Obj: 9.63346e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 4371 | Obj: -987.294
+  Backend: Success (Time: 8814.61 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-987.294000,,
+8814.608590,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/dfl001.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/dfl001.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/dfl001.csc (m=6084, n=12243)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:07:02.296] error: *** STEP 20772.0 ON studgpu-node09 CANCELLED AT 2025-12-15T16:07:02 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/e226.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/e226.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/e226.csc (m=223, n=472)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 532 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 241 | Obj: -18.7519
+  Backend: Success (Time: 390.029 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-18.751929,,
+390.028513,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/etamacro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/etamacro.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/etamacro.csc (m=580, n=914)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1044 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 480 | Obj: -310.114
+  Backend: Success (Time: 497.385 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-310.114444,,
+497.385133,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/fffff800.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/fffff800.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/fffff800.csc (m=524, n=1028)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1225 | Obj: 7.49074e-31
+Auxiliary problem solved. Phase 1 Obj: 7.49074e-31
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 382 | Obj: 555680
+  Backend: Success (Time: 515.9 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+555679.583868,,
+515.900102,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/finnis.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/finnis.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/finnis.csc (m=574, n=1096)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1042 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 616 | Obj: 102606
+  Backend: Success (Time: 497.112 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+102606.362683,,
+497.111713,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/fit1d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/fit1d.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/fit1d.csc (m=1050, n=2075)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2521 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 1376 | Obj: -9146.38
+  Backend: Success (Time: 1377.33 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-9146.378092,,
+1377.334766,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/fit1p.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/fit1p.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/fit1p.csc (m=1026, n=2076)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1416 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 2397 | Obj: 9146.38
+  Backend: Success (Time: 1288.3 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+9146.378092,,
+1288.299253,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/fit2d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/fit2d.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/fit2d.csc (m=10525, n=21024)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:07:29.480] error: *** STEP 20779.0 ON studgpu-node01 CANCELLED AT 2025-12-15T16:07:29 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/fit2p.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/fit2p.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/fit2p.csc (m=10500, n=21025)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:07:50.088] error: *** STEP 20780.0 ON studgpu-node09 CANCELLED AT 2025-12-15T16:07:50 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/forplan.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/forplan.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/forplan.csc (m=182, n=510)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 471 | Obj: 1.53695e-15
+Auxiliary problem solved. Phase 1 Obj: 1.53695e-15
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 114 | Obj: -234.482
+  Backend: Success (Time: 359.858 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-234.482461,,
+359.857688,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/ganges.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/ganges.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/ganges.csc (m=2110, n=2507)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 3005 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 274 | Obj: -109586
+  Backend: Success (Time: 3836.16 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-109585.736129,,
+3836.158843,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/gfrd-pnc.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/gfrd-pnc.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/gfrd-pnc.csc (m=876, n=1420)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1095 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 426 | Obj: 6.90224e+06
+  Backend: Success (Time: 665.876 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+6902235.999549,,
+665.876039,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/greenbea.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/greenbea.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/greenbea.csc (m=2721, n=5824)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 9101 | Obj: 2.33984e-11
+Auxiliary problem solved. Phase 1 Obj: 2.33984e-11
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:08:16.644] error: *** STEP 20784.0 ON studgpu-node09 CANCELLED AT 2025-12-15T16:08:16 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/greenbeb.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/greenbeb.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/greenbeb.csc (m=2709, n=5804)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 7410 | Obj: 2.23267e-11
+Auxiliary problem solved. Phase 1 Obj: 2.23267e-11
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:08:36.815] error: *** STEP 20785.0 ON studgpu-node01 CANCELLED AT 2025-12-15T16:08:36 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/grow15.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/grow15.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/grow15.csc (m=900, n=1245)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1783 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 373 | Obj: -1.06871e+08
+  Backend: Success (Time: 679.265 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-106870941.293575,,
+679.264723,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/grow22.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/grow22.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/grow22.csc (m=1320, n=1826)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 2535 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 490 | Obj: -1.60834e+08
+  Backend: Success (Time: 1614.71 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-160834336.482563,,
+1614.710004,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/grow7.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/grow7.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/grow7.csc (m=420, n=581)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 778 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 213 | Obj: -4.77878e+07
+  Backend: Success (Time: 464.453 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-47787811.814712,,
+464.452927,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/israel.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/israel.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/israel.csc (m=174, n=316)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 374 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 250 | Obj: -896645
+  Backend: Success (Time: 362.125 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-896644.821863,,
+362.124995,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/kb2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/kb2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/kb2.csc (m=52, n=77)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 76 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 13 | Obj: -1749.9
+  Backend: Success (Time: 329.082 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-1749.900130,,
+329.081754,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/lotfi.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/lotfi.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/lotfi.csc (m=153, n=366)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 217 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 310 | Obj: -25.2647
+  Backend: Success (Time: 358.215 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-25.264706,,
+358.214549,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/maros-r7.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/maros-r7.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/maros-r7.csc (m=3136, n=9408)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 3451 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 984 | Obj: 1.49719e+06
+  Backend: Success (Time: 11849.9 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+1497185.166480,,
+11849.935665,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/maros.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/maros.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/maros.csc (m=852, n=1937)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1494 | Obj: 8555.62
+Infeasible: Phase 1 objective 8555.62 > 0.
+  Backend: Failed (Time: 619.691 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-27416.992768,,
+619.691033,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/modszk1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/modszk1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/modszk1.csc (m=687, n=1622)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1363 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 86 | Obj: -nan
+  Backend: Success (Time: 537.51 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-nan,,
+537.510204,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/nesm.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/nesm.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/nesm.csc (m=4878, n=7186)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:09:17.647] error: *** STEP 20795.0 ON studgpu-node01 CANCELLED AT 2025-12-15T16:09:17 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/perold.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/perold.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/perold.csc (m=898, n=1803)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 7007 | Obj: 6.83525e-31
+Auxiliary problem solved. Phase 1 Obj: 6.83525e-31
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 7225 | Obj: -8747.77
+  Backend: Success (Time: 2574.77 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-8747.765688,,
+2574.774632,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/pilot.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/pilot.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/pilot.csc (m=2642, n=5894)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:09:40.922] error: *** STEP 20798.0 ON studgpu-node01 CANCELLED AT 2025-12-15T16:09:40 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/pilot.ja.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/pilot.ja.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/pilot.ja.csc (m=1285, n=2389)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 10537 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 16096 | Obj: -6113.14
+  Backend: Success (Time: 9621.96 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-6113.136603,,
+9621.959633,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/pilot.we.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/pilot.we.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/pilot.we.csc (m=1018, n=3226)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 63811 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 86 | Obj: -nan
+  Backend: Success (Time: 17292.7 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-nan,,
+17292.718019,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/pilot4.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/pilot4.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/pilot4.csc (m=657, n=1428)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 4401 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 1406 | Obj: -2581.14
+  Backend: Success (Time: 1064.7 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-2581.139261,,
+1064.700516,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/pilot87.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/pilot87.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/pilot87.csc (m=3981, n=8460)
+Solving auxiliary problem to find feasible solution x...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T16:10:30.351] error: *** STEP 20803.0 ON studgpu-node01 CANCELLED AT 2025-12-15T16:10:30 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/pilotnov.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/pilotnov.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/pilotnov.csc (m=1315, n=2582)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 12297 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 887 | Obj: -4497.28
+  Backend: Success (Time: 5481.75 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-4497.276188,,
+5481.753951,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/recipe.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/recipe.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/recipe.csc (m=187, n=276)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 232 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 17 | Obj: -266.616
+  Backend: Success (Time: 357.146 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-266.616000,,
+357.145927,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/sc105.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/sc105.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/sc105.csc (m=105, n=163)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 123 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 16 | Obj: -52.2021
+  Backend: Success (Time: 350.835 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-52.202061,,
+350.834888,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/sc205.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/sc205.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/sc205.csc (m=205, n=317)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 259 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 55 | Obj: -52.2021
+  Backend: Success (Time: 364.373 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-52.202061,,
+364.372502,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/sc50a.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/sc50a.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/sc50a.csc (m=50, n=78)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 51 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 3 | Obj: -64.5751
+  Backend: Success (Time: 323.958 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-64.575077,,
+323.958059,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/sc50b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/sc50b.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/sc50b.csc (m=50, n=78)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 54 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 4 | Obj: -70
+  Backend: Success (Time: 338.053 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-70.000000,,
+338.052844,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/scagr25.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/scagr25.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/scagr25.csc (m=471, n=671)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1076 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 268 | Obj: -1.47534e+07
+  Backend: Success (Time: 431.52 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-14753433.060769,,
+431.520341,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/scagr7.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/scagr7.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/scagr7.csc (m=129, n=185)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 234 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Optimal basis found at iter 52 | Obj: -2.33139e+06
+  Backend: Success (Time: 364.552 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-2331389.824331,,
+364.551573,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/scfxm1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/scfxm1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/scfxm1.csc (m=330, n=600)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 582 | Obj: 7.47302e-16
+Auxiliary problem solved. Phase 1 Obj: 7.47302e-16
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 163 | Obj: 18416.8
+  Backend: Success (Time: 373.159 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+18416.759028,,
+373.158992,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/scfxm2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/scfxm2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/scfxm2.csc (m=660, n=1200)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1150 | Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 428 | Obj: 36660.3
+  Backend: Success (Time: 569.997 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+36660.261565,,
+569.996590,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/scfxm3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/scfxm3.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/scfxm3.csc (m=990, n=1800)
+Solving auxiliary problem to find feasible solution x...
+Optimal basis found at iter 1695 | Obj: 2.02314e-14
+Auxiliary problem solved. Phase 1 Obj: 2.02314e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Optimal basis found at iter 606 | Obj: 54901.3
+  Backend: Success (Time: 827.631 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+54901.254550,,
+827.631492,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+

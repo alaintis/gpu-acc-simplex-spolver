@@ -1,0 +1,2034 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc (m=704, n=1754)
+  Warm-up run 1...
+Creating auxiliary problem with 389 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 10121.5, 1: 10213.5, 2: 10188.1, 3: 10188.1, 
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 9578.85, 1: 9947.87, 2: -1773.27, 3: -9676.17, 
+Iter 40 | Obj: 0: 8961.74, 1: 9680.94, 2: 9715.71, 3: 9844.48, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 8812.08, 1: 8980.67, 2: 10074.2, 3: 9547.59, 
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 8589.59, 1: 9142.57, 2: 9778.84, 3: 9667.66, 
+Solver failure: No leaving variable found.
+Iter 100 | Obj: 0: 9620.06, 1: 8828.35, 2: 9664.35, 3: 9819.7, 
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 8113.19, 1: 8457.76, 2: 10810.7, 3: 9449.02, 
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 7890.1, 1: 8388.95, 2: 9472.47, 3: 9585.7, 
+Solver failure: No leaving variable found.
+Iter 160 | Obj: 0: 7803.95, 1: 8267.56, 2: 9458.77, 3: 9386.06, 
+Solver failure: No leaving variable found.
+Iter 180 | Obj: 0: 7687.63, 1: 9972.81, 2: 9448.16, 3: 9191.88, 
+Solver failure: No leaving variable found.
+Iter 200 | Obj: 0: 7734.02, 1: 7948.61, 2: 9387.83, 3: 9250.18, 
+Solver failure: No leaving variable found.
+Iter 220 | Obj: 0: 7617.09, 1: 7571.38, 2: 9459.73, 3: 8963.88, 
+Solver failure: No leaving variable found.
+Iter 240 | Obj: 0: 7473.2, 1: 8193.46, 2: 9385.77, 3: 9050.76, 
+Solver failure: No leaving variable found.
+Iter 260 | Obj: 0: 7294.25, 1: 7842.7, 2: 9427.97, 3: 9016.72, 
+Iter 280 | Obj: 0: 7225.74, 1: 8269.11, 2: 9670.49, 3: 9192.8, 
+Iter 300 | Obj: 0: 7036.75, 1: 8287.28, 2: 9572.39, 3: 9255.96, 
+Iter 320 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 332 | Scaled Obj: 0
+srun: error: studgpu-node01: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc (m=4494, n=12832)
+  Warm-up run 1...
+Creating auxiliary problem with 1590 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 360916, 1: 360909, 2: 360877, 3: 360877, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 360916, 1: 360896, 2: 360908, 3: 360898, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 40 | Obj: 0: 360423, 1: 360896, 2: 360906, 3: 360896, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 359581, 1: 360770, 2: 360780, 3: 360770, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 358328, 1: 360020, 2: 360029, 3: 360020, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 100 | Obj: 0: 357894, 1: 359237, 2: 359247, 3: 359237, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 357642, 1: 358863, 2: 358872, 3: 358863, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 356197, 1: 358690, 2: 358700, 3: 358690, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 160 | Obj: 0: 355684, 1: 358000, 2: 358009, 3: 358000, 
+Iter 180 | Obj: 0: 354868, 1: 357891, 2: 357888, 3: 357878, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 200 | Obj: 0: 353225, 1: 358164, 2: 358656, 3: 358654, 
+Iter 220 | Obj: 0: 353177, 1: 357427, 2: 358082, 3: 358031, 
+Iter 240 | Obj: 0: 353063, 1: 357097, 2: 357716, 3: 357820, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 260 | Obj: 0: 352845, 1: 356839, 2: 357717, 3: 357778, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 280 | Obj: 0: 352054, 1: 356814, 2: 357641, 3: 357461, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 300 | Obj: 0: 351866, 1: 356559, 2: 357386, 3: 357205, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 320 | Obj: 0: 351669, 1: 356450, 2: 357187, 3: 357096, 
+Solver failure: No leaving variable found.
+Iter 340 | Obj: 0: 351229, 1: 209436, 2: 357110, 3: 209069, 
+Iter 360 | Obj: 0: 350141, 1: 356848, 2: 357293, 3: 356524, 
+Iter 380 | Obj: 0: 349402, 1: 357160, 2: 356811, 3: 356794, 
+Solver failure: No leaving variable found.
+Iter 400 | Obj: 0: 347349, 1: 356454, 2: 356831, 3: 356653, 
+Solver failure: No leaving variable found.
+Iter 420 | Obj: 0: 347108, 1: 356477, 2: 357275, 3: 356675, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 440 | Obj: 0: 345153, 1: 356424, 2: 357329, 3: 356034, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 460 | Obj: 0: 343550, 1: 356167, 2: 355978, 3: 357429, 
+Solver failure: No leaving variable found.
+Iter 480 | Obj: 0: 341865, 1: 358408, 2: 358294, 3: 357899, 
+Iter 500 | Obj: 341865
+Solver failure: No leaving variable found.
+Iter 500 | Obj: 0: 341692, 1: 367403, 2: 358882, 3: 359163, 
+Solver failure: No leaving variable found.
+Iter 520 | Obj: 0: 338554, 1: 362221, 2: 358526, 3: 359134, 
+Solver failure: No leaving variable found.
+Iter 540 | Obj: 0: 338421, 1: 355096, 2: 357326, 3: 359110, 
+Solver failure: No leaving variable found.
+Iter 560 | Obj: 0: 337958, 1: 448488, 2: 358710, 3: 359554, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 580 | Obj: 0: 337933, 1: 355477, 2: 357949, 3: 361433, 
+Solver failure: No leaving variable found.
+Iter 600 | Obj: 0: 337856, 1: 356334, 2: 357159, 3: 299731, 
+Solver failure: No leaving variable found.
+Iter 620 | Obj: 0: 337829, 1: 360601, 2: 357154, 3: 354488, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 640 | Obj: 0: 336862, 1: 356443, 2: 347922, 3: 349390, 
+Iter 660 | Obj: 0: 336267, 1: 355992, 2: 370910, 3: 348930, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 680 | Obj: 0: 324729, 1: 356076, 2: 347054, 3: 348313, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 700 | Obj: 0: 313311, 1: 383452, 2: 373755, 3: 374895, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 720 | Obj: 0: 311488, 1: 379493, 2: 377892, 3: 379361, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 740 | Obj: 0: 307362, 1: 377668, 2: 377741, 3: 379210, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 760 | Obj: 0: 306050, 1: 382270, 2: 381069, 3: 382538, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 780 | Obj: 0: 301988, 1: 380269, 2: 381462, 3: 383474, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 800 | Obj: 0: 301961, 1: 385179, 2: 384892, 3: -2.52355e+08, 
+Iter 820 | Obj: 0: 298987, 1: 385027, 2: 385904, 3: 389031, 
+Iter 840 | Obj: 0: 298987, 1: 377708, 2: 387542, 3: 389713, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 860 | Obj: 0: 298704, 1: 377461, 2: 387371, 3: 389674, 
+Iter 880 | Obj: 0: 298679, 1: 377217, 2: 387699, 3: 390339, 
+Iter 900 | Obj: 0: 295429, 1: 377233, 2: 387201, 3: 388247, 
+Iter 920 | Obj: 0: 293163, 1: 378477, 2: 387748, 3: 391065, 
+Iter 940 | Obj: 0: 288216, 1: 380102, 2: 387296, 3: 372885, 
+Iter 960 | Obj: 0: 287326, 1: 382646, 2: 389164, 3: 401393, 
+Iter 980 | Obj: 0: 287124, 1: 383616, 2: 387510, 3: 394834, 
+Iter 1000 | Obj: 287124
+Solver failure: No leaving variable found.
+Iter 1000 | Obj: 0: 285763, 1: 383901, 2: 391192, 3: 397486, 
+Iter 1020 | Obj: 0: 285631, 1: 384047, 2: 388790, 3: 397063, 
+Solver failure: No leaving variable found.
+Iter 1040 | Obj: 0: 285396, 1: 384469, 2: 388632, 3: 409658, 
+Solver failure: No leaving variable found.
+Iter 1060 | Obj: 0: 285352, 1: 384105, 2: 388669, 3: 387589, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 1080 | Obj: 0: 285329, 1: 383598, 2: 388918, 3: 385956, 
+Solver failure: No leaving variable found.
+Iter 1100 | Obj: 0: 285305, 1: 381362, 2: 390526, 3: 392189, 
+Solver failure: No leaving variable found.
+Iter 1120 | Obj: 0: 285218, 1: -1.55675e+07, 2: 3.43954e+06, 3: 387095, 
+Iter 1140 | Obj: 0: 285214, 1: 383559, 2: 388128, 3: 387595, 
+Iter 1160 | Obj: 0: 285144, 1: 394938, 2: 388110, 3: 377952, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 1180 | Obj: 0: 285041, 1: 383883, 2: 387913, 3: 378005, 
+Solver failure: No leaving variable found.
+Iter 1200 | Obj: 0: 284973, 1: 381197, 2: 387719, 3: 375843, 
+Solver failure: No leaving variable found.
+Iter 1220 | Obj: 0: 284321, 1: 381364, 2: 387754, 3: 374417, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 1240 | Obj: 0: 283780, 1: 382317, 2: 387648, 3: 375460, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 1260 | Obj: 0: 283479, 1: 384093, 2: 413686, 3: 380579, 
+Iter 1280 | Obj: 0: 282363, 1: 383447, 2: 386849, 3: -22213, 
+Solver failure: No leaving variable found.
+Iter 1300 | Obj: 0: 282267, 1: -1.2254e+07, 2: 389874, 3: 375091, 
+Iter 1320 | Obj: 0: 281075, 1: 379801, 2: 392009, 3: -408115, 
+Solver failure: No leaving variable found.
+Iter 1340 | Obj: 0: 279811, 1: 379472, 2: 388732, 3: 375908, 
+Solver failure: No leaving variable found.
+Iter 1360 | Obj: 0: 279267, 1: 375666, 2: 383512, 3: 376771, 
+Iter 1380 | Obj: 0: 278525, 1: 372151, 2: 387152, 3: 491388, 
+Iter 1400 | Obj: 0: 278130, 1: 372813, 2: 376610, 3: 382834, 
+Iter 1420 | Obj: 0: 285764, 1: 387436, 2: 412078, 3: 373197, 
+Solver failure: No leaving variable found.
+Iter 1440 | Obj: 0: 280477, 1: 365552, 2: 365196, 3: 364032, 
+Iter 1460 | Obj: 0: 277245, 1: 377187, 2: 389934, 3: 373859, 
+Solver failure: No leaving variable found.
+Iter 1480 | Obj: 0: 276215, 1: 636286, 2: 389067, 3: 373224, 
+Iter 1500 | Obj: 276215
+Solver failure: No leaving variable found.
+Iter 1500 | Obj: 0: 276165, 1: 375735, 2: 388559, 3: 373609, 
+Solver failure: No leaving variable found.
+Iter 1520 | Obj: 0: 275989, 1: 374898, 2: 388784, 3: 438465, 
+Iter 1540 | Obj: 0: 275882, 1: 375018, 2: 388584, 3: 373414, 
+Iter 1560 | Obj: 0: 275556, 1: 375309, 2: 388613, 3: 363781, 
+Iter 1580 | Obj: 0: 275012, 1: 364937, 2: 388260, 3: 362606, 
+Iter 1600 | Obj: 0: 273401, 1: 365378, 2: 389417, 3: 362636, 
+Iter 1620 | Obj: 0: 272053, 1: 364994, 2: 388642, 3: 362457, 
+Solver failure: No leaving variable found.
+Iter 1640 | Obj: 0: 271602, 1: 355165, 2: 384294, 3: 359496, 
+Iter 1660 | Obj: 0: 271562, 1: 353713, 2: 384215, 3: 361136, 
+Solver failure: No leaving variable found.
+Iter 1680 | Obj: 0: 271362, 1: 354431, 2: 380951, 3: 348955, 
+Iter 1700 | Obj: 0: 271098, 1: 351518, 2: 383604, 3: 345344, 
+Iter 1720 | Obj: 0: 260906, 1: 354787, 2: 383485, 3: 344635, 
+Iter 1740 | Obj: 0: 241503, 1: 345083, 2: 382660, 3: 338200, 
+Iter 1760 | Obj: 0: 230498, 1: 344120, 2: 428251, 3: 344303, 
+Iter 1780 | Obj: 0: 230484, 1: 346040, 2: 434716, 3: 344140, 
+Iter 1800 | Obj: 0: 229249, 1: 357617, 2: 387055, 3: 342451, 
+Iter 1820 | Obj: 0: 225267, 1: 354611, 2: 387001, 3: 334409, 
+Iter 1840 | Obj: 0: 224154, 1: 358060, 2: 387884, 3: 354338, 
+Iter 1860 | Obj: 0: 225583, 1: 358007, 2: 387737, 3: 354373, 
+Iter 1880 | Obj: 0: 225106, 1: 358434, 2: 393083, 3: 362143, 
+Iter 1900 | Obj: 0: 224674, 1: 359084, 2: 386341, 3: 361439, 
+Iter 1920 | Obj: 0: 224303, 1: 361560, 2: 389766, 3: 359622, 
+Solver failure: No leaving variable found.
+Iter 1940 | Obj: 0: 223694, 1: 357753, 2: -1.87136e+06, 3: 355276, 
+Iter 1960 | Obj: 0: 222920, 1: 358776, 2: 391150, 3: 354068, 
+Iter 1980 | Obj: 0: 222443, 1: 355747, 2: 381939, 3: 353874, 
+Iter 2000 | Obj: 222443
+Iter 2000 | Obj: 0: 211891, 1: 358187, 2: 384692, 3: 356783, 
+Solver failure: No leaving variable found.
+Iter 2020 | Obj: 0: 209915, 1: 358612, 2: 383039, 3: 353300, 
+Solver failure: No leaving variable found.
+Iter 2040 | Obj: 0: 209907, 1: 358890, 2: 383129, 3: 353589, 
+Solver failure: No leaving variable found.
+Iter 2060 | Obj: 0: 209259, 1: 358890, 2: 372596, 3: 353014, 
+Solver failure: No leaving variable found.
+Iter 2080 | Obj: 0: 209164, 1: 359492, 2: 373672, 3: 353042, 
+Solver failure: No leaving variable found.
+Iter 2100 | Obj: 0: 208179, 1: 359532, 2: 384462, 3: 363612, 
+Solver failure: No leaving variable found.
+Iter 2120 | Obj: 0: 207159, 1: 359619, 2: 373169, 3: 353079, 
+Solver failure: No leaving variable found.
+Iter 2140 | Obj: 0: 201679, 1: 359651, 2: 373169, 3: 352505, 
+Solver failure: No leaving variable found.
+Iter 2160 | Obj: 0: 199439, 1: 406070, 2: 417802, 3: 398138, 
+Iter 2180 | Obj: 0: 197234, 1: 406137, 2: 417289, 3: 352946, 
+Iter 2200 | Obj: 0: 197175, 1: 405752, 2: 417214, 3: 388806, 
+Iter 2220 | Obj: 0: 196648, 1: 405175, 2: 417491, 3: 388564, 
+Solver failure: No leaving variable found.
+Iter 2240 | Obj: 0: 185802, 1: 403645, 2: 407029, 3: 404627, 
+Solver failure: No leaving variable found.
+Iter 2260 | Obj: 0: 182577, 1: 447976, 2: 426471, 3: 407527, 
+Solver failure: No leaving variable found.
+Iter 2280 | Obj: 0: 181506, 1: 388204, 2: 427130, 3: 407456, 
+Iter 2300 | Obj: 0: 181374, 1: 437039, 2: 427264, 3: 398702, 
+Iter 2320 | Obj: 0: 180989, 1: 437215, 2: 426657, 3: 397664, 
+Iter 2340 | Obj: 0: 180677, 1: 436139, 2: 427578, 3: 349507, 
+Solver failure: No leaving variable found.
+Iter 2360 | Obj: 0: 178533, 1: 437044, 2: 427682, 3: 397433, 
+Iter 2380 | Obj: 0: 157380, 1: 438385, 2: 425337, 3: 398675, 
+Iter 2400 | Obj: 0: 78417.8, 1: 460637, 2: 449689, 3: 374337, 
+Iter 2420 | Obj: 0: 18719.8, 1: 500648, 2: 517587, 3: 469998, 
+Iter 2440 | Obj: 0: 8230.54, 1: 549866, 2: 566287, 3: 518544, 
+Iter 2460 | Obj: 0: 8202.91, 1: 549600, 2: 566177, 3: 480152, 
+Iter 2480 | Obj: 0: 8102.08, 1: 550771, 2: 566084, 3: 517561, 
+Iter 2500 | Obj: 8102.08
+Iter 2500 | Obj: 0: 7625.21, 1: 549452, 2: 566023, 3: 527453, 
+Iter 2520 | Obj: 0: 7265.59, 1: 556610, 2: 566148, 3: 508052, 
+Iter 2540 | Obj: 0: 6707.95, 1: 1.87602e+06, 2: 569363, 3: 506575, 
+Iter 2560 | Obj: 0: 1118.74, 1: 552801, 2: 565256, 3: 504930, 
+Iter 2580 | Obj: 0: 846.203, 1: 563473, 2: 589662, 3: 530485, 
+Iter 2600 | Obj: 0: 22.1075, 1: 563219, 2: 589049, 3: 530026, 
+Iter 2620 | Obj: 0: 0, 1: 558424, 2: 587033, 3: 529250, 
+Final Cleanup
+Optimal basis found at iter 2633 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 1.48476e+07, 1: 1.48745e+07, 2: 1.48752e+07, 3: 1.48747e+07, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 1.16091e+07, 1: 1.485e+07, 2: 1.48505e+07, 3: 1.485e+07, 
+Iter 40 | Obj: 0: 1.1607e+07, 1: 1.10723e+07, 2: 1.17115e+07, 3: 1.10546e+07, 
+Iter 60 | Obj: 0: 1.1607e+07, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 66). Perturbing...
+   >>> Stall detected (Iter 65). Perturbing...
+   >>> Stall detected (Iter 67). Perturbing...
+Optimal basis found at iter 66 | Scaled Obj: 1.1607e+07
+  Warm-up run 2...
+Creating auxiliary problem with 1590 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Infeasible: Phase 1 objective 360916 > 0.
+  Warm-up run 2 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc (m=55, n=136)
+  Warm-up run 1...
+Creating auxiliary problem with 17 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 234.313, 1: 3033.92, 2: 393.797, 3: 0, 
+   >>> Stall detected (Iter 38). Perturbing...
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 34). Perturbing...
+   >>> Stall detected (Iter 51). Perturbing...
+Optimal basis found at iter 20 | Scaled Obj: 0
+Infeasible: Phase 1 objective 5452.5 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc (m=8, n=17)
+  Warm-up run 1...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 0, 1: 500, 2: 0, 3: 0, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: -464.753, 1: 1.33667e-12, 2: -2.4869e-14, 3: 2.3138e-14, 
+Final Cleanup
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+free(): invalid next size (fast)
+srun: error: studgpu-node09: task 0: Aborted
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc (m=333, n=418)
+  Warm-up run 1...
+Creating auxiliary problem with 48 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 7.82364e+06, 1: 1.50717e+07, 2: 1.50717e+07, 3: 1.50717e+07, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 7.80754e+06, 1: 0, 2: 1.72459e+07, 3: 1.72459e+07, 
+Final Cleanup
+   >>> Stall detected (Iter 32). Perturbing...
+Optimal basis found at iter 23 | Scaled Obj: 7.80754e+06
+Infeasible: Phase 1 objective 1.50717e+07 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc (m=471, n=705)
+  Warm-up run 1...
+Creating auxiliary problem with 78 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1.92146e+06, 1: 1.921e+06, 2: 1.92146e+06, 3: 1.92134e+06, 
+Iter 20 | Obj: 0: 1.59863e+06, 1: 1.79457e+06, 2: 1.86705e+06, 3: 1.84159e+06, 
+Iter 40 | Obj: 0: 865870, 1: 2.19412e+06, 2: 2.17897e+06, 3: 2.24161e+06, 
+Iter 60 | Obj: 0: 46752.5, 1: 1.5884e+06, 2: 1.54668e+06, 3: 1.66907e+06, 
+Iter 80 | Obj: 0: 0, 1: 1.3733e+06, 2: 1.25087e+06, 3: 1.28409e+06, 
+Final Cleanup
+Optimal basis found at iter 91 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 2.81514e+08, 1: 1.06371e+09, 2: 9.95512e+08, 3: 9.7273e+08, 
+Iter 20 | Obj: 0: 1.55634e+07, 1: 1.04543e+10, 2: 1.03435e+10, 3: 1.03431e+10, 
+Iter 40 | Obj: 0: 1.18343e+07, 1: 1.41581e+10, 2: 1.74447e+10, 3: 1.73068e+10, 
+Iter 60 | Obj: 0: -1.0775e+07, 1: 3.20878e+10, 2: 3.20996e+10, 3: 2.4486e+10, 
+Iter 80 | Obj: 0: -1.87675e+07, 1: 2.66141e+10, 2: 2.92075e+10, 3: 3.20328e+10, 
+Iter 100 | Obj: 0: -1.88972e+07, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 139). Perturbing...
+Optimal basis found at iter 107 | Scaled Obj: -1.88972e+07
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc (m=470, n=704)
+  Warm-up run 1...
+Creating auxiliary problem with 71 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1.38993e+06, 1: 1.08115e+06, 2: 1.38993e+06, 3: 1.38993e+06, 
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 20 | Obj: 0: 1.38993e+06, 1: 1.69377e+06, 2: 1.27084e+06, 3: 1.27084e+06, 
+Iter 40 | Obj: 0: 29289.6, 1: 1.20761e+06, 2: 1.08843e+06, 3: 1.20761e+06, 
+Iter 60 | Obj: 0: 0, 1: 3.44053e+06, 2: 1.22253e+06, 3: 2.92871e+06, 
+Final Cleanup
+Optimal basis found at iter 74 | Scaled Obj: 0
+srun: error: studgpu-node01: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc (m=198, n=353)
+  Warm-up run 1...
+Creating auxiliary problem with 73 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 1580.91, 1: 2686.82, 2: 2686.82, 3: 2685.81, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 1190.1, 1: 2555.54, 2: 2558.18, 3: 2558.18, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 40 | Obj: 0: 484.874, 1: 3013.92, 2: 3566.75, 3: 2998.27, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 179.352, 1: 2458.39, 2: 2451.1, 3: 2483.26, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 82.5459, 1: 3643.93, 2: 3642.24, 3: 3646.94, 
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc (m=52, n=132)
+  Warm-up run 1...
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+  Warm-up run 2...
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+  Warm-up run 3...
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+  Warm-up run 4...
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+Creating auxiliary problem with 22 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1627, 1: 1125, 2: 1525, 3: 665, 
+Iter 20 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 22 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: -207534, 1: -207158, 2: -207136, 3: -207135, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: -207535, 1: -207511, 2: -207506, 3: -207506, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 20 | Scaled Obj: -207535
+  Runs: 5 (after 4 warm-ups)
+  Avg:  37.220 ms
+  Min:  37.009 ms (Fastest)
+  Max:  37.467 ms
+START
+186.099,37.220,37.009,37.467
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc (m=49, n=86)
+  Warm-up run 1...
+Creating auxiliary problem with 23 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 23.26, 1: 0, 2: 107.279, 3: 107.279, 
+Final Cleanup
+   >>> Stall detected (Iter 36). Perturbing...
+Optimal basis found at iter 19 | Scaled Obj: 23.26
+Infeasible: Phase 1 objective 58.9998 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc (m=431, n=1310)
+  Warm-up run 1...
+Creating auxiliary problem with 204 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-30T19:16:23.091] error: *** STEP 27261.0 ON studgpu-node01 CANCELLED AT 2025-12-30T19:16:23 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc (m=987, n=2920)
+  Warm-up run 1...
+Creating auxiliary problem with 523 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 30989.3, 1: 30989.3, 2: 30987, 3: 30989.3, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 20 | Obj: 0: 30989.3, 1: 30989.3, 2: 30987, 3: 30989.3, 
+   >>> Stall detected (Iter 29). Perturbing...
+Iter 40 | Obj: 0: 30879.3, 1: 30989.2, 2: 30987, 3: 30989.3, 
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 30163.7, 1: 30900.2, 2: 30898, 3: 30907.3, 
+Iter 80 | Obj: 0: 29892.4, 1: 30675.5, 2: 30680.3, 3: 30644.5, 
+Solver failure: No leaving variable found.
+Iter 100 | Obj: 0: 29879.1, 1: 30909.1, 2: 30504.1, 3: 30472.6, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 29862.2, 1: 30500.4, 2: 28441.2, 3: 30464, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 29852.4, 1: 30518.8, 2: 28456.3, 3: 30480.8, 
+Iter 160 | Obj: 0: 29756.5, 1: 30441, 2: 28753.8, 3: 30826.3, 
+Solver failure: No leaving variable found.
+Iter 180 | Obj: 0: 29744.7, 1: 30469.6, 2: 21127.4, 3: 28760.8, 
+Iter 200 | Obj: 0: 29367.7, 1: 28735.8, 2: 20941.2, 3: 28720.6, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 220 | Obj: 0: 29356.8, 1: 28627.1, 2: 20816.5, 3: 28630.3, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 240 | Obj: 0: 29079.5, 1: 28620.5, 2: 20834.3, 3: 28700.6, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 260 | Obj: 0: 28920.2, 1: 28474, 2: 20759, 3: 28186, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 280 | Obj: 0: 28435.6, 1: 28480.3, 2: 20801.8, 3: 28124.3, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 300 | Obj: 0: 28381.1, 1: 29341.9, 2: 21723.8, 3: 32926.9, 
+Solver failure: No leaving variable found.
+Iter 320 | Obj: 0: 0, 1: 29594.3, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 331 | Scaled Obj: 0
+Infeasible: Phase 1 objective 30989.3 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc (m=483, n=848)
+  Warm-up run 1...
+Creating auxiliary problem with 80 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 858.631, 1: 2931.57, 2: 2937.57, 3: 2937.57, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+   >>> Stall detected (Iter 32). Perturbing...
+Iter 20 | Obj: 0: 798.09, 1: 2931.57, 2: 2937.57, 3: 2937.57, 
+Iter 40 | Obj: 0: 991.895, 1: 877101, 2: 20370.9, 3: -18272.1, 
+Iter 60 | Obj: 0: 1147.69, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 61). Perturbing...
+   >>> Stall detected (Iter 63). Perturbing...
+   >>> Stall detected (Iter 63). Perturbing...
+Optimal basis found at iter 69 | Scaled Obj: 1147.69
+Infeasible: Phase 1 objective 2944.57 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc (m=107, n=207)
+  Warm-up run 1...
+Creating auxiliary problem with 80 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 2972.92, 1: 2043.11, 2: 2055.57, 3: 2048.31, 
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 619.943, 1: -308160, 2: 0, 3: 10317.3, 
+Iter 40 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 50). Perturbing...
+   >>> Stall detected (Iter 53). Perturbing...
+   >>> Stall detected (Iter 35). Perturbing...
+Optimal basis found at iter 40 | Scaled Obj: 0
+Infeasible: Phase 1 objective 2048.31 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/capri.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/capri.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/capri.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/capri.csc (m=263, n=451)
+  Warm-up run 1...
+Creating auxiliary problem with 83 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 4166.08, 1: 3652.66, 2: 3635.42, 3: 3635.07, 
+Iter 20 | Obj: 0: 1357.52, 1: 126772, 2: 2815.05, 3: 2814.18, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 40 | Obj: 0: 1069.12, 1: 1840.59, 2: 10155, 3: 7056.37, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 1253.85, 1: 1652.08, 2: 2354.54, 3: 2464.8, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 605.956, 1: 7656.46, 2: 2251.03, 3: 2368.06, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 100 | Obj: 0: 464.28, 1: 15653.4, 2: 2136.29, 3: 2254.12, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 330.917, 1: 17081.9, 2: 2087.76, 3: 2092.72, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 29.7345, 1: 17199.6, 2: 1991.61, 3: 1998.05, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 160 | Obj: 0: 0, 1: 17298.1, 2: 2020.63, 3: 2022.05, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 175 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 6271.81, 
+Final Cleanup
+   >>> Stall detected (Iter 32). Perturbing...
+   >>> Stall detected (Iter 33). Perturbing...
+Optimal basis found at iter 2 | Scaled Obj: 0
+  Warm-up run 2...
+Creating auxiliary problem with 83 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Infeasible: Phase 1 objective 3521.71 > 0.
+  Warm-up run 2 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc (m=875, n=2113)
+  Warm-up run 1...
+Creating auxiliary problem with 545 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 460, 1: 460, 2: 460, 3: 460, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 20 | Obj: 0: 460, 1: 460, 2: 460, 3: 460, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 40 | Obj: 0: 460, 1: 460, 2: 460, 3: 460, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 460, 1: 450, 2: 460, 3: 460, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 460.003, 1: 40, 2: 50, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 100 | Obj: 0: 460, 1: 51, 2: 50, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 460, 1: 40, 2: 50, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 460, 1: 40, 2: 50, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 160 | Obj: 0: 460, 1: 40, 2: 50, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 180 | Obj: 0: 460, 1: 40, 2: 50, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 200 | Obj: 0: 460, 1: 40, 2: 50, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 220 | Obj: 0: 452.519, 1: 40, 2: 61, 3: 40, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 240 | Obj: 0: 445.038, 1: 116.79, 2: 126.79, 3: 116.79, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 260 | Obj: 0: 402.883, 1: 167.84, 2: 167.012, 3: 167.84, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 280 | Obj: 0: 392.883, 1: 283.136, 2: 284.642, 3: 260.609, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 300 | Obj: 0: 392.883, 1: 312.592, 2: 260.851, 3: 281.212, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 320 | Obj: 0: 382.732, 1: 312.592, 2: 260.851, 3: 317.752, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 340 | Obj: 0: 5.32241, 1: 376.807, 2: 326.562, 3: 333.331, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 360 | Obj: 0: 5.32242, 1: 389.145, 2: 322.532, 3: 361.721, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 380 | Obj: 0: 5.32242, 1: 372.085, 2: 322.532, 3: 361.721, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 400 | Obj: 0: 5.32242, 1: 384.011, 2: 322.532, 3: 367.773, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 420 | Obj: 0: 5.32242, 1: 384.011, 2: 322.532, 3: 367.773, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+   >>> Stall detected (Iter 110). Perturbing...
+Iter 440 | Obj: 0: 5.32242, 1: 384.011, 2: 322.532, 3: 372.089, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 460 | Obj: 0: 5.32243, 1: 384.011, 2: 338.572, 3: 740.857, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+   >>> Stall detected (Iter 104). Perturbing...
+Iter 480 | Obj: 0: 5.32242, 1: 384.015, 2: 349.956, 3: 1269.51, 
+Iter 500 | Obj: 5.32242
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 500 | Obj: 0: 5.32242, 1: 384.011, 2: 349.956, 3: 1269.51, 
+   >>> Stall detected (Iter 120). Perturbing...
+Solver failure: No leaving variable found.
+Iter 520 | Obj: 0: 5.32242, 1: 384.011, 2: 349.956, 3: 1269.52, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 540 | Obj: 0: 5.32244, 1: 384.011, 2: 349.956, 3: 1269.52, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 560 | Obj: 0: 5.32243, 1: 384.011, 2: 349.956, 3: 1269.51, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 580 | Obj: 0: 5.32243, 1: 384.011, 2: 349.956, 3: 1269.51, 
+Solver failure: No leaving variable found.
+Iter 600 | Obj: 0: 5.32244, 1: 341.666, 2: 349.519, 3: 1269.52, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 620 | Obj: 0: 5.32243, 1: 384.011, 2: 318.101, 3: 1269.51, 
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc (m=606, n=2594)
+  Warm-up run 1...
+Creating auxiliary problem with 458 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 35530.7, 1: 36078.1, 2: 33744, 3: 35107.8, 
+Iter 20 | Obj: 0: 33963.9, 1: 34292.5, 2: 33709.5, 3: 34256.5, 
+Iter 40 | Obj: 0: 33381.5, 1: 32467.4, 2: 31984.5, 3: 32362.5, 
+Iter 60 | Obj: 0: 33069.5, 1: 31964.5, 2: 31395.5, 3: 31764.5, 
+Iter 80 | Obj: 0: 31838.5, 1: 30197.5, 2: 30598.2, 3: 30875.8, 
+Iter 100 | Obj: 0: 31121.5, 1: 28753.9, 2: 29083.9, 3: 29489.9, 
+Iter 120 | Obj: 0: 30567.5, 1: 27654.4, 2: 28506.6, 3: 28089.4, 
+Iter 140 | Obj: 0: 30123.9, 1: 26983.4, 2: 27417.9, 3: 27172.9, 
+Iter 160 | Obj: 0: 29187.2, 1: 24142, 2: 24689.8, 3: 24630.2, 
+Iter 180 | Obj: 0: 26156.7, 1: 22986.8, 2: 23407.8, 3: 25086.3, 
+Iter 200 | Obj: 0: 25550.4, 1: 20631.9, 2: 19185.2, 3: 20881.9, 
+Iter 220 | Obj: 0: 24517.7, 1: 18964.3, 2: 17880.2, 3: 20116.5, 
+Iter 240 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 277). Perturbing...
+   >>> Stall detected (Iter 278). Perturbing...
+   >>> Stall detected (Iter 277). Perturbing...
+Optimal basis found at iter 248 | Scaled Obj: 0
+Infeasible: Phase 1 objective 35749 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc (m=1899, n=5371)
+  Warm-up run 1...
+Creating auxiliary problem with 685 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 63416.1, 1: 31917, 2: 79931.2, 3: 78374.6, 
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 63416.1, 1: 36283.7, 2: 72514.3, 3: 52400.8, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 40 | Obj: 0: 63416.1, 1: 36481.3, 2: 90377.6, 3: 33898.6, 
+   >>> Stall detected (Iter 61). Perturbing...
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 81034.1, 1: 45703.6, 2: 61963.1, 3: 33155, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 37238.9, 1: -32499.2, 2: 86918.7, 3: -51487.6, 
+Iter 100 | Obj: 0: 37238.9, 1: 36286.1, 2: 68180.2, 3: 139563, 
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 36803.5, 1: -352288, 2: 76909.8, 3: 27311.3, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 36777.2, 1: 35163.6, 2: 57397.7, 3: -579934, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 160 | Obj: 0: 29647.7, 1: 37857.2, 2: 60079, 3: 34326.6, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 180 | Obj: 0: 29578.4, 1: 35558.7, 2: 123888, 3: 32368.8, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 200 | Obj: 0: 28592.1, 1: 36187.5, 2: 122527, 3: 33166.2, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 220 | Obj: 0: 28478.1, 1: 39620.4, 2: 122813, 3: 36599.1, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 240 | Obj: 0: 75124.7, 1: 37517.6, 2: 119949, 3: 36506.9, 
+Solver failure: No leaving variable found.
+Iter 260 | Obj: 0: 28421.5, 1: 91923.6, 2: 297080, 3: 38316.7, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 280 | Obj: 0: 28297.3, 1: 38116.2, 2: 120577, 3: 35410.1, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 300 | Obj: 0: 26592.4, 1: 38003.6, 2: 120509, 3: 35297.5, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 320 | Obj: 0: 25169.2, 1: 168537, 2: 251043, 3: 165831, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 340 | Obj: 0: 24984.3, 1: 168037, 2: 250543, 3: 499367, 
+Solver failure: No leaving variable found.
+Iter 360 | Obj: 0: 24646.5, 1: 153464, 2: 256667, 3: 164492, 
+Solver failure: No leaving variable found.
+Iter 380 | Obj: 0: 24068, 1: -1.02865e+06, 2: 160109, 3: 136845, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 400 | Obj: 0: 23632.4, 1: 161403, 2: 240356, 3: 172264, 
+Solver failure: No leaving variable found.
+Iter 420 | Obj: 0: 26970.9, 1: 167693, 2: 244159, 3: 2.05644e+06, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 440 | Obj: 0: 23769.4, 1: 142790, 2: 231206, 3: 177897, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 460 | Obj: 0: 23219.4, 1: 185735, 2: 248707, 3: 174481, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 480 | Obj: 0: 23070.6, 1: 188895, 2: 253855, 3: 179405, 
+Iter 500 | Obj: 23070.6
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 500 | Obj: 0: 22449.5, 1: 191477, 2: 163656, 3: 176908, 
+Solver failure: No leaving variable found.
+Iter 520 | Obj: 0: 22449.5, 1: 186537, 2: 171135, 3: 177373, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 540 | Obj: 0: 22430.6, 1: 224321, 2: 173642, 3: 177380, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 560 | Obj: 0: 22249.3, 1: 189363, 2: 170190, 3: 177405, 
+Solver failure: No leaving variable found.
+Iter 580 | Obj: 0: 34173.4, 1: 0, 2: 171073, 3: 0, 
+Iter 600 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 346). Perturbing...
+   >>> Stall detected (Iter 314). Perturbing...
+   >>> Stall detected (Iter 387). Perturbing...
+Optimal basis found at iter 600 | Scaled Obj: 0
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc (m=400, n=5435)
+  Warm-up run 1...
+Creating auxiliary problem with 400 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 1186.38, 1: 2161.25, 2: 15276, 3: 14169.7, 
+Iter 20 | Obj: 0: 555.716, 1: 1418.15, 2: 637.648, 3: 1645.22, 
+Iter 40 | Obj: 0: 183.318, 1: 524.134, 2: 535.519, 3: 473.967, 
+Iter 60 | Obj: 0: 136.684, 1: 389.992, 2: 454.292, 3: 252.822, 
+Iter 80 | Obj: 0: 129.115, 1: 421.42, 2: 416.381, 3: 426.037, 
+Iter 100 | Obj: 0: 125.773, 1: 318.715, 2: 379.835, 3: 370.477, 
+Iter 120 | Obj: 0: 124.453, 1: 378.022, 2: 321.707, 3: 358.907, 
+Iter 140 | Obj: 0: 119.587, 1: 414.225, 2: 310.905, 3: 387.568, 
+Iter 160 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 191). Perturbing...
+   >>> Stall detected (Iter 191). Perturbing...
+   >>> Stall detected (Iter 191). Perturbing...
+Optimal basis found at iter 160 | Scaled Obj: 0
+Infeasible: Phase 1 objective 22316 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc (m=438, n=753)
+  Warm-up run 1...
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 189, 1: 200, 2: 200, 3: 200, 
+Iter 20 | Obj: 0: 175, 1: 196, 2: 189, 3: 197, 
+Iter 40 | Obj: 0: 173.5, 1: 155, 2: 154, 3: 156, 
+Iter 60 | Obj: 0: 165, 1: 172, 2: 156, 3: 159, 
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc (m=1493, n=2596)
+  Warm-up run 1...
+Creating auxiliary problem with 795 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 677, 1: 748, 2: 748, 3: 748, 
+Iter 20 | Obj: 0: 644, 1: 664, 2: 481, 3: 478, 
+Iter 40 | Obj: 0: 619, 1: 774, 2: 612, 3: 612, 
+Iter 60 | Obj: 0: 656, 1: 653, 2: 655, 3: 652, 
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 617, 1: 676, 2: 539, 3: 521, 
+Iter 100 | Obj: 0: 677.5, 1: -55, 2: 537, 3: 572, 
+Iter 120 | Obj: 0: 592.25, 1: 434, 2: 641, 3: 652, 
+Iter 140 | Obj: 0: 551, 1: 367, 2: -11, 3: -401, 
+Iter 160 | Obj: 0: 1766, 1: 433, 2: 1310.5, 3: 649, 
+Solver failure: No leaving variable found.
+Iter 180 | Obj: 0: 4015, 1: 543, 2: 641, 3: 882, 
+Iter 200 | Obj: 0: 4551, 1: 2495, 2: 1839, 3: 1008, 
+Iter 220 | Obj: 0: 1234, 1: 518, 2: 684, 3: 693, 
+Iter 240 | Obj: 0: 1143, 1: 506, 2: 475, 3: 312.5, 
+Iter 260 | Obj: 0: 662.25, 1: 135, 2: 305, 3: 437, 
+Iter 280 | Obj: 0: 630.667, 1: 504, 2: 475, 3: 462, 
+Iter 300 | Obj: 0: 802.857, 1: 615, 2: -671, 3: 581.187, 
+Iter 320 | Obj: 0: 543, 1: 370, 2: 577, 3: 63, 
+Iter 340 | Obj: 0: 984.6, 1: 361, 2: 556.25, 3: 735.667, 
+Iter 360 | Obj: 0: 487.667, 1: 336, 2: 1019, 3: -604, 
+Iter 380 | Obj: 0: 434.818, 1: 582.75, 2: 1230, 3: 722, 
+Solver failure: No leaving variable found.
+Iter 400 | Obj: 0: 1049, 1: 440, 2: 508, 3: 450.818, 
+Iter 420 | Obj: 0: 516.069, 1: 532, 2: 338.5, 3: 388.5, 
+Iter 440 | Obj: 0: 501.6, 1: 342.952, 2: 652, 3: 1124, 
+Iter 460 | Obj: 0: 879, 1: 479, 2: 551.5, 3: 448.5, 
+Iter 480 | Obj: 0: 431.986, 1: 502.2, 2: 472, 3: 1887, 
+Iter 500 | Obj: 431.986
+Iter 500 | Obj: 0: 539, 1: 650.5, 2: 825, 3: 548, 
+Iter 520 | Obj: 0: 438.111, 1: -2061, 2: 585.667, 3: 471.5, 
+srun: error: studgpu-node01: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/dfl001.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/dfl001.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/dfl001.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/dfl001.csc (m=3674, n=9340)
+  Warm-up run 1...
+Creating auxiliary problem with 2892 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 6919, 1: 6895, 2: 6887, 3: 6887, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 7000, 1: 6901, 2: 6910, 3: 6910, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 40 | Obj: 0: 6887, 1: 6907, 2: 6907, 3: 6907, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 6887, 1: 6915.5, 2: 6915.5, 3: 6915.5, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+   >>> Stall detected (Iter 84). Perturbing...
+Iter 80 | Obj: 0: 6868, 1: 6915.5, 2: 6915.5, 3: 6915.5, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 100 | Obj: 0: 6868, 1: 6924.25, 2: 6924.25, 3: 6924.25, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 6868, 1: 6924.25, 2: 6924.25, 3: 6924.25, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 6868, 1: 6928.75, 2: 6928.75, 3: 6928.75, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 160 | Obj: 0: 10916, 1: 6928.75, 2: 6928.75, 3: 6928.75, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 180 | Obj: 0: 10326.2, 1: 7861, 2: 6551.5, 3: 6551.5, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 200 | Obj: 0: 6867, 1: 7298, 2: 8036.4, 3: 8036.4, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 220 | Obj: 0: 6864.86, 1: 6949.5, 2: 6935, 3: 6991, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 240 | Obj: 0: 6860.18, 1: 6933.5, 2: 6952.43, 3: 6953.43, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 260 | Obj: 0: 6853.69, 1: 6946.86, 2: 6951.79, 3: 6953.79, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.Solver failure: No leaving variable found.
+
+Iter 280 | Obj: 0: 6865.63, 1: 6951.91, 2: 6956.64, 3: 6958.64, 
+Solver failure: No leaving variable found.
+Iter 300 | Obj: 0: 6854.01, 1: 7328.66, 2: 6502.5, 3: 7439.28, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 320 | Obj: 0: 6849.79, 1: 6954.33, 2: 7920.52, 3: 8129.9, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 340 | Obj: 0: 6849.71, 1: 6956.61, 2: 6946.51, 3: 6951.41, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 360 | Obj: 0: 56847.4, 1: 6961.04, 2: 6950.82, 3: 7146.5, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 380 | Obj: 0: 21958.4, 1: -452150, 2: -458377, 3: -44757.9, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 400 | Obj: 0: 21286.8, 1: -9551.47, 2: -8322.69, 3: -8771.97, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 420 | Obj: 0: 20996.4, 1: -8344.69, 2: -7759.96, 3: -8189.46, 
+Solver failure: No leaving variable found.
+Iter 440 | Obj: 0: 13548, 1: 17396.3, 2: 0, 3: -70787.1, 
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/e226.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/e226.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/e226.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/e226.csc (m=173, n=396)
+  Warm-up run 1...
+Creating auxiliary problem with 30 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 88.8093, 1: 92.53, 2: 97.5214, 3: 91.6716, 
+Iter 20 | Obj: 0: 14.9162, 1: 89.3004, 2: 59.3414, 3: 77.9739, 
+Iter 40 | Obj: 0: 9.25021, 1: 50.2626, 2: 52.7804, 3: 52.3521, 
+Iter 60 | Obj: 0: 2.65454, 1: 0, 2: 0, 3: 0, 
+Iter 80 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 101). Perturbing...
+   >>> Stall detected (Iter 101). Perturbing...
+   >>> Stall detected (Iter 106). Perturbing...
+Optimal basis found at iter 80 | Scaled Obj: 0
+Infeasible: Phase 1 objective 165.881 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc (m=396, n=685)
+  Warm-up run 1...
+Creating auxiliary problem with 216 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 833.442, 1: 39724.2, 2: 38480.5, 3: 38480.5, 
+Iter 20 | Obj: 0: 574.656, 1: 6608.95, 2: 4072.55, 3: 1591.01, 
+Iter 40 | Obj: 0: 562.144, 1: 3797.34, 2: 3983.89, 3: 4060.42, 
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 490.427, 1: 4338.41, 2: 6178.29, 3: 7944.8, 
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 474.294, 1: 5009.58, 2: 6737.18, 3: 6623.12, 
+Solver failure: No leaving variable found.
+Iter 100 | Obj: 0: 474.36, 1: 5004.1, 2: 6596.26, 3: 43683.2, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 452.715, 1: 5001.5, 2: 8694.68, 3: 45130.4, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 0, 1: 5219.91, 2: 0, 3: 43180.2, 
+Final Cleanup
+   >>> Stall detected (Iter 169). Perturbing...
+Optimal basis found at iter 148 | Scaled Obj: 0
+Infeasible: Phase 1 objective 1247.06 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc (m=264, n=768)
+  Warm-up run 1...
+Creating auxiliary problem with 128 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 359550, 1: 393862, 2: 394849, 3: 385663, 
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 0, 1: 373349, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 37 | Scaled Obj: 0
+Infeasible: Phase 1 objective 425261 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc (m=324, n=693)
+  Warm-up run 1...
+Creating auxiliary problem with 103 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 14213.1, 1: 22804.4, 2: 23303.2, 3: 22192.4, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 10632.9, 1: 21945.7, 2: 21992.4, 3: 21991.3, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 40 | Obj: 0: 8406.7, 1: 21412, 2: 21450.5, 3: 21449.4, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 8392.84, 1: 24204.7, 2: 27384.8, 3: 27383.6, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 7827.56, 1: 32426, 2: 32580.5, 3: 32579.3, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 100 | Obj: 0: 5840.92, 1: 36986.9, 2: 37166.8, 3: 37230.8, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 120 | Obj: 0: 5544.69, 1: 37080.7, 2: 37251.6, 3: 37251.4, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 140 | Obj: 0: 4301.53, 1: 38335.2, 2: 38435.1, 3: 38434.9, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 160 | Obj: 0: 449.826, 1: 38614.6, 2: 38714.4, 3: 38714.2, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 180 | Obj: 0: 0, 1: 38470.2, 2: 38570.1, 3: 38569.9, 
+Final Cleanup
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Optimal basis found at iter 189 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 244973, 1: 338247, 2: 338247, 3: 338458, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 20 | Obj: 0: 215013, 1: 229118, 2: 232214, 3: 232007, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 40 | Obj: 0: 206971, 1: 208341, 2: 208341, 3: 208341, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 60 | Obj: 0: 187130, 1: 280925, 2: -1.82496e+06, 3: 329411, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+Iter 80 | Obj: 0: 165999, 1: 168940, 2: 164057, 3: 172834, 
+Solver failure: No leaving variable found.
+Solver failure: No leaving variable found.
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc (m=1048, n=2071)
+  Warm-up run 1...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 2 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Iter 20 | Obj: 0: -512.711, 1: -0.000707995, 2: 0.00838009, 3: 0.000191176, 
+Iter 40 | Obj: 0: -920.973, 1: 760.642, 2: 0, 3: 0, 
+Iter 60 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 60 | Scaled Obj: 0
+  Warm-up run 2...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+  Warm-up run 3...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+  Warm-up run 4...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+   >>> Stall detected (Iter 30). Perturbing...
+Optimal basis found at iter 0 | Scaled Obj: 0
+  Runs: 5 (after 4 warm-ups)
+  Avg:  11.089 ms
+  Min:  10.647 ms (Fastest)
+  Max:  11.606 ms
+START
+55.444,11.089,10.647,11.606
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc (m=1026, n=2076)
+  Warm-up run 1...
+Creating auxiliary problem with 0 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 0 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Solver failure: No leaving variable found.
+Iter 0 | Obj: 0: 12747.6, 1: 0, 2: 10378.5, 3: 0, 
+srun: error: studgpu-node09: task 0: Segmentation fault
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fit2d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/fit2d.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/fit2d.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/fit2d.csc (m=10388, n=20750)
+  Warm-up run 1...
+Creating auxiliary problem with 1 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: 0, 1: 0, 2: 0, 3: 0, 
+Final Cleanup
+Optimal basis found at iter 1 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Iter 0 | Obj: 0: -2176.21, 1: 0, 2: 200, 3: 0, 
+Iter 20 | Obj: 0: -2775.35, 1: -21.8, 2: 613.474, 3: 110.112, 
+Iter 40 | Obj: 0: -3325.75, 1: -52.5428, 2: 1163.62, 3: 340.833, 
+Iter 60 | Obj: 0: -4180.41, 1: -105.567, 2: 1525.13, 3: 469.769, 
+Iter 80 | Obj: 0: -4872.11, 1: 241.75, 2: 1443.13, 3: 1381.41, 
+Iter 100 | Obj: 0: -5568.97, 1: 367.845, 2: 1363.01, 3: 2197.94, 
+Iter 120 | Obj: 0: -6152.38, 1: 880.324, 2: 1343.94, 3: 2460.85, 
+Iter 140 | Obj: 0: -6755.02, 1: 1236.4, 2: 1707.25, 3: 2561.46, 
+Iter 160 | Obj: 0: -7389.92, 1: 1654.12, 2: 1623.84, 3: 3281.41, 
+Iter 180 | Obj: 0: -7800.77, 1: 1478.91, 2: 1280.87, 3: 2832.41, 
+Iter 200 | Obj: 0: -8276.02, 1: 1062.39, 2: 1306.87, 3: 2780.75, 
+Iter 220 | Obj: 0: -8667.53, 1: 1414.41, 2: 1429.37, 3: 3175.87, 
+Iter 240 | Obj: 0: -9051.56, 1: 1748.43, 2: 1643.42, 3: 3653.7, 
+Iter 260 | Obj: 0: -9518.26, 1: 2141.34, 2: 1859.97, 3: 3789.69, 
+Iter 280 | Obj: 0: -9974.24, 1: 2307.47, 2: 1817.73, 3: 3800.52, 
+Iter 300 | Obj: 0: -10345.5, 1: 2730.04, 2: 2125.61, 3: 3343.93, 
+Iter 320 | Obj: 0: -10717, 1: 2834.63, 2: 2250.95, 3: 3318.07, 
+Iter 340 | Obj: 0: -11034.8, 1: 3159.97, 2: 2315.91, 3: 3275.65, 
+Iter 360 | Obj: 0: -11457.9, 1: 3328.29, 2: 2636.61, 3: 3449.63, 
+Iter 380 | Obj: 0: -11871.4, 1: 3372.92, 2: 6791.39, 3: 4025.73, 
+Iter 400 | Obj: 0: -12292.2, 1: 3586.63, 2: 2952.53, 3: 4118.29, 
+Iter 420 | Obj: 0: -12566, 1: 3419.78, 2: 3382.33, 3: 3918.04, 
+Iter 440 | Obj: 0: -12894.2, 1: 3416.77, 2: 3367.79, 3: 4493.58, 
+Iter 460 | Obj: 0: -13279.9, 1: 3622.08, 2: 3651.32, 3: 4747.1, 
+Iter 480 | Obj: 0: -13656.7, 1: 3963.23, 2: 3786.28, 3: 5160.93, 
+Iter 500 | Obj: -13656.7
+Iter 500 | Obj: 0: -13960.8, 1: 3999.86, 2: 3908.58, 3: 5405.99, 
+Iter 520 | Obj: 0: -14274.1, 1: 3929.31, 2: 4254.24, 3: 5731.16, 
+Iter 540 | Obj: 0: -14544.8, 1: 3897.09, 2: 4334.26, 3: 5649.07, 
+Iter 560 | Obj: 0: -14849, 1: 4661.12, 2: 4450.16, 3: 5817.55, 
+Iter 580 | Obj: 0: -15258.1, 1: 5187.44, 2: 4404.38, 3: 5961.59, 
+Iter 600 | Obj: 0: -15512.5, 1: 5501.51, 2: 4644.74, 3: 5994.85, 
+Iter 620 | Obj: 0: -15823.4, 1: 5632.84, 2: 4761.04, 3: 6541.18, 
+Iter 640 | Obj: 0: -16106.7, 1: 5815.4, 2: 4797.12, 3: 6975.08, 
+Iter 660 | Obj: 0: -16397.1, 1: 6176.06, 2: 5199.88, 3: 7281.67, 
+Iter 680 | Obj: 0: -16647.7, 1: 6469.66, 2: 5315.04, 3: 7512.16, 
+Iter 700 | Obj: 0: -16867.7, 1: 6792.92, 2: 5457.93, 3: 7124.55, 
+Iter 720 | Obj: 0: -17165.6, 1: 7409.14, 2: 5740.34, 3: 7102.34, 
+Iter 740 | Obj: 0: -17446.7, 1: 7259.27, 2: 5736.98, 3: 7207.62, 
+Iter 760 | Obj: 0: -17802.7, 1: 7841.98, 2: 5918.94, 3: 7322.27, 
+Iter 780 | Obj: 0: -18170.3, 1: 7958.69, 2: 6314.46, 3: 7511.89, 
+Iter 800 | Obj: 0: -18447.5, 1: 8058.28, 2: 6550.2, 3: 7524.88, 
+Iter 820 | Obj: 0: -18658.6, 1: 8299.27, 2: 6544.87, 3: 8078.63, 
+Iter 840 | Obj: 0: -18919.2, 1: 8465.09, 2: 6586.99, 3: 8473.64, 
+Iter 860 | Obj: 0: -19191.2, 1: 8640.92, 2: 6879.99, 3: 8596.78, 
+Iter 880 | Obj: 0: -19463.4, 1: 8719.19, 2: 7421.35, 3: 8725.71, 
+Iter 900 | Obj: 0: -19761.7, 1: 9132.71, 2: 7528.65, 3: 8833.92, 
+Iter 920 | Obj: 0: -20050.3, 1: 9271.46, 2: 7727.68, 3: 9132.66, 
+Iter 940 | Obj: 0: -20261.3, 1: 9952.47, 2: 7867.35, 3: 9106, 
+Iter 960 | Obj: 0: -20518.6, 1: 9969.82, 2: 7817.54, 3: 9168.39, 
+Iter 980 | Obj: 0: -20720.9, 1: 10034.7, 2: 8113.08, 3: 9160.86, 
+Iter 1000 | Obj: -20720.9
+Iter 1000 | Obj: 0: -20932.1, 1: 10184.5, 2: 8575.88, 3: 9395.72, 
+Iter 1020 | Obj: 0: -21167.9, 1: 10067.8, 2: 8534.75, 3: 9515.42, 
+Iter 1040 | Obj: 0: -21422, 1: 10052.6, 2: 8572.99, 3: 9671.35, 
+Iter 1060 | Obj: 0: -21758.3, 1: 10356.1, 2: 8724.02, 3: 9688.79, 
+Iter 1080 | Obj: 0: -21982.9, 1: 10530.5, 2: 9044.97, 3: 10073.6, 
+Iter 1100 | Obj: 0: -22257.5, 1: 10798.1, 2: 8898.71, 3: 10288, 
+Iter 1120 | Obj: 0: -22535.2, 1: 10806.6, 2: 9316.09, 3: 10606.7, 
+Iter 1140 | Obj: 0: -22730.7, 1: 11180.9, 2: 9440.07, 3: 10476.6, 
+Iter 1160 | Obj: 0: -22999.9, 1: 11425.2, 2: 9346.37, 3: 10433.9, 
+Iter 1180 | Obj: 0: -23246.3, 1: 11442.4, 2: 9473.71, 3: 10608, 
+Iter 1200 | Obj: 0: -23453.6, 1: 11546.6, 2: 9838.14, 3: 10624.7, 
+Iter 1220 | Obj: 0: -23671.5, 1: 11903.6, 2: 9898.41, 3: 10892.2, 
+Iter 1240 | Obj: 0: -23880, 1: 11739, 2: 10105.6, 3: 11333.3, 
+Iter 1260 | Obj: 0: -24117, 1: 11941.4, 2: 10205.7, 3: 11701.6, 
+Iter 1280 | Obj: 0: -24428.6, 1: 12138.9, 2: 10238.3, 3: 11955, 
+Iter 1300 | Obj: 0: -24740.2, 1: 12357.2, 2: 10657.4, 3: 12441.1, 
+Iter 1320 | Obj: 0: -25066.2, 1: 12538.2, 2: 10444.7, 3: 12191.4, 
+Iter 1340 | Obj: 0: -25285.6, 1: 12597.9, 2: 10783.8, 3: 12529.6, 
+Iter 1360 | Obj: 0: -25470.2, 1: 12993.3, 2: 10653.3, 3: 12928.7, 
+Iter 1380 | Obj: 0: -25673.8, 1: 13082.1, 2: 10833.8, 3: 13235.2, 
+Iter 1400 | Obj: 0: -25851.3, 1: 13288.9, 2: 11070.2, 3: 13390.4, 
+Iter 1420 | Obj: 0: -26041.9, 1: 13683.5, 2: 19021.5, 3: 13369.9, 
+Iter 1440 | Obj: 0: -26163.3, 1: 13695, 2: 12580.9, 3: 13473.2, 
+Iter 1460 | Obj: 0: -26389.5, 1: 13922.9, 2: 13519.6, 3: 13713.6, 
+Iter 1480 | Obj: 0: -26603.1, 1: 14211.6, 2: 13938.5, 3: 13941.7, 
+Iter 1500 | Obj: -26603.1
+Iter 1500 | Obj: 0: -26772.5, 1: 13845.2, 2: 16057.3, 3: 14101.3, 
+Iter 1520 | Obj: 0: -26933.3, 1: 14100.9, 2: 17663.2, 3: 14593.8, 
+Iter 1540 | Obj: 0: -27160.4, 1: 14111.5, 2: 18692.2, 3: 14407.3, 
+Iter 1560 | Obj: 0: -27326.4, 1: 14381.3, 2: 18459.1, 3: 14834.4, 
+Iter 1580 | Obj: 0: -27614.1, 1: 14271.3, 2: 18854.6, 3: 15084.5, 
+Iter 1600 | Obj: 0: -27810.5, 1: 14265.4, 2: 20426.7, 3: 15036.6, 
+Iter 1620 | Obj: 0: -27993.1, 1: 14476.3, 2: 19493.9, 3: 15225.9, 
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-30T19:19:41.064] error: *** STEP 27281.0 ON studgpu-node01 CANCELLED AT 2025-12-30T19:19:41 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+

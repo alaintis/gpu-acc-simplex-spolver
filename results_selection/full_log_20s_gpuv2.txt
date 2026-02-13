@@ -1,0 +1,1828 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/25fv47.csc (m=704, n=1754)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37167
+Iter 500 | Obj: 20489.2
+Iter 1000 | Obj: 12072.4
+Iter 1500 | Obj: 5300.6
+Iter 2000 | Obj: 2630.21
+Iter 2500 | Obj: 1334.72
+Iter 3000 | Obj: 312.911
+Optimal basis found at iter 3444 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 9574.48
+Iter 500 | Obj: 5544.59
+Iter 1000 | Obj: 4739.79
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:53:55.986] error: *** STEP 20174.0 ON studgpu-node01 CANCELLED AT 2025-12-15T10:53:55 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/80bau3b.csc (m=4494, n=12832)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 3.16906e+06
+   >>> Stall detected (Iter 31). Perturbing...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:54:16.107] error: *** STEP 20175.0 ON studgpu-node09 CANCELLED AT 2025-12-15T10:54:16 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/adlittle.csc (m=55, n=136)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 8075.1
+Optimal basis found at iter 101 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 383707
+Optimal basis found at iter 50 | Scaled Obj: 225495
+  Backend: Success (Time: 489.01 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+225494.963162,,
+489.009784,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/afiro.csc (m=8, n=17)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1004
+Optimal basis found at iter 8 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.4376
+Optimal basis found at iter 1 | Scaled Obj: -464.753
+  Backend: Success (Time: 314.48 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-464.753143,,
+314.480395,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/agg.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/agg.csc (m=333, n=418)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.80717e+07
+Optimal basis found at iter 390 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.61144e+08
+Optimal basis found at iter 39 | Scaled Obj: -2.81614e+07
+  Backend: Success (Time: 1038.61 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-28161440.166577,,
+1038.614697,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/agg2.csc (m=471, n=705)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.99603e+07
+Iter 500 | Obj: 2.26873e+06
+Optimal basis found at iter 570 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.55496e+08
+Optimal basis found at iter 95 | Scaled Obj: -2.02733e+07
+  Backend: Success (Time: 1824.52 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-20273339.603977,,
+1824.519836,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/agg3.csc (m=470, n=704)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.9859e+07
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 2.1324e+06
+Optimal basis found at iter 606 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 8.94112e+08
+Optimal basis found at iter 108 | Scaled Obj: -2.65186e+06
+  Backend: Success (Time: 2000.29 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-2651861.956911,,
+2000.285181,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/bandm.csc (m=198, n=353)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6039.4
+Optimal basis found at iter 419 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -388.971
+Optimal basis found at iter 165 | Scaled Obj: -453.252
+  Backend: Success (Time: 822.033 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-453.252363,,
+822.033121,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc (m=52, n=132)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 91949.6
+Optimal basis found at iter 52 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -207128
+Optimal basis found at iter 22 | Scaled Obj: -207535
+  Backend: Success (Time: 370.238 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-207534.862119,,
+370.237752,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/blend.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/blend.csc (m=49, n=86)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 136.362
+   >>> Stall detected (Iter 61). Perturbing...
+Optimal basis found at iter 93 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -16.5061
+Optimal basis found at iter 26 | Scaled Obj: -31.079
+  Backend: Success (Time: 340.04 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-31.079048,,
+340.040340,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/bnl1.csc (m=431, n=1310)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 7390.94
+Iter 500 | Obj: 5282.15
+Iter 1000 | Obj: 3618.65
+Iter 1500 | Obj: 2358.76
+Iter 2000 | Obj: 1717.62
+Iter 2500 | Obj: 137.601
+Iter 3000 | Obj: 68.9138
+Iter 3500 | Obj: 0.0426468
+Optimal basis found at iter 3594 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 2201.6
+Iter 500 | Obj: 1971.04
+Optimal basis found at iter 687 | Scaled Obj: 1953.89
+  Backend: Success (Time: 9233.81 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+1953.890267,,
+9233.813413,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/bnl2.csc (m=987, n=2920)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37773.7
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 34219.3
+Iter 1000 | Obj: 30497.5
+Iter 1500 | Obj: 29222.9
+Iter 2000 | Obj: 25938.3
+Iter 2500 | Obj: 22007.9
+Iter 3000 | Obj: 6499.88
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:54:56.255] error: *** STEP 20185.0 ON studgpu-node09 CANCELLED AT 2025-12-15T10:54:56 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/boeing1.csc (m=483, n=848)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6712.86
+   >>> Stall detected (Iter 32). Perturbing...
+Iter 500 | Obj: 2878.11
+Iter 1000 | Obj: 284.856
+Optimal basis found at iter 1115 | Scaled Obj: 1.33162e-08
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 842.172
+Optimal basis found at iter 176 | Scaled Obj: 263.253
+  Backend: Success (Time: 3693.84 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+263.253434,,
+3693.844107,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/brandy.csc (m=107, n=207)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 3161.97
+Optimal basis found at iter 283 | Scaled Obj: 0.434887
+Infeasible: Phase 1 objective 0.434887 > 0.
+  Backend: Failed (Time: 527.937 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+7066.596869,,
+527.936767,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/capri.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/capri.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/capri.csc (m=263, n=451)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 9907.76
+Optimal basis found at iter 348 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 12159.4
+Optimal basis found at iter 115 | Scaled Obj: 3035.27
+  Backend: Success (Time: 1039.42 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+3035.268938,,
+1039.422156,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/cycle.csc (m=875, n=2113)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 29592.8
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 29004.6
+Optimal basis found at iter 547 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 2941 in basis!
+Warning: Non-zero artificial 2942 in basis!
+Warning: Non-zero artificial 2943 in basis!
+Warning: Non-zero artificial 2944 in basis!
+Warning: Non-zero artificial 2945 in basis!
+Warning: Non-zero artificial 2946 in basis!
+Warning: Non-zero artificial 2947 in basis!
+Warning: Non-zero artificial 2948 in basis!
+Warning: Non-zero artificial 2949 in basis!
+Warning: Non-zero artificial 2950 in basis!
+Warning: Non-zero artificial 2951 in basis!
+Warning: Non-zero artificial 2952 in basis!
+Warning: Non-zero artificial 2953 in basis!
+Warning: Non-zero artificial 2954 in basis!
+Warning: Non-zero artificial 2955 in basis!
+Warning: Non-zero artificial 2956 in basis!
+Warning: Non-zero artificial 2957 in basis!
+Warning: Non-zero artificial 2958 in basis!
+Warning: Non-zero artificial 2959 in basis!
+Warning: Non-zero artificial 2960 in basis!
+Warning: Non-zero artificial 2961 in basis!
+Warning: Non-zero artificial 2963 in basis!
+Warning: Non-zero artificial 2964 in basis!
+Warning: Non-zero artificial 2965 in basis!
+Warning: Non-zero artificial 2966 in basis!
+Warning: Non-zero artificial 2967 in basis!
+Warning: Non-zero artificial 2968 in basis!
+Warning: Non-zero artificial 2969 in basis!
+Warning: Non-zero artificial 2970 in basis!
+Warning: Non-zero artificial 2971 in basis!
+Warning: Non-zero artificial 2972 in basis!
+Warning: Non-zero artificial 2973 in basis!
+Warning: Non-zero artificial 2974 in basis!
+Warning: Non-zero artificial 2975 in basis!
+Warning: Non-zero artificial 2976 in basis!
+Warning: Non-zero artificial 2977 in basis!
+Warning: Non-zero artificial 2978 in basis!
+Warning: Non-zero artificial 2979 in basis!
+Warning: Non-zero artificial 2980 in basis!
+Warning: Non-zero artificial 2981 in basis!
+Warning: Non-zero artificial 2982 in basis!
+Warning: Non-zero artificial 2983 in basis!
+Warning: Non-zero artificial 2984 in basis!
+Warning: Non-zero artificial 2985 in basis!
+Warning: Non-zero artificial 2986 in basis!
+Warning: Non-zero artificial 2987 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Backend: Success (Time: 3302.68 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-nan,,
+3302.681709,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/czprob.csc (m=606, n=2594)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 44670.7
+Iter 500 | Obj: 10812.3
+Iter 1000 | Obj: 5.18906
+Optimal basis found at iter 1068 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.34922e+06
+Iter 500 | Obj: 1.00364e+06
+Optimal basis found at iter 872 | Scaled Obj: 967917
+  Backend: Success (Time: 7904.85 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+967916.745146,,
+7904.847698,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/d2q06c.csc (m=1899, n=5371)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 187353
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 136984
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:55:34.837] error: *** STEP 20192.0 ON studgpu-node09 CANCELLED AT 2025-12-15T10:55:34 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/d6cube.csc (m=400, n=5435)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 22316
+   >>> Stall detected (Iter 71). Perturbing...
+Iter 500 | Obj: 96.9345
+Iter 1000 | Obj: 72.1072
+Iter 1500 | Obj: 38.435
+Iter 2000 | Obj: 16.8028
+Iter 2500 | Obj: 5.8115
+Iter 3000 | Obj: 2.32609
+Optimal basis found at iter 3396 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 593.979
+Iter 500 | Obj: 564.721
+Iter 1000 | Obj: 513.757
+Iter 1500 | Obj: 491.366
+Iter 2000 | Obj: 481.762
+Iter 2500 | Obj: 475.836
+Iter 3000 | Obj: 467.922
+Iter 3500 | Obj: 462.199
+Iter 4000 | Obj: 455.581
+Iter 4500 | Obj: 451.35
+Iter 5000 | Obj: 441.53
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:55:54.997] error: *** STEP 20193.0 ON studgpu-node01 CANCELLED AT 2025-12-15T10:55:54 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/degen2.csc (m=438, n=753)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 376
+Iter 500 | Obj: 120.961
+Iter 1000 | Obj: 49.2738
+Iter 1500 | Obj: 27.5928
+Iter 2000 | Obj: 15.8187
+Optimal basis found at iter 2488 | Scaled Obj: -3.00748e-14
+Auxiliary problem solved. Phase 1 Obj: 1.61596e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -680.862
+Iter 500 | Obj: -774.828
+Optimal basis found at iter 686 | Scaled Obj: -793.648
+  Backend: Success (Time: 6803.8 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-793.648000,,
+6803.803555,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/degen3.csc (m=1493, n=2596)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1354
+   >>> Stall detected (Iter 53). Perturbing...
+Iter 500 | Obj: 890.154
+Iter 1000 | Obj: 520.333
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:56:22.325] error: *** STEP 20196.0 ON studgpu-node01 CANCELLED AT 2025-12-15T10:56:22 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/dfl001.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/dfl001.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/dfl001.csc (m=3674, n=9340)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 10531
+   >>> Stall detected (Iter 31). Perturbing...
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:56:42.473] error: *** STEP 20197.0 ON studgpu-node09 CANCELLED AT 2025-12-15T10:56:42 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/e226.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/e226.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/e226.csc (m=173, n=396)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 293.296
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 353 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 4.25174
+Optimal basis found at iter 185 | Scaled Obj: -10.9609
+  Backend: Success (Time: 777.825 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-10.960867,,
+777.824824,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/etamacro.csc (m=396, n=685)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 15190.5
+Iter 500 | Obj: 1044.64
+Optimal basis found at iter 828 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1335.51
+Optimal basis found at iter 265 | Scaled Obj: 349.506
+  Backend: Success (Time: 2352.55 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+349.506214,,
+2352.546556,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/fffff800.csc (m=264, n=768)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 723729
+Iter 500 | Obj: 2475.93
+Optimal basis found at iter 579 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 736748
+Optimal basis found at iter 188 | Scaled Obj: 551958
+  Backend: Success (Time: 1500.65 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+551958.303904,,
+1500.652062,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/finnis.csc (m=324, n=693)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45388.6
+Iter 500 | Obj: 4131.51
+Optimal basis found at iter 531 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 233042
+Optimal basis found at iter 265 | Scaled Obj: 14555.9
+  Backend: Success (Time: 1607.62 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+14555.942311,,
+1607.622010,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc (m=1048, n=2071)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1482
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 1143.81
+Iter 1000 | Obj: 830.496
+Iter 1500 | Obj: 554.918
+Iter 2000 | Obj: 328.296
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:57:10.431] error: *** STEP 20202.0 ON studgpu-node01 CANCELLED AT 2025-12-15T10:57:10 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/fit1p.csc (m=1026, n=2076)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 96626
+Iter 500 | Obj: 83004.2
+Iter 1000 | Obj: 61157.5
+Optimal basis found at iter 1486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 357379
+Iter 500 | Obj: 101184
+Iter 1000 | Obj: 81036.7
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:57:30.556] error: *** STEP 20203.0 ON studgpu-node09 CANCELLED AT 2025-12-15T10:57:30 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fit2d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/fit2d.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/fit2d.csc (m=10388, n=20750)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 20250
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:57:50.690] error: *** STEP 20204.0 ON studgpu-node01 CANCELLED AT 2025-12-15T10:57:50 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/fit2p.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/fit2p.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/fit2p.csc (m=10500, n=21025)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 472507
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:58:11.533] error: *** STEP 20206.0 ON studgpu-node09 CANCELLED AT 2025-12-15T10:58:11 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/forplan.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/forplan.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/forplan.csc (m=88, n=395)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 3.81407e+07
+   >>> Stall detected (Iter 34). Perturbing...
+Optimal basis found at iter 441 | Scaled Obj: -1.78878e-07
+Auxiliary problem solved. Phase 1 Obj: 4.48356e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 1466.07
+Optimal basis found at iter 95 | Scaled Obj: 1466.06
+  Backend: Success (Time: 560.591 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+1466.063560,,
+560.591456,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/ganges.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/ganges.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/ganges.csc (m=825, n=1166)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.06613e+06
+Iter 500 | Obj: 648935
+Iter 1000 | Obj: 105038
+Optimal basis found at iter 1286 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -94764.2
+Optimal basis found at iter 85 | Scaled Obj: -108347
+  Backend: Success (Time: 6976.34 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-108346.871173,,
+6976.341695,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/gfrd-pnc.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/gfrd-pnc.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/gfrd-pnc.csc (m=580, n=1120)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 314509
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 130495
+Optimal basis found at iter 807 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.24183e+07
+Optimal basis found at iter 354 | Scaled Obj: 6.90224e+06
+  Backend: Success (Time: 4354.66 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+6902235.999549,,
+4354.664210,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/greenbea.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/greenbea.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/greenbea.csc (m=1209, n=3416)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 219681
+   >>> Stall detected (Iter 166). Perturbing...
+Iter 500 | Obj: 195659
+Iter 1000 | Obj: 168272
+Iter 1500 | Obj: 141715
+Iter 2000 | Obj: 111352
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:58:45.142] error: *** STEP 20212.0 ON studgpu-node09 CANCELLED AT 2025-12-15T10:58:45 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/greenbeb.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/greenbeb.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/greenbeb.csc (m=1214, n=3411)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 187166
+   >>> Stall detected (Iter 144). Perturbing...
+Iter 500 | Obj: 172540
+Iter 1000 | Obj: 158153
+Iter 1500 | Obj: 123282
+Iter 2000 | Obj: 110328
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:59:05.278] error: *** STEP 20213.0 ON studgpu-node01 CANCELLED AT 2025-12-15T10:59:05 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/grow15.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/grow15.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/grow15.csc (m=895, n=1240)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.03235e+08
+   >>> Stall detected (Iter 82). Perturbing...
+Iter 500 | Obj: 7.47766e+07
+Iter 1000 | Obj: 3.61525e+07
+Iter 1500 | Obj: 9.01273e+06
+Optimal basis found at iter 1762 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -8.27329e+07
+Optimal basis found at iter 259 | Scaled Obj: -1.06871e+08
+  Backend: Success (Time: 11157.5 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-106870941.293575,,
+11157.526486,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/grow22.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/grow22.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/grow22.csc (m=1315, n=1821)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.51414e+08
+   >>> Stall detected (Iter 82). Perturbing...
+Iter 500 | Obj: 1.17684e+08
+Iter 1000 | Obj: 7.72714e+07
+Iter 1500 | Obj: 4.82063e+07
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T10:59:36.997] error: *** STEP 20215.0 ON studgpu-node01 CANCELLED AT 2025-12-15T10:59:36 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/grow7.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/grow7.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/grow7.csc (m=415, n=576)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 4.8173e+07
+Iter 500 | Obj: 1.46626e+07
+Optimal basis found at iter 724 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -3.24354e+07
+Optimal basis found at iter 125 | Scaled Obj: -4.77878e+07
+  Backend: Success (Time: 2059.02 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-47787811.814712,,
+2059.022604,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/israel.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/israel.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/israel.csc (m=166, n=307)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.96663e+06
+Optimal basis found at iter 295 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -260205
+Optimal basis found at iter 252 | Scaled Obj: -814645
+  Backend: Success (Time: 778.947 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-814644.821863,,
+778.946651,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/kb2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/kb2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/kb2.csc (m=46, n=71)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 417
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 76 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -1204.8
+Optimal basis found at iter 15 | Scaled Obj: -1749.9
+  Backend: Success (Time: 348.963 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-1749.900130,,
+348.962638,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/lotfi.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/lotfi.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/lotfi.csc (m=112, n=324)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 182787
+Optimal basis found at iter 181 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 476.946
+Optimal basis found at iter 146 | Scaled Obj: -31.1432
+  Backend: Success (Time: 496.764 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-31.143206,,
+496.764462,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/maros-r7.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/maros-r7.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/maros-r7.csc (m=2152, n=6605)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 9.39368e+06
+Iter 500 | Obj: 6.95563e+06
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T11:00:02.369] error: *** STEP 20220.0 ON studgpu-node09 CANCELLED AT 2025-12-15T11:00:02 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/modszk1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/modszk1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/modszk1.csc (m=550, n=1470)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.02641e+06
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 179622
+Optimal basis found at iter 738 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 5.35987e+07
+Iter 500 | Obj: 129280
+Optimal basis found at iter 555 | Scaled Obj: 320.62
+  Backend: Success (Time: 5171.75 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+320.619729,,
+5171.746697,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/perold.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/perold.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/perold.csc (m=738, n=1508)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 6.03932e+06
+Iter 500 | Obj: 1.44494e+06
+Iter 1000 | Obj: 1.08768e+06
+Iter 1500 | Obj: 987587
+Iter 2000 | Obj: 793078
+Iter 2500 | Obj: 665929
+Iter 3000 | Obj: 311589
+Iter 3500 | Obj: 2.04091
+Optimal basis found at iter 3773 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -4584.29
+Iter 500 | Obj: -5758.21
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T11:00:28.125] error: *** STEP 20222.0 ON studgpu-node09 CANCELLED AT 2025-12-15T11:00:28 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/pilot.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/pilot.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/pilot.csc (m=2054, n=4984)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 98924.1
+Iter 500 | Obj: 74328.1
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T11:00:48.242] error: *** STEP 20223.0 ON studgpu-node01 CANCELLED AT 2025-12-15T11:00:48 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/pilot.ja.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/pilot.ja.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/pilot.ja.csc (m=1004, n=1980)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 2.96725e+06
+Iter 500 | Obj: 2.29644e+06
+Iter 1000 | Obj: 2.17027e+06
+Iter 1500 | Obj: 2.07685e+06
+Iter 2000 | Obj: 1.91457e+06
+Iter 2500 | Obj: 1.78651e+06
+Iter 3000 | Obj: 1.6506e+06
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T11:01:08.381] error: *** STEP 20224.0 ON studgpu-node09 CANCELLED AT 2025-12-15T11:01:08 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/pilot.we.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/pilot.we.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/pilot.we.csc (m=819, n=2742)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 2.43802e+06
+   >>> Stall detected (Iter 76). Perturbing...
+Iter 500 | Obj: 2.14857e+06
+Iter 1000 | Obj: 1.89318e+06
+Iter 1500 | Obj: 1.73405e+06
+Iter 2000 | Obj: 1.4764e+06
+Iter 2500 | Obj: 1.24793e+06
+Iter 3000 | Obj: 981147
+Optimal basis found at iter 3451 | Scaled Obj: 48240.3
+Infeasible: Phase 1 objective 48240.3 > 0.
+  Backend: Failed (Time: 17448.2 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+380.665425,,
+17448.219125,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/pilot4.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/pilot4.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/pilot4.csc (m=574, n=1169)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1.10856e+06
+Iter 500 | Obj: 578423
+Iter 1000 | Obj: 450687
+Iter 1500 | Obj: 183742
+Iter 2000 | Obj: 82896.6
+Iter 2500 | Obj: 46.5754
+Iter 3000 | Obj: 33.941
+Optimal basis found at iter 3261 | Scaled Obj: 32.8826
+Infeasible: Phase 1 objective 32.8826 > 0.
+  Backend: Failed (Time: 11023.3 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+0.000000,,
+11023.349311,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/pilot87.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/pilot87.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/pilot87.csc (m=3203, n=7398)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 292226
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T11:01:57.799] error: *** STEP 20227.0 ON studgpu-node01 CANCELLED AT 2025-12-15T11:01:57 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/pilotnov.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/pilotnov.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/pilotnov.csc (m=1055, n=2306)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 2.4745e+06
+Iter 500 | Obj: 1.67256e+06
+   >>> Stall detected (Iter 643). Perturbing...
+Iter 1000 | Obj: 1.67056e+06
+Iter 1500 | Obj: 1.66264e+06
+Iter 2000 | Obj: 1.6616e+06
+Iter 2500 | Obj: 1.61813e+06
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T11:02:18.009] error: *** STEP 20228.0 ON studgpu-node09 CANCELLED AT 2025-12-15T11:02:18 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/recipe.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/recipe.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/recipe.csc (m=63, n=107)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1026
+Optimal basis found at iter 79 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -153.096
+Optimal basis found at iter 0 | Scaled Obj: -153.096
+  Backend: Success (Time: 378.886 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-153.096000,,
+378.885613,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/sc105.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/sc105.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/sc105.csc (m=44, n=92)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 2793
+Optimal basis found at iter 49 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -32.7931
+Optimal basis found at iter 12 | Scaled Obj: -52.2021
+  Backend: Success (Time: 317.229 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-52.202061,,
+317.228608,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/sc205.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/sc205.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/sc205.csc (m=89, n=180)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5700
+Optimal basis found at iter 113 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -27.0888
+Optimal basis found at iter 44 | Scaled Obj: -52.2021
+  Backend: Success (Time: 420.75 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-52.202061,,
+420.750204,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/sc50a.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/sc50a.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/sc50a.csc (m=19, n=40)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1500
+Optimal basis found at iter 20 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -63.738
+Optimal basis found at iter 3 | Scaled Obj: -64.5751
+  Backend: Success (Time: 380.165 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-64.575077,,
+380.165004,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/sc50b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/sc50b.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/sc50b.csc (m=14, n=31)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1500
+Optimal basis found at iter 14 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -67.2554
+Optimal basis found at iter 2 | Scaled Obj: -70
+  Backend: Success (Time: 365.345 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-70.000000,,
+365.344576,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scagr25.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scagr25.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scagr25.csc (m=337, n=535)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 444308
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 110764
+Optimal basis found at iter 897 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -5.2549e+06
+Optimal basis found at iter 333 | Scaled Obj: -1.40012e+07
+  Backend: Success (Time: 2297.8 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-14001173.332769,,
+2297.795642,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scagr7.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scagr7.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scagr7.csc (m=91, n=145)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 133508
+Optimal basis found at iter 144 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -1.04459e+06
+Optimal basis found at iter 61 | Scaled Obj: -1.57913e+06
+  Backend: Success (Time: 494.104 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+-1579130.096331,,
+494.103529,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scfxm1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scfxm1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scfxm1.csc (m=248, n=504)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 26512.7
+Optimal basis found at iter 409 | Scaled Obj: -6.93889e-14
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 44198.5
+Optimal basis found at iter 149 | Scaled Obj: 15781.5
+  Backend: Success (Time: 799.114 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+15781.539528,,
+799.114285,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scfxm2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scfxm2.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scfxm2.csc (m=502, n=1014)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 54808.9
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 24157.3
+Optimal basis found at iter 931 | Scaled Obj: -1.06078e-05
+Auxiliary problem solved. Phase 1 Obj: 0
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 82756.9
+Optimal basis found at iter 300 | Scaled Obj: 31389.8
+  Backend: Success (Time: 3297.53 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+31389.822565,,
+3297.530381,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scfxm3.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scfxm3.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scfxm3.csc (m=765, n=1533)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 79779.9
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 49584.3
+Iter 1000 | Obj: 14412.4
+Optimal basis found at iter 1222 | Scaled Obj: -3.23193e-05
+Auxiliary problem solved. Phase 1 Obj: 1.53119e-13
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: 117238
+Iter 500 | Obj: 47264.9
+Optimal basis found at iter 548 | Scaled Obj: 47166
+  Backend: Success (Time: 7794.91 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+47165.966050,,
+7794.907461,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scorpion.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scorpion.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scorpion.csc (m=77, n=136)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 17.671
+Optimal basis found at iter 99 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 2149.53
+Optimal basis found at iter 21 | Scaled Obj: 1687.2
+  Backend: Success (Time: 486.217 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+1687.202110,,
+486.216959,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scrs8.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scrs8.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scrs8.csc (m=132, n=882)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 460.235
+Optimal basis found at iter 194 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 2580.73
+Optimal basis found at iter 236 | Scaled Obj: 899.335
+  Backend: Success (Time: 551.999 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+899.334946,,
+551.999061,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scsd1.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scsd1.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scsd1.csc (m=77, n=760)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 1
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 127 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 33.673
+   >>> Stall detected (Iter 113). Perturbing...
+Optimal basis found at iter 212 | Scaled Obj: 8.66667
+  Backend: Success (Time: 478.757 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+8.666670,,
+478.757412,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/scsd6.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Processing path: "../../dphpc-simplex-data/netlib/csc/presolved/scsd6.csc"
+---------------------------------
+Path is a single file, processing...
+
+Comparing on: ../../dphpc-simplex-data/netlib/csc/presolved/scsd6.csc (m=147, n=1350)
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 233 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 235.047
+Iter 500 | Obj: 53.7437
+   >>> Stall detected (Iter 632). Perturbing...
+Optimal basis found at iter 679 | Scaled Obj: 50.5
+  Backend: Success (Time: 853.883 ms)
+Printing the following for statistics collection ( time_all_problems.sh)
+optimal value BACKEND, optimal value CUOPT, delta
+time BACKEND (ms), time CUOPT (ms)
+START
+50.500008,,
+853.882534,
+END
+
+---------------------------------
+Test run complete.
+Processed: 1 files
+Failed:    0 files
+

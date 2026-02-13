@@ -1,0 +1,13 @@
+# Build directories
+bin/*
+build/*
+
+# Log directory
+log/*
+
+# VSCode
+.vscode/*
+
+#venv
+.venv/
+

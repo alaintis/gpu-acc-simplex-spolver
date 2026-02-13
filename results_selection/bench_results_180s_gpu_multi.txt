@@ -1,0 +1,6 @@
+../../dphpc-simplex-data/netlib/csc/presolved/beaconfd.csc
+186.099,37.220,37.009,37.467
+
+../../dphpc-simplex-data/netlib/csc/presolved/fit1d.csc
+55.444,11.089,10.647,11.606
+

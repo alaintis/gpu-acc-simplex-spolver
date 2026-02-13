@@ -1,0 +1,15 @@
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc
+134.211,13.421,13.332,13.534
+
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc
+165.970,16.597,16.526,16.742
+
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc
+151.611,15.161,15.048,15.342
+
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc
+6330.542,633.054,632.148,634.847
+
+../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc
+8941.016,894.102,892.233,896.779
+

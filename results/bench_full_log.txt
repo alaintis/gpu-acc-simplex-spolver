@@ -1,0 +1,1071 @@
+============ ../../dphpc-simplex-data/netlib/presolved/25fv47.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/25fv47.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/25fv47.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/adlittle.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/adlittle.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/adlittle.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/afiro.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/afiro.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/afiro.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/agg.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/agg.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/agg.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/agg2.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/agg2.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/agg2.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/agg3.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/agg3.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/agg3.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/bandm.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/bandm.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/bandm.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/beaconfd.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/beaconfd.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/beaconfd.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/blend.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/blend.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/blend.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/bnl1.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/bnl1.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/bnl1.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/bnl2.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/bnl2.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/bnl2.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/brandy.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/brandy.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/brandy.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/cycle.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/cycle.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/cycle.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/d2q06c.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/d2q06c.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/d2q06c.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/degen2.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/degen2.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/degen2.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/degen3.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/degen3.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/degen3.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/dfl001.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/dfl001.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/dfl001.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/fffff800.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/fffff800.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/fffff800.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/fit1d.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/fit1d.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/fit1d.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/fit1p.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/fit1p.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/fit1p.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/fit2d.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/fit2d.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/fit2d.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/fit2p.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/fit2p.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/fit2p.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/ganges.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/ganges.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/ganges.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/gfrd-pnc.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/gfrd-pnc.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/gfrd-pnc.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/grow15.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/grow15.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/grow15.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/grow22.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/grow22.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/grow22.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/grow7.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/grow7.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/grow7.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/israel.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/israel.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/israel.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/kb2.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/kb2.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/kb2.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/lotfi.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/lotfi.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/lotfi.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/maros-r7.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/maros-r7.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/maros-r7.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/modszk1.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/modszk1.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/modszk1.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/pilotnov.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/pilotnov.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/pilotnov.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/sc105.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/sc105.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/sc105.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/sc205.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/sc205.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/sc205.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/sc50a.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/sc50a.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/sc50a.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/sc50b.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/sc50b.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/sc50b.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scagr25.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scagr25.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scagr25.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scagr7.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scagr7.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scagr7.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scfxm1.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scfxm1.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scfxm1.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scfxm2.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scfxm2.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scfxm2.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scfxm3.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scfxm3.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scfxm3.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scorpion.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scorpion.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scorpion.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scrs8.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scrs8.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scrs8.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scsd1.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scsd1.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scsd1.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scsd6.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scsd6.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scsd6.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/scsd8.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/scsd8.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/scsd8.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/sctap1.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/sctap1.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/sctap1.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/sctap2.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/sctap2.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/sctap2.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/sctap3.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/sctap3.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/sctap3.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/share1b.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/share1b.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/share1b.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/share2b.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/share2b.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/share2b.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/ship04l.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/ship04l.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/ship04l.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/ship04s.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/ship04s.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/ship04s.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/ship08l.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/ship08l.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/ship08l.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/ship08s.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/ship08s.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/ship08s.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/ship12l.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/ship12l.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/ship12l.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/ship12s.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/ship12s.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/ship12s.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/stocfor1.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/stocfor1.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/stocfor1.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/stocfor2.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/stocfor2.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/stocfor2.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/tuff.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/tuff.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/tuff.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/wood1p.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/wood1p.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/wood1p.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/presolved/woodw.presolved ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 5 warm-up, 10 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/presolved/woodw.presolved
+---------------------------------
+Found 1 problem files.
+
+Failed to benchmark file: ../../dphpc-simplex-data/netlib/presolved/woodw.presolved
+  Error: Expected A with 'csc' format
+
+CSV file written successfully: benchmark_results.csv
+---------------------------------
+Benchmark run complete. Processed 1 files.
+

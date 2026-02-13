@@ -1,0 +1,1521 @@
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/afiro.csc (m=8, n=17)
+  Warm-up run 1...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+  Warm-up run 2...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+  Warm-up run 3...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+  Warm-up run 4...
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+Final score: -464.753, feasible: 1
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+Creating auxiliary problem with 2 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -290.157
+Optimal basis found at iter 2 | Scaled Obj: -464.753
+  Runs: 5 (after 4 warm-ups)
+  Avg:  23.747 ms
+  Min:  23.660 ms (Fastest)
+  Max:  23.850 ms
+START
+118.735,23.747,23.660,23.850
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/degen2.csc (m=438, n=753)
+  Warm-up run 1...
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+  Warm-up run 2...
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+  Warm-up run 3...
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+  Warm-up run 4...
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+Final score: -793.648, feasible: 1
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+Creating auxiliary problem with 228 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 212
+Iter 500 | Obj: 25.1658
+Iter 1000 | Obj: 6.66054
+Optimal basis found at iter 1419 | Scaled Obj: -2.76654e-15
+Auxiliary problem solved. Phase 1 Obj: 1.26649e-14
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Iter 0 | Obj: -692.651
+Iter 500 | Obj: -784.903
+Optimal basis found at iter 624 | Scaled Obj: -793.648
+  Runs: 5 (after 4 warm-ups)
+  Avg:  10060.142 ms
+  Min:  10025.389 ms (Fastest)
+  Max:  10087.503 ms
+START
+50300.710,10060.142,10025.389,10087.503
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/fit2d.csc (m=10388, n=20750)
+  Warm-up run 1...
+Creating auxiliary problem with 1 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 1 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T01:32:25.994] error: *** STEP 20050.0 ON studgpu-node01 CANCELLED AT 2025-12-15T01:32:25 DUE to SIGNAL Killed ***
+srun: error: studgpu-node01: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/greenbeb.csc (m=1214, n=3411)
+  Warm-up run 1...
+Creating auxiliary problem with 853 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 67185.8
+   >>> Stall detected (Iter 136). Perturbing...
+   >>> Stall detected (Iter 170). Perturbing...
+Iter 500 | Obj: 62503.2
+Iter 1000 | Obj: 43241.4
+Iter 1500 | Obj: 32444.3
+Iter 2000 | Obj: 22150.7
+Iter 2500 | Obj: 14771.6
+Iter 3000 | Obj: 7555.61
+Iter 3500 | Obj: 3389.59
+Iter 4000 | Obj: 835.231
+Iter 4500 | Obj: 354.408
+Iter 5000 | Obj: 1.27532
+Optimal basis found at iter 5054 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: -3.41992e+06
+Iter 500 | Obj: -3.68188e+06
+Iter 1000 | Obj: -3.97727e+06
+Iter 1500 | Obj: -4.07451e+06
+Iter 2000 | Obj: -4.12204e+06
+Iter 2500 | Obj: -4.14266e+06
+Iter 3000 | Obj: -4.16268e+06
+Iter 3500 | Obj: -4.16391e+06
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T01:34:06.657] error: *** STEP 20051.0 ON studgpu-node09 CANCELLED AT 2025-12-15T01:34:06 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot.csc (m=2054, n=4984)
+  Warm-up run 1...
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Warm-up run 2...
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Warm-up run 3...
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Warm-up run 4...
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Final score: -nan, feasible: 1
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Creating auxiliary problem with 652 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 37099.4
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 49 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 5610 in basis!
+Warning: Non-zero artificial 5611 in basis!
+Warning: Non-zero artificial 5612 in basis!
+Warning: Non-zero artificial 5613 in basis!
+Warning: Non-zero artificial 5614 in basis!
+Warning: Non-zero artificial 5615 in basis!
+Warning: Non-zero artificial 5616 in basis!
+Warning: Non-zero artificial 5617 in basis!
+Warning: Non-zero artificial 5618 in basis!
+Warning: Non-zero artificial 5619 in basis!
+Warning: Non-zero artificial 5620 in basis!
+Warning: Non-zero artificial 5621 in basis!
+Warning: Non-zero artificial 5622 in basis!
+Warning: Non-zero artificial 5623 in basis!
+Warning: Non-zero artificial 5624 in basis!
+Warning: Non-zero artificial 5625 in basis!
+Warning: Non-zero artificial 5626 in basis!
+Warning: Non-zero artificial 5627 in basis!
+Warning: Non-zero artificial 5628 in basis!
+Warning: Non-zero artificial 5629 in basis!
+Warning: Non-zero artificial 5630 in basis!
+Warning: Non-zero artificial 5631 in basis!
+Warning: Non-zero artificial 5632 in basis!
+Warning: Non-zero artificial 5633 in basis!
+Warning: Non-zero artificial 5634 in basis!
+Warning: Non-zero artificial 5635 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 611
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Runs: 5 (after 4 warm-ups)
+  Avg:  3123.676 ms
+  Min:  3116.405 ms (Fastest)
+  Max:  3146.936 ms
+START
+15618.382,3123.676,3116.405,3146.936
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/pilot87.csc (m=3203, n=7398)
+  Warm-up run 1...
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Warm-up run 2...
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Warm-up run 3...
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+  Warm-up run 4...
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Final score: -nan, feasible: 1
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Iter 0 | Obj: -nan
+Optimal basis found at iter 0 | Scaled Obj: -nan
+Creating auxiliary problem with 1608 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 150796
+Structural zero pivot at row 1174
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Failed to find the diagonal!!
+Optimal basis found at iter 111 | Scaled Obj: -nan
+Auxiliary problem solved. Phase 1 Obj: -nan
+Warning: Non-zero artificial 9004 in basis!
+Warning: Non-zero artificial 9005 in basis!
+Phase 1 has artificials in basis. Using Big-M Method for Phase 2.
+srun: forcing job termination
+srun: got SIGCONT
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+[2025-12-15T01:36:16.172] error: *** STEP 20053.0 ON studgpu-node09 CANCELLED AT 2025-12-15T01:36:16 DUE to SIGNAL Killed ***
+srun: error: studgpu-node09: task 0: Killed
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50a.csc (m=19, n=40)
+  Warm-up run 1...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+  Warm-up run 2...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+  Warm-up run 3...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+  Warm-up run 4...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+Final score: -64.5751, feasible: 1
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 13 | Scaled Obj: -64.5751
+  Runs: 5 (after 4 warm-ups)
+  Avg:  37.894 ms
+  Min:  37.777 ms (Fastest)
+  Max:  38.109 ms
+START
+189.468,37.894,37.777,38.109
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/sc50b.csc (m=14, n=31)
+  Warm-up run 1...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+  Warm-up run 2...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+  Warm-up run 3...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+  Warm-up run 4...
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+Final score: -70, feasible: 1
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+Creating auxiliary problem with 3 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 0
+Optimal basis found at iter 3 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 0
+Optimal basis found at iter 11 | Scaled Obj: -70
+  Runs: 5 (after 4 warm-ups)
+  Avg:  34.209 ms
+  Min:  33.914 ms (Fastest)
+  Max:  34.463 ms
+START
+171.043,34.209,33.914,34.463
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd6.csc (m=147, n=1350)
+  Warm-up run 1...
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+  Warm-up run 2...
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+  Warm-up run 3...
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+  Warm-up run 4...
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+Final score: 50.5, feasible: 1
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+Creating auxiliary problem with 139 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 5.25
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 232 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 196.551
+   >>> Stall detected (Iter 255). Perturbing...
+Iter 500 | Obj: 50.75
+Optimal basis found at iter 519 | Scaled Obj: 50.5
+  Runs: 5 (after 4 warm-ups)
+  Avg:  1584.929 ms
+  Min:  1577.750 ms (Fastest)
+  Max:  1592.995 ms
+START
+7924.644,1584.929,1577.750,1592.995
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/scsd8.csc (m=397, n=2750)
+  Warm-up run 1...
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+  Warm-up run 2...
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+  Warm-up run 3...
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+  Warm-up run 4...
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+Final score: 905, feasible: 1
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+Creating auxiliary problem with 391 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 45
+   >>> Stall detected (Iter 31). Perturbing...
+Iter 500 | Obj: 45
+Optimal basis found at iter 752 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 3199.09
+Iter 500 | Obj: 1411.61
+Iter 1000 | Obj: 935.779
+   >>> Stall detected (Iter 1025). Perturbing...
+Iter 1500 | Obj: 905
+Optimal basis found at iter 1507 | Scaled Obj: 905
+  Runs: 5 (after 4 warm-ups)
+  Avg:  9247.992 ms
+  Min:  9228.404 ms (Fastest)
+  Max:  9259.530 ms
+START
+46239.960,9247.992,9228.404,9259.530
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/ship04l.csc (m=292, n=1905)
+  Warm-up run 1...
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+  Warm-up run 2...
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+  Warm-up run 3...
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+  Warm-up run 4...
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+Final score: 1.79242e+06, feasible: 1
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+Creating auxiliary problem with 273 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 383.4
+Optimal basis found at iter 285 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.88082e+06
+Optimal basis found at iter 217 | Scaled Obj: 1.79242e+06
+  Runs: 5 (after 4 warm-ups)
+  Avg:  1440.777 ms
+  Min:  1435.417 ms (Fastest)
+  Max:  1447.877 ms
+START
+7203.885,1440.777,1435.417,1447.877
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/stair.csc (m=254, n=429)
+  Warm-up run 1...
+Creating auxiliary problem with 130 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 990.612
+Optimal basis found at iter 284 | Scaled Obj: 0.0109
+Infeasible: Phase 1 objective 0.0109 > 0.
+  Warm-up run 1 failed.
+---------------------------------
+Benchmark run complete. Processed 1 files.
+
+============ ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc ============
+srun: GPU count: 1
+srun: CPU count: 2
+srun: Memory: 24576MB
+Starting benchmark run...
+Config: 4 warm-up, 5 timed runs.
+Benchmarking single file: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc
+---------------------------------
+Found 1 problem files.
+
+----is running number 0 of  1: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc ---------------------------
+Benchmarking: ../../dphpc-simplex-data/netlib/csc/presolved/selection_problems/woodw.csc (m=562, n=4100)
+  Warm-up run 1...
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+  Warm-up run 2...
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+  Warm-up run 3...
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+  Warm-up run 4...
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+Final score: 1.30448, feasible: 1
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+Creating auxiliary problem with 486 synthetic variables.
+Solving auxiliary problem to find feasible solution x...
+Iter 0 | Obj: 500.5
+   >>> Stall detected (Iter 31). Perturbing...
+Optimal basis found at iter 486 | Scaled Obj: 0
+Auxiliary problem solved. Phase 1 Obj: 0
+Iter 0 | Obj: 1.12733
+Iter 500 | Obj: 1.27498
+Optimal basis found at iter 669 | Scaled Obj: 1.30448
+  Runs: 5 (after 4 warm-ups)
+  Avg:  6880.646 ms
+  Min:  6867.509 ms (Fastest)
+  Max:  6897.531 ms
+START
+34403.232,6880.646,6867.509,6897.531
+END
+
+---------------------------------
+Benchmark run complete. Processed 1 files.
+

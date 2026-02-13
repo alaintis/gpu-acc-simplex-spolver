@@ -1,0 +1,4 @@
+../../dphpc-simplex-data/netlib/csc/25fv47.csc
+5501.78,
+885.153,
+
